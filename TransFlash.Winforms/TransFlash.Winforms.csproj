@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{445250AF-9A79-49CE-86E8-E431D54EE6B5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Couche.Winforms</RootNamespace>
+    <AssemblyName>Couche.Winforms</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>E:\Logiciels\Bunifu_UI_v1.5.3 Cracké\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>E:\Logiciels\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyTcp, Version=2.0.4.2, Culture=neutral, PublicKeyToken=3d9d367bfd3b4d17, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyTcp.2.0.4.2\lib\netstandard2.0\EasyTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>E:\Logiciels\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="LollipoUi">
+      <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\Release\LollipoUi.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\App HOTEL\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\App HOTEL\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\App HOTEL\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SimpleTCP, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleTCP.1.0.24\lib\net45\SimpleTCP.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleTCPServer, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleTCPServer.1.0.1\lib\netstandard2.0\SimpleTCPServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleTCPStandar, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleTCPStandar.1.0.1\lib\netstandard2.0\SimpleTCPStandar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.NetworkInformation, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.NetworkInformation.4.3.0\lib\net46\System.Net.NetworkInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow">
+      <HintPath>..\packages\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="XanderUI">
+      <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\Release\XanderUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Zeroit.Framework.LollipopControls">
+      <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\Release\Zeroit.Framework.LollipopControls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlsUtilisateurs\Choix\FrmChoix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Choix\FrmChoix.Designer.cs">
+      <DependentUpon>FrmChoix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilChefAgence.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilChefAgence.Designer.cs">
+      <DependentUpon>Uc_AccueilChefAgence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilResponsableCompte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilResponsableCompte.Designer.cs">
+      <DependentUpon>Uc_AccueilResponsableCompte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilCaissier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilCaissier.Designer.cs">
+      <DependentUpon>Uc_AccueilCaissier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilComptable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilComptable.Designer.cs">
+      <DependentUpon>Uc_AccueilComptable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilSecretaireComptable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilSecretaireComptable.Designer.cs">
+      <DependentUpon>Uc_AccueilSecretaireComptable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationCompteEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationCompteEmploye.Designer.cs">
+      <DependentUpon>Frm_InformationCompteEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationEmploye.Designer.cs">
+      <DependentUpon>Frm_InformationEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationClient.Designer.cs">
+      <DependentUpon>Frm_InformationClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerCompteEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerCompteEmploye.Designer.cs">
+      <DependentUpon>Frm_EditerCompteEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerEmploye.Designer.cs">
+      <DependentUpon>Frm_EditerEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerCompte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerCompte.Designer.cs">
+      <DependentUpon>Frm_EditerCompte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerClient.Designer.cs">
+      <DependentUpon>Frm_EditerClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.Designer.cs">
+      <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Villes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Villes.Designer.cs">
+      <DependentUpon>Uc_Villes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Pays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Pays.Designer.cs">
+      <DependentUpon>Uc_Pays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.Designer.cs">
+      <DependentUpon>Uc_Salaries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.Designer.cs">
+      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Garanties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Garanties.Designer.cs">
+      <DependentUpon>Uc_Garanties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_NumerosComptables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_NumerosComptables.Designer.cs">
+      <DependentUpon>Uc_NumerosComptables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_PartsSociales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_PartsSociales.Designer.cs">
+      <DependentUpon>Uc_PartsSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Beneficiers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Beneficiers.Designer.cs">
+      <DependentUpon>Uc_Beneficiers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_EnregistrerEmploye.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_EnregistrerEmploye.Designer.cs">
+      <DependentUpon>Uc_EnregistrerEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_PlusEncore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_PlusEncore.Designer.cs">
+      <DependentUpon>Uc_PlusEncore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererCompte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererCompte.Designer.cs">
+      <DependentUpon>Uc_GererCompte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererEmploye.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererEmploye.Designer.cs">
+      <DependentUpon>Uc_GererEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererClient.Designer.cs">
+      <DependentUpon>Uc_GererClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererRemboursement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererRemboursement.Designer.cs">
+      <DependentUpon>Uc_GererRemboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererCredit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererCredit.Designer.cs">
+      <DependentUpon>Uc_GererCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTransaction.Designer.cs">
+      <DependentUpon>Uc_GererTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRemboursement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRemboursement.Designer.cs">
+      <DependentUpon>Uc_InitierRemboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierCredit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierCredit.Designer.cs">
+      <DependentUpon>Uc_InitierCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.Designer.cs">
+      <DependentUpon>Uc_InitierTransfertInterCompte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.Designer.cs">
+      <DependentUpon>Uc_InitierRetrait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierDepot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierDepot.Designer.cs">
+      <DependentUpon>Uc_InitierDepot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_AjouterCompteClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_AjouterCompteClient.Designer.cs">
+      <DependentUpon>Uc_AjouterCompteClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_EnregistrerClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_EnregistrerClient.Designer.cs">
+      <DependentUpon>Uc_EnregistrerClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Beneficier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Beneficier.Designer.cs">
+      <DependentUpon>Uc_Beneficier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Principal.Designer.cs">
+      <DependentUpon>Frm_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personne.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test1.Designer.cs">
+      <DependentUpon>Test1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ControlsUtilisateurs\Choix\FrmChoix.resx">
+      <DependentUpon>FrmChoix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilChefAgence.resx">
+      <DependentUpon>Uc_AccueilChefAgence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilResponsableCompte.resx">
+      <DependentUpon>Uc_AccueilResponsableCompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilCaissier.resx">
+      <DependentUpon>Uc_AccueilCaissier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilComptable.resx">
+      <DependentUpon>Uc_AccueilComptable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilSecretaireComptable.resx">
+      <DependentUpon>Uc_AccueilSecretaireComptable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationCompteEmploye.resx">
+      <DependentUpon>Frm_InformationCompteEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationEmploye.resx">
+      <DependentUpon>Frm_InformationEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationClient.resx">
+      <DependentUpon>Frm_InformationClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerCompteEmploye.resx">
+      <DependentUpon>Frm_EditerCompteEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerEmploye.resx">
+      <DependentUpon>Frm_EditerEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerCompte.resx">
+      <DependentUpon>Frm_EditerCompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_EditerClient.resx">
+      <DependentUpon>Frm_EditerClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.resx">
+      <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Villes.resx">
+      <DependentUpon>Uc_Villes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Pays.resx">
+      <DependentUpon>Uc_Pays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.resx">
+      <DependentUpon>Uc_Salaries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.resx">
+      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Garanties.resx">
+      <DependentUpon>Uc_Garanties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_NumerosComptables.resx">
+      <DependentUpon>Uc_NumerosComptables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_PartsSociales.resx">
+      <DependentUpon>Uc_PartsSociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Beneficiers.resx">
+      <DependentUpon>Uc_Beneficiers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_EnregistrerEmploye.resx">
+      <DependentUpon>Uc_EnregistrerEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_PlusEncore.resx">
+      <DependentUpon>Uc_PlusEncore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererCompte.resx">
+      <DependentUpon>Uc_GererCompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererEmploye.resx">
+      <DependentUpon>Uc_GererEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererClient.resx">
+      <DependentUpon>Uc_GererClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererRemboursement.resx">
+      <DependentUpon>Uc_GererRemboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererCredit.resx">
+      <DependentUpon>Uc_GererCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTransaction.resx">
+      <DependentUpon>Uc_GererTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRemboursement.resx">
+      <DependentUpon>Uc_InitierRemboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierCredit.resx">
+      <DependentUpon>Uc_InitierCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.resx">
+      <DependentUpon>Uc_InitierTransfertInterCompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.resx">
+      <DependentUpon>Uc_InitierRetrait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierDepot.resx">
+      <DependentUpon>Uc_InitierDepot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_AjouterCompteClient.resx">
+      <DependentUpon>Uc_AjouterCompteClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_EnregistrerClient.resx">
+      <DependentUpon>Uc_EnregistrerClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Beneficier.resx">
+      <DependentUpon>Uc_Beneficier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Principal.resx">
+      <DependentUpon>Frm_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Test1.resx">
+      <DependentUpon>Test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Personne.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3926.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\812.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1436.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14361.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_folder_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overview_pages_3_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_folder_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_right_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_right_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deposit_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdrawal_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_arrived_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner_frame_4_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_do_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_52px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_104px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deposit_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_104px4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overview_pages_3_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\todo_list_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_folder_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdrawal_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner_frame_5_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deposit_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overview_pages_3_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_card_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner_frame_5_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_do_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_folder_104px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdrawal_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit - Copie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_male_circle_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_left_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron_left_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment_reminders_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment_reminders_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refund_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refund_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_exchange_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_in_both_directions_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_exchange_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_in_both_directions_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assistant_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assistant_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity_feed_2_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled_message_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled_message_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity_feed_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_squared_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity_feed_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_squared_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_squared_104px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron_down_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_down_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron_down_26px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_down_26px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dossier_folder_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dossier_folder_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\others.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resp_grands_comptes others.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pourquoi-devenir-manager others.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_52px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workflow_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workflow_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_do_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to_do_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner_frame_5_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner_frame_5_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_card_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_card_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refund_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refund_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groups_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dossier_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dossier_folder_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_in_both_directions_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data_in_both_directions_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_exchange_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_exchange_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assistant_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assistant_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdrawal_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdrawal_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deposit_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deposit_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_folder_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_folder_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overview_pages_3_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overview_pages_3_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_52px4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_right_52px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled_message_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment_reminders_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled_message_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment_reminders_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approve_and_update_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_image_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_image_26px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_property_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_property_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\myspace_squared_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_male_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_user_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_user_male_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_user_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_user_male_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_52px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ms_excel_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ms_excel_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_user_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_user_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_round_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_round_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransFlash.BLL\TransFlash.BLL.csproj">
+      <Project>{f308cb2f-9ab3-4ce2-b5a5-a8f2a125612a}</Project>
+      <Name>TransFlash.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransFlash.BO\TransFlash.BO.csproj">
+      <Project>{1edb01b1-399e-4671-82bf-f125456b744c}</Project>
+      <Name>TransFlash.BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransFlash.Winforms.Fonctions\TransFlash.Winforms.Fonctions.csproj">
+      <Project>{2b328aca-a88e-44e3-92b1-e8545d7d7c2a}</Project>
+      <Name>TransFlash.Winforms.Fonctions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
