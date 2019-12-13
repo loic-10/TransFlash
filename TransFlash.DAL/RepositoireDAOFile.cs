@@ -124,5 +124,28 @@ namespace Multicouche.DAL
             listes.Clear();
             File.Delete(fileName);
         }
+
+        public void Edit(T oldItem, T newItem)
+        {
+            int oldIndex = listes.IndexOf(oldItem);
+            int newIndex = listes.IndexOf(newItem);
+
+            if (oldItem == null || newItem == null)
+                throw new ArgumentNullException("un des elements est null");
+
+            if (oldIndex > -1 && (oldIndex == newIndex || newIndex == -1))
+            {
+                listes[oldIndex] = newItem;
+                binaire.Serialisation(fileName, listes);
+            }
+            else if (oldIndex == -1)
+            {
+                throw new KeyNotFoundException(oldItem.ToString() + " pas dans la liste");
+            }
+            else if (newIndex != -1 && oldIndex != newIndex)
+            {
+                throw new DuplicateWaitObjectException(newItem.ToString() + " existe deja");
+            }
+        }
     }
 }

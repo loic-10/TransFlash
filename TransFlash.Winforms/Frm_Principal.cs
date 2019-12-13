@@ -6,12 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Couche.Winforms.ControlsUtilisateurs.Accueil;
 using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls;
 using Guna.UI.WinForms;
 using TransFlash.Winforms.Fonctions;
+using TransFlash.BO;
 
 namespace Couche.Winforms
 {
@@ -20,13 +22,17 @@ namespace Couche.Winforms
 
         private Frm_Fonction fonction = new Frm_Fonction();
 
-        private static UserControl leCorpDePage = null;
+        private UserControl leCorpDePage = null;
 
-        private static UserControl pageAccueil = null;
+        private UserControl pageAccueil = null;
 
-        public Frm_Principal()
+        private Employe employe = null;
+
+        public Frm_Principal(Employe employe)
         {
             InitializeComponent();
+            this.employe = employe;
+
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -35,7 +41,7 @@ namespace Couche.Winforms
             fonction.AnimationOuverture(panelMenu);
             fonction.AnimationIcone(btnMessage, btnNotification, btnManuelUtilisation);
 
-            Uc_AccueilChefAgence frm = new Uc_AccueilChefAgence();
+            Uc_AccueilChefAgence frm = new Uc_AccueilChefAgence(this.employe);
             pageAccueil = frm;
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
@@ -89,7 +95,7 @@ namespace Couche.Winforms
 
         private void btnGererClient_Click(object sender, EventArgs e)
         {
-            Uc_GererClient frm = new Uc_GererClient();
+            Uc_GererClient frm = new Uc_GererClient(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
@@ -101,7 +107,7 @@ namespace Couche.Winforms
 
         private void btnGererEmployes_Click(object sender, EventArgs e)
         {
-            Uc_GererEmploye frm = new Uc_GererEmploye();
+            Uc_GererEmploye frm = new Uc_GererEmploye(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
@@ -143,7 +149,15 @@ namespace Couche.Winforms
 
         private void Frm_Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
+            timer1.Enabled = false;
+            timer2.Enabled = false;
+            System.Threading.Thread.Sleep(1000);
             Application.Exit();
+        }
+
+        private void gunaShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

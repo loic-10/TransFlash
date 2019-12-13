@@ -15,43 +15,68 @@ namespace TransFlash.BLL
 
         private CreditBLO creditBLO = null;
 
+        private OperationBLO operationBLO = null;
+
         public RemboursementBLO()
         {
             remboursementBLO = new RepositoireDAOFile<Remboursement>();
         }
 
-        public void AjouterRemboursement(string codeRemboursement, Credit emprunt, double montant)
+        public void EffectuerRemboursement(Credit credit, double montant, Employe employe)
         {
-            remboursementBLO.Add(new Remboursement(codeRemboursement, emprunt, DateTime.Now, montant,
-            StatutRemboursement.En_attente_de_validité));
+            operationBLO = new OperationBLO();
+
+            remboursementBLO.Add(new Remboursement(CodeRemboursement, credit, DateTime.Now, montant, 
+                StatutRemboursement.En_attente_de_validité));
+
+            operationBLO.AjouterOperation(TypeOperation.Remboursement, employe, credit.Client, new CompteClient("Indefini"), montant, "toto tata");
+
+            new IdentifiantBLO().AddIdRemboursement();
         }
 
-        public void PayerDette(Remboursement remboursement, Credit credit, double montant)
+        public void ValiderRemboursement(Remboursement remboursement, Employe employe)
         {
+            operationBLO = new OperationBLO();
             creditBLO = new CreditBLO();
-            creditBLO.ReduireMontantCredit(credit, montant);
+
             Remboursement oldRemboursement = remboursement;
             remboursement.StatutRemboursement = StatutRemboursement.Validé;
             remboursementBLO[remboursementBLO.IndexOf(oldRemboursement)] = remboursement;
+
+            operationBLO.AjouterOperation(TypeOperation.Validation, employe, remboursement.Credit.Client, new CompteClient("Indefini"), remboursement.Montant, "toto tata");
+
+            creditBLO.ReduireMontantCredit(remboursement.Credit, remboursement.Montant, employe);
+
         }
 
-        public IEnumerable<Remboursement> RemboursementDuCredit(Credit credit) => remboursementBLO.Find(x => x.Credit == credit);
+        public string CodeRemboursement => "rem-" + new IdentifiantBLO().IdRemboursement.ToString().PadLeft(8, '0');
 
-        public List<Remboursement> RechercherLesRemboursements(string valeur)
+        public void PayerDette(Remboursement remboursement, Credit credit, double montant, Employe employe)
         {
-            List<Remboursement> remboursements = new List<Remboursement>();
-            foreach (var item in TousRemboursements)
-                if (item.DateRemboursement.ToString().ToLower().Contains(valeur.ToLower()) ||
-                    item.StatutRemboursement.ToString().ToLower().Contains(valeur.ToLower()) ||
-                    item.Montant.ToString().ToLower().Contains(valeur.ToLower()))
-                    remboursements.Add(item);
+            operationBLO = new OperationBLO();
+            creditBLO = new CreditBLO();
+            creditBLO.ReduireMontantCredit(credit, montant, employe);
+            Remboursement oldRemboursement = remboursement;
+            remboursement.StatutRemboursement = StatutRemboursement.Validé;
+            remboursementBLO[remboursementBLO.IndexOf(oldRemboursement)] = remboursement;
 
-            return remboursements;
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, credit.Client, new CompteClient("Indefini"), montant, "toto tata");
         }
 
-        public void SupprimerRemboursement(Remboursement Remboursement)
+        public IEnumerable<Remboursement> RemboursementDuCredit(Credit credit) => remboursementBLO.Find(x => 
+            x.Credit == credit);
+
+        public IEnumerable<Remboursement> RechercherLesRemboursements(string valeur) => remboursementBLO.Find(x =>
+            x.DateRemboursement.ToString().ToLower().Contains(valeur.ToLower()) ||
+            x.StatutRemboursement.ToString().ToLower().Contains(valeur.ToLower()) ||
+            x.Montant.ToString().ToLower().Contains(valeur.ToLower()));
+
+        public void SupprimerRemboursement(Remboursement remboursement, Employe employe)
         {
-            remboursementBLO.Remove(Remboursement);
+            operationBLO = new OperationBLO();
+            remboursementBLO.Remove(remboursement);
+            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, remboursement.Credit.Client, new CompteClient("Indefini"), 
+                remboursement.Montant, "toto tata");
         }
 
         public List<Remboursement> TousRemboursements => remboursementBLO.AllItems;

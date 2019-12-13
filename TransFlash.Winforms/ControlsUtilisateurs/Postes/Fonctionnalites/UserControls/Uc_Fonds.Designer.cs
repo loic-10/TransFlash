@@ -1,6 +1,6 @@
 ﻿namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
 {
-    partial class Uc_NumerosComptables
+    partial class Uc_Fonds
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
@@ -39,7 +39,6 @@
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.btnSupprimer = new Guna.UI.WinForms.GunaButton();
             this.btnAjouter = new Guna.UI.WinForms.GunaButton();
-            this.btnModifier = new Guna.UI.WinForms.GunaButton();
             this.btnExtraireSousExcel = new Guna.UI.WinForms.GunaButton();
             this.btnImprimer = new Guna.UI.WinForms.GunaButton();
             this.b = new Guna.UI.WinForms.GunaButton();
@@ -116,16 +115,15 @@
             this.lblTitre.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.Location = new System.Drawing.Point(3, 11);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(525, 58);
+            this.lblTitre.Size = new System.Drawing.Size(160, 58);
             this.lblTitre.TabIndex = 5;
-            this.lblTitre.Text = "Numeros comptables";
+            this.lblTitre.Text = "Fonds";
             // 
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.White;
             this.gunaPanel2.Controls.Add(this.btnSupprimer);
             this.gunaPanel2.Controls.Add(this.btnAjouter);
-            this.gunaPanel2.Controls.Add(this.btnModifier);
             this.gunaPanel2.Controls.Add(this.btnExtraireSousExcel);
             this.gunaPanel2.Controls.Add(this.btnImprimer);
             this.gunaPanel2.Controls.Add(this.b);
@@ -150,8 +148,9 @@
             this.btnSupprimer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnSupprimer.Image = global::Couche.Winforms.Properties.Resources.add_property_52px1;
+            this.btnSupprimer.ImageOffsetX = 5;
             this.btnSupprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSupprimer.Location = new System.Drawing.Point(230, 4);
+            this.btnSupprimer.Location = new System.Drawing.Point(161, 4);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnSupprimer.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -159,7 +158,7 @@
             this.btnSupprimer.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
             this.btnSupprimer.OnPressedColor = System.Drawing.Color.Black;
             this.btnSupprimer.Radius = 15;
-            this.btnSupprimer.Size = new System.Drawing.Size(115, 35);
+            this.btnSupprimer.Size = new System.Drawing.Size(125, 35);
             this.btnSupprimer.TabIndex = 5;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.TextOffsetX = -5;
@@ -179,8 +178,9 @@
             this.btnAjouter.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnAjouter.Image = global::Couche.Winforms.Properties.Resources.add_property_52px1;
+            this.btnAjouter.ImageOffsetX = 5;
             this.btnAjouter.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAjouter.Location = new System.Drawing.Point(13, 4);
+            this.btnAjouter.Location = new System.Drawing.Point(36, 4);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnAjouter.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -188,39 +188,10 @@
             this.btnAjouter.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
             this.btnAjouter.OnPressedColor = System.Drawing.Color.Black;
             this.btnAjouter.Radius = 15;
-            this.btnAjouter.Size = new System.Drawing.Size(95, 35);
+            this.btnAjouter.Size = new System.Drawing.Size(105, 35);
             this.btnAjouter.TabIndex = 4;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.TextOffsetX = -5;
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModifier.Animated = true;
-            this.btnModifier.AnimationHoverSpeed = 0.07F;
-            this.btnModifier.AnimationSpeed = 0.03F;
-            this.btnModifier.BackColor = System.Drawing.Color.Transparent;
-            this.btnModifier.BaseColor = System.Drawing.Color.White;
-            this.btnModifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnModifier.BorderSize = 1;
-            this.btnModifier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModifier.FocusedColor = System.Drawing.Color.Empty;
-            this.btnModifier.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnModifier.Image = global::Couche.Winforms.Properties.Resources.add_property_52px1;
-            this.btnModifier.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnModifier.Location = new System.Drawing.Point(118, 4);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnModifier.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnModifier.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnModifier.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
-            this.btnModifier.OnPressedColor = System.Drawing.Color.Black;
-            this.btnModifier.Radius = 15;
-            this.btnModifier.Size = new System.Drawing.Size(102, 35);
-            this.btnModifier.TabIndex = 3;
-            this.btnModifier.Text = "Modifier";
-            this.btnModifier.TextOffsetX = -5;
             // 
             // btnExtraireSousExcel
             // 
@@ -237,8 +208,9 @@
             this.btnExtraireSousExcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExtraireSousExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnExtraireSousExcel.Image = global::Couche.Winforms.Properties.Resources.add_property_52px1;
+            this.btnExtraireSousExcel.ImageOffsetX = 5;
             this.btnExtraireSousExcel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExtraireSousExcel.Location = new System.Drawing.Point(610, 4);
+            this.btnExtraireSousExcel.Location = new System.Drawing.Point(603, 4);
             this.btnExtraireSousExcel.Name = "btnExtraireSousExcel";
             this.btnExtraireSousExcel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnExtraireSousExcel.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -246,7 +218,7 @@
             this.btnExtraireSousExcel.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
             this.btnExtraireSousExcel.OnPressedColor = System.Drawing.Color.Black;
             this.btnExtraireSousExcel.Radius = 15;
-            this.btnExtraireSousExcel.Size = new System.Drawing.Size(180, 35);
+            this.btnExtraireSousExcel.Size = new System.Drawing.Size(187, 35);
             this.btnExtraireSousExcel.TabIndex = 2;
             this.btnExtraireSousExcel.Text = "Exporter sous Excel";
             this.btnExtraireSousExcel.TextOffsetX = -5;
@@ -266,8 +238,9 @@
             this.btnImprimer.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.add_property_52px1;
+            this.btnImprimer.ImageOffsetX = 5;
             this.btnImprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnImprimer.Location = new System.Drawing.Point(495, 4);
+            this.btnImprimer.Location = new System.Drawing.Point(466, 4);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnImprimer.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -275,7 +248,7 @@
             this.btnImprimer.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
             this.btnImprimer.OnPressedColor = System.Drawing.Color.Black;
             this.btnImprimer.Radius = 15;
-            this.btnImprimer.Size = new System.Drawing.Size(105, 35);
+            this.btnImprimer.Size = new System.Drawing.Size(117, 35);
             this.btnImprimer.TabIndex = 1;
             this.btnImprimer.Text = "Imprimer";
             this.btnImprimer.TextOffsetX = -5;
@@ -295,8 +268,9 @@
             this.b.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.b.Image = global::Couche.Winforms.Properties.Resources.add_property_52px1;
+            this.b.ImageOffsetX = 5;
             this.b.ImageSize = new System.Drawing.Size(20, 20);
-            this.b.Location = new System.Drawing.Point(355, 4);
+            this.b.Location = new System.Drawing.Point(306, 4);
             this.b.Name = "b";
             this.b.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.b.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -304,7 +278,7 @@
             this.b.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
             this.b.OnPressedColor = System.Drawing.Color.Black;
             this.b.Radius = 15;
-            this.b.Size = new System.Drawing.Size(130, 35);
+            this.b.Size = new System.Drawing.Size(140, 35);
             this.b.TabIndex = 0;
             this.b.Text = "Informations";
             this.b.TextOffsetX = -5;
@@ -320,32 +294,32 @@
             this.dgClient.AllowUserToAddRows = false;
             this.dgClient.AllowUserToDeleteRows = false;
             this.dgClient.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.dgClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.dgClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgClient.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgClient.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgClient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgClient.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgClient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgClient.ColumnHeadersHeight = 30;
             this.dgClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgClient.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgClient.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgClient.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgClient.EnableHeadersVisualStyles = false;
@@ -421,14 +395,14 @@
             this.dataGrid.TabIndex = 9;
             this.dataGrid.TextLocation = new System.Drawing.Point(10, 10);
             // 
-            // Uc_NumerosComptables
+            // Uc_Fonds
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gunaPanel4);
             this.Controls.Add(this.gunaPanel2);
             this.Controls.Add(this.gunaPanel1);
-            this.Name = "Uc_NumerosComptables";
+            this.Name = "Uc_Fonds";
             this.Size = new System.Drawing.Size(800, 700);
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
@@ -456,6 +430,5 @@
         private Guna.UI.WinForms.GunaButton btnImprimer;
         private Guna.UI.WinForms.GunaButton btnSupprimer;
         private Guna.UI.WinForms.GunaButton btnAjouter;
-        private Guna.UI.WinForms.GunaButton btnModifier;
     }
 }

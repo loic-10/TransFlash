@@ -7,6 +7,7 @@ using static TransFlash.BO.Statut;
 
 namespace TransFlash.BO
 {
+    [Serializable]
     public class Employe : Personne
     {
         public string CodeEmploye { get; set; }
@@ -29,9 +30,9 @@ namespace TransFlash.BO
             MotDePasse = motDePasse;
         }
 
-        public Employe(string codeEmploye, string nomComplet, DateTime dateNaissance, string lieuNaissance, string sexe, 
+        public Employe(string codeEmploye, string nomComplet, DateTime? dateNaissance, string lieuNaissance, StatutSexe? sexe, 
             string numeroCNI, string numeroTelephone1, string numeroTelephone2, Pays pays, Ville ville, string adresse, 
-            string photoProfil, DateTime dateEnregistrement, string nomUtilisateur, string motDePasse, StatutEmploye statutEmploye) 
+            string photoProfil, DateTime? dateEnregistrement, string nomUtilisateur, string motDePasse, StatutEmploye statutEmploye) 
                 : base(nomComplet, dateNaissance, lieuNaissance, sexe, numeroCNI, numeroTelephone1, numeroTelephone2, pays, ville, 
                       adresse, photoProfil, dateEnregistrement)
         {

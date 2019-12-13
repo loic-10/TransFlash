@@ -45,5 +45,10 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
             Uc_GererRemboursement frm = new Uc_GererRemboursement();
             fonction.AfficherPageChoisie(this, frm);
         }
+
+        private void gunaLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

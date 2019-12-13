@@ -8,14 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransFlash.BLL;
+using TransFlash.BO;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
 {
     public partial class Frm_EditerEmploye : Form
     {
-        public Frm_EditerEmploye()
+
+        private EmployeBLO employeBLO = null;
+
+        private Employe employe = null;
+
+        private Employe employeChef = null;
+
+        public Frm_EditerEmploye(Employe employeChef, Employe employe)
         {
             InitializeComponent();
+            employeBLO = new EmployeBLO();
+            this.employeChef = employeChef;
+            this.employe = employe;
         }
     }
 }

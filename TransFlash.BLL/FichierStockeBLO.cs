@@ -13,61 +13,54 @@ namespace TransFlash.BLL
     {
         private IDAL<FichierStocke> fichierStockeBLO = null;
 
+        private OperationBLO operationBLO = null;
+
         public FichierStockeBLO()
         {
             fichierStockeBLO = new RepositoireDAOFile<FichierStocke>();
         }
 
-        public void AjouterFichierStocke(int id, string nom, string fileName, Client client, Garantie garantie,
-            StatutStockage statutStockage)
+        public void AjouterFichierStocke(string nom, string fileName, Client client, Garantie garantie, StatutStockage statutStockage, Employe employe)
         {
-            fichierStockeBLO.Add(new FichierStocke(id, DateTime.Now, nom, fileName, client, garantie, statutStockage));
+            operationBLO = new OperationBLO();
+
+            fichierStockeBLO.Add(new FichierStocke(new IdentifiantBLO().IdFichierStocke, DateTime.Now, nom, fileName, client, garantie, statutStockage));
+
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("Indefini"), garantie.MontantEvaluation, "toto tata");
+
+            new IdentifiantBLO().AddIdFichierStocke();
         }
 
-        public void ModifierFichierStocke(FichierStocke FichierStocke, string nom, string fileName, Client client, Garantie garantie,
-            StatutStockage statutStockage)
+        public void ModifierNomFichierStocke(FichierStocke fichierStocke, string nom, Employe employe)
         {
-            FichierStocke oldFichierStocke = FichierStocke;
-            FichierStocke.Nom = nom;
-            fichierStockeBLO[fichierStockeBLO.IndexOf(oldFichierStocke)] = FichierStocke;
+            operationBLO = new OperationBLO();
+            FichierStocke oldFichierStocke = fichierStocke;
+            fichierStocke.Nom = nom;
+            fichierStockeBLO[fichierStockeBLO.IndexOf(oldFichierStocke)] = fichierStocke;
+
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, fichierStocke.Client, new CompteClient("Indefini"), 
+                fichierStocke.Garantie.MontantEvaluation, "toto tata");
         }
 
-        public void SupprimerFichierStocke(FichierStocke fichierStocke)
+        public void SupprimerFichierStocke(FichierStocke fichierStocke, Employe employe)
         {
+            operationBLO = new OperationBLO();
             fichierStockeBLO.Remove(fichierStocke);
+
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, fichierStocke.Client, new CompteClient("Indefini"), 
+                fichierStocke.Garantie.MontantEvaluation, "toto tata");
         }
 
-        public List<FichierStocke> RechercherLesFichierStockes(string valeur)
-        {
-            List<FichierStocke> fichierStockes = new List<FichierStocke>();
-            foreach (var item in TousFichierStockes)
-                if (item.Nom.ToLower() == valeur.ToLower() ||
-                    item.StatutStockage.ToString().ToLower() == valeur.ToLower() ||
-                    item.DateEnregistrement.ToString().ToLower() == valeur.ToLower())
-                    fichierStockes.Add(item);
-                    
-            return fichierStockes;
-        }
+        public IEnumerable<FichierStocke> RechercherLesFichierStockes(string valeur) => fichierStockeBLO.Find(x =>
+            x.Nom.ToLower().Contains(valeur.ToLower()) ||
+            x.StatutStockage.ToString().ToLower().Contains(valeur.ToLower()) ||
+            x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()));
 
-        public List<FichierStocke> RechercherFichierStockesClient(Client client)
-        {
-            List<FichierStocke> fichierStockes = new List<FichierStocke>();
-            foreach (var item in TousFichierStockes)
-                if (item.Client == client)
-                    fichierStockes.Add(item);
-                    
-            return fichierStockes;
-        }
+        public IEnumerable<FichierStocke> RechercherFichierStockesClient(Client client) => fichierStockeBLO.Find(x =>
+            x.Client == client);
 
-        public List<FichierStocke> RechercherFichierStockesGarantie(Garantie garantie)
-        {
-            List<FichierStocke> fichierStockes = new List<FichierStocke>();
-            foreach (var item in TousFichierStockes)
-                if (item.Garantie == garantie)
-                    fichierStockes.Add(item);
-                    
-            return fichierStockes;
-        }
+        public IEnumerable<FichierStocke> RechercherFichierStockesGarantie(Garantie garantie) => fichierStockeBLO.Find(x =>
+            x.Garantie == garantie);
 
         public List<FichierStocke> TousFichierStockes => fichierStockeBLO.AllItems;
 

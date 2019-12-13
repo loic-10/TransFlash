@@ -38,7 +38,7 @@
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.lblTitreCaissier = new Guna.UI.WinForms.GunaLabel();
             this.gunaAnimateWindow1 = new Guna.UI.WinForms.GunaAnimateWindow(this.components);
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.btnGererTransaction = new Guna.UI.WinForms.GunaAdvenceTileButton();
@@ -57,11 +57,11 @@
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaShadowPanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.gunaShadowPanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel2);
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel1);
             this.gunaShadowPanel1.Controls.Add(this.gunaLabel3);
-            this.gunaShadowPanel1.Controls.Add(this.gunaLabel2);
+            this.gunaShadowPanel1.Controls.Add(this.lblTitreCaissier);
             this.gunaShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
@@ -71,32 +71,35 @@
             // 
             // gunaPanel2
             // 
-            this.gunaPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaPanel2.Controls.Add(this.gunaLabel1);
             this.gunaPanel2.Controls.Add(this.gunaPictureBox1);
-            this.gunaPanel2.Location = new System.Drawing.Point(689, 110);
+            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaPanel2.Location = new System.Drawing.Point(699, 106);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(301, 36);
+            this.gunaPanel2.Size = new System.Drawing.Size(301, 47);
             this.gunaPanel2.TabIndex = 5;
             // 
             // gunaLabel1
             // 
+            this.gunaLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(29, 4);
+            this.gunaLabel1.Location = new System.Drawing.Point(29, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(269, 28);
+            this.gunaLabel1.Size = new System.Drawing.Size(272, 47);
             this.gunaLabel1.TabIndex = 1;
             this.gunaLabel1.Text = "Afficher la liste de vos transactions";
             this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gunaLabel1.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
             // gunaPictureBox1
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPictureBox1.Image = global::Couche.Winforms.Properties.Resources.double_right_52px1;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(29, 28);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(29, 47);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 0;
             this.gunaPictureBox1.TabStop = false;
@@ -105,18 +108,20 @@
             // 
             this.gunaPanel1.Controls.Add(this.gunaLabel4);
             this.gunaPanel1.Controls.Add(this.gunaPictureBox2);
-            this.gunaPanel1.Location = new System.Drawing.Point(9, 110);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 106);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(301, 36);
+            this.gunaPanel1.Size = new System.Drawing.Size(301, 47);
             this.gunaPanel1.TabIndex = 5;
             // 
             // gunaLabel4
             // 
+            this.gunaLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaLabel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel4.Location = new System.Drawing.Point(32, 4);
+            this.gunaLabel4.Location = new System.Drawing.Point(29, 0);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(266, 28);
+            this.gunaLabel4.Size = new System.Drawing.Size(272, 47);
             this.gunaLabel4.TabIndex = 5;
             this.gunaLabel4.Text = "Acceder au manuel d\'utilisation";
             this.gunaLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,40 +129,39 @@
             // gunaPictureBox2
             // 
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPictureBox2.Image = global::Couche.Winforms.Properties.Resources.double_right_52px1;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(3, 4);
+            this.gunaPictureBox2.Location = new System.Drawing.Point(0, 0);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(29, 28);
+            this.gunaPictureBox2.Size = new System.Drawing.Size(29, 47);
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 4;
             this.gunaPictureBox2.TabStop = false;
             // 
             // gunaLabel3
             // 
-            this.gunaLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLabel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel3.Location = new System.Drawing.Point(5, 54);
+            this.gunaLabel3.Location = new System.Drawing.Point(0, 53);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(985, 53);
+            this.gunaLabel3.Size = new System.Drawing.Size(1000, 53);
             this.gunaLabel3.TabIndex = 3;
             this.gunaLabel3.Text = "Vos avez la possibilte d\'avoir acces a toutes vos operations et aussi au manuel d" +
     "\'utilisation consacre a votre poste";
             this.gunaLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gunaLabel2
+            // lblTitreCaissier
             // 
-            this.gunaLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(8, 9);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(982, 53);
-            this.gunaLabel2.TabIndex = 2;
-            this.gunaLabel2.Text = "Bienvenue, caissier #1";
-            this.gunaLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitreCaissier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitreCaissier.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitreCaissier.ForeColor = System.Drawing.Color.White;
+            this.lblTitreCaissier.Location = new System.Drawing.Point(0, 0);
+            this.lblTitreCaissier.Name = "lblTitreCaissier";
+            this.lblTitreCaissier.Size = new System.Drawing.Size(1000, 53);
+            this.lblTitreCaissier.TabIndex = 2;
+            this.lblTitreCaissier.Text = "Bienvenue, ";
+            this.lblTitreCaissier.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaAnimateWindow1
             // 
@@ -359,7 +363,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel lblTitreCaissier;
         private Guna.UI.WinForms.GunaAnimateWindow gunaAnimateWindow1;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton1;

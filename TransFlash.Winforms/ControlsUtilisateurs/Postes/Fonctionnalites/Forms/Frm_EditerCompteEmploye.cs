@@ -20,5 +20,10 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
             txbMDP.Text = txbNomUtilisateur.Text.Substring(0, 4);
             txbConfirmerMDP.Text = txbNomUtilisateur.Text.Substring(4, 8);
         }
+
+        private void txbMDP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

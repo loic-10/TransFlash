@@ -15,6 +15,7 @@ namespace Multicouche.DAL
         T Get(T item);
         IEnumerable<T> Find(Func<T, bool> predicate);
         void Remove(T item);
+        void Edit(T oldItem, T newItem);
         List<T> AllItems { get; }
         int Count { get; }
         bool IsReadOnly { get; }

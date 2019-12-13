@@ -44,7 +44,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnNumerosComptables_Click(object sender, EventArgs e)
         {
-            Uc_NumerosComptables frm = new Uc_NumerosComptables();
+            Uc_Fonds frm = new Uc_Fonds();
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 

@@ -12,6 +12,7 @@ namespace TransFlash.BO
     {
         public int Id { get; set; }
         public Employe Employe { get; set; }
+        public CompteClient CompteClient { get; set; }
         public DateTime DateFond { get; set; }
         public TypeActionFond TypeActionFond { get; set; }
         public double MontantAction { get; set; }
@@ -22,11 +23,12 @@ namespace TransFlash.BO
         {
         }
 
-        public Fond(int id, Employe employe, DateTime dateFond, TypeActionFond typeActionFond, double montantAction,
+        public Fond(int id, Employe employe, CompteClient compteClient, DateTime dateFond, TypeActionFond typeActionFond, double montantAction,
             double montantTotal, string description)
         {
             Id = id;
             Employe = employe;
+            CompteClient = compteClient;
             DateFond = dateFond;
             TypeActionFond = typeActionFond;
             MontantAction = montantAction;
