@@ -13,45 +13,49 @@ namespace TransFlash.BLL
     {
         private IDAL<Beneficier> beneficierBLO = null;
 
+        private OperationBLO operationBLO = new OperationBLO();
+
         public BeneficierBLO()
         {
             beneficierBLO = new RepositoireDAOFile<Beneficier>();
         }
 
-        public void AjouterBeneficier(int id, string nom, string descriptionCondition, int pourcentage, CompteClient compteClient)
+        public void AjouterBeneficier(string nom, string descriptionCondition, int pourcentage, CompteClient compteClient, Employe employe)
         {
-            beneficierBLO.Add(new Beneficier(id, nom, descriptionCondition, pourcentage, compteClient));
+            operationBLO = new OperationBLO();
+            beneficierBLO.Add(new Beneficier(new IdentifiantBLO().IdBeneficier, nom, descriptionCondition, pourcentage, compteClient));
+
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, 0, "toto tata");
+
+            new IdentifiantBLO().AddIdBeneficier();
         }
 
-        public void ModifierBeneficier(Beneficier beneficier, string nom, string descriptionCondition, int pourcentage, CompteClient compteClient)
+        public void ModifierBeneficier(Beneficier beneficier, string nom, string descriptionCondition, int pourcentage, Employe employe)
         {
+            operationBLO = new OperationBLO();
             Beneficier oldBeneficier = beneficier;
             beneficier.Nom = nom;
             beneficier.DescriptionCondition = descriptionCondition;
             beneficier.Pourcentage = pourcentage;
-            beneficier.CompteClient = compteClient;
             beneficierBLO[beneficierBLO.IndexOf(oldBeneficier)] = beneficier;
+
+            operationBLO.AjouterOperation(TypeOperation.Modification, employe, beneficier.CompteClient.Client, beneficier.CompteClient, pourcentage, "toto tata");
         }
 
-        public void SupprimerBeneficier(Beneficier Beneficier)
+        public void SupprimerBeneficier(Beneficier beneficier, Employe employe)
         {
-            beneficierBLO.Remove(Beneficier);
+            operationBLO = new OperationBLO();
+            beneficierBLO.Remove(beneficier);
+
+            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, beneficier.CompteClient.Client, beneficier.CompteClient, beneficier.Pourcentage, "toto tata");
         }
 
-        public List<Beneficier> RechercherLesBeneficiersDuCompte(CompteClient compteClient)
-        {
-            var reqBeneficiers = from beneficier in TousBeneficiers
-                             where (beneficier.CompteClient == compteClient)
-                             select beneficier;
-            return reqBeneficiers as List<Beneficier>;
-        }
+        public IEnumerable<Beneficier> RechercherLesBeneficiersDuCompte(CompteClient compteClient) => beneficierBLO.Find(x =>
+            x.CompteClient == compteClient);
 
-        public List<Beneficier> RechercherLesBeneficiers(string valeur)
-        {
-            var reqBeneficiers = beneficierBLO.Find(x => x.Nom.ToLower().Contains(valeur.ToLower()) ||
-                                                                                x.DescriptionCondition.ToLower().Contains(valeur.ToLower()));
-            return reqBeneficiers as List<Beneficier>;
-        }
+        public IEnumerable<Beneficier> RechercherLesBeneficiers(string valeur) => beneficierBLO.Find(x => 
+            x.Nom.ToLower().Contains(valeur.ToLower()) ||
+            x.DescriptionCondition.ToLower().Contains(valeur.ToLower()));
 
         public List<Beneficier> TousBeneficiers => beneficierBLO.AllItems;
 

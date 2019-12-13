@@ -9,17 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransFlash.Winforms.Fonctions;
 using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls;
+using TransFlash.BO;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 {
     public partial class Uc_AccueilChefAgence : UserControl
     {
 
+        private Employe employe = new Employe();
+
         private Frm_Fonction fonction = new Frm_Fonction();
 
-        public Uc_AccueilChefAgence()
+        public Uc_AccueilChefAgence(Employe employe)
         {
             InitializeComponent();
+            this.employe = employe;
+            lblTitreChefAgence.Text += $"{this.employe.StatutEmploye.ToString().Replace("_"," ")} #{this.employe.CodeEmploye}";
         }
 
         private void Uc_AccueilChefAgence_Load(object sender, EventArgs e)
@@ -29,7 +34,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private void btnGererClient_Click(object sender, EventArgs e)
         {
-            Uc_GererClient frm = new Uc_GererClient();
+            Uc_GererClient frm = new Uc_GererClient(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 
@@ -59,7 +64,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private void btnGererEmploye_Click(object sender, EventArgs e)
         {
-            Uc_GererEmploye frm = new Uc_GererEmploye();
+            Uc_GererEmploye frm = new Uc_GererEmploye(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 

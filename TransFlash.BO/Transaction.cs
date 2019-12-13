@@ -15,6 +15,8 @@ namespace TransFlash.BO
         public TypeTransaction TypeTransaction { get; set; }
         public Epargne Epargne { get; set; }
         public DateTime DateTransaction { get; set; }
+        public Employe EmployeEmetteur { get; set; }
+        public Employe EmployeValideur { get; set; }
         public CompteClient CompteClientEmetteur { get; set; }
         public CompteClient CompteClientDestinataire { get; set; }
         public double Montant { get; set; }
@@ -31,8 +33,8 @@ namespace TransFlash.BO
         }
 
         public Transaction(string codeTransaction, TypeCompte typeCompte, TypeTransaction typeTransaction, Epargne epargne, 
-            DateTime dateTransaction, CompteClient compteClientEmetteur, CompteClient compteClientDestinataire, double montant, 
-            StatutTransaction statutTransaction, int nombreJourAttente) : this(codeTransaction)
+            DateTime dateTransaction, CompteClient compteClientEmetteur, CompteClient compteClientDestinataire, Employe employeEmetteur,
+            Employe employeValideur, double montant, StatutTransaction statutTransaction, int nombreJourAttente) : this(codeTransaction)
         {
             TypeCompte = typeCompte;
             TypeTransaction = typeTransaction;
@@ -40,6 +42,8 @@ namespace TransFlash.BO
             DateTransaction = dateTransaction;
             CompteClientEmetteur = compteClientEmetteur;
             CompteClientDestinataire = compteClientDestinataire;
+            EmployeEmetteur = employeEmetteur;
+            EmployeValideur = employeValideur;
             Montant = montant;
             StatutTransaction = statutTransaction;
             NombreJourAttente = nombreJourAttente;

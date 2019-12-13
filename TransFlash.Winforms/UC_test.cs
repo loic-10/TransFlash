@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
+namespace Couche.Winforms
 {
-    public partial class Uc_NumerosComptables : UserControl
+    public partial class UC_test : UserControl
     {
-        public Uc_NumerosComptables()
+        public UC_test()
         {
             InitializeComponent();
         }

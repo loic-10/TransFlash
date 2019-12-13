@@ -20,11 +20,17 @@ namespace TransFlash.BLL
                //AjouterParametreGeneral()
         }
 
-        public void AjouterParametreGeneral(float pourcentageRetrait, float pourcentageRetraitEpargneSansAvis, int nombreMinimalBeneficier,
-            int nombreMaximalBeneficier, double montantPartSociale, double montantDeCreationCompte)
+        public void AjouterParametreGeneral(string nomMicrofinance, int ageMinimalRequis, float pourcentageRetrait, float pourcentageRetraitEpargneSansAvis,
+            float pourcentageDuCreditMaximalSalarie, float pourcentageDecouvertMaximal, float pourcentageBeneficeCompteEpargne, int nombreMinimalBeneficier,
+            int nombreMaximalBeneficier, double montantPartSociale, double montantDeCreationCompte, double montantMininimumDepot,
+            int nombreJourRetraitAviseDeEpargne, int nombreJourAttenteReponsePourCredit, int nombreMoisMinimalPourDecouvert,
+            double soldeMaximalCompteCourant, double fraiesCreationCompte, double fraiesDebloquerCompte)
         {
-            parametreGeneralBLO.Add(new ParametreGeneral(pourcentageRetrait, pourcentageRetraitEpargneSansAvis, nombreMinimalBeneficier,
-            nombreMaximalBeneficier, montantPartSociale, montantDeCreationCompte));
+            //parametreGeneralBLO.Add(new ParametreGeneral(nomMicrofinance, ageMinimalRequis, float pourcentageRetrait, float pourcentageRetraitEpargneSansAvis,
+            //float pourcentageDuCreditMaximalSalarie, float pourcentageDecouvertMaximal, float pourcentageBeneficeCompteEpargne, int nombreMinimalBeneficier,
+            //int nombreMaximalBeneficier, double montantPartSociale, double montantDeCreationCompte, double montantMininimumDepot,
+            //int nombreJourRetraitAviseDeEpargne, int nombreJourAttenteReponsePourCredit, int nombreMoisMinimalPourDecouvert,
+            //double soldeMaximalCompteCourant, double fraiesCreationCompte, double fraiesDebloquerCompte));
         }
 
         public void ModifierParametreGeneral(ParametreGeneral parametreGeneral, float pourcentageRetrait,

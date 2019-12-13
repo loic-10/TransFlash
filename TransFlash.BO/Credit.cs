@@ -12,7 +12,8 @@ namespace TransFlash.BO
     {
         public string CodeCredit { get; set; }
         public TypeCredit TypeCredit { get; set; }
-        public DateTime DateCredit { get; set; }
+        public DateTime DateCreditOuvertureDossier { get; set; }
+        public DateTime? DateCreditValidation { get; set; }
         public int NombreMois { get; set; }
         public Client Client { get; set; }
         public Garantie Garantie { get; set; }
@@ -29,11 +30,12 @@ namespace TransFlash.BO
             CodeCredit = codeCredit;
         }
 
-        public Credit(string codeCredit, TypeCredit typeCredit, DateTime dateCredit, int nombreMois, Client client, Garantie garantie, 
-            double montantEmprunte, double montantRembourse, StatutCredit statutCredit) : this(codeCredit)
+        public Credit(string codeCredit, TypeCredit typeCredit, DateTime dateCreditOuvertureDossier, DateTime? dateCreditValidation, int nombreMois, 
+            Client client, Garantie garantie, double montantEmprunte, double montantRembourse, StatutCredit statutCredit) : this(codeCredit)
         {
             TypeCredit = typeCredit;
-            DateCredit = dateCredit;
+            DateCreditOuvertureDossier = dateCreditOuvertureDossier;
+            DateCreditValidation = dateCreditValidation;
             NombreMois = nombreMois;
             Client = client;
             Garantie = garantie;

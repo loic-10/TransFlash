@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static TransFlash.BO.Statut;
 
 namespace TransFlash.BO
 {
@@ -10,9 +11,9 @@ namespace TransFlash.BO
     public class Personne
     {
         public string NomComplet { get; set; }
-        public DateTime DateNaissance { get; set; }
+        public DateTime? DateNaissance { get; set; }
         public string LieuNaissance { get; set; }
-        public string Sexe { get; set; }
+        public StatutSexe? Sexe { get; set; }
         public string NumeroCNI { get; set; }
         public string NumeroTelephone1 { get; set; }
         public string NumeroTelephone2 { get; set; }
@@ -20,7 +21,7 @@ namespace TransFlash.BO
         public Ville Ville { get; set; }
         public string Adresse { get; set; }
         public string PhotoProfil { get; set; }
-        public DateTime DateEnregistrement { get; set; }
+        public DateTime? DateEnregistrement { get; set; }
 
         public Personne()
         {
@@ -31,9 +32,9 @@ namespace TransFlash.BO
             NumeroCNI = numeroCNI;
         }
 
-        public Personne(string nomComplet, DateTime dateNaissance, string lieuNaissance, string sexe, string numeroCNI, 
+        public Personne(string nomComplet, DateTime? dateNaissance, string lieuNaissance, StatutSexe? sexe, string numeroCNI, 
             string numeroTelephone1, string numeroTelephone2, Pays pays, Ville ville, string adresse, string photoProfil, 
-            DateTime dateEnregistrement) : this(nomComplet)
+            DateTime? dateEnregistrement) : this(nomComplet)
         {
             DateNaissance = dateNaissance;
             LieuNaissance = lieuNaissance;

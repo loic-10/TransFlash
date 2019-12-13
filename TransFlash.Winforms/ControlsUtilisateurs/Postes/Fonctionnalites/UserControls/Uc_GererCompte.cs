@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms;
 using TransFlash.Winforms.Fonctions;
+using TransFlash.BO;
+using TransFlash.BLL;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
 {
     public partial class Uc_GererCompte : UserControl
     {
+
+        private Employe employe = null;
 
         private Frm_Fonction fonction = new Frm_Fonction();
 

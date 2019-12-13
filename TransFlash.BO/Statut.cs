@@ -18,6 +18,12 @@ namespace TransFlash.BO
             Comptable
         }
 
+        public enum StatutConnexion
+        {
+            Connecté,
+            Deconnecté
+        }
+
         public enum StatutCompte
         {
             En_attente_de_validité,
@@ -36,7 +42,9 @@ namespace TransFlash.BO
             En_attente_de_validité,
             Remboursé,
             Non_remboursé,
-            Annulé
+            Programmé,
+            Annulé,
+            Ouverture_du_dossier
         }
 
         public enum StatutRemboursement
@@ -73,6 +81,18 @@ namespace TransFlash.BO
             Courant
         }
 
+        public static TypeCompte RetourTypeCompte(string typeCompte)
+        {
+            string[] valeurs = Enum.GetNames(typeof(TypeCompte));
+
+            if (valeurs[0] == typeCompte)
+                return TypeCompte.Epargne;
+            else if (valeurs[1] == typeCompte)
+                return TypeCompte.Courant;
+
+            return new TypeCompte();
+        }
+
         public enum TypeCredit
         {
             A_court_terme,
@@ -84,6 +104,18 @@ namespace TransFlash.BO
         {
             Entreprise,
             Particulier
+        }
+
+        public static TypeAppartenantCompteEpargne? RetourTypeAppartenantCompteEpargne(string typeAppartenantCompteEpargne)
+        {
+            string[] valeurs = Enum.GetNames(typeof(TypeAppartenantCompteEpargne));
+
+            if (valeurs[0] == typeAppartenantCompteEpargne)
+                return TypeAppartenantCompteEpargne.Entreprise;
+            else if (valeurs[1] == typeAppartenantCompteEpargne)
+                return TypeAppartenantCompteEpargne.Particulier;
+
+            return null;
         }
 
         public enum StatutNumeroComptable
@@ -127,7 +159,9 @@ namespace TransFlash.BO
         {
             Garantie,
             Demande_de_stage,
-            Document_de_la_microfinance
+            Document_de_la_microfinance,
+            Image_des_clients,
+            Image_des_employés
         }
 
         public enum TypeActionFond
@@ -149,13 +183,23 @@ namespace TransFlash.BO
             Modification,
             Suppression,
             Entrée,
-            Sortie
+            Sortie,
+            Avis_de_retrait,
+            Annulation, 
+            Embauche,
+            Retour_de_garantie,
+            Reduction_du_montant_de_la_part_sociale,
+            Validation, 
+            Virement,
+            Activation,
+            Désactivation
+
         }
 
-        public static List<string> StatutSexe = new List<string>()
+        public enum StatutSexe
         {
-            "Maxculin",
-            "Féminin"
+            Maxculin,
+            Féminin
         };
 
     }

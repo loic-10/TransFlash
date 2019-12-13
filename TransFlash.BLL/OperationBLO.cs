@@ -18,10 +18,12 @@ namespace TransFlash.BLL
             operationBLO = new RepositoireDAOFile<Operation>();
         }
 
-        public void AjouterOperation(int id, TypeOperation typeOperation, Employe employe, Client client,
+        public void AjouterOperation(TypeOperation typeOperation, Employe employe, Client client,
                                                     CompteClient compteClient, double valeurOperation, string description)
         {
-            operationBLO.Add(new Operation(id, DateTime.Now, typeOperation, employe, client, compteClient, valeurOperation, description));
+            operationBLO.Add(new Operation(new IdentifiantBLO().IdOperation, DateTime.Now, typeOperation, employe, client, compteClient, valeurOperation, description));
+            
+            new IdentifiantBLO().AddIdOperation();        
         }
 
         public void SupprimerOperation(Operation Operation)
@@ -30,14 +32,14 @@ namespace TransFlash.BLL
         }
 
         public IEnumerable<Operation> RechercherOperationsCompte(CompteClient compteClient) => operationBLO.Find(x => 
-                x.CompteClient == compteClient);
+            x.CompteClient == compteClient);
 
         public IEnumerable<Operation> RechercherLesOperations(string valeur) => operationBLO.Find(x => 
-                x.Client.ToString().ToLower().Contains(valeur.ToLower()) ||
-                x.Description.ToLower().Contains(valeur.ToLower()) ||
-                x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) ||
-                x.ValeurOperation.ToString().Contains(valeur.ToLower()) ||
-                x.Employe.ToString().Contains(valeur.ToLower()));
+            x.Client.ToString().ToLower().Contains(valeur.ToLower()) ||
+            x.Description.ToLower().Contains(valeur.ToLower()) ||
+            x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) ||
+            x.ValeurOperation.ToString().Contains(valeur.ToLower()) ||
+            x.Employe.ToString().Contains(valeur.ToLower()));
 
         public List<Operation> TousOperations => operationBLO.AllItems;
 

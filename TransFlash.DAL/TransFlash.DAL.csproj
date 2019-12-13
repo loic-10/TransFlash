@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activateur\Activateur.cs" />
+    <Compile Include="Cryptographie\CrypterSHA1.cs" />
     <Compile Include="Cryptographie\CrypterMD5.cs" />
     <Compile Include="IDAL.cs" />
     <Compile Include="Langue\Langue.cs" />
@@ -56,12 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Multicouche.BO\Multicouche.BO.csproj">
-      <Project>{e1082ccf-2e71-4721-a73a-eb0e9df5f55a}</Project>
-      <Name>Multicouche.BO</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

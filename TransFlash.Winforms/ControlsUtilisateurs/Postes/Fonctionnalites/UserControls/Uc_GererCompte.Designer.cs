@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.dgClient = new Guna.UI.WinForms.GunaDataGridView();
             this.LieuNaiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,15 +42,17 @@
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
+            this.btnExporterExcel = new Guna.UI.WinForms.GunaButton();
+            this.btnImprimer = new Guna.UI.WinForms.GunaButton();
+            this.btnInformation = new Guna.UI.WinForms.GunaButton();
+            this.btnSupprimer = new Guna.UI.WinForms.GunaButton();
             this.btnEditerCompte = new Guna.UI.WinForms.GunaButton();
             this.btnAjouterCompte = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnExporterExcel = new Guna.UI.WinForms.GunaButton();
-            this.btnImprimer = new Guna.UI.WinForms.GunaButton();
-            this.btnInformation = new Guna.UI.WinForms.GunaButton();
-            this.btnSupprimer = new Guna.UI.WinForms.GunaButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.gunaPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
@@ -75,35 +77,33 @@
             // 
             this.dgClient.AllowUserToAddRows = false;
             this.dgClient.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.dgClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgClient.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.dgClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgClient.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgClient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgClient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgClient.ColumnHeadersHeight = 50;
             this.dgClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LieuNaiss,
             this.CNI});
-            this.dgClient.DataSource = this.clientsBindingSource1;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgClient.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgClient.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgClient.EnableHeadersVisualStyles = false;
             this.dgClient.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
@@ -236,85 +236,6 @@
             this.gunaPanel5.Size = new System.Drawing.Size(200, 700);
             this.gunaPanel5.TabIndex = 8;
             // 
-            // btnEditerCompte
-            // 
-            this.btnEditerCompte.AnimationHoverSpeed = 0.07F;
-            this.btnEditerCompte.AnimationSpeed = 0.03F;
-            this.btnEditerCompte.BaseColor = System.Drawing.Color.Transparent;
-            this.btnEditerCompte.BorderColor = System.Drawing.Color.Black;
-            this.btnEditerCompte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditerCompte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditerCompte.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEditerCompte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditerCompte.ForeColor = System.Drawing.Color.White;
-            this.btnEditerCompte.Image = global::Couche.Winforms.Properties.Resources.edit_user_male_64px;
-            this.btnEditerCompte.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditerCompte.Location = new System.Drawing.Point(0, 84);
-            this.btnEditerCompte.Name = "btnEditerCompte";
-            this.btnEditerCompte.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnEditerCompte.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEditerCompte.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEditerCompte.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_user_52px;
-            this.btnEditerCompte.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditerCompte.Size = new System.Drawing.Size(200, 42);
-            this.btnEditerCompte.TabIndex = 2;
-            this.btnEditerCompte.Text = "Editer";
-            this.btnEditerCompte.Click += new System.EventHandler(this.btnEditerCompte_Click);
-            // 
-            // btnAjouterCompte
-            // 
-            this.btnAjouterCompte.AnimationHoverSpeed = 0.07F;
-            this.btnAjouterCompte.AnimationSpeed = 0.03F;
-            this.btnAjouterCompte.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAjouterCompte.BorderColor = System.Drawing.Color.Black;
-            this.btnAjouterCompte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAjouterCompte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAjouterCompte.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAjouterCompte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouterCompte.ForeColor = System.Drawing.Color.White;
-            this.btnAjouterCompte.Image = global::Couche.Winforms.Properties.Resources.add_user_male_64px;
-            this.btnAjouterCompte.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAjouterCompte.Location = new System.Drawing.Point(0, 42);
-            this.btnAjouterCompte.Name = "btnAjouterCompte";
-            this.btnAjouterCompte.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnAjouterCompte.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAjouterCompte.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAjouterCompte.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
-            this.btnAjouterCompte.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAjouterCompte.Size = new System.Drawing.Size(200, 42);
-            this.btnAjouterCompte.TabIndex = 1;
-            this.btnAjouterCompte.Text = "Ajouter a un client";
-            this.btnAjouterCompte.Click += new System.EventHandler(this.btnAjouterCompte_Click);
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.White;
-            this.gunaButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.White;
-            this.gunaButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.Image = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(0, 0);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(200, 42);
-            this.gunaButton1.TabIndex = 0;
-            this.gunaButton1.Text = "Tout sur compte";
-            // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.Radius = 3;
-            this.gunaElipse1.TargetControl = this.dgClient;
-            // 
             // btnExporterExcel
             // 
             this.btnExporterExcel.AnimationHoverSpeed = 0.07F;
@@ -411,6 +332,93 @@
             this.btnSupprimer.TabIndex = 21;
             this.btnSupprimer.Text = "Supprimer";
             // 
+            // btnEditerCompte
+            // 
+            this.btnEditerCompte.AnimationHoverSpeed = 0.07F;
+            this.btnEditerCompte.AnimationSpeed = 0.03F;
+            this.btnEditerCompte.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEditerCompte.BorderColor = System.Drawing.Color.Black;
+            this.btnEditerCompte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditerCompte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditerCompte.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditerCompte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditerCompte.ForeColor = System.Drawing.Color.White;
+            this.btnEditerCompte.Image = global::Couche.Winforms.Properties.Resources.edit_user_male_64px;
+            this.btnEditerCompte.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditerCompte.Location = new System.Drawing.Point(0, 84);
+            this.btnEditerCompte.Name = "btnEditerCompte";
+            this.btnEditerCompte.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnEditerCompte.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditerCompte.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditerCompte.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_user_52px;
+            this.btnEditerCompte.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditerCompte.Size = new System.Drawing.Size(200, 42);
+            this.btnEditerCompte.TabIndex = 2;
+            this.btnEditerCompte.Text = "Editer";
+            this.btnEditerCompte.Click += new System.EventHandler(this.btnEditerCompte_Click);
+            // 
+            // btnAjouterCompte
+            // 
+            this.btnAjouterCompte.AnimationHoverSpeed = 0.07F;
+            this.btnAjouterCompte.AnimationSpeed = 0.03F;
+            this.btnAjouterCompte.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAjouterCompte.BorderColor = System.Drawing.Color.Black;
+            this.btnAjouterCompte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAjouterCompte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAjouterCompte.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAjouterCompte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouterCompte.ForeColor = System.Drawing.Color.White;
+            this.btnAjouterCompte.Image = global::Couche.Winforms.Properties.Resources.add_user_male_64px;
+            this.btnAjouterCompte.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAjouterCompte.Location = new System.Drawing.Point(0, 42);
+            this.btnAjouterCompte.Name = "btnAjouterCompte";
+            this.btnAjouterCompte.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnAjouterCompte.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAjouterCompte.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAjouterCompte.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
+            this.btnAjouterCompte.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAjouterCompte.Size = new System.Drawing.Size(200, 42);
+            this.btnAjouterCompte.TabIndex = 1;
+            this.btnAjouterCompte.Text = "Ajouter a un client";
+            this.toolTip1.SetToolTip(this.btnAjouterCompte, "Enregistrer un nouveau client");
+            this.btnAjouterCompte.Click += new System.EventHandler(this.btnAjouterCompte_Click);
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.White;
+            this.gunaButton1.BaseColor = System.Drawing.Color.White;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.White;
+            this.gunaButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
+            this.gunaButton1.Image = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(0, 0);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(200, 42);
+            this.gunaButton1.TabIndex = 0;
+            this.gunaButton1.Text = "Tout sur compte";
+            // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 3;
+            this.gunaElipse1.TargetControl = this.dgClient;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Compte";
+            // 
             // Uc_GererCompte
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -451,5 +459,7 @@
         private Guna.UI.WinForms.GunaButton btnImprimer;
         private Guna.UI.WinForms.GunaButton btnInformation;
         private Guna.UI.WinForms.GunaButton btnSupprimer;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

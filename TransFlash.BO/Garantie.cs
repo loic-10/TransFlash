@@ -11,9 +11,14 @@ namespace TransFlash.BO
     public class Garantie
     {
         public int Id { get; set; }
+        public DateTime DateEnregistrement { get; set; }
+        public Credit Credit { get; set; }
+        public string Nom { get; set; }
         public string ElementEnGarantie { get; set; }
         public Avaliste Avaliste { get; set; }
         public StatutGarantie StatutGarantie { get; set; }
+        public string Description { get; set; }
+        public double MontantEvaluation { get; set; }
 
         public Garantie()
         {
@@ -24,11 +29,17 @@ namespace TransFlash.BO
             Id = id;
         }
 
-        public Garantie(int id, string elementEnGarantie, Avaliste avaliste, StatutGarantie statutGarantie) : this(id)
+        public Garantie(int id, DateTime dateEnregistrement, Credit credit, string nom, string elementEnGarantie, Avaliste avaliste, StatutGarantie statutGarantie, 
+            string description, double montantEvaluation) : this(id)
         {
+            DateEnregistrement = dateEnregistrement;
+            Credit = credit;
+            Nom = nom;
             ElementEnGarantie = elementEnGarantie;
             Avaliste = avaliste;
             StatutGarantie = statutGarantie;
+            Description = description;
+            MontantEvaluation = montantEvaluation;
         }
 
         public override bool Equals(object obj)

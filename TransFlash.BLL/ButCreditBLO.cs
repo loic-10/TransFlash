@@ -13,33 +13,37 @@ namespace TransFlash.BLL
     {
         private IDAL<ButCredit> butCreditBLO = null;
 
+        private OperationBLO operationBLO = null;
+
         public ButCreditBLO()
         {
             butCreditBLO = new RepositoireDAOFile<ButCredit>();
+            if(butCreditBLO.Count == 0)
+            {
+                AjouterButCredit("Investissement", new Employe("Indefini"));
+                AjouterButCredit("Agriculture", new Employe("Indefini"));
+                AjouterButCredit("Elevage", new Employe("Indefini"));
+            }
         }
 
-        public void AjouterButCredit(string nom)
+        public void AjouterButCredit(string nom, Employe employe)
         {
+            operationBLO = new OperationBLO();
             butCreditBLO.Add(new ButCredit(nom));
+
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
         }
 
-        public void ModifierButCredit(ButCredit ButCredit, string nom)
+        public void SupprimerButCredit(ButCredit ButCredit, Employe employe)
         {
-            ButCredit oldButCredit = ButCredit;
-            ButCredit.Nom = nom;
-            butCreditBLO[butCreditBLO.IndexOf(oldButCredit)] = ButCredit;
-        }
-
-        public void SupprimerButCredit(ButCredit ButCredit)
-        {
+            operationBLO = new OperationBLO();
             butCreditBLO.Remove(ButCredit);
+
+            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
         }
 
-        public List<ButCredit> RechercherLesButCredits(string valeur)
-        {
-            var reqButCredits = butCreditBLO.Find(x => x.Nom.ToLower().Contains(valeur.ToLower()));
-            return reqButCredits as List<ButCredit>;
-        }
+        public IEnumerable<ButCredit> RechercherLesButCredits(string valeur) => butCreditBLO.Find(x => 
+            x.Nom.ToLower().Contains(valeur.ToLower()));
 
         public List<ButCredit> TousButCredits => butCreditBLO.AllItems;
 

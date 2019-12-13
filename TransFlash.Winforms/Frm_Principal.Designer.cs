@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation2 = new Guna.UI.Animation.Animation();
-            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation6 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation5 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.GunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
             this.GunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
@@ -43,7 +43,6 @@
             this.btnHidde = new Guna.UI.WinForms.GunaImageButton();
             this.btnView = new Guna.UI.WinForms.GunaImageButton();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaImageButton6 = new Guna.UI.WinForms.GunaImageButton();
             this.pbProfil = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaShadowPanel2 = new Guna.UI.WinForms.GunaShadowPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -56,6 +55,7 @@
             this.panelMenu = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.panelMenuPoste = new Guna.UI.WinForms.GunaPanel();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPlusEncore = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnGererPorteFeuilleEntreprise = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gererPorteFeuilleCredit = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -220,6 +220,7 @@
             this.gunaShadowPanel1.ShadowShift = 0;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1275, 54);
             this.gunaShadowPanel1.TabIndex = 14;
+            this.gunaShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaShadowPanel1_Paint);
             // 
             // btnHidde
             // 
@@ -254,7 +255,6 @@
             // 
             // gunaPanel5
             // 
-            this.gunaPanel5.Controls.Add(this.gunaImageButton6);
             this.gunaPanel5.Controls.Add(this.pbProfil);
             this.gunaTransition2.SetDecoration(this.gunaPanel5, Guna.UI.Animation.DecorationType.None);
             this.gunaTransition1.SetDecoration(this.gunaPanel5, Guna.UI.Animation.DecorationType.None);
@@ -264,27 +264,14 @@
             this.gunaPanel5.Size = new System.Drawing.Size(343, 54);
             this.gunaPanel5.TabIndex = 3;
             // 
-            // gunaImageButton6
-            // 
-            this.gunaImageButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.gunaImageButton6, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaImageButton6, Guna.UI.Animation.DecorationType.None);
-            this.gunaImageButton6.Image = global::Couche.Winforms.Properties.Resources.chevron_down_26px1;
-            this.gunaImageButton6.ImageSize = new System.Drawing.Size(15, 15);
-            this.gunaImageButton6.Location = new System.Drawing.Point(316, 17);
-            this.gunaImageButton6.Name = "gunaImageButton6";
-            this.gunaImageButton6.OnHoverImage = global::Couche.Winforms.Properties.Resources.chevron_down_26px;
-            this.gunaImageButton6.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.gunaImageButton6.Size = new System.Drawing.Size(19, 19);
-            this.gunaImageButton6.TabIndex = 19;
-            // 
             // pbProfil
             // 
             this.pbProfil.BaseColor = System.Drawing.Color.Transparent;
             this.gunaTransition2.SetDecoration(this.pbProfil, Guna.UI.Animation.DecorationType.None);
             this.gunaTransition1.SetDecoration(this.pbProfil, Guna.UI.Animation.DecorationType.None);
             this.pbProfil.Image = global::Couche.Winforms.Properties.Resources.user_male_circle_104px;
-            this.pbProfil.Location = new System.Drawing.Point(267, 4);
+            this.pbProfil.InitialImage = global::Couche.Winforms.Properties.Resources.user_male_circle_104px;
+            this.pbProfil.Location = new System.Drawing.Point(289, 3);
             this.pbProfil.Name = "pbProfil";
             this.pbProfil.Size = new System.Drawing.Size(45, 45);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -435,6 +422,7 @@
             // panelMenuPoste
             // 
             this.panelMenuPoste.AutoScroll = true;
+            this.panelMenuPoste.Controls.Add(this.gunaAdvenceButton1);
             this.panelMenuPoste.Controls.Add(this.btnPlusEncore);
             this.panelMenuPoste.Controls.Add(this.btnGererPorteFeuilleEntreprise);
             this.panelMenuPoste.Controls.Add(this.gererPorteFeuilleCredit);
@@ -454,6 +442,46 @@
             this.panelMenuPoste.Size = new System.Drawing.Size(265, 605);
             this.panelMenuPoste.TabIndex = 3;
             this.panelMenuPoste.Visible = false;
+            // 
+            // gunaAdvenceButton1
+            // 
+            this.gunaAdvenceButton1.Animated = true;
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.gunaAdvenceButton1.CheckedImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
+            this.gunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaTransition2.SetDecoration(this.gunaAdvenceButton1, Guna.UI.Animation.DecorationType.None);
+            this.gunaTransition1.SetDecoration(this.gunaAdvenceButton1, Guna.UI.Animation.DecorationType.None);
+            this.gunaAdvenceButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.gunaAdvenceButton1.Image = global::Couche.Winforms.Properties.Resources.dossier_32px;
+            this.gunaAdvenceButton1.ImageOffsetX = 5;
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(32, 32);
+            this.gunaAdvenceButton1.LineBottom = 1;
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.gunaAdvenceButton1.LineLeft = 5;
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(0, 550);
+            this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.gunaAdvenceButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.OnPressedDepth = 0;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(265, 50);
+            this.gunaAdvenceButton1.TabIndex = 65;
+            this.gunaAdvenceButton1.Text = "Gerer toutes les operations";
             // 
             // btnPlusEncore
             // 
@@ -616,7 +644,7 @@
             this.btnGererPorteFeuilleCaisse.OnPressedDepth = 0;
             this.btnGererPorteFeuilleCaisse.Size = new System.Drawing.Size(265, 50);
             this.btnGererPorteFeuilleCaisse.TabIndex = 61;
-            this.btnGererPorteFeuilleCaisse.Text = "Gerer votre porte-feuille";
+            this.btnGererPorteFeuilleCaisse.Text = "Gerer des rapports";
             this.btnGererPorteFeuilleCaisse.Click += new System.EventHandler(this.btnGererPorteFeuilleCaisse_Click);
             // 
             // btnGererEmployes
@@ -862,7 +890,7 @@
             this.btnGererEmprunt.OnPressedDepth = 0;
             this.btnGererEmprunt.Size = new System.Drawing.Size(265, 50);
             this.btnGererEmprunt.TabIndex = 54;
-            this.btnGererEmprunt.Text = "Gerer les emprunts";
+            this.btnGererEmprunt.Text = "Gerer les credits";
             this.btnGererEmprunt.Click += new System.EventHandler(this.btnGererEmprunt_Click);
             // 
             // btnAccueil
@@ -962,22 +990,22 @@
             // 
             this.gunaTransition1.AnimationType = Guna.UI.Animation.AnimationType.Transparent;
             this.gunaTransition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 1F;
-            this.gunaTransition1.DefaultAnimation = animation2;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 0;
+            animation6.Padding = new System.Windows.Forms.Padding(0);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 0F;
+            animation6.TransparencyCoeff = 1F;
+            this.gunaTransition1.DefaultAnimation = animation6;
             // 
             // timer1
             // 
@@ -995,22 +1023,22 @@
             // 
             this.gunaTransition2.AnimationType = Guna.UI.Animation.AnimationType.ScaleAndRotate;
             this.gunaTransition2.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(30);
-            animation1.RotateCoeff = 0.5F;
-            animation1.RotateLimit = 0.2F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.gunaTransition2.DefaultAnimation = animation1;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(30);
+            animation5.RotateCoeff = 0.5F;
+            animation5.RotateLimit = 0.2F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.gunaTransition2.DefaultAnimation = animation5;
             // 
             // Frm_Principal
             // 
@@ -1062,7 +1090,6 @@
         private Guna.UI.WinForms.GunaPanel panelActivite;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel3;
         private Guna.UI.WinForms.GunaCirclePictureBox pbProfil;
-        private Guna.UI.WinForms.GunaImageButton gunaImageButton6;
         private Guna.UI.WinForms.GunaImageButton btnMessage;
         private Guna.UI.WinForms.GunaImageButton btnManuelUtilisation;
         private Guna.UI.WinForms.GunaImageButton btnNotification;
@@ -1094,6 +1121,7 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer2;
         private Guna.UI.WinForms.GunaTransition gunaTransition2;
+        internal Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
     }
 }
 

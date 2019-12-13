@@ -1,4 +1,5 @@
-﻿using Multicouche.DAL;
+﻿
+using Multicouche.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,47 +14,38 @@ namespace TransFlash.BLL
     {
         private IDAL<Avaliste> avalisteBLO = null;
 
+        private OperationBLO operationBLO = null;
+
         public AvalisteBLO()
         {
             avalisteBLO = new RepositoireDAOFile<Avaliste>();
         }
 
-        public void AjouterAvaliste(int id, Garantie garantie, string nomComplet, string profession, string description, double montantParMois)
+        public void AjouterAvaliste(Garantie garantie, string nomComplet, string profession, string description, double montantParMois, Employe employe)
         {
-            avalisteBLO.Add(new Avaliste(id, garantie, nomComplet, profession, description, montantParMois));
+            operationBLO = new OperationBLO();
+            avalisteBLO.Add(new Avaliste(new IdentifiantBLO().IdAvaliste, garantie, nomComplet, profession, description, montantParMois));
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, garantie.Credit.Client, new CompteClient("Indefini"), montantParMois, "toto tata");
+
+            new IdentifiantBLO().AddIdAvaliste();
         }
 
-        public void ModifierAvaliste(Avaliste avaliste, string nomComplet, string profession, string description, double montantParMois)
+        public void SupprimerAvaliste(Avaliste avaliste, Employe employe)
         {
-            Avaliste oldAvaliste = avaliste;
-            avaliste.NomComplet = nomComplet;
-            avaliste.Profession = profession;
-            avaliste.Description = description;
-            avaliste.MontantParMois = montantParMois;
-            avalisteBLO[avalisteBLO.IndexOf(oldAvaliste)] = avaliste;
-        }
-
-        public void SupprimerAvaliste(Avaliste avaliste)
-        {
+            operationBLO = new OperationBLO();
             avalisteBLO.Remove(avaliste);
+
+            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, avaliste.Garantie.Credit.Client, new CompteClient("Indefini"), avaliste.MontantParMois, "toto tata");
         }
 
-        public Avaliste RechercherAvalistesCompte(Garantie garantie)
-        {
-            var reqAvalistes = from avaliste in TousAvalistes
-                                 where (avaliste.Garantie == garantie)
-                                 select avaliste;
-            return reqAvalistes.FirstOrDefault();
-        }
+        public Avaliste RechercherAvalistesGarantie(Garantie garantie) => avalisteBLO.Find(x =>
+            x.Garantie == garantie).FirstOrDefault();
 
-        public List<Avaliste> RechercherLesAvalistes(string valeur)
-        {
-            var reqAvalistes = avalisteBLO.Find(x => x.NomComplet.ToLower().Contains(valeur.ToLower()) ||
-                                                                                x.Profession.ToLower().Contains(valeur.ToLower()) ||
-                                                                                x.Description.ToLower().Contains(valeur.ToLower()) ||
-                                                                                x.MontantParMois.ToString().Contains(valeur));
-            return reqAvalistes as List<Avaliste>;
-        }
+        public IEnumerable<Avaliste> RechercherLesAvalistes(string valeur) => avalisteBLO.Find(x => 
+            x.NomComplet.ToLower().Contains(valeur.ToLower()) ||
+            x.Profession.ToLower().Contains(valeur.ToLower()) ||
+            x.Description.ToLower().Contains(valeur.ToLower()) ||
+            x.MontantParMois.ToString().Contains(valeur));
 
         public List<Avaliste> TousAvalistes => avalisteBLO.AllItems;
 

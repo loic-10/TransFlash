@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.btnVilles = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPays = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -41,7 +40,6 @@
             this.btnPartsSociales = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnBeneficiers = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panelCorps = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel5.SuspendLayout();
             this.SuspendLayout();
@@ -358,7 +356,7 @@
             this.btnNumerosComptables.OnPressedDepth = 0;
             this.btnNumerosComptables.Size = new System.Drawing.Size(200, 42);
             this.btnNumerosComptables.TabIndex = 67;
-            this.btnNumerosComptables.Text = "Numeros comptables";
+            this.btnNumerosComptables.Text = "Fonds";
             this.btnNumerosComptables.Click += new System.EventHandler(this.btnNumerosComptables_Click);
             // 
             // btnPartsSociales
@@ -460,13 +458,9 @@
             this.gunaButton1.TabIndex = 0;
             this.gunaButton1.Text = "Tout sur plus encore...";
             // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.Radius = 3;
-            this.gunaElipse1.TargetControl = this;
-            // 
             // panelCorps
             // 
+            this.panelCorps.BackColor = System.Drawing.Color.White;
             this.panelCorps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCorps.Location = new System.Drawing.Point(200, 0);
             this.panelCorps.Name = "panelCorps";
@@ -489,7 +483,6 @@
         #endregion
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaPanel gunaPanel5;
-        private Guna.UI.WinForms.GunaElipse gunaElipse1;
         internal Guna.UI.WinForms.GunaAdvenceButton btnBeneficiers;
         internal Guna.UI.WinForms.GunaAdvenceButton btnAvalistes;
         internal Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton5;

@@ -13,6 +13,8 @@ namespace TransFlash.BLL
     {
         private IDAL<PartSociale> partSocialeBLO = null;
 
+        private OperationBLO operationBLO = null;
+
         private ParametreGeneralBLO parametreGeneralBLO = null;
 
         public PartSocialeBLO()
@@ -20,32 +22,62 @@ namespace TransFlash.BLL
             partSocialeBLO = new RepositoireDAOFile<PartSociale>();
         }
 
-        public void AjouterPartSociale(CompteClient compteClient, StatutPartSociale statutPartSociale, double montant)
+        public void AjouterPartSociale(CompteClient compteClient, StatutPartSociale statutPartSociale, double montant, Employe employe)
         {
+            operationBLO = new OperationBLO();
+
             partSocialeBLO.Add(new PartSociale(compteClient, statutPartSociale, montant));
+
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, montant, "toto tata");
         }
 
-        public void AjouterMontantSociale(PartSociale partSociale, double montant)
+        public void AjouterMontantSociale(PartSociale partSociale, double montant, Employe employe)
         {
+            operationBLO = new OperationBLO();
+
             PartSociale oldPartSociale = partSociale;
             partSociale.Montant += montant;
             partSocialeBLO[partSocialeBLO.IndexOf(oldPartSociale)] = partSociale;
+
+            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, partSociale.CompteClient.Client, partSociale.CompteClient, montant, "toto tata");
         }
 
         public bool VerifierValidite(PartSociale partSociale, double montant)
         {
             parametreGeneralBLO = new ParametreGeneralBLO();
-            partSociale.Montant += montant;
-            if (parametreGeneralBLO.TousParametreGenerals[0].MontantPartSociale >= partSociale.Montant)
+            if (montant > 0 && parametreGeneralBLO.TousParametreGenerals[0].MontantPartSociale >= (partSociale.Montant = montant))
                 return true;
 
             return false;
         }
 
-        public void SupprimerPartSociale(PartSociale PartSociale)
+        public void UtiliserArgentParSociale(PartSociale partSociale, double montant, Employe employe)
         {
-            partSocialeBLO.Remove(PartSociale);
+            operationBLO = new OperationBLO();
+
+            PartSociale oldPartSociale = partSociale;
+            partSociale.Montant -= montant;
+            partSocialeBLO[partSocialeBLO.IndexOf(oldPartSociale)] = partSociale;
+
+            operationBLO.AjouterOperation(TypeOperation.Reduction_du_montant_de_la_part_sociale, employe, partSociale.CompteClient.Client, 
+                partSociale.CompteClient, montant, "toto tata");
         }
+
+        public void SupprimerPartSociale(PartSociale partSociale, Employe employe)
+        {
+            operationBLO = new OperationBLO();
+            partSocialeBLO.Remove(partSociale);
+
+            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, partSociale.CompteClient.Client, partSociale.CompteClient, partSociale.Montant, "toto tata");
+        }
+
+        public PartSociale RechercherPartSocialesCompte(CompteClient compteClient) => partSocialeBLO.Find(x =>
+              x.CompteClient == compteClient).FirstOrDefault();
+
+        public IEnumerable<PartSociale> RechercherLesPartSociales(string valeur) => partSocialeBLO.Find(x =>
+            x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) ||
+            x.Montant.ToString().ToLower().Contains(valeur.ToLower()) ||
+            x.StatutPartSociale.ToString().ToLower().Contains(valeur.ToLower()));
 
         public List<PartSociale> TousPartSociales => partSocialeBLO.AllItems;
 

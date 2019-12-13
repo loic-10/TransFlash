@@ -35,7 +35,7 @@
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.btnMettreAJour = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaGroupBox13 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gbCodeEmploye = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox14 = new Guna.UI.WinForms.GunaGroupBox();
             this.lblNomUtilisateur = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel23 = new Guna.UI.WinForms.GunaLabel();
@@ -50,7 +50,7 @@
             this.gunaLabel21 = new Guna.UI.WinForms.GunaLabel();
             this.panelControl.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
-            this.gunaGroupBox13.SuspendLayout();
+            this.gbCodeEmploye.SuspendLayout();
             this.gunaGroupBox14.SuspendLayout();
             this.gunaGroupBox15.SuspendLayout();
             this.panelMontantDepart.SuspendLayout();
@@ -135,29 +135,29 @@
             this.gunaElipse1.Radius = 5;
             this.gunaElipse1.TargetControl = this;
             // 
-            // gunaGroupBox13
+            // gbCodeEmploye
             // 
-            this.gunaGroupBox13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaGroupBox13.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox13.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox13.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox13.BorderSize = 1;
-            this.gunaGroupBox13.Controls.Add(this.gunaGroupBox14);
-            this.gunaGroupBox13.Controls.Add(this.gunaGroupBox15);
-            this.gunaGroupBox13.Controls.Add(this.panelMontantDepart);
-            this.gunaGroupBox13.Controls.Add(this.panelNomStructure);
-            this.gunaGroupBox13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGroupBox13.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox13.LineTop = 0;
-            this.gunaGroupBox13.Location = new System.Drawing.Point(55, 73);
-            this.gunaGroupBox13.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.gunaGroupBox13.Name = "gunaGroupBox13";
-            this.gunaGroupBox13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.gunaGroupBox13.Radius = 5;
-            this.gunaGroupBox13.Size = new System.Drawing.Size(530, 328);
-            this.gunaGroupBox13.TabIndex = 13;
-            this.gunaGroupBox13.Text = "Information du compte l\'employe : emp_00000001";
-            this.gunaGroupBox13.TextLocation = new System.Drawing.Point(10, 10);
+            this.gbCodeEmploye.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbCodeEmploye.BackColor = System.Drawing.Color.Transparent;
+            this.gbCodeEmploye.BaseColor = System.Drawing.Color.Transparent;
+            this.gbCodeEmploye.BorderColor = System.Drawing.Color.DarkGray;
+            this.gbCodeEmploye.BorderSize = 1;
+            this.gbCodeEmploye.Controls.Add(this.gunaGroupBox14);
+            this.gbCodeEmploye.Controls.Add(this.gunaGroupBox15);
+            this.gbCodeEmploye.Controls.Add(this.panelMontantDepart);
+            this.gbCodeEmploye.Controls.Add(this.panelNomStructure);
+            this.gbCodeEmploye.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCodeEmploye.LineColor = System.Drawing.Color.Gainsboro;
+            this.gbCodeEmploye.LineTop = 0;
+            this.gbCodeEmploye.Location = new System.Drawing.Point(55, 73);
+            this.gbCodeEmploye.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.gbCodeEmploye.Name = "gbCodeEmploye";
+            this.gbCodeEmploye.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.gbCodeEmploye.Radius = 5;
+            this.gbCodeEmploye.Size = new System.Drawing.Size(530, 328);
+            this.gbCodeEmploye.TabIndex = 13;
+            this.gbCodeEmploye.Text = "Information du compte l\'employe : #";
+            this.gbCodeEmploye.TextLocation = new System.Drawing.Point(10, 10);
             // 
             // gunaGroupBox14
             // 
@@ -316,7 +316,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(640, 496);
-            this.Controls.Add(this.gunaGroupBox13);
+            this.Controls.Add(this.gbCodeEmploye);
             this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.panelControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -325,7 +325,7 @@
             this.Text = "ModifierClient";
             this.panelControl.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
-            this.gunaGroupBox13.ResumeLayout(false);
+            this.gbCodeEmploye.ResumeLayout(false);
             this.gunaGroupBox14.ResumeLayout(false);
             this.gunaGroupBox15.ResumeLayout(false);
             this.panelMontantDepart.ResumeLayout(false);
@@ -341,7 +341,7 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaButton btnMettreAJour;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox13;
+        private Guna.UI.WinForms.GunaGroupBox gbCodeEmploye;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox14;
         private Guna.UI.WinForms.GunaLabel gunaLabel23;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox15;

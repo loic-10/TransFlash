@@ -92,5 +92,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransFlash.BO\TransFlash.BO.csproj">
+      <Project>{1edb01b1-399e-4671-82bf-f125456b744c}</Project>
+      <Name>TransFlash.BO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

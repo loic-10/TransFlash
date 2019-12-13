@@ -23,9 +23,9 @@ namespace TransFlash.BO
             CodeClient = codeClient;
         }
 
-        public Client(string codeClient, string nomComplet, DateTime dateNaissance, string lieuNaissance, string sexe, string numeroCNI, 
+        public Client(string codeClient, string nomComplet, DateTime? dateNaissance, string lieuNaissance, StatutSexe? sexe, string numeroCNI, 
             string numeroTelephone1, string numeroTelephone2, Pays pays, Ville ville, string adresse, string photoProfil, 
-            DateTime dateEnregistrement, string profession, StatutClient statutClient) 
+            DateTime? dateEnregistrement, string profession, StatutClient statutClient) 
                 : base(nomComplet, dateNaissance, lieuNaissance, sexe, numeroCNI, numeroTelephone1, 
                       numeroTelephone2, pays, ville, adresse, photoProfil, dateEnregistrement)
         {

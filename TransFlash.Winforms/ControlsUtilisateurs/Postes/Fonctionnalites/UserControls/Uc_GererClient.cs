@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms;
 using TransFlash.Winforms.Fonctions;
+using TransFlash.BO;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
 {
@@ -17,14 +18,17 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private Frm_Fonction fonction = new Frm_Fonction();
 
-        public Uc_GererClient()
+        private Employe employe = new Employe();
+
+        public Uc_GererClient(Employe employe)
         {
             InitializeComponent();
+            this.employe = employe;
         }
 
         private void btnEnregistrerClient_Click(object sender, EventArgs e)
         {
-            Uc_EnregistrerClient frm = new Uc_EnregistrerClient();
+            Uc_EnregistrerClient frm = new Uc_EnregistrerClient(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 

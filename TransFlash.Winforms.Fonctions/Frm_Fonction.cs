@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
 using MetroFramework.Forms;
+using TransFlash.BO;
+using static TransFlash.BO.Statut;
 
 namespace TransFlash.Winforms.Fonctions
 {
@@ -106,5 +108,57 @@ namespace TransFlash.Winforms.Fonctions
                 row.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             }
         }
+
+        public void PrendreUniquementChiffre(GunaTextBox textBox)
+        {
+            string[] text = new string[textBox.Text.Length];
+            string val = string.Empty;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (textBox.Text[i] == '0' || textBox.Text[i] == '1' || textBox.Text[i] == '2' || textBox.Text[i] == '3' ||
+                    textBox.Text[i] == '4' || textBox.Text[i] == '5' || textBox.Text[i] == '6' || textBox.Text[i] == '7' ||
+                    textBox.Text[i] == '8' || textBox.Text[i] == '9')
+                {
+                    val += textBox.Text[i].ToString();
+                    textBox.Focus();
+                }
+            }
+            textBox.Text = val;
+            textBox.Select(val.Length, val.Length);
+        }
+
+        public void ChargerEnumerationComboBox(GunaComboBox comboBox, string[] valeurs)
+        {
+            foreach (string valeur in valeurs)
+                comboBox.Items.Add(valeur);
+        }
+
+        public void ChargerPaysComboBox(GunaComboBox comboBox, IEnumerable<Pays> pays)
+        {
+            foreach (var valeur in pays)
+                comboBox.Items.Add(valeur.ToString());
+        }
+
+        public void ChargerCodePhoneComboBox(GunaComboBox comboBox, IEnumerable<Pays> pays)
+        {
+            foreach (var valeur in pays)
+                comboBox.Items.Add(valeur.CodePhone);
+        }
+
+        public void ChargerVillesComboBox(GunaComboBox comboBox, IEnumerable<Ville> villes)
+        {
+            foreach (var valeur in villes)
+                comboBox.Items.Add(valeur.ToString());
+        }
+
+        public bool SiActiveButtonPourUneSelection(GunaDataGridView dataGrid) => (dataGrid.SelectedRows.Count == 1);
+
+        public bool SiActiveButtonPourPlusieursSelections(GunaDataGridView dataGrid) => (dataGrid.SelectedRows.Count > 0);
+
+        public bool SiTypeCompteSelectionneEpargne(GunaComboBox comboBoxTypeCompte) =>
+            (comboBoxTypeCompte.Text == TypeCompte.Epargne.ToString() && comboBoxTypeCompte.SelectedIndex > -1);
+
+        public bool SiTypeAppartenantSelectionneEntreprise(GunaComboBox comboBoxTypeAppartenant) =>
+            (comboBoxTypeAppartenant.Text == TypeAppartenantCompteEpargne.Entreprise.ToString() && comboBoxTypeAppartenant.SelectedIndex > -1);
     }
 }

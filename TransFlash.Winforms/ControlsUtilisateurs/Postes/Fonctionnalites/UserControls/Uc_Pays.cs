@@ -34,7 +34,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
             fonction.DesignDataGrid(dataGridPays);
         }
 
-        private void RefreshGrid(List<Pays> pays)
+        private void RefreshGrid(IEnumerable<Pays> pays)
         {
             dataGridPays.DataSource = pays;
             fonction.DesignDataGrid(dataGridPays);

@@ -9,30 +9,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls;
 using TransFlash.Winforms.Fonctions;
+using TransFlash.BO;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 {
-    public partial class Uc_AccueilResponsableCompte : UserControl
+    public partial class Uc_AccueilChefCredit : UserControl
     {
 
-        private Frm_Principal principal = new Frm_Principal();
+        private Frm_Principal principal = null;
 
         private Frm_Fonction fonction = new Frm_Fonction();
 
-        public Uc_AccueilResponsableCompte()
+        private Employe employe = null;
+
+        public Uc_AccueilChefCredit(Employe employe)
         {
             InitializeComponent();
+            this.employe = employe;
+            principal = new Frm_Principal(this.employe);
         }
 
-        private void Uc_AccueilResponsableCompte_Load(object sender, EventArgs e)
+        private void Uc_AccueilChefCredit_Load(object sender, EventArgs e)
         {
             gunaShadowPanel1.BaseColor = Color.FromArgb(150, 24, 57, 101);
         }
 
         private void btnGererClient_Click(object sender, EventArgs e)
         {
-            //fonction.ChangerButtonActif(principal.btnGererEmpruntResponsableCompte, principal.btnAccueilResponsableCompte, principal.panelMenu);
-            Uc_GererClient frm = new Uc_GererClient();
+            //fonction.ChangerButtonActif(principal.btnGererEmpruntChefCredit, principal.btnAccueilChefCredit, principal.panelMenu);
+            Uc_GererClient frm = new Uc_GererClient(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 
