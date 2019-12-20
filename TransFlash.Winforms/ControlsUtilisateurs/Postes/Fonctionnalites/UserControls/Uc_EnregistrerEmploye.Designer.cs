@@ -34,74 +34,74 @@
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.btnEnregistrer = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaGroupBox16 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gbEmploye = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox20 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaPanel11 = new Guna.UI.WinForms.GunaPanel();
             this.cmbCodeTelephone2 = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaTextBox4 = new Guna.UI.WinForms.GunaTextBox();
+            this.txbNumero2 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel17 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox25 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
             this.cmbCodeTelephone1 = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaTextBox6 = new Guna.UI.WinForms.GunaTextBox();
+            this.txbNumero1 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel29 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox19 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbSexe = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel16 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox21 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaComboBox5 = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbVille = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel19 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaLabel22 = new Guna.UI.WinForms.GunaLabel();
+            this.lblCodeEmploye = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel24 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox22 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.btnEdit = new Guna.UI.WinForms.GunaButton();
+            this.pbEmploye = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel26 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox23 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaComboBox6 = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbPays = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel27 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox24 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaTextBox5 = new Guna.UI.WinForms.GunaTextBox();
+            this.txbAdresse = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel28 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox26 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaTextBox7 = new Guna.UI.WinForms.GunaTextBox();
+            this.txbNumeroCNI = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel30 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox27 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaTextBox8 = new Guna.UI.WinForms.GunaTextBox();
+            this.txbLieuNaissance = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel31 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox28 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtDateNaissance = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaLabel32 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox29 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaTextBox9 = new Guna.UI.WinForms.GunaTextBox();
+            this.txbNomComplet = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel33 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.gunaGroupBox13 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox14 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.txbNomUtilisateur = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel23 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox15 = new Guna.UI.WinForms.GunaGroupBox();
-            this.cmbTypeCompte = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbRoleEmploye = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             this.panelMontantDepart = new Guna.UI.WinForms.GunaGroupBox();
-            this.btnMontantDepart = new Guna.UI.WinForms.GunaTextBox();
+            this.txbConfirmMDP = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel18 = new Guna.UI.WinForms.GunaLabel();
             this.panelNomStructure = new Guna.UI.WinForms.GunaGroupBox();
-            this.txbNomStructure = new Guna.UI.WinForms.GunaTextBox();
+            this.txbMotDePasse = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel21 = new Guna.UI.WinForms.GunaLabel();
             this.gunaShadowPanel1.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
-            this.gunaGroupBox16.SuspendLayout();
+            this.gbEmploye.SuspendLayout();
             this.gunaGroupBox20.SuspendLayout();
             this.gunaGroupBox25.SuspendLayout();
             this.gunaGroupBox19.SuspendLayout();
             this.gunaGroupBox21.SuspendLayout();
             this.gunaPanel6.SuspendLayout();
             this.gunaGroupBox22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmploye)).BeginInit();
             this.gunaGroupBox23.SuspendLayout();
             this.gunaGroupBox24.SuspendLayout();
             this.gunaGroupBox26.SuspendLayout();
@@ -174,7 +174,6 @@
             this.btnEnregistrer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.btnEnregistrer.BorderColor = System.Drawing.Color.Black;
             this.btnEnregistrer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnregistrer.Enabled = false;
             this.btnEnregistrer.FocusedColor = System.Drawing.Color.Empty;
             this.btnEnregistrer.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnregistrer.ForeColor = System.Drawing.Color.White;
@@ -194,11 +193,12 @@
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnEnregistrer.TextOffsetX = 10;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click_1);
             // 
             // gunaPanel2
             // 
             this.gunaPanel2.AutoScroll = true;
-            this.gunaPanel2.Controls.Add(this.gunaGroupBox16);
+            this.gunaPanel2.Controls.Add(this.gbEmploye);
             this.gunaPanel2.Controls.Add(this.gunaPanel3);
             this.gunaPanel2.Controls.Add(this.gunaGroupBox13);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -207,48 +207,47 @@
             this.gunaPanel2.Size = new System.Drawing.Size(1000, 583);
             this.gunaPanel2.TabIndex = 7;
             // 
-            // gunaGroupBox16
+            // gbEmploye
             // 
-            this.gunaGroupBox16.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaGroupBox16.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox16.BaseColor = System.Drawing.SystemColors.Control;
-            this.gunaGroupBox16.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox16.BorderSize = 1;
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox20);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox25);
-            this.gunaGroupBox16.Controls.Add(this.gunaButton1);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox19);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox21);
-            this.gunaGroupBox16.Controls.Add(this.gunaPanel6);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox22);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox23);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox24);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox26);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox27);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox28);
-            this.gunaGroupBox16.Controls.Add(this.gunaGroupBox29);
-            this.gunaGroupBox16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGroupBox16.LineBottom = 2;
-            this.gunaGroupBox16.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox16.LineLeft = 2;
-            this.gunaGroupBox16.LineRight = 2;
-            this.gunaGroupBox16.LineTop = 2;
-            this.gunaGroupBox16.Location = new System.Drawing.Point(8, 23);
-            this.gunaGroupBox16.Name = "gunaGroupBox16";
-            this.gunaGroupBox16.Radius = 5;
-            this.gunaGroupBox16.Size = new System.Drawing.Size(966, 527);
-            this.gunaGroupBox16.TabIndex = 6;
-            this.gunaGroupBox16.Text = "Informations de l\'employe";
-            this.gunaGroupBox16.TextLocation = new System.Drawing.Point(10, 10);
+            this.gbEmploye.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gbEmploye.BackColor = System.Drawing.Color.Transparent;
+            this.gbEmploye.BaseColor = System.Drawing.Color.Transparent;
+            this.gbEmploye.BorderColor = System.Drawing.Color.DimGray;
+            this.gbEmploye.BorderSize = 1;
+            this.gbEmploye.Controls.Add(this.gunaGroupBox20);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox25);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox19);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox21);
+            this.gbEmploye.Controls.Add(this.gunaPanel6);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox22);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox23);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox24);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox26);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox27);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox28);
+            this.gbEmploye.Controls.Add(this.gunaGroupBox29);
+            this.gbEmploye.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEmploye.LineBottom = 2;
+            this.gbEmploye.LineColor = System.Drawing.Color.Silver;
+            this.gbEmploye.LineLeft = 2;
+            this.gbEmploye.LineRight = 2;
+            this.gbEmploye.LineTop = 2;
+            this.gbEmploye.Location = new System.Drawing.Point(8, 28);
+            this.gbEmploye.Name = "gbEmploye";
+            this.gbEmploye.Radius = 5;
+            this.gbEmploye.Size = new System.Drawing.Size(966, 527);
+            this.gbEmploye.TabIndex = 8;
+            this.gbEmploye.Text = "Informations de l\'employe";
+            this.gbEmploye.TextLocation = new System.Drawing.Point(10, 10);
             // 
             // gunaGroupBox20
             // 
             this.gunaGroupBox20.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox20.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox20.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox20.BorderColor = System.Drawing.Color.DarkGray;
             this.gunaGroupBox20.Controls.Add(this.gunaPanel11);
             this.gunaGroupBox20.Controls.Add(this.cmbCodeTelephone2);
-            this.gunaGroupBox20.Controls.Add(this.gunaTextBox4);
+            this.gunaGroupBox20.Controls.Add(this.txbNumero2);
             this.gunaGroupBox20.Controls.Add(this.gunaLabel17);
             this.gunaGroupBox20.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox20.LineTop = 0;
@@ -256,7 +255,7 @@
             this.gunaGroupBox20.Name = "gunaGroupBox20";
             this.gunaGroupBox20.Radius = 5;
             this.gunaGroupBox20.Size = new System.Drawing.Size(442, 38);
-            this.gunaGroupBox20.TabIndex = 29;
+            this.gunaGroupBox20.TabIndex = 31;
             this.gunaGroupBox20.TextLocation = new System.Drawing.Point(10, 8);
             // 
             // gunaPanel11
@@ -291,25 +290,26 @@
             this.cmbCodeTelephone2.Size = new System.Drawing.Size(90, 38);
             this.cmbCodeTelephone2.TabIndex = 8;
             // 
-            // gunaTextBox4
+            // txbNumero2
             // 
-            this.gunaTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox4.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox4.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox4.BorderSize = 1;
-            this.gunaTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaTextBox4.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox4.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox4.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox4.Location = new System.Drawing.Point(273, 0);
-            this.gunaTextBox4.Name = "gunaTextBox4";
-            this.gunaTextBox4.PasswordChar = '\0';
-            this.gunaTextBox4.Radius = 5;
-            this.gunaTextBox4.Size = new System.Drawing.Size(169, 38);
-            this.gunaTextBox4.TabIndex = 7;
+            this.txbNumero2.BackColor = System.Drawing.Color.Transparent;
+            this.txbNumero2.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbNumero2.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbNumero2.BorderSize = 1;
+            this.txbNumero2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNumero2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txbNumero2.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbNumero2.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbNumero2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbNumero2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNumero2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbNumero2.Location = new System.Drawing.Point(273, 0);
+            this.txbNumero2.Name = "txbNumero2";
+            this.txbNumero2.PasswordChar = '\0';
+            this.txbNumero2.Radius = 5;
+            this.txbNumero2.Size = new System.Drawing.Size(169, 38);
+            this.txbNumero2.TabIndex = 7;
+            this.txbNumero2.TextChanged += new System.EventHandler(this.txbNumero2_TextChanged);
             // 
             // gunaLabel17
             // 
@@ -325,11 +325,11 @@
             // gunaGroupBox25
             // 
             this.gunaGroupBox25.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox25.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox25.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox25.BorderColor = System.Drawing.Color.DarkGray;
             this.gunaGroupBox25.Controls.Add(this.gunaPanel10);
             this.gunaGroupBox25.Controls.Add(this.cmbCodeTelephone1);
-            this.gunaGroupBox25.Controls.Add(this.gunaTextBox6);
+            this.gunaGroupBox25.Controls.Add(this.txbNumero1);
             this.gunaGroupBox25.Controls.Add(this.gunaLabel29);
             this.gunaGroupBox25.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox25.LineTop = 0;
@@ -337,7 +337,7 @@
             this.gunaGroupBox25.Name = "gunaGroupBox25";
             this.gunaGroupBox25.Radius = 5;
             this.gunaGroupBox25.Size = new System.Drawing.Size(442, 38);
-            this.gunaGroupBox25.TabIndex = 28;
+            this.gunaGroupBox25.TabIndex = 30;
             this.gunaGroupBox25.TextLocation = new System.Drawing.Point(10, 8);
             // 
             // gunaPanel10
@@ -372,25 +372,26 @@
             this.cmbCodeTelephone1.Size = new System.Drawing.Size(90, 38);
             this.cmbCodeTelephone1.TabIndex = 8;
             // 
-            // gunaTextBox6
+            // txbNumero1
             // 
-            this.gunaTextBox6.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox6.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox6.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox6.BorderSize = 1;
-            this.gunaTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaTextBox6.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox6.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox6.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox6.Location = new System.Drawing.Point(273, 0);
-            this.gunaTextBox6.Name = "gunaTextBox6";
-            this.gunaTextBox6.PasswordChar = '\0';
-            this.gunaTextBox6.Radius = 5;
-            this.gunaTextBox6.Size = new System.Drawing.Size(169, 38);
-            this.gunaTextBox6.TabIndex = 7;
+            this.txbNumero1.BackColor = System.Drawing.Color.Transparent;
+            this.txbNumero1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbNumero1.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbNumero1.BorderSize = 1;
+            this.txbNumero1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNumero1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txbNumero1.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbNumero1.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbNumero1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbNumero1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNumero1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbNumero1.Location = new System.Drawing.Point(273, 0);
+            this.txbNumero1.Name = "txbNumero1";
+            this.txbNumero1.PasswordChar = '\0';
+            this.txbNumero1.Radius = 5;
+            this.txbNumero1.Size = new System.Drawing.Size(169, 38);
+            this.txbNumero1.TabIndex = 7;
+            this.txbNumero1.TextChanged += new System.EventHandler(this.txbNumero1_TextChanged);
             // 
             // gunaLabel29
             // 
@@ -403,70 +404,42 @@
             this.gunaLabel29.Text = "Numero de telephone*";
             this.gunaLabel29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gunaButton1
-            // 
-            this.gunaButton1.Animated = true;
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = global::Couche.Winforms.Properties.Resources.edit_image_26px1;
-            this.gunaButton1.ImageOffsetX = -8;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(813, 469);
-            this.gunaButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_image_26px;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 5;
-            this.gunaButton1.Size = new System.Drawing.Size(23, 20);
-            this.gunaButton1.TabIndex = 24;
-            // 
             // gunaGroupBox19
             // 
             this.gunaGroupBox19.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox19.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox19.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox19.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox19.Controls.Add(this.gunaComboBox3);
+            this.gunaGroupBox19.Controls.Add(this.cmbSexe);
             this.gunaGroupBox19.Controls.Add(this.gunaLabel16);
             this.gunaGroupBox19.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox19.LineTop = 0;
             this.gunaGroupBox19.Location = new System.Drawing.Point(15, 170);
             this.gunaGroupBox19.Name = "gunaGroupBox19";
             this.gunaGroupBox19.Radius = 5;
-            this.gunaGroupBox19.Size = new System.Drawing.Size(442, 38);
+            this.gunaGroupBox19.Size = new System.Drawing.Size(446, 38);
             this.gunaGroupBox19.TabIndex = 22;
             this.gunaGroupBox19.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaComboBox3
+            // cmbSexe
             // 
-            this.gunaComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox3.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaComboBox3.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaComboBox3.BorderSize = 1;
-            this.gunaComboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gunaComboBox3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaComboBox3.FormattingEnabled = true;
-            this.gunaComboBox3.Location = new System.Drawing.Point(175, 0);
-            this.gunaComboBox3.Name = "gunaComboBox3";
-            this.gunaComboBox3.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaComboBox3.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox3.Radius = 5;
-            this.gunaComboBox3.Size = new System.Drawing.Size(267, 38);
-            this.gunaComboBox3.TabIndex = 9;
+            this.cmbSexe.BackColor = System.Drawing.Color.Transparent;
+            this.cmbSexe.BaseColor = System.Drawing.Color.White;
+            this.cmbSexe.BorderColor = System.Drawing.Color.DarkGray;
+            this.cmbSexe.BorderSize = 1;
+            this.cmbSexe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSexe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSexe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexe.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbSexe.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSexe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbSexe.FormattingEnabled = true;
+            this.cmbSexe.Location = new System.Drawing.Point(175, 0);
+            this.cmbSexe.Name = "cmbSexe";
+            this.cmbSexe.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.cmbSexe.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbSexe.Radius = 5;
+            this.cmbSexe.Size = new System.Drawing.Size(271, 38);
+            this.cmbSexe.TabIndex = 9;
             // 
             // gunaLabel16
             // 
@@ -482,40 +455,39 @@
             // gunaGroupBox21
             // 
             this.gunaGroupBox21.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox21.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox21.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox21.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox21.Controls.Add(this.gunaComboBox5);
+            this.gunaGroupBox21.Controls.Add(this.cmbVille);
             this.gunaGroupBox21.Controls.Add(this.gunaLabel19);
             this.gunaGroupBox21.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox21.LineTop = 0;
             this.gunaGroupBox21.Location = new System.Drawing.Point(15, 344);
             this.gunaGroupBox21.Name = "gunaGroupBox21";
             this.gunaGroupBox21.Radius = 5;
-            this.gunaGroupBox21.Size = new System.Drawing.Size(442, 38);
+            this.gunaGroupBox21.Size = new System.Drawing.Size(446, 38);
             this.gunaGroupBox21.TabIndex = 13;
             this.gunaGroupBox21.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaComboBox5
+            // cmbVille
             // 
-            this.gunaComboBox5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox5.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaComboBox5.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaComboBox5.BorderSize = 1;
-            this.gunaComboBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaComboBox5.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gunaComboBox5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaComboBox5.FormattingEnabled = true;
-            this.gunaComboBox5.Location = new System.Drawing.Point(175, 0);
-            this.gunaComboBox5.Name = "gunaComboBox5";
-            this.gunaComboBox5.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaComboBox5.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox5.Radius = 5;
-            this.gunaComboBox5.Size = new System.Drawing.Size(267, 38);
-            this.gunaComboBox5.TabIndex = 10;
+            this.cmbVille.BackColor = System.Drawing.Color.Transparent;
+            this.cmbVille.BaseColor = System.Drawing.Color.White;
+            this.cmbVille.BorderColor = System.Drawing.Color.DarkGray;
+            this.cmbVille.BorderSize = 1;
+            this.cmbVille.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbVille.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbVille.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVille.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbVille.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVille.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbVille.FormattingEnabled = true;
+            this.cmbVille.Location = new System.Drawing.Point(175, 0);
+            this.cmbVille.Name = "cmbVille";
+            this.cmbVille.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.cmbVille.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbVille.Radius = 5;
+            this.cmbVille.Size = new System.Drawing.Size(271, 38);
+            this.cmbVille.TabIndex = 10;
             // 
             // gunaLabel19
             // 
@@ -531,24 +503,23 @@
             // gunaPanel6
             // 
             this.gunaPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.gunaPanel6.Controls.Add(this.gunaLabel22);
+            this.gunaPanel6.Controls.Add(this.lblCodeEmploye);
             this.gunaPanel6.Controls.Add(this.gunaLabel24);
-            this.gunaPanel6.Controls.Add(this.gunaButton2);
+            this.gunaPanel6.Controls.Add(this.gunaButton3);
             this.gunaPanel6.Location = new System.Drawing.Point(15, 462);
             this.gunaPanel6.Name = "gunaPanel6";
             this.gunaPanel6.Size = new System.Drawing.Size(446, 42);
             this.gunaPanel6.TabIndex = 17;
             // 
-            // gunaLabel22
+            // lblCodeEmploye
             // 
-            this.gunaLabel22.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaLabel22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel22.Location = new System.Drawing.Point(245, 0);
-            this.gunaLabel22.Name = "gunaLabel22";
-            this.gunaLabel22.Size = new System.Drawing.Size(174, 42);
-            this.gunaLabel22.TabIndex = 21;
-            this.gunaLabel22.Text = "emp_00000001";
-            this.gunaLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCodeEmploye.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblCodeEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeEmploye.Location = new System.Drawing.Point(245, 0);
+            this.lblCodeEmploye.Name = "lblCodeEmploye";
+            this.lblCodeEmploye.Size = new System.Drawing.Size(174, 42);
+            this.lblCodeEmploye.TabIndex = 21;
+            this.lblCodeEmploye.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // gunaLabel24
             // 
@@ -561,38 +532,39 @@
             this.gunaLabel24.Text = "Cet employe a pour code : ";
             this.gunaLabel24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gunaButton2
+            // gunaButton3
             // 
-            this.gunaButton2.Animated = true;
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaButton2.Image = global::Couche.Winforms.Properties.Resources.info_52px;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(35, 35);
-            this.gunaButton2.Location = new System.Drawing.Point(0, 0);
-            this.gunaButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px1;
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Radius = 10;
-            this.gunaButton2.Size = new System.Drawing.Size(55, 42);
-            this.gunaButton2.TabIndex = 19;
+            this.gunaButton3.Animated = true;
+            this.gunaButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaButton3.AnimationSpeed = 0.03F;
+            this.gunaButton3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton3.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaButton3.Image = global::Couche.Winforms.Properties.Resources.info_52px;
+            this.gunaButton3.ImageSize = new System.Drawing.Size(35, 35);
+            this.gunaButton3.Location = new System.Drawing.Point(0, 0);
+            this.gunaButton3.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaButton3.Name = "gunaButton3";
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px1;
+            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton3.Radius = 10;
+            this.gunaButton3.Size = new System.Drawing.Size(55, 42);
+            this.gunaButton3.TabIndex = 19;
             // 
             // gunaGroupBox22
             // 
             this.gunaGroupBox22.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox22.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox22.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox22.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox22.Controls.Add(this.gunaCirclePictureBox1);
+            this.gunaGroupBox22.Controls.Add(this.btnEdit);
+            this.gunaGroupBox22.Controls.Add(this.pbEmploye);
             this.gunaGroupBox22.Controls.Add(this.gunaLabel26);
             this.gunaGroupBox22.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox22.LineTop = 0;
@@ -603,18 +575,45 @@
             this.gunaGroupBox22.TabIndex = 12;
             this.gunaGroupBox22.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaCirclePictureBox1
+            // btnEdit
             // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaCirclePictureBox1.Image = global::Couche.Winforms.Properties.Resources.credit___Copie;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(175, 0);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(160, 160);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 21;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            this.btnEdit.Animated = true;
+            this.btnEdit.AnimationHoverSpeed = 0.07F;
+            this.btnEdit.AnimationSpeed = 0.03F;
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BorderColor = System.Drawing.Color.Black;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::Couche.Winforms.Properties.Resources.edit_image_26px1;
+            this.btnEdit.ImageOffsetX = -8;
+            this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEdit.Location = new System.Drawing.Point(312, 140);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEdit.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_image_26px;
+            this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEdit.Radius = 5;
+            this.btnEdit.Size = new System.Drawing.Size(23, 20);
+            this.btnEdit.TabIndex = 24;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // pbEmploye
+            // 
+            this.pbEmploye.BaseColor = System.Drawing.Color.White;
+            this.pbEmploye.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbEmploye.InitialImage = global::Couche.Winforms.Properties.Resources.user_male_circle_104px1;
+            this.pbEmploye.Location = new System.Drawing.Point(175, 0);
+            this.pbEmploye.Name = "pbEmploye";
+            this.pbEmploye.Size = new System.Drawing.Size(160, 160);
+            this.pbEmploye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEmploye.TabIndex = 25;
+            this.pbEmploye.TabStop = false;
             // 
             // gunaLabel26
             // 
@@ -629,40 +628,40 @@
             // gunaGroupBox23
             // 
             this.gunaGroupBox23.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox23.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox23.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox23.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox23.Controls.Add(this.gunaComboBox6);
+            this.gunaGroupBox23.Controls.Add(this.cmbPays);
             this.gunaGroupBox23.Controls.Add(this.gunaLabel27);
             this.gunaGroupBox23.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox23.LineTop = 0;
             this.gunaGroupBox23.Location = new System.Drawing.Point(15, 286);
             this.gunaGroupBox23.Name = "gunaGroupBox23";
             this.gunaGroupBox23.Radius = 5;
-            this.gunaGroupBox23.Size = new System.Drawing.Size(442, 38);
+            this.gunaGroupBox23.Size = new System.Drawing.Size(446, 38);
             this.gunaGroupBox23.TabIndex = 11;
             this.gunaGroupBox23.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaComboBox6
+            // cmbPays
             // 
-            this.gunaComboBox6.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox6.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaComboBox6.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaComboBox6.BorderSize = 1;
-            this.gunaComboBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaComboBox6.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gunaComboBox6.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaComboBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaComboBox6.FormattingEnabled = true;
-            this.gunaComboBox6.Location = new System.Drawing.Point(175, 0);
-            this.gunaComboBox6.Name = "gunaComboBox6";
-            this.gunaComboBox6.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaComboBox6.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox6.Radius = 5;
-            this.gunaComboBox6.Size = new System.Drawing.Size(267, 38);
-            this.gunaComboBox6.TabIndex = 9;
+            this.cmbPays.BackColor = System.Drawing.Color.Transparent;
+            this.cmbPays.BaseColor = System.Drawing.Color.White;
+            this.cmbPays.BorderColor = System.Drawing.Color.DarkGray;
+            this.cmbPays.BorderSize = 1;
+            this.cmbPays.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbPays.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbPays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPays.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbPays.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPays.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbPays.FormattingEnabled = true;
+            this.cmbPays.Location = new System.Drawing.Point(175, 0);
+            this.cmbPays.Name = "cmbPays";
+            this.cmbPays.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.cmbPays.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbPays.Radius = 5;
+            this.cmbPays.Size = new System.Drawing.Size(271, 38);
+            this.cmbPays.TabIndex = 9;
+            this.cmbPays.SelectedIndexChanged += new System.EventHandler(this.cmbPays_SelectedIndexChanged);
             // 
             // gunaLabel27
             // 
@@ -678,9 +677,9 @@
             // gunaGroupBox24
             // 
             this.gunaGroupBox24.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox24.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox24.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox24.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox24.Controls.Add(this.gunaTextBox5);
+            this.gunaGroupBox24.Controls.Add(this.txbAdresse);
             this.gunaGroupBox24.Controls.Add(this.gunaLabel28);
             this.gunaGroupBox24.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox24.LineTop = 0;
@@ -691,25 +690,25 @@
             this.gunaGroupBox24.TabIndex = 9;
             this.gunaGroupBox24.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaTextBox5
+            // txbAdresse
             // 
-            this.gunaTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox5.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox5.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox5.BorderSize = 1;
-            this.gunaTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox5.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox5.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox5.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox5.Location = new System.Drawing.Point(175, 0);
-            this.gunaTextBox5.Name = "gunaTextBox5";
-            this.gunaTextBox5.PasswordChar = '\0';
-            this.gunaTextBox5.Radius = 5;
-            this.gunaTextBox5.Size = new System.Drawing.Size(267, 38);
-            this.gunaTextBox5.TabIndex = 5;
+            this.txbAdresse.BackColor = System.Drawing.Color.Transparent;
+            this.txbAdresse.BaseColor = System.Drawing.Color.White;
+            this.txbAdresse.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbAdresse.BorderSize = 1;
+            this.txbAdresse.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbAdresse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbAdresse.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbAdresse.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbAdresse.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbAdresse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbAdresse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbAdresse.Location = new System.Drawing.Point(175, 0);
+            this.txbAdresse.Name = "txbAdresse";
+            this.txbAdresse.PasswordChar = '\0';
+            this.txbAdresse.Radius = 5;
+            this.txbAdresse.Size = new System.Drawing.Size(267, 38);
+            this.txbAdresse.TabIndex = 5;
             // 
             // gunaLabel28
             // 
@@ -725,38 +724,39 @@
             // gunaGroupBox26
             // 
             this.gunaGroupBox26.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox26.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox26.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox26.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox26.Controls.Add(this.gunaTextBox7);
+            this.gunaGroupBox26.Controls.Add(this.txbNumeroCNI);
             this.gunaGroupBox26.Controls.Add(this.gunaLabel30);
             this.gunaGroupBox26.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox26.LineTop = 0;
             this.gunaGroupBox26.Location = new System.Drawing.Point(15, 228);
             this.gunaGroupBox26.Name = "gunaGroupBox26";
             this.gunaGroupBox26.Radius = 5;
-            this.gunaGroupBox26.Size = new System.Drawing.Size(442, 38);
+            this.gunaGroupBox26.Size = new System.Drawing.Size(446, 38);
             this.gunaGroupBox26.TabIndex = 7;
             this.gunaGroupBox26.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaTextBox7
+            // txbNumeroCNI
             // 
-            this.gunaTextBox7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox7.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox7.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox7.BorderSize = 1;
-            this.gunaTextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox7.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox7.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox7.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox7.Location = new System.Drawing.Point(175, 0);
-            this.gunaTextBox7.Name = "gunaTextBox7";
-            this.gunaTextBox7.PasswordChar = '\0';
-            this.gunaTextBox7.Radius = 5;
-            this.gunaTextBox7.Size = new System.Drawing.Size(267, 38);
-            this.gunaTextBox7.TabIndex = 7;
+            this.txbNumeroCNI.BackColor = System.Drawing.Color.Transparent;
+            this.txbNumeroCNI.BaseColor = System.Drawing.Color.White;
+            this.txbNumeroCNI.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbNumeroCNI.BorderSize = 1;
+            this.txbNumeroCNI.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNumeroCNI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbNumeroCNI.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbNumeroCNI.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbNumeroCNI.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbNumeroCNI.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNumeroCNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbNumeroCNI.Location = new System.Drawing.Point(175, 0);
+            this.txbNumeroCNI.Name = "txbNumeroCNI";
+            this.txbNumeroCNI.PasswordChar = '\0';
+            this.txbNumeroCNI.Radius = 5;
+            this.txbNumeroCNI.Size = new System.Drawing.Size(271, 38);
+            this.txbNumeroCNI.TabIndex = 7;
+            this.txbNumeroCNI.TextChanged += new System.EventHandler(this.txbNumeroCNI_TextChanged);
             // 
             // gunaLabel30
             // 
@@ -772,9 +772,9 @@
             // gunaGroupBox27
             // 
             this.gunaGroupBox27.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox27.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox27.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox27.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox27.Controls.Add(this.gunaTextBox8);
+            this.gunaGroupBox27.Controls.Add(this.txbLieuNaissance);
             this.gunaGroupBox27.Controls.Add(this.gunaLabel31);
             this.gunaGroupBox27.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox27.LineTop = 0;
@@ -785,25 +785,25 @@
             this.gunaGroupBox27.TabIndex = 6;
             this.gunaGroupBox27.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaTextBox8
+            // txbLieuNaissance
             // 
-            this.gunaTextBox8.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox8.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox8.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox8.BorderSize = 1;
-            this.gunaTextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox8.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox8.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox8.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox8.Location = new System.Drawing.Point(175, 0);
-            this.gunaTextBox8.Name = "gunaTextBox8";
-            this.gunaTextBox8.PasswordChar = '\0';
-            this.gunaTextBox8.Radius = 5;
-            this.gunaTextBox8.Size = new System.Drawing.Size(267, 38);
-            this.gunaTextBox8.TabIndex = 6;
+            this.txbLieuNaissance.BackColor = System.Drawing.Color.Transparent;
+            this.txbLieuNaissance.BaseColor = System.Drawing.Color.White;
+            this.txbLieuNaissance.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbLieuNaissance.BorderSize = 1;
+            this.txbLieuNaissance.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbLieuNaissance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbLieuNaissance.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbLieuNaissance.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbLieuNaissance.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbLieuNaissance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbLieuNaissance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbLieuNaissance.Location = new System.Drawing.Point(175, 0);
+            this.txbLieuNaissance.Name = "txbLieuNaissance";
+            this.txbLieuNaissance.PasswordChar = '\0';
+            this.txbLieuNaissance.Radius = 5;
+            this.txbLieuNaissance.Size = new System.Drawing.Size(267, 38);
+            this.txbLieuNaissance.TabIndex = 6;
             // 
             // gunaLabel31
             // 
@@ -819,44 +819,44 @@
             // gunaGroupBox28
             // 
             this.gunaGroupBox28.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox28.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox28.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox28.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox28.Controls.Add(this.gunaDateTimePicker1);
+            this.gunaGroupBox28.Controls.Add(this.dtDateNaissance);
             this.gunaGroupBox28.Controls.Add(this.gunaLabel32);
             this.gunaGroupBox28.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox28.LineTop = 0;
             this.gunaGroupBox28.Location = new System.Drawing.Point(15, 112);
             this.gunaGroupBox28.Name = "gunaGroupBox28";
             this.gunaGroupBox28.Radius = 5;
-            this.gunaGroupBox28.Size = new System.Drawing.Size(442, 38);
+            this.gunaGroupBox28.Size = new System.Drawing.Size(446, 38);
             this.gunaGroupBox28.TabIndex = 4;
             this.gunaGroupBox28.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaDateTimePicker1
+            // dtDateNaissance
             // 
-            this.gunaDateTimePicker1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaDateTimePicker1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaDateTimePicker1.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaDateTimePicker1.BorderSize = 1;
-            this.gunaDateTimePicker1.CustomFormat = null;
-            this.gunaDateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(175, 0);
-            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
-            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Radius = 5;
-            this.gunaDateTimePicker1.Size = new System.Drawing.Size(267, 38);
-            this.gunaDateTimePicker1.TabIndex = 5;
-            this.gunaDateTimePicker1.Text = "lundi 28 octobre 2019";
-            this.gunaDateTimePicker1.Value = new System.DateTime(2019, 10, 28, 6, 10, 57, 152);
+            this.dtDateNaissance.BackColor = System.Drawing.Color.Transparent;
+            this.dtDateNaissance.BaseColor = System.Drawing.Color.White;
+            this.dtDateNaissance.BorderColor = System.Drawing.Color.DarkGray;
+            this.dtDateNaissance.BorderSize = 1;
+            this.dtDateNaissance.CustomFormat = null;
+            this.dtDateNaissance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtDateNaissance.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtDateNaissance.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.dtDateNaissance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDateNaissance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtDateNaissance.Location = new System.Drawing.Point(175, 0);
+            this.dtDateNaissance.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtDateNaissance.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtDateNaissance.Name = "dtDateNaissance";
+            this.dtDateNaissance.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtDateNaissance.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.dtDateNaissance.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.dtDateNaissance.OnPressedColor = System.Drawing.Color.Black;
+            this.dtDateNaissance.Radius = 5;
+            this.dtDateNaissance.Size = new System.Drawing.Size(271, 38);
+            this.dtDateNaissance.TabIndex = 5;
+            this.dtDateNaissance.Text = "lundi 28 octobre 2019";
+            this.dtDateNaissance.Value = new System.DateTime(2019, 10, 28, 6, 10, 57, 152);
             // 
             // gunaLabel32
             // 
@@ -872,9 +872,9 @@
             // gunaGroupBox29
             // 
             this.gunaGroupBox29.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox29.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox29.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox29.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox29.Controls.Add(this.gunaTextBox9);
+            this.gunaGroupBox29.Controls.Add(this.txbNomComplet);
             this.gunaGroupBox29.Controls.Add(this.gunaLabel33);
             this.gunaGroupBox29.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox29.LineTop = 0;
@@ -885,25 +885,26 @@
             this.gunaGroupBox29.TabIndex = 3;
             this.gunaGroupBox29.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaTextBox9
+            // txbNomComplet
             // 
-            this.gunaTextBox9.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox9.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox9.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox9.BorderSize = 1;
-            this.gunaTextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox9.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox9.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox9.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox9.Location = new System.Drawing.Point(175, 0);
-            this.gunaTextBox9.Name = "gunaTextBox9";
-            this.gunaTextBox9.PasswordChar = '\0';
-            this.gunaTextBox9.Radius = 5;
-            this.gunaTextBox9.Size = new System.Drawing.Size(762, 38);
-            this.gunaTextBox9.TabIndex = 5;
+            this.txbNomComplet.BackColor = System.Drawing.Color.Transparent;
+            this.txbNomComplet.BaseColor = System.Drawing.Color.White;
+            this.txbNomComplet.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbNomComplet.BorderSize = 1;
+            this.txbNomComplet.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNomComplet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbNomComplet.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbNomComplet.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbNomComplet.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbNomComplet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNomComplet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbNomComplet.Location = new System.Drawing.Point(175, 0);
+            this.txbNomComplet.Name = "txbNomComplet";
+            this.txbNomComplet.PasswordChar = '\0';
+            this.txbNomComplet.Radius = 5;
+            this.txbNomComplet.Size = new System.Drawing.Size(762, 38);
+            this.txbNomComplet.TabIndex = 5;
+            this.txbNomComplet.TextChanged += new System.EventHandler(this.txbNomComplet_TextChanged);
             // 
             // gunaLabel33
             // 
@@ -956,7 +957,7 @@
             this.gunaGroupBox14.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox14.BaseColor = System.Drawing.SystemColors.Control;
             this.gunaGroupBox14.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox14.Controls.Add(this.gunaTextBox1);
+            this.gunaGroupBox14.Controls.Add(this.txbNomUtilisateur);
             this.gunaGroupBox14.Controls.Add(this.gunaLabel23);
             this.gunaGroupBox14.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox14.LineTop = 0;
@@ -967,25 +968,26 @@
             this.gunaGroupBox14.TabIndex = 19;
             this.gunaGroupBox14.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaTextBox1
+            // txbNomUtilisateur
             // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox1.BorderSize = 1;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox1.Location = new System.Drawing.Point(207, 0);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 5;
-            this.gunaTextBox1.Size = new System.Drawing.Size(235, 38);
-            this.gunaTextBox1.TabIndex = 6;
+            this.txbNomUtilisateur.BackColor = System.Drawing.Color.Transparent;
+            this.txbNomUtilisateur.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbNomUtilisateur.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbNomUtilisateur.BorderSize = 1;
+            this.txbNomUtilisateur.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbNomUtilisateur.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbNomUtilisateur.Enabled = false;
+            this.txbNomUtilisateur.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbNomUtilisateur.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbNomUtilisateur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbNomUtilisateur.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNomUtilisateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbNomUtilisateur.Location = new System.Drawing.Point(207, 0);
+            this.txbNomUtilisateur.Name = "txbNomUtilisateur";
+            this.txbNomUtilisateur.PasswordChar = '\0';
+            this.txbNomUtilisateur.Radius = 5;
+            this.txbNomUtilisateur.Size = new System.Drawing.Size(235, 38);
+            this.txbNomUtilisateur.TabIndex = 6;
             // 
             // gunaLabel23
             // 
@@ -1003,7 +1005,7 @@
             this.gunaGroupBox15.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox15.BaseColor = System.Drawing.SystemColors.Control;
             this.gunaGroupBox15.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox15.Controls.Add(this.cmbTypeCompte);
+            this.gunaGroupBox15.Controls.Add(this.cmbRoleEmploye);
             this.gunaGroupBox15.Controls.Add(this.gunaLabel13);
             this.gunaGroupBox15.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox15.LineTop = 0;
@@ -1014,27 +1016,28 @@
             this.gunaGroupBox15.TabIndex = 13;
             this.gunaGroupBox15.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // cmbTypeCompte
+            // cmbRoleEmploye
             // 
-            this.cmbTypeCompte.BackColor = System.Drawing.Color.Transparent;
-            this.cmbTypeCompte.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cmbTypeCompte.BorderColor = System.Drawing.Color.DarkGray;
-            this.cmbTypeCompte.BorderSize = 1;
-            this.cmbTypeCompte.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbTypeCompte.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbTypeCompte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypeCompte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbTypeCompte.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbTypeCompte.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTypeCompte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbTypeCompte.FormattingEnabled = true;
-            this.cmbTypeCompte.Location = new System.Drawing.Point(175, 0);
-            this.cmbTypeCompte.Name = "cmbTypeCompte";
-            this.cmbTypeCompte.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.cmbTypeCompte.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmbTypeCompte.Radius = 5;
-            this.cmbTypeCompte.Size = new System.Drawing.Size(267, 38);
-            this.cmbTypeCompte.TabIndex = 9;
+            this.cmbRoleEmploye.BackColor = System.Drawing.Color.Transparent;
+            this.cmbRoleEmploye.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cmbRoleEmploye.BorderColor = System.Drawing.Color.DarkGray;
+            this.cmbRoleEmploye.BorderSize = 1;
+            this.cmbRoleEmploye.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbRoleEmploye.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbRoleEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRoleEmploye.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbRoleEmploye.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbRoleEmploye.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRoleEmploye.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbRoleEmploye.FormattingEnabled = true;
+            this.cmbRoleEmploye.Location = new System.Drawing.Point(175, 0);
+            this.cmbRoleEmploye.Name = "cmbRoleEmploye";
+            this.cmbRoleEmploye.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.cmbRoleEmploye.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbRoleEmploye.Radius = 5;
+            this.cmbRoleEmploye.Size = new System.Drawing.Size(267, 38);
+            this.cmbRoleEmploye.TabIndex = 9;
+            this.cmbRoleEmploye.SelectedIndexChanged += new System.EventHandler(this.cmbRoleEmploye_SelectedIndexChanged);
             // 
             // gunaLabel13
             // 
@@ -1052,7 +1055,7 @@
             this.panelMontantDepart.BackColor = System.Drawing.Color.Transparent;
             this.panelMontantDepart.BaseColor = System.Drawing.SystemColors.Control;
             this.panelMontantDepart.BorderColor = System.Drawing.Color.DarkGray;
-            this.panelMontantDepart.Controls.Add(this.btnMontantDepart);
+            this.panelMontantDepart.Controls.Add(this.txbConfirmMDP);
             this.panelMontantDepart.Controls.Add(this.gunaLabel18);
             this.panelMontantDepart.LineColor = System.Drawing.Color.Gainsboro;
             this.panelMontantDepart.LineTop = 0;
@@ -1063,25 +1066,25 @@
             this.panelMontantDepart.TabIndex = 9;
             this.panelMontantDepart.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // btnMontantDepart
+            // txbConfirmMDP
             // 
-            this.btnMontantDepart.BackColor = System.Drawing.Color.Transparent;
-            this.btnMontantDepart.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMontantDepart.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMontantDepart.BorderSize = 1;
-            this.btnMontantDepart.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnMontantDepart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMontantDepart.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnMontantDepart.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.btnMontantDepart.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMontantDepart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMontantDepart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMontantDepart.Location = new System.Drawing.Point(175, 0);
-            this.btnMontantDepart.Name = "btnMontantDepart";
-            this.btnMontantDepart.PasswordChar = '\0';
-            this.btnMontantDepart.Radius = 5;
-            this.btnMontantDepart.Size = new System.Drawing.Size(267, 38);
-            this.btnMontantDepart.TabIndex = 5;
+            this.txbConfirmMDP.BackColor = System.Drawing.Color.Transparent;
+            this.txbConfirmMDP.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbConfirmMDP.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbConfirmMDP.BorderSize = 1;
+            this.txbConfirmMDP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbConfirmMDP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbConfirmMDP.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbConfirmMDP.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbConfirmMDP.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbConfirmMDP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbConfirmMDP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbConfirmMDP.Location = new System.Drawing.Point(175, 0);
+            this.txbConfirmMDP.Name = "txbConfirmMDP";
+            this.txbConfirmMDP.PasswordChar = '\0';
+            this.txbConfirmMDP.Radius = 5;
+            this.txbConfirmMDP.Size = new System.Drawing.Size(267, 38);
+            this.txbConfirmMDP.TabIndex = 5;
             // 
             // gunaLabel18
             // 
@@ -1099,7 +1102,7 @@
             this.panelNomStructure.BackColor = System.Drawing.Color.Transparent;
             this.panelNomStructure.BaseColor = System.Drawing.SystemColors.Control;
             this.panelNomStructure.BorderColor = System.Drawing.Color.DarkGray;
-            this.panelNomStructure.Controls.Add(this.txbNomStructure);
+            this.panelNomStructure.Controls.Add(this.txbMotDePasse);
             this.panelNomStructure.Controls.Add(this.gunaLabel21);
             this.panelNomStructure.LineColor = System.Drawing.Color.Gainsboro;
             this.panelNomStructure.LineTop = 0;
@@ -1110,25 +1113,25 @@
             this.panelNomStructure.TabIndex = 6;
             this.panelNomStructure.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // txbNomStructure
+            // txbMotDePasse
             // 
-            this.txbNomStructure.BackColor = System.Drawing.Color.Transparent;
-            this.txbNomStructure.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbNomStructure.BorderColor = System.Drawing.Color.DarkGray;
-            this.txbNomStructure.BorderSize = 1;
-            this.txbNomStructure.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbNomStructure.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbNomStructure.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.txbNomStructure.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.txbNomStructure.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbNomStructure.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNomStructure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txbNomStructure.Location = new System.Drawing.Point(175, 0);
-            this.txbNomStructure.Name = "txbNomStructure";
-            this.txbNomStructure.PasswordChar = '\0';
-            this.txbNomStructure.Radius = 5;
-            this.txbNomStructure.Size = new System.Drawing.Size(267, 38);
-            this.txbNomStructure.TabIndex = 6;
+            this.txbMotDePasse.BackColor = System.Drawing.Color.Transparent;
+            this.txbMotDePasse.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbMotDePasse.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbMotDePasse.BorderSize = 1;
+            this.txbMotDePasse.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbMotDePasse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbMotDePasse.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbMotDePasse.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbMotDePasse.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbMotDePasse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMotDePasse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbMotDePasse.Location = new System.Drawing.Point(175, 0);
+            this.txbMotDePasse.Name = "txbMotDePasse";
+            this.txbMotDePasse.PasswordChar = '\0';
+            this.txbMotDePasse.Radius = 5;
+            this.txbMotDePasse.Size = new System.Drawing.Size(267, 38);
+            this.txbMotDePasse.TabIndex = 6;
             // 
             // gunaLabel21
             // 
@@ -1156,14 +1159,14 @@
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel2.ResumeLayout(false);
-            this.gunaGroupBox16.ResumeLayout(false);
+            this.gbEmploye.ResumeLayout(false);
             this.gunaGroupBox20.ResumeLayout(false);
             this.gunaGroupBox25.ResumeLayout(false);
             this.gunaGroupBox19.ResumeLayout(false);
             this.gunaGroupBox21.ResumeLayout(false);
             this.gunaPanel6.ResumeLayout(false);
             this.gunaGroupBox22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmploye)).EndInit();
             this.gunaGroupBox23.ResumeLayout(false);
             this.gunaGroupBox24.ResumeLayout(false);
             this.gunaGroupBox26.ResumeLayout(false);
@@ -1187,61 +1190,61 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox13;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox15;
-        private Guna.UI.WinForms.GunaComboBox cmbTypeCompte;
+        private Guna.UI.WinForms.GunaComboBox cmbRoleEmploye;
         private Guna.UI.WinForms.GunaLabel gunaLabel13;
         private Guna.UI.WinForms.GunaGroupBox panelMontantDepart;
-        private Guna.UI.WinForms.GunaTextBox btnMontantDepart;
+        private Guna.UI.WinForms.GunaTextBox txbConfirmMDP;
         private Guna.UI.WinForms.GunaLabel gunaLabel18;
         private Guna.UI.WinForms.GunaGroupBox panelNomStructure;
-        private Guna.UI.WinForms.GunaTextBox txbNomStructure;
+        private Guna.UI.WinForms.GunaTextBox txbMotDePasse;
         private Guna.UI.WinForms.GunaLabel gunaLabel21;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox14;
         private Guna.UI.WinForms.GunaLabel gunaLabel23;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox16;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox19;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox3;
-        private Guna.UI.WinForms.GunaLabel gunaLabel16;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox21;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox5;
-        private Guna.UI.WinForms.GunaLabel gunaLabel19;
-        private Guna.UI.WinForms.GunaPanel gunaPanel6;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox22;
-        private Guna.UI.WinForms.GunaLabel gunaLabel26;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox23;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel27;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox24;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox5;
-        private Guna.UI.WinForms.GunaLabel gunaLabel28;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox26;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox7;
-        private Guna.UI.WinForms.GunaLabel gunaLabel30;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox27;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox8;
-        private Guna.UI.WinForms.GunaLabel gunaLabel31;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox28;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel32;
-        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox29;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox9;
-        private Guna.UI.WinForms.GunaLabel gunaLabel33;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel22;
-        private Guna.UI.WinForms.GunaLabel gunaLabel24;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private Guna.UI.WinForms.GunaImageButton btnBack;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox txbNomUtilisateur;
+        private Guna.UI.WinForms.GunaGroupBox gbEmploye;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox20;
         private Guna.UI.WinForms.GunaPanel gunaPanel11;
         private Guna.UI.WinForms.GunaComboBox cmbCodeTelephone2;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox4;
+        private Guna.UI.WinForms.GunaTextBox txbNumero2;
         private Guna.UI.WinForms.GunaLabel gunaLabel17;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox25;
         private Guna.UI.WinForms.GunaPanel gunaPanel10;
         private Guna.UI.WinForms.GunaComboBox cmbCodeTelephone1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox6;
+        private Guna.UI.WinForms.GunaTextBox txbNumero1;
         private Guna.UI.WinForms.GunaLabel gunaLabel29;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox19;
+        private Guna.UI.WinForms.GunaComboBox cmbSexe;
+        private Guna.UI.WinForms.GunaLabel gunaLabel16;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox21;
+        private Guna.UI.WinForms.GunaComboBox cmbVille;
+        private Guna.UI.WinForms.GunaLabel gunaLabel19;
+        private Guna.UI.WinForms.GunaPanel gunaPanel6;
+        private Guna.UI.WinForms.GunaLabel lblCodeEmploye;
+        private Guna.UI.WinForms.GunaLabel gunaLabel24;
+        private Guna.UI.WinForms.GunaButton gunaButton3;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox23;
+        private Guna.UI.WinForms.GunaComboBox cmbPays;
+        private Guna.UI.WinForms.GunaLabel gunaLabel27;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox24;
+        private Guna.UI.WinForms.GunaTextBox txbAdresse;
+        private Guna.UI.WinForms.GunaLabel gunaLabel28;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox26;
+        private Guna.UI.WinForms.GunaTextBox txbNumeroCNI;
+        private Guna.UI.WinForms.GunaLabel gunaLabel30;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox27;
+        private Guna.UI.WinForms.GunaTextBox txbLieuNaissance;
+        private Guna.UI.WinForms.GunaLabel gunaLabel31;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox28;
+        private Guna.UI.WinForms.GunaDateTimePicker dtDateNaissance;
+        private Guna.UI.WinForms.GunaLabel gunaLabel32;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox29;
+        private Guna.UI.WinForms.GunaTextBox txbNomComplet;
+        private Guna.UI.WinForms.GunaLabel gunaLabel33;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox22;
+        private Guna.UI.WinForms.GunaButton btnEdit;
+        private Guna.UI.WinForms.GunaPictureBox pbEmploye;
+        private Guna.UI.WinForms.GunaLabel gunaLabel26;
     }
 }

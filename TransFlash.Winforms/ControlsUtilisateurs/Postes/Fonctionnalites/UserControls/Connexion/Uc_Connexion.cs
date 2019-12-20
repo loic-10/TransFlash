@@ -10,17 +10,22 @@ using System.Windows.Forms;
 using TransFlash.BLL;
 using TransFlash.BO;
 using Tulpep.NotificationWindow;
+using TransFlash.Winforms.Fonctions;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls.Connexion
 {
     public partial class Uc_Connexion : UserControl
     {
 
-        private EmployeBLO employeBLO = new EmployeBLO();
+        private EmployeBLO employeBLO = null;
+
+        private Frm_Fonction fonction = null;
 
         public Uc_Connexion()
         {
             InitializeComponent();
+            employeBLO = new EmployeBLO();
+            fonction = new Frm_Fonction();
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
@@ -29,22 +34,16 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
             {
                 if(txbNomUtilisateur.Text != string.Empty || txbPassword.Text != string.Empty)
                 {
-                    popupNotifier1.BodyColor = Color.FromArgb(33, 191, 116);
-                    popupNotifier1.TitleText = "Authentification";
-                    popupNotifier1.ContentColor = Color.White;
                     Employe employe = employeBLO.SeConnecter(txbNomUtilisateur.Text, txbPassword.Text);
                     if (employe != null)
                     {
-                        popupNotifier1.ContentText = $"Bienvenue {employe.StatutEmploye.ToString().Replace("_", " ")} {employe.NomComplet}";
+                        fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Authentification",
+                            $"Bienvenue {employe.StatutEmploye.ToString().Replace("_", " ")} {employe.NomComplet}");
                         Frm_Principal frm_Principal = new Frm_Principal(employe);
                         frm_Principal.Show();
                     }
                     else
-                    {
-                        popupNotifier1.ContentText = $"Compte errone";
-                        popupNotifier1.BodyColor = Color.FromArgb(248, 43, 43);
-                    }
-                    popupNotifier1.Popup();
+                        fonction.AfficheMessageNotification(Color.FromArgb(248, 43, 43), "Authentification", "Compte errone");
                 }
                 else
                 {

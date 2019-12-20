@@ -53,10 +53,12 @@ namespace TransFlash.BLL
             operationBLO = new OperationBLO();
             compteClientBLO = new CompteClientBLO();
             fondBLO = new FondBLO();
-            Transaction oldTransaction = transaction;
+
+            int index = transactionBLO.IndexOf(transaction);
+
             transaction.StatutTransaction = StatutTransaction.Validé;
             transaction.EmployeValideur = employe;
-            transactionBLO[transactionBLO.IndexOf(oldTransaction)] = transaction;
+            transactionBLO[index] = transaction;
 
             if (transaction.TypeTransaction == TypeTransaction.Dépot)
             {
@@ -88,9 +90,12 @@ namespace TransFlash.BLL
             fondBLO = new FondBLO();
             epargneBLO = new EpargneBLO();
             Transaction oldTransaction = transaction;
+
+            int index = transactionBLO.IndexOf(transaction);
+
             transaction.StatutTransaction = StatutTransaction.Validé;
             transaction.EmployeValideur = employe;
-            transactionBLO[transactionBLO.IndexOf(oldTransaction)] = transaction;
+            transactionBLO[index] = transaction;
 
             if (transaction.TypeTransaction == TypeTransaction.Dépot)
             {
@@ -125,10 +130,12 @@ namespace TransFlash.BLL
         public void AviserTransaction(Transaction transaction, Employe employe)
         {
             operationBLO = new OperationBLO();
-            Transaction oldTransaction = transaction;
+
+            int index = transactionBLO.IndexOf(transaction);
+
             transaction.StatutTransaction = StatutTransaction.Avisé;
             transaction.EmployeValideur = employe;
-            transactionBLO[transactionBLO.IndexOf(oldTransaction)] = transaction;
+            transactionBLO[index] = transaction;
             operationBLO.AjouterOperation(TypeOperation.Avis_de_retrait, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur,
                 transaction.Montant, "toto tata");
         }
@@ -138,10 +145,12 @@ namespace TransFlash.BLL
         public void AnnulerTransaction(Transaction transaction, Employe employe)
         {
             operationBLO = new OperationBLO();
-            Transaction oldTransaction = transaction;
+
+            int index = transactionBLO.IndexOf(transaction);
+
             transaction.StatutTransaction = StatutTransaction.Annulé;
             transaction.EmployeValideur = employe;
-            transactionBLO[transactionBLO.IndexOf(oldTransaction)] = transaction;
+            transactionBLO[index] = transaction;
             operationBLO.AjouterOperation(TypeOperation.Annulation, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur,
                 transaction.Montant, "toto tata");
         }

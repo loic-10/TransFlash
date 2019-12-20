@@ -26,13 +26,13 @@ namespace TransFlash.BLL
             salarieBLO = new RepositoireDAOFile<Salarie>();
         }
 
-        public void AjouterSalarie(CompteClient compteClientEmploye, CompteClient compteClientEntreprise, double montantSalaire, 
-            int jourDePaye, Employe employe)
+        public void AjouterSalarie(CompteClient compteClientEmploye, CompteClient compteClientEntreprise, double montantSalaire,
+            DateTime dateEmbauche, int jourDePaye, Employe employe)
         {
             operationBLO = new OperationBLO();
 
-            salarieBLO.Add(new Salarie(new IdentifiantBLO().IdSalarie, compteClientEmploye, compteClientEntreprise, montantSalaire,DateTime.Now,
-                                                    StatutSalarie.En_règle,  StatutPayementSalarie.Non_payé, jourDePaye));
+            salarieBLO.Add(new Salarie(new IdentifiantBLO().IdSalarie, compteClientEmploye, compteClientEntreprise, montantSalaire, dateEmbauche,
+                                            DateTime.Now, StatutSalarie.En_règle,  StatutPayementSalarie.Non_payé, jourDePaye));
 
             operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClientEmploye.Client, new CompteClient("Indefini"), montantSalaire, "toto tata");
 
@@ -43,10 +43,11 @@ namespace TransFlash.BLL
         {
             operationBLO = new OperationBLO();
 
-            Salarie oldSalarie = salarie;
+            int index = salarieBLO.IndexOf(salarie);
+
             salarie.MontantSalaire = montantSalaire;
             salarie.JourDePaye = jourDePaye;
-            salarieBLO[salarieBLO.IndexOf(oldSalarie)] = salarie;
+            salarieBLO[index] = salarie;
 
             operationBLO.AjouterOperation(TypeOperation.Ajout, employe, salarie.CompteClientEmploye.Client, new CompteClient("Indefini"), montantSalaire, "toto tata");
         }
@@ -94,7 +95,7 @@ namespace TransFlash.BLL
             return false;
         }
 
-        public double MontantMaximal(Salarie salarie) => 
+        public double MontantMaximalDecouvert(Salarie salarie) => 
             ((salarieBLO[salarieBLO.IndexOf(salarie)].MontantSalaire) * (parametreGeneralBLO.TousParametreGenerals[0].PourcentageDecouvertMaximal/100));
 
         public void SupprimerSalarie(Salarie salarie, Employe employe)

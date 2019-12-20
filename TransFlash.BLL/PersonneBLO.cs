@@ -11,17 +11,11 @@ namespace TransFlash.BLL
 {
     public class PersonneBLO
     {
+        private static ClientBLO clientBLO = new ClientBLO();
+        private static EmployeBLO employeBLO = new EmployeBLO();
 
-        public static bool VerifierCNIExist(string numeroCNI)
-        {
-            ClientBLO clientBLO = new ClientBLO();
-            EmployeBLO employeBLO = new EmployeBLO();
-
-            if (clientBLO.RechercherCNIExist(numeroCNI) != null && employeBLO.RechercherCNIExist(numeroCNI)  != null)
-                return true;
-
-            return false;
-        }
+        public static bool VerifierCNIExist(string numeroCNI, Client client, Employe employe) => (clientBLO.RechercherCNIExist(numeroCNI, client) == null && 
+                                                                                                employeBLO.RechercherCNIExist(numeroCNI, employe) == null);
 
     }
 }

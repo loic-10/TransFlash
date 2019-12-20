@@ -9,17 +9,19 @@ namespace TransFlash.BO
     [Serializable]
     public class ParametreGeneral
     {
-        // Nom microfinance
+        // Information microfinance
         public string NomMicrofinance { get; set; }
+        public string LogoMicrofinance { get; set; }
+        public string PositionGeographiqueMicrofinance { get; set; }
+        public string SloganMicrofinance { get; set; }
+        public Devise DeviseMicrofinance { get; set; }
 
         // Age
         public int AgeMinimalRequis { get; set; }
 
-
         // Pourcentage
         public float PourcentageRetrait { get; set; }
         public float PourcentageRetraitEpargneSansAvis { get; set; }
-        public float PourcentageDuCreditMaximalSalarie { get; set; }
         public float PourcentageDecouvertMaximal { get; set; }
         public float PourcentageBeneficeCompteEpargne { get; set; }
 
@@ -45,7 +47,6 @@ namespace TransFlash.BO
         public double SoldeMaximalCompteCourant { get; set; }
 
         // Fraies sur un compte
-        public double FraiesCreationCompte { get; set; }
         public double FraiesDebloquerCompte { get; set; }
 
 
@@ -55,17 +56,21 @@ namespace TransFlash.BO
         {
         }
 
-        public ParametreGeneral(string nomMicrofinance, int ageMinimalRequis, float pourcentageRetrait, float pourcentageRetraitEpargneSansAvis, 
-            float pourcentageDuCreditMaximalSalarie, float pourcentageDecouvertMaximal, float pourcentageBeneficeCompteEpargne, int nombreMinimalBeneficier, 
-            int nombreMaximalBeneficier, double montantPartSociale, double montantDeCreationCompte, double montantMininimumDepot,
-            int nombreJourRetraitAviseDeEpargne, int nombreJourAttenteReponsePourCredit, int nombreMoisMinimalPourDecouvert, 
-            double soldeMaximalCompteCourant, double fraiesCreationCompte, double fraiesDebloquerCompte)
+        public ParametreGeneral(string nomMicrofinance, string logoMicrofinance, string positionGeographiqueMicrofinance, string sloganMicrofinance,
+            Devise deviseMicrofinance, int ageMinimalRequis, float pourcentageRetrait, float pourcentageRetraitEpargneSansAvis, 
+            float pourcentageDecouvertMaximal, float pourcentageBeneficeCompteEpargne, int nombreMinimalBeneficier, int nombreMaximalBeneficier, 
+            double montantPartSociale, double montantDeCreationCompte, double montantMininimumDepot, int nombreJourRetraitAviseDeEpargne,
+            int nombreJourAttenteReponsePourCredit, int nombreMoisMinimalPourDecouvert, double soldeMaximalCompteCourant, 
+            double fraiesDebloquerCompte)
         {
             NomMicrofinance = nomMicrofinance;
+            LogoMicrofinance = logoMicrofinance;
+            PositionGeographiqueMicrofinance = positionGeographiqueMicrofinance;
+            SloganMicrofinance = sloganMicrofinance;
+            DeviseMicrofinance = deviseMicrofinance;
             AgeMinimalRequis = ageMinimalRequis;
             PourcentageRetrait = pourcentageRetrait;
             PourcentageRetraitEpargneSansAvis = pourcentageRetraitEpargneSansAvis;
-            PourcentageDuCreditMaximalSalarie = pourcentageDuCreditMaximalSalarie;
             PourcentageDecouvertMaximal = pourcentageDecouvertMaximal;
             PourcentageBeneficeCompteEpargne = pourcentageBeneficeCompteEpargne;
             NombreMinimalBeneficier = nombreMinimalBeneficier;
@@ -77,7 +82,6 @@ namespace TransFlash.BO
             NombreJourAttenteReponsePourCredit = nombreJourAttenteReponsePourCredit;
             NombreMoisMinimalPourDecouvert = nombreMoisMinimalPourDecouvert;
             SoldeMaximalCompteCourant = soldeMaximalCompteCourant;
-            FraiesCreationCompte = fraiesCreationCompte;
             FraiesDebloquerCompte = fraiesDebloquerCompte;
         }
     }

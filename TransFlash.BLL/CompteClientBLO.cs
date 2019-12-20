@@ -77,7 +77,7 @@ namespace TransFlash.BLL
 
             double montant;
             if (compteClient.StatutCompte == StatutCompte.En_attente_de_validité)
-                montant = parametreGeneralBLO.TousParametreGenerals[0].FraiesCreationCompte;
+                montant = parametreGeneralBLO.TousParametreGenerals[0].MontantDeCreationCompte;
             else
                 montant = parametreGeneralBLO.TousParametreGenerals[0].FraiesDebloquerCompte;
             

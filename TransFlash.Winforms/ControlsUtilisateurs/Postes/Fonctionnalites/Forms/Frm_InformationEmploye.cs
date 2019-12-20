@@ -32,7 +32,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
             gbCodeEmploye.Text += employe.CodeEmploye;
             lblCNI.Text = employe.NumeroCNI;
             lblAdresse.Text = employe.Adresse;
-            lblDateNaissance.Text = employe.DateNaissance.ToString();
+            lblDateNaissance.Text = (employe.DateNaissance != null) ? employe.DateNaissance.Value.ToShortDateString() : employe.DateNaissance.ToString();
             lblLieuNaissance.Text = employe.LieuNaissance;
             lblNomComplet.Text = employe.NomComplet;
             lblNumeroTelephone1.Text = employe.NumeroTelephone1;
@@ -40,6 +40,10 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
             lblPays.Text = employe.Pays.ToString();
             lblSexe.Text = employe.Sexe.ToString();
             lblVille.Text = employe.Ville.ToString();
+            lblRoleEmploye.Text = employe.StatutEmploye.ToString().Replace("_", " ");
+            lblUsername.Text = employe.NomUtilisateur;
+
+            pbProfil.Image = (employe.PhotoProfil != string.Empty) ? Image.FromFile(employe.PhotoProfil) : pbProfil.InitialImage;
         }
 
         private void btnMettreAJour_Click(object sender, EventArgs e)

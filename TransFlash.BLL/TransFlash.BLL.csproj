@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeviseBLO.cs" />
     <Compile Include="IdentifiantBLO.cs" />
     <Compile Include="OperationBLO.cs" />
     <Compile Include="FondBLO.cs" />

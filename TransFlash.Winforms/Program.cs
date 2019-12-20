@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransFlash.BLL;
+using TransFlash.BO;
 
 namespace Couche.Winforms
 {
@@ -17,7 +19,8 @@ namespace Couche.Winforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Demarrage());
+            //Application.Run(new Frm_Demarrage());
+            Application.Run(new Frm_Principal(new EmployeBLO().ChefAgence));
         }
     }
 }

@@ -33,11 +33,13 @@ namespace TransFlash.BLL
         public void ModifierBeneficier(Beneficier beneficier, string nom, string descriptionCondition, int pourcentage, Employe employe)
         {
             operationBLO = new OperationBLO();
-            Beneficier oldBeneficier = beneficier;
+
+            int index = beneficierBLO.IndexOf(beneficier);
+
             beneficier.Nom = nom;
             beneficier.DescriptionCondition = descriptionCondition;
             beneficier.Pourcentage = pourcentage;
-            beneficierBLO[beneficierBLO.IndexOf(oldBeneficier)] = beneficier;
+            beneficierBLO[index] = beneficier;
 
             operationBLO.AjouterOperation(TypeOperation.Modification, employe, beneficier.CompteClient.Client, beneficier.CompteClient, pourcentage, "toto tata");
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ using System.Windows.Forms;
 using Guna.UI.WinForms;
 using MetroFramework.Forms;
 using TransFlash.BO;
+using TransFlash.Winforms.Fonctions.Properties;
+using Tulpep.NotificationWindow;
 using static TransFlash.BO.Statut;
 
 namespace TransFlash.Winforms.Fonctions
@@ -98,13 +101,13 @@ namespace TransFlash.Winforms.Fonctions
         public void DesignDataGrid(GunaDataGridView dataGrid)
         {
             dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(13, 72, 114);
-            dataGrid.ColumnHeadersHeight = 45;
+            dataGrid.ColumnHeadersHeight = 50;
             dataGrid.RowHeadersVisible = true;
 
             foreach (DataGridViewRow row in dataGrid.Rows)
             {
                 row.Selected = false;
-                row.Height = 45;
+                row.Height = 50;
                 row.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             }
         }
@@ -142,7 +145,10 @@ namespace TransFlash.Winforms.Fonctions
         public void ChargerCodePhoneComboBox(GunaComboBox comboBox, IEnumerable<Pays> pays)
         {
             foreach (var valeur in pays)
-                comboBox.Items.Add(valeur.CodePhone);
+            {
+                if(!comboBox.Items.Contains(valeur.CodePhone))
+                    comboBox.Items.Add(valeur.CodePhone);
+            }
         }
 
         public void ChargerVillesComboBox(GunaComboBox comboBox, IEnumerable<Ville> villes)
@@ -160,5 +166,94 @@ namespace TransFlash.Winforms.Fonctions
 
         public bool SiTypeAppartenantSelectionneEntreprise(GunaComboBox comboBoxTypeAppartenant) =>
             (comboBoxTypeAppartenant.Text == TypeAppartenantCompteEpargne.Entreprise.ToString() && comboBoxTypeAppartenant.SelectedIndex > -1);
+
+        public void ImporterImage(PictureBox pictureBox)
+        {
+            OpenFileDialog of = new OpenFileDialog
+            {
+                Title = "Choose a picture",
+                Filter = "Images(.jpg, jpeg, png, gif)|*.jpg; *.jpeg; *.png; *.gif"
+            };
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = null;
+                pictureBox.ImageLocation = of.FileName;
+                pictureBox.Image = Image.FromFile(of.FileName);
+            }
+        }
+
+        public string PictureName(PictureBox pictureBox)
+        {
+            const string folder = "Images";
+            DirectoryInfo di = new DirectoryInfo(folder);
+            if (!di.Exists)
+            {
+                di.Create();
+            }
+            string pictureName = string.Empty;
+            if (pictureBox.ImageLocation != null)
+            {
+                pictureName = folder + "/" + Guid.NewGuid().ToString() + Path.GetExtension(pictureBox.ImageLocation);
+                FileInfo fi = new FileInfo(pictureBox.ImageLocation);
+                fi.CopyTo(pictureName);
+            }
+            return pictureName;
+        }
+
+        public void AfficheMessageNotification(Color couleurFond, string titre, string message)
+        {
+            PopupNotifier notifier = new PopupNotifier()
+            {
+                AnimationDuration = 1000,
+                AnimationInterval = 10,
+                BorderColor = Color.Transparent,
+                BodyColor = couleurFond,
+                ButtonHoverColor = Color.FromArgb(24, 57, 101),
+                ContentColor = Color.White,
+                ContentFont = new Font(new FontFamily("Century Gothic"), 12),
+                ContentHoverColor = Color.Gainsboro,
+                ContentPadding = new Padding(5),
+                ContentText = message,
+                Delay = 3000,
+                GradientPower = 80,
+                HeaderColor = Color.White,
+                HeaderHeight = 10,
+                Image = Resources.system_report_52px,
+                ImagePadding = new Padding(5),
+                ImageSize = new Size(40, 40),
+                IsRightToLeft = false,
+                Size = new Size(400, 150),
+                TitleColor = Color.White,
+                TitleFont = new Font(new FontFamily("Century Gothic"), 14),
+                TitlePadding = new Padding(5),
+                TitleText = titre
+            };
+            
+            notifier.Popup();
+        }
+
+        public void ExtractionSurExcel(GunaDataGridView dataGrid)
+        {
+            if (dataGrid.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application applicationClass = new Microsoft.Office.Interop.Excel.Application();
+                applicationClass.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < dataGrid.Columns.Count + 1; i++)
+                {
+                    applicationClass.Cells[1, i] = dataGrid.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dataGrid.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGrid.Columns.Count; j++)
+                    {
+                        if(dataGrid.Rows[i].Cells[j].Value != null)
+                            applicationClass.Cells[i + 2, j + 1] = dataGrid.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                applicationClass.Columns.AutoFit();
+                applicationClass.Visible = true;
+            }
+        }
     }
 }
