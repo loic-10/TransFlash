@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Couche.Winforms</RootNamespace>
     <AssemblyName>Couche.Winforms</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,6 +46,12 @@
     <Reference Include="Guna.UI">
       <HintPath>E:\Logiciels\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Highlight, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Highlight.4.0.0\lib\net40\Highlight.dll</HintPath>
+    </Reference>
+    <Reference Include="HighlightMarker, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HighlightMarker.1.1.0\lib\net45\HighlightMarker.dll</HintPath>
+    </Reference>
     <Reference Include="LollipoUi">
       <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\Release\LollipoUi.dll</HintPath>
     </Reference>
@@ -58,6 +65,9 @@
       <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\App HOTEL\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PlaceholderTextBox, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PlaceholderTextBox.1.3.1\lib\PlaceholderTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleTCP, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleTCP.1.0.24\lib\net45\SimpleTCP.dll</HintPath>
     </Reference>
@@ -152,11 +162,11 @@
     <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilSecretaireComptable.Designer.cs">
       <DependentUpon>Uc_AccueilSecretaireComptable.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationCompteEmploye.cs">
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererPays.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationCompteEmploye.Designer.cs">
-      <DependentUpon>Frm_InformationCompteEmploye.cs</DependentUpon>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererPays.Designer.cs">
+      <DependentUpon>Frm_GererPays.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationEmploye.cs">
       <SubType>Form</SubType>
@@ -395,8 +405,8 @@
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilSecretaireComptable.resx">
       <DependentUpon>Uc_AccueilSecretaireComptable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationCompteEmploye.resx">
-      <DependentUpon>Frm_InformationCompteEmploye.cs</DependentUpon>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererPays.resx">
+      <DependentUpon>Frm_GererPays.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_InformationEmploye.resx">
       <DependentUpon>Frm_InformationEmploye.cs</DependentUpon>
@@ -1014,6 +1024,14 @@
       <Project>{1edb01b1-399e-4671-82bf-f125456b744c}</Project>
       <Name>TransFlash.BO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TransFlash.Reporting\TransFlash.Reporting.csproj">
+      <Project>{1bc50325-b002-49d3-ada9-0c193334f42a}</Project>
+      <Name>TransFlash.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransFlash.Ressources\TransFlash.Ressources.csproj">
+      <Project>{ef50918f-028a-414f-a513-906928c78d1f}</Project>
+      <Name>TransFlash.Ressources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TransFlash.Winforms.Fonctions\TransFlash.Winforms.Fonctions.csproj">
       <Project>{2b328aca-a88e-44e3-92b1-e8545d7d7c2a}</Project>
       <Name>TransFlash.Winforms.Fonctions</Name>
@@ -1024,6 +1042,57 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Gestions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_male_circle_104px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geography_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geography_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_property_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_property_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_property_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ms_excel_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ms_excel_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_property_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_property_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_list_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_property_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_property_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

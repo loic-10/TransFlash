@@ -46,6 +46,7 @@
     <Compile Include="ButCredit.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="CompteClient.cs" />
+    <Compile Include="Devise.cs" />
     <Compile Include="Employe.cs" />
     <Compile Include="Credit.cs" />
     <Compile Include="Epargne.cs" />

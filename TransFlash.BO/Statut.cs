@@ -18,6 +18,22 @@ namespace TransFlash.BO
             Comptable
         }
 
+        public static StatutEmploye RetourStatutEmploye(string statutEmploye)
+        {
+            string[] valeurs = Enum.GetNames(typeof(StatutEmploye));
+
+            if (valeurs[0] == statutEmploye)
+                return StatutEmploye.Chef_Agence;
+            else if (valeurs[1] == statutEmploye)
+                return StatutEmploye.Chef_Credit;
+            else if (valeurs[2] == statutEmploye)
+                return StatutEmploye.Secretaire_Comptable;
+            else if (valeurs[3] == statutEmploye)
+                return StatutEmploye.Caissier;
+
+            return StatutEmploye.Comptable;
+        }
+
         public enum StatutConnexion
         {
             Connecté,
@@ -198,9 +214,21 @@ namespace TransFlash.BO
 
         public enum StatutSexe
         {
-            Maxculin,
+            Masculin,
             Féminin
         };
+
+        public static StatutSexe? RetourSexe(string sexe)
+        {
+            string[] valeurs = Enum.GetNames(typeof(StatutSexe));
+
+            if (valeurs[0] == sexe)
+                return StatutSexe.Masculin;
+            else if (valeurs[1] == sexe)
+                return StatutSexe.Féminin;
+
+            return null;
+        }
 
     }
 }

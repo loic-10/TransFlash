@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms;
 using TransFlash.Winforms.Fonctions;
+using TransFlash.BO;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
 {
@@ -17,11 +18,14 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private static UserControl leCorpDePage = null;
 
+        private Employe employe = null;
+
         private Frm_Fonction fonction = new Frm_Fonction();
 
-        public Uc_PlusEncore()
+        public Uc_PlusEncore(Employe employe)
         {
             InitializeComponent();
+            this.employe = employe;
             Uc_Beneficiers frm = new Uc_Beneficiers();
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
@@ -74,7 +78,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnPays_Click(object sender, EventArgs e)
         {
-            Uc_Pays frm = new Uc_Pays();
+            Uc_Pays frm = new Uc_Pays(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 

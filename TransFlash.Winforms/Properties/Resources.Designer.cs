@@ -183,6 +183,36 @@ namespace Couche.Winforms.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_list_24px {
+            get {
+                object obj = ResourceManager.GetObject("add_list_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_property_24px {
+            get {
+                object obj = ResourceManager.GetObject("add_property_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_property_48px {
+            get {
+                object obj = ResourceManager.GetObject("add_property_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_property_52px {
             get {
                 object obj = ResourceManager.GetObject("add_property_52px", resourceCulture);
@@ -523,6 +553,26 @@ namespace Couche.Winforms.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_property_24px {
+            get {
+                object obj = ResourceManager.GetObject("delete_property_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_property_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("delete_property_24px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap deposit_104px {
             get {
                 object obj = ResourceManager.GetObject("deposit_104px", resourceCulture);
@@ -673,6 +723,26 @@ namespace Couche.Winforms.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_property_24px {
+            get {
+                object obj = ResourceManager.GetObject("edit_property_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_property_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("edit_property_24px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_user_52px {
             get {
                 object obj = ResourceManager.GetObject("edit_user_52px", resourceCulture);
@@ -773,6 +843,26 @@ namespace Couche.Winforms.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap geography_104px {
+            get {
+                object obj = ResourceManager.GetObject("geography_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap geography_48px {
+            get {
+                object obj = ResourceManager.GetObject("geography_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap groups_104px {
             get {
                 object obj = ResourceManager.GetObject("groups_104px", resourceCulture);
@@ -826,6 +916,26 @@ namespace Couche.Winforms.Properties {
         internal static System.Drawing.Bitmap home_52px {
             get {
                 object obj = ResourceManager.GetObject("home_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_24px {
+            get {
+                object obj = ResourceManager.GetObject("info_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("info_24px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -986,6 +1096,26 @@ namespace Couche.Winforms.Properties {
         internal static System.Drawing.Bitmap menu_104px {
             get {
                 object obj = ResourceManager.GetObject("menu_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ms_excel_24px {
+            get {
+                object obj = ResourceManager.GetObject("ms_excel_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ms_excel_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("ms_excel_24px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1213,6 +1343,26 @@ namespace Couche.Winforms.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_24px {
+            get {
+                object obj = ResourceManager.GetObject("print_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_24px1 {
+            get {
+                object obj = ResourceManager.GetObject("print_24px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap print_52px {
             get {
                 object obj = ResourceManager.GetObject("print_52px", resourceCulture);
@@ -1366,6 +1516,16 @@ namespace Couche.Winforms.Properties {
         internal static System.Drawing.Bitmap save_32px {
             get {
                 object obj = ResourceManager.GetObject("save_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_property_24px {
+            get {
+                object obj = ResourceManager.GetObject("search_property_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1576,6 +1736,16 @@ namespace Couche.Winforms.Properties {
         internal static System.Drawing.Bitmap user_male_circle_104px {
             get {
                 object obj = ResourceManager.GetObject("user_male_circle_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_male_circle_104px1 {
+            get {
+                object obj = ResourceManager.GetObject("user_male_circle_104px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

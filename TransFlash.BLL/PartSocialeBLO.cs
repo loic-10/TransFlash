@@ -35,9 +35,10 @@ namespace TransFlash.BLL
         {
             operationBLO = new OperationBLO();
 
-            PartSociale oldPartSociale = partSociale;
+            int index = partSocialeBLO.IndexOf(partSociale);
+
             partSociale.Montant += montant;
-            partSocialeBLO[partSocialeBLO.IndexOf(oldPartSociale)] = partSociale;
+            partSocialeBLO[index] = partSociale;
 
             operationBLO.AjouterOperation(TypeOperation.Ajout, employe, partSociale.CompteClient.Client, partSociale.CompteClient, montant, "toto tata");
         }
@@ -55,9 +56,10 @@ namespace TransFlash.BLL
         {
             operationBLO = new OperationBLO();
 
-            PartSociale oldPartSociale = partSociale;
+            int index = partSocialeBLO.IndexOf(partSociale);
+
             partSociale.Montant -= montant;
-            partSocialeBLO[partSocialeBLO.IndexOf(oldPartSociale)] = partSociale;
+            partSocialeBLO[index] = partSociale;
 
             operationBLO.AjouterOperation(TypeOperation.Reduction_du_montant_de_la_part_sociale, employe, partSociale.CompteClient.Client, 
                 partSociale.CompteClient, montant, "toto tata");

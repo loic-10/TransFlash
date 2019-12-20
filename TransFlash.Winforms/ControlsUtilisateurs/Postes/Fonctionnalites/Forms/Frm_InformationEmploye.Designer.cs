@@ -30,8 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbCodeEmploye = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
+            this.lblRoleEmploye = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaGroupBox7 = new Guna.UI.WinForms.GunaGroupBox();
+            this.lblUsername = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaLabel22 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox26 = new Guna.UI.WinForms.GunaGroupBox();
             this.lblCNI = new Guna.UI.WinForms.GunaLabel();
@@ -67,11 +72,14 @@
             this.GunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.btnMettreAJour = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.btnMettreAJour = new Guna.UI.WinForms.GunaButton();
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.pbProfil = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gbCodeEmploye.SuspendLayout();
+            this.gunaGroupBox1.SuspendLayout();
+            this.gunaGroupBox7.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaGroupBox26.SuspendLayout();
             this.gunaGroupBox5.SuspendLayout();
             this.gunaGroupBox4.SuspendLayout();
@@ -84,6 +92,7 @@
             this.gunaGroupBox6.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCodeEmploye
@@ -93,6 +102,8 @@
             this.gbCodeEmploye.BaseColor = System.Drawing.SystemColors.ControlLight;
             this.gbCodeEmploye.BorderColor = System.Drawing.Color.DarkGray;
             this.gbCodeEmploye.BorderSize = 1;
+            this.gbCodeEmploye.Controls.Add(this.gunaGroupBox1);
+            this.gbCodeEmploye.Controls.Add(this.gunaGroupBox7);
             this.gbCodeEmploye.Controls.Add(this.gunaPanel3);
             this.gbCodeEmploye.Controls.Add(this.gunaLabel22);
             this.gbCodeEmploye.Controls.Add(this.gunaGroupBox26);
@@ -116,26 +127,89 @@
             this.gbCodeEmploye.Text = "Information de l\'employe  :  #";
             this.gbCodeEmploye.TextLocation = new System.Drawing.Point(10, 10);
             // 
+            // gunaGroupBox1
+            // 
+            this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGroupBox1.BaseColor = System.Drawing.SystemColors.ControlLight;
+            this.gunaGroupBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaGroupBox1.Controls.Add(this.lblRoleEmploye);
+            this.gunaGroupBox1.Controls.Add(this.gunaLabel3);
+            this.gunaGroupBox1.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaGroupBox1.LineTop = 0;
+            this.gunaGroupBox1.Location = new System.Drawing.Point(15, 427);
+            this.gunaGroupBox1.Name = "gunaGroupBox1";
+            this.gunaGroupBox1.Radius = 5;
+            this.gunaGroupBox1.Size = new System.Drawing.Size(351, 38);
+            this.gunaGroupBox1.TabIndex = 41;
+            this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // lblRoleEmploye
+            // 
+            this.lblRoleEmploye.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRoleEmploye.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoleEmploye.Location = new System.Drawing.Point(145, 0);
+            this.lblRoleEmploye.Name = "lblRoleEmploye";
+            this.lblRoleEmploye.Size = new System.Drawing.Size(206, 38);
+            this.lblRoleEmploye.TabIndex = 7;
+            this.lblRoleEmploye.Text = "Nom_client";
+            this.lblRoleEmploye.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.Location = new System.Drawing.Point(0, 0);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(145, 38);
+            this.gunaLabel3.TabIndex = 4;
+            this.gunaLabel3.Text = "Role de l\'employe :";
+            this.gunaLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gunaGroupBox7
+            // 
+            this.gunaGroupBox7.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGroupBox7.BaseColor = System.Drawing.SystemColors.ControlLight;
+            this.gunaGroupBox7.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaGroupBox7.Controls.Add(this.lblUsername);
+            this.gunaGroupBox7.Controls.Add(this.gunaLabel5);
+            this.gunaGroupBox7.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaGroupBox7.LineTop = 0;
+            this.gunaGroupBox7.Location = new System.Drawing.Point(415, 427);
+            this.gunaGroupBox7.Name = "gunaGroupBox7";
+            this.gunaGroupBox7.Radius = 5;
+            this.gunaGroupBox7.Size = new System.Drawing.Size(351, 38);
+            this.gunaGroupBox7.TabIndex = 40;
+            this.gunaGroupBox7.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(207, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(144, 38);
+            this.lblUsername.TabIndex = 7;
+            this.lblUsername.Text = "Nom_client";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel5.Location = new System.Drawing.Point(0, 0);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(207, 38);
+            this.gunaLabel5.TabIndex = 4;
+            this.gunaLabel5.Text = "Nom d\'utilisateur (pseudo) :";
+            this.gunaLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // gunaPanel3
             // 
-            this.gunaPanel3.Controls.Add(this.gunaCirclePictureBox1);
-            this.gunaPanel3.Location = new System.Drawing.Point(14, 52);
+            this.gunaPanel3.Controls.Add(this.pbProfil);
+            this.gunaPanel3.Location = new System.Drawing.Point(14, 55);
             this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(193, 203);
+            this.gunaPanel3.Size = new System.Drawing.Size(200, 200);
             this.gunaPanel3.TabIndex = 39;
-            // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaCirclePictureBox1.Image = global::Couche.Winforms.Properties.Resources.credit___Copie;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(193, 203);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 40;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // gunaLabel22
             // 
@@ -157,7 +231,7 @@
             this.gunaGroupBox26.Controls.Add(this.gunaLabel30);
             this.gunaGroupBox26.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox26.LineTop = 0;
-            this.gunaGroupBox26.Location = new System.Drawing.Point(14, 282);
+            this.gunaGroupBox26.Location = new System.Drawing.Point(14, 271);
             this.gunaGroupBox26.Name = "gunaGroupBox26";
             this.gunaGroupBox26.Radius = 5;
             this.gunaGroupBox26.Size = new System.Drawing.Size(351, 38);
@@ -198,7 +272,7 @@
             this.gunaGroupBox5.Location = new System.Drawing.Point(222, 213);
             this.gunaGroupBox5.Name = "gunaGroupBox5";
             this.gunaGroupBox5.Radius = 5;
-            this.gunaGroupBox5.Size = new System.Drawing.Size(351, 38);
+            this.gunaGroupBox5.Size = new System.Drawing.Size(544, 38);
             this.gunaGroupBox5.TabIndex = 36;
             this.gunaGroupBox5.TextLocation = new System.Drawing.Point(10, 8);
             // 
@@ -208,7 +282,7 @@
             this.lblSexe.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSexe.Location = new System.Drawing.Point(51, 0);
             this.lblSexe.Name = "lblSexe";
-            this.lblSexe.Size = new System.Drawing.Size(300, 38);
+            this.lblSexe.Size = new System.Drawing.Size(493, 38);
             this.lblSexe.TabIndex = 7;
             this.lblSexe.Text = "Nom_client";
             this.lblSexe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -233,7 +307,7 @@
             this.gunaGroupBox4.Controls.Add(this.gunaLabel23);
             this.gunaGroupBox4.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox4.LineTop = 0;
-            this.gunaGroupBox4.Location = new System.Drawing.Point(14, 412);
+            this.gunaGroupBox4.Location = new System.Drawing.Point(14, 375);
             this.gunaGroupBox4.Name = "gunaGroupBox4";
             this.gunaGroupBox4.Radius = 5;
             this.gunaGroupBox4.Size = new System.Drawing.Size(351, 38);
@@ -271,7 +345,7 @@
             this.gunaGroupBox20.Controls.Add(this.gunaLabel17);
             this.gunaGroupBox20.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox20.LineTop = 0;
-            this.gunaGroupBox20.Location = new System.Drawing.Point(415, 347);
+            this.gunaGroupBox20.Location = new System.Drawing.Point(415, 323);
             this.gunaGroupBox20.Name = "gunaGroupBox20";
             this.gunaGroupBox20.Radius = 5;
             this.gunaGroupBox20.Size = new System.Drawing.Size(351, 38);
@@ -309,7 +383,7 @@
             this.gunaGroupBox3.Controls.Add(this.gunaLabel20);
             this.gunaGroupBox3.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox3.LineTop = 0;
-            this.gunaGroupBox3.Location = new System.Drawing.Point(14, 347);
+            this.gunaGroupBox3.Location = new System.Drawing.Point(14, 323);
             this.gunaGroupBox3.Name = "gunaGroupBox3";
             this.gunaGroupBox3.Radius = 5;
             this.gunaGroupBox3.Size = new System.Drawing.Size(351, 38);
@@ -347,7 +421,7 @@
             this.gunaGroupBox2.Controls.Add(this.gunaLabel15);
             this.gunaGroupBox2.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox2.LineTop = 0;
-            this.gunaGroupBox2.Location = new System.Drawing.Point(415, 282);
+            this.gunaGroupBox2.Location = new System.Drawing.Point(415, 271);
             this.gunaGroupBox2.Name = "gunaGroupBox2";
             this.gunaGroupBox2.Radius = 5;
             this.gunaGroupBox2.Size = new System.Drawing.Size(351, 38);
@@ -385,7 +459,7 @@
             this.gunaGroupBox24.Controls.Add(this.gunaLabel28);
             this.gunaGroupBox24.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox24.LineTop = 0;
-            this.gunaGroupBox24.Location = new System.Drawing.Point(415, 412);
+            this.gunaGroupBox24.Location = new System.Drawing.Point(415, 375);
             this.gunaGroupBox24.Name = "gunaGroupBox24";
             this.gunaGroupBox24.Radius = 5;
             this.gunaGroupBox24.Size = new System.Drawing.Size(351, 38);
@@ -565,6 +639,16 @@
             this.gunaElipse1.Radius = 5;
             this.gunaElipse1.TargetControl = this;
             // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.DarkGray;
+            this.gunaPanel1.Controls.Add(this.btnMettreAJour);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 585);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(845, 66);
+            this.gunaPanel1.TabIndex = 12;
+            // 
             // btnMettreAJour
             // 
             this.btnMettreAJour.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -596,15 +680,22 @@
             this.btnMettreAJour.TextOffsetX = 10;
             this.btnMettreAJour.Click += new System.EventHandler(this.btnMettreAJour_Click);
             // 
-            // gunaPanel1
+            // gunaElipse2
             // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.DarkGray;
-            this.gunaPanel1.Controls.Add(this.btnMettreAJour);
-            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 585);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(845, 66);
-            this.gunaPanel1.TabIndex = 12;
+            this.gunaElipse2.Radius = 10;
+            // 
+            // pbProfil
+            // 
+            this.pbProfil.BaseColor = System.Drawing.Color.White;
+            this.pbProfil.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbProfil.InitialImage = global::Couche.Winforms.Properties.Resources.user_male_circle_104px1;
+            this.pbProfil.Location = new System.Drawing.Point(0, 0);
+            this.pbProfil.Name = "pbProfil";
+            this.pbProfil.Size = new System.Drawing.Size(200, 200);
+            this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProfil.TabIndex = 0;
+            this.pbProfil.TabStop = false;
+            this.pbProfil.UseTransfarantBackground = false;
             // 
             // Frm_InformationEmploye
             // 
@@ -619,8 +710,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifierClient";
             this.gbCodeEmploye.ResumeLayout(false);
+            this.gunaGroupBox1.ResumeLayout(false);
+            this.gunaGroupBox7.ResumeLayout(false);
             this.gunaPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaGroupBox26.ResumeLayout(false);
             this.gunaGroupBox5.ResumeLayout(false);
             this.gunaGroupBox4.ResumeLayout(false);
@@ -633,6 +725,7 @@
             this.gunaGroupBox6.ResumeLayout(false);
             this.panelControl.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -675,9 +768,16 @@
         private Guna.UI.WinForms.GunaLabel lblNumeroTelephone1;
         private Guna.UI.WinForms.GunaLabel gunaLabel15;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox6;
         private Guna.UI.WinForms.GunaLabel lblNomComplet;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
+        private Guna.UI.WinForms.GunaLabel lblRoleEmploye;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaGroupBox gunaGroupBox7;
+        private Guna.UI.WinForms.GunaLabel lblUsername;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
+        private Guna.UI.WinForms.GunaCirclePictureBox pbProfil;
     }
 }

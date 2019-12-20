@@ -16,7 +16,7 @@ namespace Couche.Winforms
         private Uc_Connexion frm = null;
         public Frm_Demarrage()
         {
-            InitializeComponent();
+            InitializeComponent();   
             timer1.Interval = 5000;
             timer1.Enabled = true;
             AfficherFormConnexion();
@@ -40,7 +40,7 @@ namespace Couche.Winforms
         {
             while(panelSplashScreen.Width >= 300)
             {
-                System.Threading.Thread.Sleep(15);
+                System.Threading.Thread.Sleep(5);
                 panelSplashScreen.Width -= 50;
                 frm.Dock = DockStyle.Fill;
             }

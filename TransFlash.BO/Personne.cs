@@ -27,15 +27,16 @@ namespace TransFlash.BO
         {
         }
 
-        public Personne(string numeroCNI)
+        public Personne(string nomComplet)
         {
-            NumeroCNI = numeroCNI;
+            NomComplet = nomComplet;
         }
 
         public Personne(string nomComplet, DateTime? dateNaissance, string lieuNaissance, StatutSexe? sexe, string numeroCNI, 
             string numeroTelephone1, string numeroTelephone2, Pays pays, Ville ville, string adresse, string photoProfil, 
             DateTime? dateEnregistrement) : this(nomComplet)
         {
+            NomComplet = nomComplet;
             DateNaissance = dateNaissance;
             LieuNaissance = lieuNaissance;
             Sexe = sexe;

@@ -39,10 +39,11 @@ namespace TransFlash.BLL
         public void ModifierVille(Ville ville, string nom, Pays pays, Employe employe)
         {
             operationBLO = new OperationBLO();
-            Ville oldVille = ville;
+
+            int index = villeBLO.IndexOf(ville);
             ville.Nom = nom;
             ville.Pays = pays;
-            villeBLO[villeBLO.IndexOf(oldVille)] = ville;
+            villeBLO[index] = ville;
 
             operationBLO.AjouterOperation(TypeOperation.Modification, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
         }

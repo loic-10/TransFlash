@@ -35,10 +35,12 @@ namespace TransFlash.BLL
         public void ModifierPays(Pays pays, string nom, string codePhone, Employe employe)
         {
             operationBLO = new OperationBLO();
-            Pays oldPays = pays;
+
+            int index = paysBLO.IndexOf(pays);
+
             pays.Nom = nom;
             pays.CodePhone = codePhone;
-            paysBLO[paysBLO.IndexOf(oldPays)] = pays;
+            paysBLO[index] = pays;
 
             operationBLO.AjouterOperation(TypeOperation.Modification, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
         }

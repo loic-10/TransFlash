@@ -14,6 +14,7 @@ namespace TransFlash.BO
         public CompteClient CompteClientEmploye { get; set; }
         public CompteClient CompteClientEntreprise { get; set; }
         public double MontantSalaire { get; set; }
+        public DateTime DateEmbauche { get; set; }
         public DateTime DateEnregistrement { get; set; }
         public StatutSalarie StatutSalarie { get; set; }
         public StatutPayementSalarie StatutPayementSalarie { get; set; }
@@ -29,12 +30,14 @@ namespace TransFlash.BO
             Id = id;
         }
 
-        public Salarie(int id, CompteClient compteClientEmploye, CompteClient compteClientEntreprise, double montantSalaire,
-            DateTime dateEnregistrement, StatutSalarie statutSalarie, StatutPayementSalarie statutPayementSalarie, int jourDePaye) : this(id)
+        public Salarie(int id, CompteClient compteClientEmploye, CompteClient compteClientEntreprise, double montantSalaire, 
+            DateTime dateEmbauche, DateTime dateEnregistrement, StatutSalarie statutSalarie, StatutPayementSalarie statutPayementSalarie, 
+            int jourDePaye) : this(id)
         {
             CompteClientEmploye = compteClientEmploye;
             CompteClientEntreprise = compteClientEntreprise;
             MontantSalaire = montantSalaire;
+            DateEmbauche = dateEmbauche;
             DateEnregistrement = dateEnregistrement;
             StatutSalarie = statutSalarie;
             StatutPayementSalarie = statutPayementSalarie;

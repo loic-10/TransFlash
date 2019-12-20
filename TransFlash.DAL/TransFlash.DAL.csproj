@@ -7,8 +7,8 @@
     <ProjectGuid>{CA49AA47-EA5C-4578-A3F3-7CD9FEB436D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Multicouche.DAL</RootNamespace>
-    <AssemblyName>Multicouche.DAL</AssemblyName>
+    <RootNamespace>TransFlash.DAL</RootNamespace>
+    <AssemblyName>TransFlash.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

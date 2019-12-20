@@ -39,9 +39,10 @@ namespace TransFlash.BLL
             operationBLO = new OperationBLO();
             creditBLO = new CreditBLO();
 
-            Remboursement oldRemboursement = remboursement;
+            int index = remboursementBLO.IndexOf(remboursement);
+
             remboursement.StatutRemboursement = StatutRemboursement.Validé;
-            remboursementBLO[remboursementBLO.IndexOf(oldRemboursement)] = remboursement;
+            remboursementBLO[index] = remboursement;
 
             operationBLO.AjouterOperation(TypeOperation.Validation, employe, remboursement.Credit.Client, new CompteClient("Indefini"), remboursement.Montant, "toto tata");
 
@@ -56,9 +57,11 @@ namespace TransFlash.BLL
             operationBLO = new OperationBLO();
             creditBLO = new CreditBLO();
             creditBLO.ReduireMontantCredit(credit, montant, employe);
-            Remboursement oldRemboursement = remboursement;
+
+            int index = remboursementBLO.IndexOf(remboursement);
+
             remboursement.StatutRemboursement = StatutRemboursement.Validé;
-            remboursementBLO[remboursementBLO.IndexOf(oldRemboursement)] = remboursement;
+            remboursementBLO[index] = remboursement;
 
             operationBLO.AjouterOperation(TypeOperation.Ajout, employe, credit.Client, new CompteClient("Indefini"), montant, "toto tata");
         }

@@ -56,7 +56,11 @@ namespace TransFlash.BLL
         {
             operationBLO = new OperationBLO();
             fichierStockeBLO = new FichierStockeBLO();
-            Client oldClient = client;
+
+            int index = clientBLO.IndexOf(client);
+
+            string fileName = client.PhotoProfil;
+
             client.NomComplet = nomComplet;
             client.DateNaissance = dateNaissance;
             client.LieuNaissance = lieuNaissance;
@@ -69,10 +73,11 @@ namespace TransFlash.BLL
             client.Adresse = adresse;
             client.PhotoProfil = photoProfil;
             client.Profession = profession;
-            if (photoProfil != oldClient.PhotoProfil)
+
+            if (photoProfil != fileName)
                 fichierStockeBLO.AjouterFichierStocke($"Photo du client {client.CodeClient}", photoProfil, client, new Garantie(0), StatutStockage.Image_des_clients, employe);
 
-            clientBLO[clientBLO.IndexOf(oldClient)] = client;
+            clientBLO[index] = client;
 
             operationBLO.AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("Indefini"), 0, "toto tata");
         }
@@ -114,8 +119,8 @@ namespace TransFlash.BLL
             x.CodeClient.ToLower().Contains(valeur.ToLower()) || 
             x.NumeroCNI.ToLower().Contains(valeur.ToLower()));
 
-        public Client RechercherCNIExist(string numeroCNI) => clientBLO.Find(x => 
-            x.NumeroCNI.ToLower() == numeroCNI.ToLower()).FirstOrDefault();
+        public Client RechercherCNIExist(string numeroCNI, Client client) => clientBLO.Find(x => 
+            x.NumeroCNI.ToLower() == numeroCNI.ToLower() && x.CodeClient != client.CodeClient).FirstOrDefault();
 
         public List<Client> TousClients => clientBLO.AllItems;
 

@@ -33,6 +33,13 @@ namespace Couche.Winforms
             InitializeComponent();
             this.employe = employe;
 
+            DebutProgramme(this.employe);
+        }
+
+        public void DebutProgramme(Employe employe)
+        {
+            if (employe.PhotoProfil != string.Empty)
+                pbProfil.Image = Image.FromFile(employe.PhotoProfil);
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -125,16 +132,23 @@ namespace Couche.Winforms
 
         private void btnPlusEncore_Click(object sender, EventArgs e)
         {
-            Uc_PlusEncore frm = new Uc_PlusEncore();
+            Uc_PlusEncore frm = new Uc_PlusEncore(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            gunaTransition1.HideSync(panelLogo);
-            gunaTransition1.ShowSync(panelLogo);
-            gunaTransition2.HideSync(btnParametre);
-            gunaTransition2.ShowSync(btnParametre);
+            try
+            {
+                gunaTransition1.HideSync(panelLogo);
+                gunaTransition1.ShowSync(panelLogo);
+                gunaTransition2.HideSync(btnParametre);
+                gunaTransition2.ShowSync(btnParametre);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Frm_Principal_FormClosing(object sender, FormClosingEventArgs e)
