@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.clientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -48,20 +47,7 @@
             this.checkNomUtilisateur = new Guna.UI.WinForms.GunaCheckBox();
             this.checkStatutEmploye = new Guna.UI.WinForms.GunaCheckBox();
             this.checkDateEnregistrement = new Guna.UI.WinForms.GunaCheckBox();
-            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
-            this.txbRechercher = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
-            this.btnExporterExcel = new Guna.UI.WinForms.GunaButton();
-            this.btnImprimer = new Guna.UI.WinForms.GunaButton();
-            this.btnInformationEmploye = new Guna.UI.WinForms.GunaButton();
-            this.btnSupprimer = new Guna.UI.WinForms.GunaButton();
-            this.btnEditerCompteEmploye = new Guna.UI.WinForms.GunaButton();
-            this.btnEditerEmploye = new Guna.UI.WinForms.GunaButton();
-            this.btnEnregistrerEmploye = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.dataGridEmploye = new Guna.UI.WinForms.GunaDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,23 +64,45 @@
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.lblCountItems = new Guna.UI.WinForms.GunaLabel();
             this.dataGrid = new Guna.UI.WinForms.GunaGroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
+            this.gunaPanel7 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.txbRechercher = new PlaceholderTextBox.PlaceholderTextBox();
+            this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
+            this.lblTitre = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
+            this.btnExporterExcel = new Guna.UI.WinForms.GunaButton();
+            this.btnImprimer = new Guna.UI.WinForms.GunaButton();
+            this.btnInformationEmploye = new Guna.UI.WinForms.GunaButton();
+            this.btnSupprimer = new Guna.UI.WinForms.GunaButton();
+            this.btnEditerCompteEmploye = new Guna.UI.WinForms.GunaButton();
+            this.btnEditerEmploye = new Guna.UI.WinForms.GunaButton();
+            this.btnEnregistrerEmploye = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.clientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.gunaPanel3.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmploye)).BeginInit();
             this.gunaPanel4.SuspendLayout();
             this.dataGrid.SuspendLayout();
+            this.gunaPanel7.SuspendLayout();
+            this.gunaLinePanel1.SuspendLayout();
+            this.gunaPanel6.SuspendLayout();
+            this.gunaPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.White;
+            this.gunaPanel1.Controls.Add(this.gunaPanel6);
             this.gunaPanel1.Controls.Add(this.gunaPanel2);
-            this.gunaPanel1.Controls.Add(this.gunaLabel1);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel1.Location = new System.Drawing.Point(200, 0);
             this.gunaPanel1.Name = "gunaPanel1";
@@ -104,8 +112,8 @@
             // 
             // gunaPanel2
             // 
-            this.gunaPanel2.Controls.Add(this.flowLayoutPanel1);
             this.gunaPanel2.Controls.Add(this.gunaPanel3);
+            this.gunaPanel2.Controls.Add(this.gunaPanel7);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaPanel2.Location = new System.Drawing.Point(0, 75);
             this.gunaPanel2.Name = "gunaPanel2";
@@ -129,11 +137,12 @@
             this.flowLayoutPanel1.Controls.Add(this.checkStatutEmploye);
             this.flowLayoutPanel1.Controls.Add(this.checkDateEnregistrement);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(451, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(339, 65);
             this.flowLayoutPanel1.TabIndex = 10;
+            this.flowLayoutPanel1.TabStop = true;
             // 
             // checkCode
             // 
@@ -326,70 +335,6 @@
             this.checkDateEnregistrement.Text = "Date d\'enregistrement";
             this.checkDateEnregistrement.CheckedChanged += new System.EventHandler(this.checkDateEnregistrement_CheckedChanged);
             // 
-            // gunaPanel3
-            // 
-            this.gunaPanel3.Controls.Add(this.gunaButton8);
-            this.gunaPanel3.Controls.Add(this.txbRechercher);
-            this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaPanel3.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(451, 65);
-            this.gunaPanel3.TabIndex = 9;
-            // 
-            // gunaButton8
-            // 
-            this.gunaButton8.AnimationHoverSpeed = 0.07F;
-            this.gunaButton8.AnimationSpeed = 0.03F;
-            this.gunaButton8.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton8.BaseColor = System.Drawing.Color.White;
-            this.gunaButton8.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton8.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton8.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton8.Image = global::Couche.Winforms.Properties.Resources.find_user_52px;
-            this.gunaButton8.ImageOffsetX = -7;
-            this.gunaButton8.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaButton8.Location = new System.Drawing.Point(18, 18);
-            this.gunaButton8.Name = "gunaButton8";
-            this.gunaButton8.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaButton8.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton8.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaButton8.OnHoverImage = global::Couche.Winforms.Properties.Resources.find_user_52px;
-            this.gunaButton8.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton8.Radius = 15;
-            this.gunaButton8.Size = new System.Drawing.Size(29, 29);
-            this.gunaButton8.TabIndex = 8;
-            // 
-            // txbRechercher
-            // 
-            this.txbRechercher.BackColor = System.Drawing.Color.Transparent;
-            this.txbRechercher.BaseColor = System.Drawing.Color.White;
-            this.txbRechercher.BorderColor = System.Drawing.Color.Silver;
-            this.txbRechercher.BorderSize = 1;
-            this.txbRechercher.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbRechercher.FocusedBaseColor = System.Drawing.Color.White;
-            this.txbRechercher.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.txbRechercher.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txbRechercher.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbRechercher.Location = new System.Drawing.Point(10, 15);
-            this.txbRechercher.Name = "txbRechercher";
-            this.txbRechercher.PasswordChar = '\0';
-            this.txbRechercher.Radius = 15;
-            this.txbRechercher.Size = new System.Drawing.Size(433, 35);
-            this.txbRechercher.TabIndex = 7;
-            this.txbRechercher.TextOffsetX = 35;
-            this.txbRechercher.TextChanged += new System.EventHandler(this.txbRechercher_TextChanged);
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(3, 11);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(536, 58);
-            this.gunaLabel1.TabIndex = 5;
-            this.gunaLabel1.Text = "Gestion des employes";
-            // 
             // gunaPanel5
             // 
             this.gunaPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -406,209 +351,6 @@
             this.gunaPanel5.Name = "gunaPanel5";
             this.gunaPanel5.Size = new System.Drawing.Size(200, 700);
             this.gunaPanel5.TabIndex = 8;
-            // 
-            // btnExporterExcel
-            // 
-            this.btnExporterExcel.AnimationHoverSpeed = 0.07F;
-            this.btnExporterExcel.AnimationSpeed = 0.03F;
-            this.btnExporterExcel.BaseColor = System.Drawing.Color.Transparent;
-            this.btnExporterExcel.BorderColor = System.Drawing.Color.Black;
-            this.btnExporterExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExporterExcel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExporterExcel.FocusedColor = System.Drawing.Color.Empty;
-            this.btnExporterExcel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExporterExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExporterExcel.Image = global::Couche.Winforms.Properties.Resources.ms_excel_64px;
-            this.btnExporterExcel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExporterExcel.Location = new System.Drawing.Point(0, 294);
-            this.btnExporterExcel.Name = "btnExporterExcel";
-            this.btnExporterExcel.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnExporterExcel.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnExporterExcel.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnExporterExcel.OnHoverImage = global::Couche.Winforms.Properties.Resources.ms_excel_52px;
-            this.btnExporterExcel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnExporterExcel.Size = new System.Drawing.Size(200, 42);
-            this.btnExporterExcel.TabIndex = 32;
-            this.btnExporterExcel.Text = "Exporter sous Excel";
-            this.btnExporterExcel.Click += new System.EventHandler(this.btnExporterExcel_Click);
-            // 
-            // btnImprimer
-            // 
-            this.btnImprimer.AnimationHoverSpeed = 0.07F;
-            this.btnImprimer.AnimationSpeed = 0.03F;
-            this.btnImprimer.BaseColor = System.Drawing.Color.Transparent;
-            this.btnImprimer.BorderColor = System.Drawing.Color.Black;
-            this.btnImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnImprimer.FocusedColor = System.Drawing.Color.Empty;
-            this.btnImprimer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimer.ForeColor = System.Drawing.Color.White;
-            this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.print_64px;
-            this.btnImprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnImprimer.Location = new System.Drawing.Point(0, 252);
-            this.btnImprimer.Name = "btnImprimer";
-            this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnImprimer.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnImprimer.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnImprimer.OnHoverImage = global::Couche.Winforms.Properties.Resources.print_52px;
-            this.btnImprimer.OnPressedColor = System.Drawing.Color.Black;
-            this.btnImprimer.Size = new System.Drawing.Size(200, 42);
-            this.btnImprimer.TabIndex = 31;
-            this.btnImprimer.Text = "Imprimer";
-            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
-            // 
-            // btnInformationEmploye
-            // 
-            this.btnInformationEmploye.AnimationHoverSpeed = 0.07F;
-            this.btnInformationEmploye.AnimationSpeed = 0.03F;
-            this.btnInformationEmploye.BaseColor = System.Drawing.Color.Transparent;
-            this.btnInformationEmploye.BorderColor = System.Drawing.Color.Black;
-            this.btnInformationEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInformationEmploye.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformationEmploye.Enabled = false;
-            this.btnInformationEmploye.FocusedColor = System.Drawing.Color.Empty;
-            this.btnInformationEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformationEmploye.ForeColor = System.Drawing.Color.White;
-            this.btnInformationEmploye.Image = global::Couche.Winforms.Properties.Resources.info_64px;
-            this.btnInformationEmploye.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnInformationEmploye.Location = new System.Drawing.Point(0, 210);
-            this.btnInformationEmploye.Name = "btnInformationEmploye";
-            this.btnInformationEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnInformationEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnInformationEmploye.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnInformationEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px2;
-            this.btnInformationEmploye.OnPressedColor = System.Drawing.Color.Black;
-            this.btnInformationEmploye.Size = new System.Drawing.Size(200, 42);
-            this.btnInformationEmploye.TabIndex = 27;
-            this.btnInformationEmploye.Text = "Informations employe";
-            this.btnInformationEmploye.Click += new System.EventHandler(this.btnInformation_Click);
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.AnimationHoverSpeed = 0.07F;
-            this.btnSupprimer.AnimationSpeed = 0.03F;
-            this.btnSupprimer.BaseColor = System.Drawing.Color.Transparent;
-            this.btnSupprimer.BorderColor = System.Drawing.Color.Black;
-            this.btnSupprimer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSupprimer.Enabled = false;
-            this.btnSupprimer.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSupprimer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.ForeColor = System.Drawing.Color.White;
-            this.btnSupprimer.Image = global::Couche.Winforms.Properties.Resources.info_64px;
-            this.btnSupprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSupprimer.Location = new System.Drawing.Point(0, 168);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnSupprimer.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSupprimer.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSupprimer.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px2;
-            this.btnSupprimer.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSupprimer.Size = new System.Drawing.Size(200, 42);
-            this.btnSupprimer.TabIndex = 26;
-            this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            // 
-            // btnEditerCompteEmploye
-            // 
-            this.btnEditerCompteEmploye.AnimationHoverSpeed = 0.07F;
-            this.btnEditerCompteEmploye.AnimationSpeed = 0.03F;
-            this.btnEditerCompteEmploye.BaseColor = System.Drawing.Color.Transparent;
-            this.btnEditerCompteEmploye.BorderColor = System.Drawing.Color.Black;
-            this.btnEditerCompteEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditerCompteEmploye.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditerCompteEmploye.Enabled = false;
-            this.btnEditerCompteEmploye.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEditerCompteEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditerCompteEmploye.ForeColor = System.Drawing.Color.White;
-            this.btnEditerCompteEmploye.Image = global::Couche.Winforms.Properties.Resources.edit_user_male_64px;
-            this.btnEditerCompteEmploye.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditerCompteEmploye.Location = new System.Drawing.Point(0, 126);
-            this.btnEditerCompteEmploye.Name = "btnEditerCompteEmploye";
-            this.btnEditerCompteEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnEditerCompteEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEditerCompteEmploye.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEditerCompteEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_user_52px;
-            this.btnEditerCompteEmploye.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditerCompteEmploye.Size = new System.Drawing.Size(200, 42);
-            this.btnEditerCompteEmploye.TabIndex = 25;
-            this.btnEditerCompteEmploye.Text = "Editer compte employe";
-            this.btnEditerCompteEmploye.Click += new System.EventHandler(this.btnEditerCompteEmploye_Click);
-            // 
-            // btnEditerEmploye
-            // 
-            this.btnEditerEmploye.AnimationHoverSpeed = 0.07F;
-            this.btnEditerEmploye.AnimationSpeed = 0.03F;
-            this.btnEditerEmploye.BaseColor = System.Drawing.Color.Transparent;
-            this.btnEditerEmploye.BorderColor = System.Drawing.Color.Black;
-            this.btnEditerEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditerEmploye.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditerEmploye.Enabled = false;
-            this.btnEditerEmploye.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEditerEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditerEmploye.ForeColor = System.Drawing.Color.White;
-            this.btnEditerEmploye.Image = global::Couche.Winforms.Properties.Resources.edit_user_male_64px;
-            this.btnEditerEmploye.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditerEmploye.Location = new System.Drawing.Point(0, 84);
-            this.btnEditerEmploye.Name = "btnEditerEmploye";
-            this.btnEditerEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnEditerEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEditerEmploye.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEditerEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_user_52px;
-            this.btnEditerEmploye.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditerEmploye.Size = new System.Drawing.Size(200, 42);
-            this.btnEditerEmploye.TabIndex = 2;
-            this.btnEditerEmploye.Text = "Editer employe";
-            this.btnEditerEmploye.Click += new System.EventHandler(this.btnEditerEmploye_Click);
-            // 
-            // btnEnregistrerEmploye
-            // 
-            this.btnEnregistrerEmploye.AnimationHoverSpeed = 0.07F;
-            this.btnEnregistrerEmploye.AnimationSpeed = 0.03F;
-            this.btnEnregistrerEmploye.BaseColor = System.Drawing.Color.Transparent;
-            this.btnEnregistrerEmploye.BorderColor = System.Drawing.Color.Black;
-            this.btnEnregistrerEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnregistrerEmploye.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEnregistrerEmploye.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEnregistrerEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnregistrerEmploye.ForeColor = System.Drawing.Color.White;
-            this.btnEnregistrerEmploye.Image = global::Couche.Winforms.Properties.Resources.add_user_male_64px;
-            this.btnEnregistrerEmploye.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEnregistrerEmploye.Location = new System.Drawing.Point(0, 42);
-            this.btnEnregistrerEmploye.Name = "btnEnregistrerEmploye";
-            this.btnEnregistrerEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnEnregistrerEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEnregistrerEmploye.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEnregistrerEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
-            this.btnEnregistrerEmploye.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEnregistrerEmploye.Size = new System.Drawing.Size(200, 42);
-            this.btnEnregistrerEmploye.TabIndex = 1;
-            this.btnEnregistrerEmploye.Text = "Enregistrer employe";
-            this.btnEnregistrerEmploye.Click += new System.EventHandler(this.btnEnregistrerEmploye_Click);
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.White;
-            this.gunaButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.White;
-            this.gunaButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.Image = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(0, 0);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(200, 42);
-            this.gunaButton1.TabIndex = 0;
-            this.gunaButton1.Text = "Tout sur employe";
             // 
             // gunaElipse1
             // 
@@ -826,6 +568,315 @@
             this.dataGrid.TabIndex = 9;
             this.dataGrid.TextLocation = new System.Drawing.Point(10, 10);
             // 
+            // gunaPanel7
+            // 
+            this.gunaPanel7.Controls.Add(this.gunaLinePanel1);
+            this.gunaPanel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaPanel7.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel7.Name = "gunaPanel7";
+            this.gunaPanel7.Padding = new System.Windows.Forms.Padding(10);
+            this.gunaPanel7.Size = new System.Drawing.Size(451, 65);
+            this.gunaPanel7.TabIndex = 11;
+            // 
+            // gunaLinePanel1
+            // 
+            this.gunaLinePanel1.Controls.Add(this.txbRechercher);
+            this.gunaLinePanel1.Controls.Add(this.gunaButton8);
+            this.gunaLinePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaLinePanel1.LineBottom = 2;
+            this.gunaLinePanel1.LineColor = System.Drawing.Color.Black;
+            this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel1.Location = new System.Drawing.Point(10, 10);
+            this.gunaLinePanel1.Name = "gunaLinePanel1";
+            this.gunaLinePanel1.Size = new System.Drawing.Size(431, 45);
+            this.gunaLinePanel1.TabIndex = 10;
+            // 
+            // txbRechercher
+            // 
+            this.txbRechercher.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbRechercher.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbRechercher.Location = new System.Drawing.Point(36, 10);
+            this.txbRechercher.Name = "txbRechercher";
+            this.txbRechercher.PlaceholderText = "Rechercher";
+            this.txbRechercher.Size = new System.Drawing.Size(382, 24);
+            this.txbRechercher.TabIndex = 10;
+            this.txbRechercher.TextChanged += new System.EventHandler(this.txbRechercher_TextChanged);
+            // 
+            // gunaPanel6
+            // 
+            this.gunaPanel6.Controls.Add(this.lblTitre);
+            this.gunaPanel6.Controls.Add(this.gunaPictureBox1);
+            this.gunaPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel6.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel6.Name = "gunaPanel6";
+            this.gunaPanel6.Size = new System.Drawing.Size(800, 75);
+            this.gunaPanel6.TabIndex = 13;
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitre.Font = new System.Drawing.Font("Lucida Handwriting", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.lblTitre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitre.ImageKey = "(aucun)";
+            this.lblTitre.Location = new System.Drawing.Point(65, 0);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(735, 75);
+            this.lblTitre.TabIndex = 8;
+            this.lblTitre.Text = "Gestion des employes";
+            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gunaPanel3
+            // 
+            this.gunaPanel3.Controls.Add(this.flowLayoutPanel1);
+            this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel3.Location = new System.Drawing.Point(451, 0);
+            this.gunaPanel3.Name = "gunaPanel3";
+            this.gunaPanel3.Size = new System.Drawing.Size(339, 65);
+            this.gunaPanel3.TabIndex = 12;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaPictureBox1.Image = global::Couche.Winforms.Properties.Resources.meeting_room_48px;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(65, 75);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.gunaPictureBox1.TabIndex = 7;
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // gunaButton8
+            // 
+            this.gunaButton8.AnimationHoverSpeed = 0.07F;
+            this.gunaButton8.AnimationSpeed = 0.03F;
+            this.gunaButton8.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton8.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaButton8.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaButton8.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton8.ForeColor = System.Drawing.Color.Black;
+            this.gunaButton8.Image = global::Couche.Winforms.Properties.Resources.find_user_male_24px;
+            this.gunaButton8.ImageOffsetX = -7;
+            this.gunaButton8.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton8.Location = new System.Drawing.Point(0, 0);
+            this.gunaButton8.Name = "gunaButton8";
+            this.gunaButton8.OnHoverBaseColor = System.Drawing.Color.White;
+            this.gunaButton8.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton8.OnHoverForeColor = System.Drawing.Color.Black;
+            this.gunaButton8.OnHoverImage = global::Couche.Winforms.Properties.Resources.find_user_male_24px;
+            this.gunaButton8.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton8.Radius = 15;
+            this.gunaButton8.Size = new System.Drawing.Size(30, 45);
+            this.gunaButton8.TabIndex = 8;
+            // 
+            // btnExporterExcel
+            // 
+            this.btnExporterExcel.AnimationHoverSpeed = 0.07F;
+            this.btnExporterExcel.AnimationSpeed = 0.03F;
+            this.btnExporterExcel.BaseColor = System.Drawing.Color.Transparent;
+            this.btnExporterExcel.BorderColor = System.Drawing.Color.Black;
+            this.btnExporterExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExporterExcel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExporterExcel.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExporterExcel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExporterExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExporterExcel.Image = global::Couche.Winforms.Properties.Resources.ms_excel_64px;
+            this.btnExporterExcel.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExporterExcel.Location = new System.Drawing.Point(0, 302);
+            this.btnExporterExcel.Name = "btnExporterExcel";
+            this.btnExporterExcel.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnExporterExcel.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExporterExcel.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExporterExcel.OnHoverImage = global::Couche.Winforms.Properties.Resources.ms_excel_52px;
+            this.btnExporterExcel.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExporterExcel.Size = new System.Drawing.Size(200, 42);
+            this.btnExporterExcel.TabIndex = 32;
+            this.btnExporterExcel.Text = "Exporter sous Excel";
+            this.btnExporterExcel.Click += new System.EventHandler(this.btnExporterExcel_Click);
+            // 
+            // btnImprimer
+            // 
+            this.btnImprimer.AnimationHoverSpeed = 0.07F;
+            this.btnImprimer.AnimationSpeed = 0.03F;
+            this.btnImprimer.BaseColor = System.Drawing.Color.Transparent;
+            this.btnImprimer.BorderColor = System.Drawing.Color.Black;
+            this.btnImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImprimer.FocusedColor = System.Drawing.Color.Empty;
+            this.btnImprimer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimer.ForeColor = System.Drawing.Color.White;
+            this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.print_64px;
+            this.btnImprimer.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnImprimer.Location = new System.Drawing.Point(0, 260);
+            this.btnImprimer.Name = "btnImprimer";
+            this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnImprimer.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnImprimer.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnImprimer.OnHoverImage = global::Couche.Winforms.Properties.Resources.print_52px;
+            this.btnImprimer.OnPressedColor = System.Drawing.Color.Black;
+            this.btnImprimer.Size = new System.Drawing.Size(200, 42);
+            this.btnImprimer.TabIndex = 31;
+            this.btnImprimer.Text = "Imprimer";
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
+            // 
+            // btnInformationEmploye
+            // 
+            this.btnInformationEmploye.AnimationHoverSpeed = 0.07F;
+            this.btnInformationEmploye.AnimationSpeed = 0.03F;
+            this.btnInformationEmploye.BaseColor = System.Drawing.Color.Transparent;
+            this.btnInformationEmploye.BorderColor = System.Drawing.Color.Black;
+            this.btnInformationEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInformationEmploye.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformationEmploye.Enabled = false;
+            this.btnInformationEmploye.FocusedColor = System.Drawing.Color.Empty;
+            this.btnInformationEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformationEmploye.ForeColor = System.Drawing.Color.White;
+            this.btnInformationEmploye.Image = global::Couche.Winforms.Properties.Resources.info_64px;
+            this.btnInformationEmploye.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnInformationEmploye.Location = new System.Drawing.Point(0, 218);
+            this.btnInformationEmploye.Name = "btnInformationEmploye";
+            this.btnInformationEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnInformationEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnInformationEmploye.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnInformationEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px2;
+            this.btnInformationEmploye.OnPressedColor = System.Drawing.Color.Black;
+            this.btnInformationEmploye.Size = new System.Drawing.Size(200, 42);
+            this.btnInformationEmploye.TabIndex = 27;
+            this.btnInformationEmploye.Text = "Informations employe";
+            this.btnInformationEmploye.Click += new System.EventHandler(this.btnInformation_Click);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.AnimationHoverSpeed = 0.07F;
+            this.btnSupprimer.AnimationSpeed = 0.03F;
+            this.btnSupprimer.BaseColor = System.Drawing.Color.Transparent;
+            this.btnSupprimer.BorderColor = System.Drawing.Color.Black;
+            this.btnSupprimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSupprimer.Enabled = false;
+            this.btnSupprimer.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSupprimer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupprimer.ForeColor = System.Drawing.Color.White;
+            this.btnSupprimer.Image = global::Couche.Winforms.Properties.Resources.info_64px;
+            this.btnSupprimer.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSupprimer.Location = new System.Drawing.Point(0, 176);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnSupprimer.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSupprimer.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSupprimer.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px2;
+            this.btnSupprimer.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSupprimer.Size = new System.Drawing.Size(200, 42);
+            this.btnSupprimer.TabIndex = 26;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // btnEditerCompteEmploye
+            // 
+            this.btnEditerCompteEmploye.AnimationHoverSpeed = 0.07F;
+            this.btnEditerCompteEmploye.AnimationSpeed = 0.03F;
+            this.btnEditerCompteEmploye.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEditerCompteEmploye.BorderColor = System.Drawing.Color.Black;
+            this.btnEditerCompteEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditerCompteEmploye.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditerCompteEmploye.Enabled = false;
+            this.btnEditerCompteEmploye.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditerCompteEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditerCompteEmploye.ForeColor = System.Drawing.Color.White;
+            this.btnEditerCompteEmploye.Image = global::Couche.Winforms.Properties.Resources.edit_user_male_64px;
+            this.btnEditerCompteEmploye.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditerCompteEmploye.Location = new System.Drawing.Point(0, 134);
+            this.btnEditerCompteEmploye.Name = "btnEditerCompteEmploye";
+            this.btnEditerCompteEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnEditerCompteEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditerCompteEmploye.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditerCompteEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_user_52px;
+            this.btnEditerCompteEmploye.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditerCompteEmploye.Size = new System.Drawing.Size(200, 42);
+            this.btnEditerCompteEmploye.TabIndex = 25;
+            this.btnEditerCompteEmploye.Text = "Editer compte employe";
+            this.btnEditerCompteEmploye.Click += new System.EventHandler(this.btnEditerCompteEmploye_Click);
+            // 
+            // btnEditerEmploye
+            // 
+            this.btnEditerEmploye.AnimationHoverSpeed = 0.07F;
+            this.btnEditerEmploye.AnimationSpeed = 0.03F;
+            this.btnEditerEmploye.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEditerEmploye.BorderColor = System.Drawing.Color.Black;
+            this.btnEditerEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditerEmploye.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditerEmploye.Enabled = false;
+            this.btnEditerEmploye.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditerEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditerEmploye.ForeColor = System.Drawing.Color.White;
+            this.btnEditerEmploye.Image = global::Couche.Winforms.Properties.Resources.edit_user_male_64px;
+            this.btnEditerEmploye.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditerEmploye.Location = new System.Drawing.Point(0, 92);
+            this.btnEditerEmploye.Name = "btnEditerEmploye";
+            this.btnEditerEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnEditerEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditerEmploye.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditerEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.edit_user_52px;
+            this.btnEditerEmploye.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditerEmploye.Size = new System.Drawing.Size(200, 42);
+            this.btnEditerEmploye.TabIndex = 2;
+            this.btnEditerEmploye.Text = "Editer employe";
+            this.btnEditerEmploye.Click += new System.EventHandler(this.btnEditerEmploye_Click);
+            // 
+            // btnEnregistrerEmploye
+            // 
+            this.btnEnregistrerEmploye.AnimationHoverSpeed = 0.07F;
+            this.btnEnregistrerEmploye.AnimationSpeed = 0.03F;
+            this.btnEnregistrerEmploye.BaseColor = System.Drawing.Color.Transparent;
+            this.btnEnregistrerEmploye.BorderColor = System.Drawing.Color.Black;
+            this.btnEnregistrerEmploye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnregistrerEmploye.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEnregistrerEmploye.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEnregistrerEmploye.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnregistrerEmploye.ForeColor = System.Drawing.Color.White;
+            this.btnEnregistrerEmploye.Image = global::Couche.Winforms.Properties.Resources.add_user_male_64px;
+            this.btnEnregistrerEmploye.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEnregistrerEmploye.Location = new System.Drawing.Point(0, 50);
+            this.btnEnregistrerEmploye.Name = "btnEnregistrerEmploye";
+            this.btnEnregistrerEmploye.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnEnregistrerEmploye.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEnregistrerEmploye.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEnregistrerEmploye.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_user_52px;
+            this.btnEnregistrerEmploye.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEnregistrerEmploye.Size = new System.Drawing.Size(200, 42);
+            this.btnEnregistrerEmploye.TabIndex = 1;
+            this.btnEnregistrerEmploye.Text = "Enregistrer employe";
+            this.btnEnregistrerEmploye.Click += new System.EventHandler(this.btnEnregistrerEmploye_Click);
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.White;
+            this.gunaButton1.BaseColor = System.Drawing.Color.White;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.White;
+            this.gunaButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
+            this.gunaButton1.Image = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(0, 0);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(200, 50);
+            this.gunaButton1.TabIndex = 0;
+            this.gunaButton1.Text = "Tout sur employe";
+            // 
             // Uc_GererEmploye
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -834,18 +885,22 @@
             this.Controls.Add(this.gunaPanel5);
             this.Name = "Uc_GererEmploye";
             this.Size = new System.Drawing.Size(1000, 700);
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
-            this.gunaPanel1.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.gunaPanel3.ResumeLayout(false);
             this.gunaPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmploye)).EndInit();
             this.gunaPanel4.ResumeLayout(false);
             this.dataGrid.ResumeLayout(false);
+            this.gunaPanel7.ResumeLayout(false);
+            this.gunaLinePanel1.ResumeLayout(false);
+            this.gunaLinePanel1.PerformLayout();
+            this.gunaPanel6.ResumeLayout(false);
+            this.gunaPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -853,14 +908,11 @@
         #endregion
         private System.Windows.Forms.BindingSource clientsBindingSource1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaButton btnEditerEmploye;
         private Guna.UI.WinForms.GunaButton btnEnregistrerEmploye;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaPanel gunaPanel5;
         private System.Windows.Forms.BindingSource clientsBindingSource;
-        private Guna.UI.WinForms.GunaTextBox txbRechercher;
-        private Guna.UI.WinForms.GunaButton gunaButton8;
         private Guna.UI.WinForms.GunaButton btnInformationEmploye;
         private Guna.UI.WinForms.GunaButton btnSupprimer;
         private Guna.UI.WinForms.GunaButton btnEditerCompteEmploye;
@@ -884,9 +936,7 @@
         private Guna.UI.WinForms.GunaLabel lblCountItems;
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaCheckBox checkCode;
-        private Guna.UI.WinForms.GunaCheckBox checkNomComplet;
         private Guna.UI.WinForms.GunaCheckBox checkDateNaissance;
         private Guna.UI.WinForms.GunaCheckBox checkLieuNaissance;
         private Guna.UI.WinForms.GunaCheckBox checkSexe;
@@ -897,5 +947,14 @@
         private Guna.UI.WinForms.GunaCheckBox checkNomUtilisateur;
         private Guna.UI.WinForms.GunaCheckBox checkStatutEmploye;
         private Guna.UI.WinForms.GunaCheckBox checkDateEnregistrement;
+        public Guna.UI.WinForms.GunaCheckBox checkNomComplet;
+        private Guna.UI.WinForms.GunaPanel gunaPanel7;
+        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
+        private PlaceholderTextBox.PlaceholderTextBox txbRechercher;
+        private Guna.UI.WinForms.GunaButton gunaButton8;
+        private Guna.UI.WinForms.GunaPanel gunaPanel6;
+        private Guna.UI.WinForms.GunaLabel lblTitre;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel3;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.btnBack = new Guna.UI.WinForms.GunaImageButton();
             this.gunaLabel15 = new Guna.UI.WinForms.GunaLabel();
@@ -91,6 +92,7 @@
             this.panelNomStructure = new Guna.UI.WinForms.GunaGroupBox();
             this.txbMotDePasse = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel21 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaShadowPanel1.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -131,13 +133,14 @@
             // btnBack
             // 
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnBack.Image = global::Couche.Winforms.Properties.Resources.left_round_64px;
             this.btnBack.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnBack.Location = new System.Drawing.Point(7, 8);
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Name = "btnBack";
             this.btnBack.OnHoverImage = global::Couche.Winforms.Properties.Resources.left_round_52px;
             this.btnBack.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btnBack.Size = new System.Drawing.Size(35, 35);
+            this.btnBack.Size = new System.Drawing.Size(51, 51);
             this.btnBack.TabIndex = 3;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -488,6 +491,7 @@
             this.cmbVille.Radius = 5;
             this.cmbVille.Size = new System.Drawing.Size(271, 38);
             this.cmbVille.TabIndex = 10;
+            this.cmbVille.SelectedIndexChanged += new System.EventHandler(this.cmbVille_SelectedIndexChanged);
             // 
             // gunaLabel19
             // 
@@ -1144,6 +1148,11 @@
             this.gunaLabel21.Text = "Mot de passe*";
             this.gunaLabel21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 5;
+            this.gunaElipse1.TargetControl = this.pbEmploye;
+            // 
             // Uc_EnregistrerEmploye
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1246,5 +1255,6 @@
         private Guna.UI.WinForms.GunaButton btnEdit;
         private Guna.UI.WinForms.GunaPictureBox pbEmploye;
         private Guna.UI.WinForms.GunaLabel gunaLabel26;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
     }
 }

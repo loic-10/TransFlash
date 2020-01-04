@@ -18,7 +18,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private Frm_Principal frmPrincipal = null;
 
-        public Uc_AccueilComptable(Employe employe)
+        public Uc_AccueilComptable(Employe employe, Frm_Principal frm_Principal)
         {
             InitializeComponent();
             this.employe = employe;
@@ -29,12 +29,6 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
         private void Uc_AccueilComptable_Load(object sender, EventArgs e)
         {
             gunaShadowPanel1.BaseColor = Color.FromArgb(150, 24, 57, 101);
-        }
-
-        private void BtnDepot_Click(object sender, EventArgs e)
-        {
-            Uc_AccueilChefAgence frm = new Uc_AccueilChefAgence(this.employe);
-            AfficherPageChoisie(frm);
         }
 
         private void AfficherPageChoisie(UserControl userPage)

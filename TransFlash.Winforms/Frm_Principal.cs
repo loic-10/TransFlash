@@ -14,6 +14,7 @@ using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls;
 using Guna.UI.WinForms;
 using TransFlash.Winforms.Fonctions;
 using TransFlash.BO;
+using static TransFlash.BO.Statut;
 
 namespace Couche.Winforms
 {
@@ -24,33 +25,112 @@ namespace Couche.Winforms
 
         private UserControl leCorpDePage = null;
 
-        private UserControl pageAccueil = null;
-
         private Employe employe = null;
+
+        private Timer timer10 = null;
+
+        private Timer timer20 = null;
+
+        private GunaTransition gunaTransition1 = null;
+
+        private GunaTransition gunaTransition2 = null;
 
         public Frm_Principal(Employe employe)
         {
             InitializeComponent();
+
+            gunaTransition1 = new GunaTransition()
+            {
+                AnimationType = Guna.UI.Animation.AnimationType.Transparent,
+                Interval = 10,
+                MaxAnimationTime = 1500,
+                TimeStep = 0.02f
+            };
+
+            gunaTransition2 = new GunaTransition()
+            {
+                AnimationType = Guna.UI.Animation.AnimationType.ScaleAndRotate,
+                Interval = 10,
+                MaxAnimationTime = 1500,
+                TimeStep = 0.02f
+            };
+
+            timer10 = new Timer()
+            {
+                Interval = 5000,
+                Enabled = true
+            };
+
+            timer20 = new Timer()
+            {
+                Interval = 1000,
+                Enabled = true
+            };
+
+            timer10.Tick += Timer10_Tick1;
+
+            timer20.Tick += Timer20_Tick;
+
             this.employe = employe;
 
             DebutProgramme(this.employe);
+
+            Load += Frm_Principal_Load;
         }
 
-        public void DebutProgramme(Employe employe)
+        private void Timer20_Tick(object sender, EventArgs e)
         {
-            if (employe.PhotoProfil != string.Empty)
-                pbProfil.Image = Image.FromFile(employe.PhotoProfil);
+            lblDate.Text = DateTime.Now.ToString();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
+        private void Timer10_Tick1(object sender, EventArgs e)
+        {
+            try
+            {
+                gunaTransition1.HideSync(panelLogo);
+                gunaTransition1.ShowSync(panelLogo);
+                gunaTransition2.HideSync(btnParametre);
+                gunaTransition2.ShowSync(btnParametre);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ParametreArretTimer(Timer timer1, Timer timer2)
+        {
+            timer1.Enabled = false;
+            timer1.Enabled = false;
+        }
+
+        private void Timer10_Tick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Frm_Principal_Load(object sender, EventArgs e)
         {
             fonction.MenuTop(panelMenuPoste);
             fonction.AnimationOuverture(panelMenu);
             fonction.AnimationIcone(btnMessage, btnNotification, btnManuelUtilisation);
 
-            Uc_AccueilChefAgence frm = new Uc_AccueilChefAgence(this.employe);
-            pageAccueil = frm;
-            fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
+            fonction.AfficheCorp(VoirAccueilEmploye(this.employe) as UserControl, panelCorps, leCorpDePage);
+        }
+
+        public Control VoirAccueilEmploye(Employe employe) =>
+            (employe.StatutEmploye == StatutEmploye.Caissier) ? new Control() :
+            (employe.StatutEmploye == StatutEmploye.Secretaire_Comptable) ? new Uc_AccueilSecretaireComptable(employe, this) :
+            (employe.StatutEmploye == StatutEmploye.Chef_Agence) ? new Uc_AccueilChefAgence(employe, this) :
+            (employe.StatutEmploye == StatutEmploye.Chef_Credit) ? new Uc_AccueilChefCredit(employe, this) :
+            (employe.StatutEmploye == StatutEmploye.Comptable) ? new Uc_AccueilComptable(employe, this) : 
+            new Control();
+
+
+        public void DebutProgramme(Employe employe)
+        {
+            if (employe.PhotoProfil != string.Empty)
+                pbProfil.Image = Image.FromFile(employe.PhotoProfil);
         }
 
         private void BtnHidde_Click(object sender, EventArgs e)
@@ -79,7 +159,7 @@ namespace Couche.Winforms
 
         private void btnAccueil_Click(object sender, EventArgs e)
         {
-            fonction.AfficheCorp(pageAccueil, panelCorps, leCorpDePage);
+            fonction.AfficheCorp(VoirAccueilEmploye(this.employe) as UserControl, panelCorps, leCorpDePage);
         }
 
         private void btnGererEmprunt_Click(object sender, EventArgs e)
@@ -96,7 +176,7 @@ namespace Couche.Winforms
 
         private void btnGererTransaction_Click(object sender, EventArgs e)
         {
-            Uc_GererTransaction frm = new Uc_GererTransaction();
+            Uc_GererTransaction frm = new Uc_GererTransaction(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
@@ -108,13 +188,19 @@ namespace Couche.Winforms
 
         private void btnGererCompte_Click(object sender, EventArgs e)
         {
-            Uc_GererCompte frm = new Uc_GererCompte();
+            Uc_GererCompte frm = new Uc_GererCompte(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnGererEmployes_Click(object sender, EventArgs e)
         {
             Uc_GererEmploye frm = new Uc_GererEmploye(this.employe);
+            fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
+        }
+
+        private void btnGererTouteOperation_Click(object sender, EventArgs e)
+        {
+            Uc_GererTouteOperation frm = new Uc_GererTouteOperation(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
@@ -136,36 +222,14 @@ namespace Couche.Winforms
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                gunaTransition1.HideSync(panelLogo);
-                gunaTransition1.ShowSync(panelLogo);
-                gunaTransition2.HideSync(btnParametre);
-                gunaTransition2.ShowSync(btnParametre);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void Frm_Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            lblDate.Text = DateTime.Now.ToString();
-        }
-
         private void Frm_Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            timer1.Enabled = false;
-            timer2.Enabled = false;
-            System.Threading.Thread.Sleep(1000);
+            ParametreArretTimer(timer10, timer20);
             Application.Exit();
         }
 

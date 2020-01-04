@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +13,6 @@ namespace TransFlash.BLL
     {
         private IDAL<Beneficier> beneficierBLO = null;
 
-        private OperationBLO operationBLO = new OperationBLO();
-
         public BeneficierBLO()
         {
             beneficierBLO = new RepositoireDAOFile<Beneficier>();
@@ -22,17 +20,17 @@ namespace TransFlash.BLL
 
         public void AjouterBeneficier(string nom, string descriptionCondition, int pourcentage, CompteClient compteClient, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             beneficierBLO.Add(new Beneficier(new IdentifiantBLO().IdBeneficier, nom, descriptionCondition, pourcentage, compteClient));
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, 0,
+                $"Ajout du beneficier {new IdentifiantBLO().IdBeneficier} du compte {compteClient}, qui beneficiera d'un pourcentage de {pourcentage}%");
 
             new IdentifiantBLO().AddIdBeneficier();
         }
 
         public void ModifierBeneficier(Beneficier beneficier, string nom, string descriptionCondition, int pourcentage, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             int index = beneficierBLO.IndexOf(beneficier);
 
@@ -41,25 +39,32 @@ namespace TransFlash.BLL
             beneficier.Pourcentage = pourcentage;
             beneficierBLO[index] = beneficier;
 
-            operationBLO.AjouterOperation(TypeOperation.Modification, employe, beneficier.CompteClient.Client, beneficier.CompteClient, pourcentage, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Modification, employe, beneficier.CompteClient.Client, beneficier.CompteClient, 
+                pourcentage, $"Modification du beneficier {beneficier} du compte {beneficier.CompteClient}, qui beneficiera d'un pourcentage de {pourcentage}%");
         }
 
         public void SupprimerBeneficier(Beneficier beneficier, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             beneficierBLO.Remove(beneficier);
 
-            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, beneficier.CompteClient.Client, beneficier.CompteClient, beneficier.Pourcentage, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, beneficier.CompteClient.Client, beneficier.CompteClient, 
+                beneficier.Pourcentage, $"Suppression du beneficier {beneficier} du compte {beneficier.CompteClient}, qui beneficiait d'un pourcentage " +
+                $"de {beneficier.Pourcentage}%");
         }
 
         public IEnumerable<Beneficier> RechercherLesBeneficiersDuCompte(CompteClient compteClient) => beneficierBLO.Find(x =>
-            x.CompteClient == compteClient);
+            x.CompteClient.ToString() == compteClient.ToString());
 
-        public IEnumerable<Beneficier> RechercherLesBeneficiers(string valeur) => beneficierBLO.Find(x => 
-            x.Nom.ToLower().Contains(valeur.ToLower()) ||
-            x.DescriptionCondition.ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<Beneficier> RechercherLesBeneficiers(string valeur, bool checkIdentifiant, bool checkNom,
+            bool checkDescriptionCondition, bool checkPourcentage, bool checkCompte) => beneficierBLO.Find(x => 
+            (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkIdentifiant) ||
+            (x.Nom.ToString().ToLower().Contains(valeur.ToLower()) && checkNom) ||
+            (x.DescriptionCondition.ToString().ToLower().Contains(valeur.ToLower()) && checkDescriptionCondition) ||
+            (x.Pourcentage.ToString().ToLower().Contains(valeur.ToLower()) && checkPourcentage) ||
+            (x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) && checkCompte));
 
-        public List<Beneficier> TousBeneficiers => beneficierBLO.AllItems;
+        public IEnumerable<Beneficier> TousBeneficiers => beneficierBLO.AllItems;
 
     }
 }

@@ -33,11 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
+            this.lblTitre = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkNom = new Guna.UI.WinForms.GunaCheckBox();
             this.checkCodeTelephone = new Guna.UI.WinForms.GunaCheckBox();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.txbRechercher = new PlaceholderTextBox.PlaceholderTextBox();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
@@ -47,30 +51,25 @@
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.lblCountItems = new Guna.UI.WinForms.GunaLabel();
             this.dataGrid = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
-            this.lblTitre = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.placeholderTextBox1 = new PlaceholderTextBox.PlaceholderTextBox();
             this.btnAjouter = new Guna.UI.WinForms.GunaButton();
             this.btnModifier = new Guna.UI.WinForms.GunaButton();
             this.btnSupprimer = new Guna.UI.WinForms.GunaButton();
-            this.btnInformation = new Guna.UI.WinForms.GunaButton();
             this.btnImprimer = new Guna.UI.WinForms.GunaButton();
             this.btnExtraireSousExcel = new Guna.UI.WinForms.GunaButton();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
             this.personneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gunaPanel1.SuspendLayout();
+            this.gunaPanel6.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
+            this.gunaLinePanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPays)).BeginInit();
             this.gunaPanel4.SuspendLayout();
             this.dataGrid.SuspendLayout();
-            this.gunaPanel6.SuspendLayout();
-            this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personneBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -86,15 +85,40 @@
             this.gunaPanel1.Size = new System.Drawing.Size(800, 135);
             this.gunaPanel1.TabIndex = 10;
             // 
+            // gunaPanel6
+            // 
+            this.gunaPanel6.Controls.Add(this.lblTitre);
+            this.gunaPanel6.Controls.Add(this.gunaPictureBox1);
+            this.gunaPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel6.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel6.Name = "gunaPanel6";
+            this.gunaPanel6.Size = new System.Drawing.Size(800, 70);
+            this.gunaPanel6.TabIndex = 12;
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitre.Font = new System.Drawing.Font("Lucida Handwriting", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.lblTitre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitre.ImageKey = "(aucun)";
+            this.lblTitre.Location = new System.Drawing.Point(65, 0);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(735, 70);
+            this.lblTitre.TabIndex = 8;
+            this.lblTitre.Text = "Pays";
+            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // gunaPanel3
             // 
             this.gunaPanel3.Controls.Add(this.flowLayoutPanel1);
             this.gunaPanel3.Controls.Add(this.gunaPanel5);
             this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaPanel3.Location = new System.Drawing.Point(0, 72);
+            this.gunaPanel3.Location = new System.Drawing.Point(0, 70);
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.gunaPanel3.Size = new System.Drawing.Size(800, 63);
+            this.gunaPanel3.Size = new System.Drawing.Size(800, 65);
             this.gunaPanel3.TabIndex = 11;
             // 
             // flowLayoutPanel1
@@ -106,12 +130,13 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(451, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10, 15, 10, 10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(339, 63);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(339, 65);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // checkNom
             // 
             this.checkNom.BaseColor = System.Drawing.Color.White;
+            this.checkNom.Checked = true;
             this.checkNom.CheckedOffColor = System.Drawing.Color.Gray;
             this.checkNom.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.checkNom.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -123,11 +148,11 @@
             this.checkNom.Size = new System.Drawing.Size(67, 22);
             this.checkNom.TabIndex = 10;
             this.checkNom.Text = "Nom";
+            this.checkNom.CheckedChanged += new System.EventHandler(this.checkNom_CheckedChanged);
             // 
             // checkCodeTelephone
             // 
             this.checkCodeTelephone.BaseColor = System.Drawing.Color.White;
-            this.checkCodeTelephone.Checked = true;
             this.checkCodeTelephone.CheckedOffColor = System.Drawing.Color.Gray;
             this.checkCodeTelephone.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.checkCodeTelephone.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -139,6 +164,7 @@
             this.checkCodeTelephone.Size = new System.Drawing.Size(157, 22);
             this.checkCodeTelephone.TabIndex = 11;
             this.checkCodeTelephone.Text = "Code telephone";
+            this.checkCodeTelephone.CheckedChanged += new System.EventHandler(this.checkCodeTelephone_CheckedChanged);
             // 
             // gunaPanel5
             // 
@@ -147,8 +173,32 @@
             this.gunaPanel5.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel5.Name = "gunaPanel5";
             this.gunaPanel5.Padding = new System.Windows.Forms.Padding(10);
-            this.gunaPanel5.Size = new System.Drawing.Size(451, 63);
+            this.gunaPanel5.Size = new System.Drawing.Size(451, 65);
             this.gunaPanel5.TabIndex = 9;
+            // 
+            // gunaLinePanel1
+            // 
+            this.gunaLinePanel1.Controls.Add(this.txbRechercher);
+            this.gunaLinePanel1.Controls.Add(this.gunaButton8);
+            this.gunaLinePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaLinePanel1.LineBottom = 2;
+            this.gunaLinePanel1.LineColor = System.Drawing.Color.Black;
+            this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel1.Location = new System.Drawing.Point(10, 10);
+            this.gunaLinePanel1.Name = "gunaLinePanel1";
+            this.gunaLinePanel1.Size = new System.Drawing.Size(431, 45);
+            this.gunaLinePanel1.TabIndex = 10;
+            // 
+            // txbRechercher
+            // 
+            this.txbRechercher.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbRechercher.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbRechercher.Location = new System.Drawing.Point(36, 10);
+            this.txbRechercher.Name = "txbRechercher";
+            this.txbRechercher.PlaceholderText = "Rechercher";
+            this.txbRechercher.Size = new System.Drawing.Size(382, 24);
+            this.txbRechercher.TabIndex = 10;
+            this.txbRechercher.TextChanged += new System.EventHandler(this.txbRechercher_TextChanged);
             // 
             // gunaPanel2
             // 
@@ -166,7 +216,6 @@
             this.flowLayoutPanel2.Controls.Add(this.btnAjouter);
             this.flowLayoutPanel2.Controls.Add(this.btnModifier);
             this.flowLayoutPanel2.Controls.Add(this.btnSupprimer);
-            this.flowLayoutPanel2.Controls.Add(this.btnInformation);
             this.flowLayoutPanel2.Controls.Add(this.btnImprimer);
             this.flowLayoutPanel2.Controls.Add(this.btnExtraireSousExcel);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -321,54 +370,6 @@
             this.dataGrid.TabIndex = 9;
             this.dataGrid.TextLocation = new System.Drawing.Point(10, 10);
             // 
-            // gunaPanel6
-            // 
-            this.gunaPanel6.Controls.Add(this.lblTitre);
-            this.gunaPanel6.Controls.Add(this.gunaPictureBox1);
-            this.gunaPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel6.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel6.Name = "gunaPanel6";
-            this.gunaPanel6.Size = new System.Drawing.Size(800, 72);
-            this.gunaPanel6.TabIndex = 12;
-            // 
-            // lblTitre
-            // 
-            this.lblTitre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitre.Font = new System.Drawing.Font("Lucida Handwriting", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.lblTitre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTitre.ImageKey = "(aucun)";
-            this.lblTitre.Location = new System.Drawing.Point(65, 0);
-            this.lblTitre.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(735, 72);
-            this.lblTitre.TabIndex = 8;
-            this.lblTitre.Text = "Pays";
-            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // gunaLinePanel1
-            // 
-            this.gunaLinePanel1.Controls.Add(this.placeholderTextBox1);
-            this.gunaLinePanel1.Controls.Add(this.gunaButton8);
-            this.gunaLinePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaLinePanel1.LineBottom = 2;
-            this.gunaLinePanel1.LineColor = System.Drawing.Color.Black;
-            this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel1.Location = new System.Drawing.Point(10, 10);
-            this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(431, 43);
-            this.gunaLinePanel1.TabIndex = 10;
-            // 
-            // placeholderTextBox1
-            // 
-            this.placeholderTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.placeholderTextBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placeholderTextBox1.Location = new System.Drawing.Point(36, 10);
-            this.placeholderTextBox1.Name = "placeholderTextBox1";
-            this.placeholderTextBox1.PlaceholderText = "Rechercher";
-            this.placeholderTextBox1.Size = new System.Drawing.Size(392, 24);
-            this.placeholderTextBox1.TabIndex = 10;
-            // 
             // btnAjouter
             // 
             this.btnAjouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -434,6 +435,7 @@
             this.btnModifier.TabIndex = 9;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.TextOffsetX = -5;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
@@ -467,39 +469,7 @@
             this.btnSupprimer.TabIndex = 11;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.TextOffsetX = -5;
-            // 
-            // btnInformation
-            // 
-            this.btnInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInformation.Animated = true;
-            this.btnInformation.AnimationHoverSpeed = 0.07F;
-            this.btnInformation.AnimationSpeed = 0.03F;
-            this.btnInformation.BackColor = System.Drawing.Color.Transparent;
-            this.btnInformation.BaseColor = System.Drawing.Color.White;
-            this.btnInformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnInformation.BorderSize = 1;
-            this.btnInformation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInformation.Enabled = false;
-            this.btnInformation.FocusedColor = System.Drawing.Color.Empty;
-            this.btnInformation.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnInformation.Image = global::Couche.Winforms.Properties.Resources.info_24px;
-            this.btnInformation.ImageOffsetX = -5;
-            this.btnInformation.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnInformation.Location = new System.Drawing.Point(352, 15);
-            this.btnInformation.Margin = new System.Windows.Forms.Padding(5);
-            this.btnInformation.Name = "btnInformation";
-            this.btnInformation.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnInformation.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnInformation.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnInformation.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_24px1;
-            this.btnInformation.OnPressedColor = System.Drawing.Color.Black;
-            this.btnInformation.Padding = new System.Windows.Forms.Padding(5);
-            this.btnInformation.Radius = 15;
-            this.btnInformation.Size = new System.Drawing.Size(130, 35);
-            this.btnInformation.TabIndex = 6;
-            this.btnInformation.Text = "Informations";
-            this.btnInformation.TextOffsetX = -5;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnImprimer
             // 
@@ -518,7 +488,7 @@
             this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.print_24px;
             this.btnImprimer.ImageOffsetX = -5;
             this.btnImprimer.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnImprimer.Location = new System.Drawing.Point(492, 15);
+            this.btnImprimer.Location = new System.Drawing.Point(352, 15);
             this.btnImprimer.Margin = new System.Windows.Forms.Padding(5);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -550,7 +520,7 @@
             this.btnExtraireSousExcel.Image = global::Couche.Winforms.Properties.Resources.ms_excel_24px;
             this.btnExtraireSousExcel.ImageOffsetX = -5;
             this.btnExtraireSousExcel.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnExtraireSousExcel.Location = new System.Drawing.Point(607, 15);
+            this.btnExtraireSousExcel.Location = new System.Drawing.Point(467, 15);
             this.btnExtraireSousExcel.Margin = new System.Windows.Forms.Padding(5);
             this.btnExtraireSousExcel.Name = "btnExtraireSousExcel";
             this.btnExtraireSousExcel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -574,7 +544,7 @@
             this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(65, 72);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(65, 70);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.gunaPictureBox1.TabIndex = 7;
             this.gunaPictureBox1.TabStop = false;
@@ -598,10 +568,10 @@
             this.gunaButton8.OnHoverBaseColor = System.Drawing.Color.White;
             this.gunaButton8.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton8.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaButton8.OnHoverImage = global::Couche.Winforms.Properties.Resources.find_user_52px;
+            this.gunaButton8.OnHoverImage = global::Couche.Winforms.Properties.Resources.search_property_24px;
             this.gunaButton8.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton8.Radius = 15;
-            this.gunaButton8.Size = new System.Drawing.Size(30, 43);
+            this.gunaButton8.Size = new System.Drawing.Size(30, 45);
             this.gunaButton8.TabIndex = 8;
             // 
             // personneBindingSource
@@ -618,18 +588,18 @@
             this.Name = "Uc_Pays";
             this.Size = new System.Drawing.Size(800, 700);
             this.gunaPanel1.ResumeLayout(false);
+            this.gunaPanel6.ResumeLayout(false);
             this.gunaPanel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.gunaPanel5.ResumeLayout(false);
+            this.gunaLinePanel1.ResumeLayout(false);
+            this.gunaLinePanel1.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPays)).EndInit();
             this.gunaPanel4.ResumeLayout(false);
             this.dataGrid.ResumeLayout(false);
-            this.gunaPanel6.ResumeLayout(false);
-            this.gunaLinePanel1.ResumeLayout(false);
-            this.gunaLinePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personneBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -649,7 +619,6 @@
         private Guna.UI.WinForms.GunaButton btnModifier;
         private Guna.UI.WinForms.GunaButton btnExtraireSousExcel;
         private Guna.UI.WinForms.GunaButton btnImprimer;
-        private Guna.UI.WinForms.GunaButton btnInformation;
         private System.Windows.Forms.BindingSource personneBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -665,6 +634,6 @@
         private Guna.UI.WinForms.GunaLabel lblTitre;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
-        private PlaceholderTextBox.PlaceholderTextBox placeholderTextBox1;
+        private PlaceholderTextBox.PlaceholderTextBox txbRechercher;
     }
 }

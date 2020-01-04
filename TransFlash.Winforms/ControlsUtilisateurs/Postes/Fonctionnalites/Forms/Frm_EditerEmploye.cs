@@ -18,28 +18,24 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
     public partial class Frm_EditerEmploye : Form
     {
 
-        private EmployeBLO employeBLO = null;
-
-        private readonly Employe employe = null;
+        private Employe employe = null;
 
         private Employe employeChef = null;
 
         private Frm_Fonction fonction = null;
 
-        private VilleBLO villeBLO = null;
+        private Uc_GererEmploye uc_GererEmploye = null;
 
-        private PaysBLO paysBLO = null;
-
-        public Frm_EditerEmploye(Employe employeChef, Employe employe)
+        public Frm_EditerEmploye(Employe employeChef, Employe employe, Uc_GererEmploye uc_GererEmploye)
         {
             InitializeComponent();
             fonction = new Frm_Fonction();
-            paysBLO = new PaysBLO();
-            villeBLO = new VilleBLO();
 
-            employeBLO = new EmployeBLO();
             this.employeChef = employeChef;
+
             this.employe = employe;
+
+            this.uc_GererEmploye = uc_GererEmploye;
 
             InformationEmploye(this.employe);
         }
@@ -47,9 +43,9 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
         private void InformationEmploye(Employe employe)
         {
             fonction.ChargerEnumerationComboBox(cmbSexe, Enum.GetNames(typeof(StatutSexe)));
-            fonction.ChargerPaysComboBox(cmbPays, paysBLO.TousPays);
-            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone1, paysBLO.TousPays);
-            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone2, paysBLO.TousPays);
+            fonction.ChargerPaysComboBox(cmbPays, new PaysBLO().TousPays);
+            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone1, new PaysBLO().TousPays);
+            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone2, new PaysBLO().TousPays);
 
             gbEmploye.Text += employe.CodeEmploye;
             lblCodeEmploye.Text = employe.CodeEmploye;
@@ -68,7 +64,9 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
             cmbCodeTelephone2.Text = employe.NumeroTelephone2.Split(' ')[0];
             txbNumero2.Text = employe.NumeroTelephone2.Split(' ')[1];
 
-            if(employe.Pays.ToString()  != "Indefini")
+            cmbPays.Items.Add("add new land >>");
+
+            if (employe.Pays.ToString()  != "Indefini")
                 cmbPays.Text = employe.Pays.ToString();
 
             if(employe.Sexe.ToString()  != null)
@@ -85,11 +83,79 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
 
         }
 
+        public void RefreshCMBPays()
+        {
+            cmbPays.Items.Clear();
+            cmbCodeTelephone1.Items.Clear();
+            cmbCodeTelephone2.Items.Clear();
+            fonction.ChargerPaysComboBox(cmbPays, new PaysBLO().TousPays);
+            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone1, new PaysBLO().TousPays);
+            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone2, new PaysBLO().TousPays);
+            cmbPays.Items.Add("add new land >>");
+            cmbPays.SelectedIndex = cmbPays.Items.Count - 2;
+            cmbVille.Items.Clear();
+            fonction.ChargerVillesComboBox(cmbVille, new VilleBLO().RechercherLesVillesDuPays(new PaysBLO().RechercherUnPays(cmbPays.Text)));
+            cmbVille.Items.Add("add new town >>");
+            cmbVille.SelectedIndex = -1;
+        }
+
+        public void RefreshCMBVille(int pays)
+        {
+            cmbPays.Items.Clear();
+            cmbCodeTelephone1.Items.Clear();
+            cmbCodeTelephone2.Items.Clear();
+            fonction.ChargerPaysComboBox(cmbPays, new PaysBLO().TousPays);
+            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone1, new PaysBLO().TousPays);
+            fonction.ChargerCodePhoneComboBox(cmbCodeTelephone2, new PaysBLO().TousPays);
+            cmbPays.Items.Add("add new land >>");
+            cmbPays.SelectedIndex = pays;
+            cmbVille.Items.Clear();
+            if (pays > -1)
+            {
+                fonction.ChargerVillesComboBox(cmbVille, new VilleBLO().RechercherLesVillesDuPays(new PaysBLO().RechercherUnPays(cmbPays.Items[pays].ToString())));
+                cmbVille.Items.Add("add new town >>");
+                cmbVille.SelectedIndex = cmbVille.Items.Count - 2;
+            }
+        }
+
         private void cmbPays_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbVille.Items.Clear();
-            fonction.ChargerVillesComboBox(cmbVille, villeBLO.RechercherLesVillesDuPays(paysBLO.RechercherUnPays(cmbPays.Text)));
-            cmbVille.SelectedIndex = -1;
+            try
+            {
+                if (cmbPays.SelectedIndex == cmbPays.Items.Count - 1)
+                {
+                    cmbPays.SelectedIndex = -1;
+                    new Frm_GererPays(this.employeChef, this).ShowDialog();
+                }
+                else if (cmbPays.SelectedIndex > -1)
+                {
+                    fonction.ChargerVillesComboBox(cmbVille, new VilleBLO().RechercherLesVillesDuPays(new PaysBLO().RechercherUnPays(cmbPays.Text)));
+                    cmbVille.Items.Add("add new town >>");
+                    cmbVille.SelectedIndex = -1;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbVille_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmbVille.SelectedIndex == cmbVille.Items.Count - 1)
+                {
+                    cmbVille.SelectedIndex = -1;
+                    new Frm_GererVille(this.employeChef, this).ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -111,17 +177,21 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
             {
                 string fileName = fonction.PictureName(pbEmploye);
 
+                string numeroTelehone2 = (txbNumero2.Text != string.Empty && cmbCodeTelephone2.Text != string.Empty) ? 
+                    $"{cmbCodeTelephone2.Text} {txbNumero2.Text}" :
+                    " ";
+
                 if (SiFormulaireRempliCorrectement)
                 {
                     if (SiAgeConvient)
                     {
                         if (PersonneBLO.VerifierCNIExist(txbNumeroCNI.Text, new Client(), this.employe))
                         {
-                            employeBLO.ModifierEmploye(this.employe, txbNomComplet.Text, dtDateNaissance.Value.Date, txbLieuNaissance.Text,
+                            new EmployeBLO().ModifierEmploye(this.employe, txbNomComplet.Text, dtDateNaissance.Value.Date, txbLieuNaissance.Text,
                                 RetourSexe(cmbSexe.Text), txbNumeroCNI.Text, $"{cmbCodeTelephone1.Text} {txbNumero1.Text} ",
-                                $"{cmbCodeTelephone2.Text} {txbNumero2.Text} ", paysBLO.RechercherUnPays(cmbPays.Text),
-                                villeBLO.RechercherUneVille(cmbVille.Text), txbAdresse.Text, fileName, this.employeChef);
-                            new Uc_GererEmploye(this.employeChef).RefreshDataGrid(employeBLO.TousEmployes);
+                                numeroTelehone2, new PaysBLO().RechercherUnPays(cmbPays.Text),
+                                new VilleBLO().RechercherUneVille(cmbVille.Text), txbAdresse.Text, fileName, this.employeChef);
+                            this.uc_GererEmploye.txbRechercher_TextChanged(sender, e);
                             fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Modification",
                                 $"Employe modifie !");
                         }

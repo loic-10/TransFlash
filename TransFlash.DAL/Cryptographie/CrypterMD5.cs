@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Multicouche.DAL.Cryptographie
+namespace TransFlash.DAL.Cryptographie
 {
     public class CrypterMD5
     {

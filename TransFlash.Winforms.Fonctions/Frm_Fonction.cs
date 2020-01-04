@@ -23,6 +23,30 @@ namespace TransFlash.Winforms.Fonctions
         public Frm_Fonction()
         {
             InitializeComponent();
+
+            gunaTransition1 = new GunaTransition()
+            {
+                AnimationType = Guna.UI.Animation.AnimationType.HorizBlind,
+                Interval = 10,
+                MaxAnimationTime = 1500,
+                TimeStep = 0.02f
+            };
+
+            gunaTransition2 = new GunaTransition()
+            {
+                AnimationType = Guna.UI.Animation.AnimationType.Transparent,
+                Interval = 2,
+                MaxAnimationTime = 500,
+                TimeStep = 0.02f
+            };
+
+            gunaTransition3 = new GunaTransition()
+            {
+                AnimationType = Guna.UI.Animation.AnimationType.Particles,
+                Interval = 30,
+                MaxAnimationTime = 5000,
+                TimeStep = 0.02f
+            };
         }
 
         public void AnimationOuverture(GunaPanel panelMenu)
@@ -50,7 +74,7 @@ namespace TransFlash.Winforms.Fonctions
             if (panel.Width == 265)
             {
                 panel.Visible = false;
-                panel.Width = 55;
+                panel.Width = 50;
                 gunaTransition1.ShowSync(panel);
             }
             else
@@ -71,22 +95,38 @@ namespace TransFlash.Winforms.Fonctions
 
         public void AfficheCorp(UserControl controlCorp, Control control, UserControl leCorpDePage)
         {
-            leCorpDePage = controlCorp;
-            gunaTransition2.HideSync(control);
-            control.Controls.Clear();
-            control.Controls.Add(controlCorp);
-            controlCorp.Dock = DockStyle.Fill;
-            gunaTransition2.ShowSync(control);
+            try
+            {
+                leCorpDePage = controlCorp;
+                gunaTransition2.HideSync(control);
+                control.Controls.Clear();
+                control.Controls.Add(controlCorp);
+                controlCorp.Dock = DockStyle.Fill;
+                controlCorp.BringToFront();
+                gunaTransition2.ShowSync(control);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void AfficherPageChoisie(Control control, UserControl userPage)
         {
-            gunaTransition2.HideSync(control);
-            control.Controls.Clear();
-            control.Controls.Add(userPage);
-            userPage.Dock = DockStyle.Fill;
-            userPage.BringToFront();
-            gunaTransition2.ShowSync(control);
+            try
+            {
+                gunaTransition2.HideSync(control);
+                control.Controls.Clear();
+                control.Controls.Add(userPage);
+                userPage.Dock = DockStyle.Fill;
+                userPage.BringToFront();
+                gunaTransition2.ShowSync(control);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void ChangerButtonActif(GunaAdvenceButton buttonAActiver, GunaAdvenceButton buttonADesactiver, GunaPanel panelMenu)
@@ -100,6 +140,12 @@ namespace TransFlash.Winforms.Fonctions
 
         public void DesignDataGrid(GunaDataGridView dataGrid)
         {
+            new GunaElipse()
+            {
+                TargetControl = dataGrid,
+                Radius = 5
+            };
+            dataGrid.AutoGenerateColumns = false;
             dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(13, 72, 114);
             dataGrid.ColumnHeadersHeight = 50;
             dataGrid.RowHeadersVisible = true;
@@ -156,6 +202,44 @@ namespace TransFlash.Winforms.Fonctions
             foreach (var valeur in villes)
                 comboBox.Items.Add(valeur.ToString());
         }
+
+        public void ChargerCompteClientComboBox(GunaComboBox comboBox, IEnumerable<CompteClient> compteClients)
+        {
+            foreach (var valeur in compteClients)
+                comboBox.Items.Add(valeur.ToString());
+        }
+
+        public bool SiActiveButtonPourActiverCompte(GunaDataGridView dataGrid, int positionStatut) => 
+            dataGrid.SelectedRows.Count == 1 && 
+            dataGrid.SelectedRows[0].Cells[positionStatut].Value.ToString() == StatutCompte.Bloqué.ToString();
+
+        public bool SiActiveButtonPourBloquerCompte(GunaDataGridView dataGrid, int positionStatut) => 
+            dataGrid.SelectedRows.Count == 1 && 
+            dataGrid.SelectedRows[0].Cells[positionStatut].Value.ToString() == StatutCompte.Activé.ToString();
+
+        public bool SiClientEtCompteClientActiverPourTransaction(Transaction transaction) => 
+            transaction.CompteClientEmetteur.Client.StatutClient == StatutClient.Activé && 
+            (transaction.CompteClientEmetteur.StatutCompte == StatutCompte.Activé ||
+            transaction.CompteClientEmetteur.StatutCompte == StatutCompte.En_attente_de_validité);
+
+        public bool SiActiveButtonPourAnnulerTransaction(GunaDataGridView dataGrid, int positionStatut, Transaction transaction) => 
+            dataGrid.SelectedRows.Count == 1 &&
+            SiClientEtCompteClientActiverPourTransaction(transaction) &&
+            dataGrid.SelectedRows[0].Cells[positionStatut].Value.ToString() == StatutTransaction.En_cours_de_validité.ToString();
+
+        public bool SiActiveButtonPourValiderTransaction(GunaDataGridView dataGrid, int positionStatut, Transaction transaction) =>
+            dataGrid.SelectedRows.Count == 1 &&
+            SiClientEtCompteClientActiverPourTransaction(transaction) &&
+            (dataGrid.SelectedRows[0].Cells[positionStatut].Value.ToString() == StatutTransaction.En_cours_de_validité.ToString() ||
+            dataGrid.SelectedRows[0].Cells[positionStatut].Value.ToString() == StatutTransaction.Avisé.ToString());
+
+        public bool SiActiveButtonPourAviserTransaction(GunaDataGridView dataGrid, int positionStatut, int positionTypeCompte,
+            int positionTypeTransaction, Transaction transaction) =>
+            dataGrid.SelectedRows.Count == 1 &&
+            SiClientEtCompteClientActiverPourTransaction(transaction) &&
+            dataGrid.SelectedRows[0].Cells[positionStatut].Value.ToString() == StatutTransaction.En_cours_de_validité.ToString() &&
+            dataGrid.SelectedRows[0].Cells[positionTypeCompte].Value.ToString() == TypeCompte.Epargne.ToString() &&
+            dataGrid.SelectedRows[0].Cells[positionTypeTransaction].Value.ToString() == TypeTransaction.Retrait.ToString();
 
         public bool SiActiveButtonPourUneSelection(GunaDataGridView dataGrid) => (dataGrid.SelectedRows.Count == 1);
 
@@ -234,26 +318,77 @@ namespace TransFlash.Winforms.Fonctions
 
         public void ExtractionSurExcel(GunaDataGridView dataGrid)
         {
-            if (dataGrid.Rows.Count > 0)
+            try
             {
-                Microsoft.Office.Interop.Excel.Application applicationClass = new Microsoft.Office.Interop.Excel.Application();
-                applicationClass.Application.Workbooks.Add(Type.Missing);
-                for (int i = 1; i < dataGrid.Columns.Count + 1; i++)
+                if (dataGrid.Rows.Count > 0)
                 {
-                    applicationClass.Cells[1, i] = dataGrid.Columns[i - 1].HeaderText;
+                    Microsoft.Office.Interop.Excel.Application applicationClass = new Microsoft.Office.Interop.Excel.Application();
+                    applicationClass.Application.Workbooks.Add(Type.Missing);
+                    for (int i = 1; i < dataGrid.Columns.Count + 1; i++)
+                    {
+                        applicationClass.Cells[1, i] = dataGrid.Columns[i - 1].HeaderText;
+                    }
+
+                    for (int i = 0; i < dataGrid.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < dataGrid.Columns.Count; j++)
+                        {
+                            if(dataGrid.Rows[i].Cells[j].Value != null)
+                                applicationClass.Cells[i + 2, j + 1] = dataGrid.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    applicationClass.Columns.AutoFit();
+                    applicationClass.Visible = true;
                 }
 
-                for (int i = 0; i < dataGrid.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dataGrid.Columns.Count; j++)
-                    {
-                        if(dataGrid.Rows[i].Cells[j].Value != null)
-                            applicationClass.Cells[i + 2, j + 1] = dataGrid.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-                applicationClass.Columns.AutoFit();
-                applicationClass.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
+
+        public void AfficherUneInfoBulle(Control control, string titleInfoBulle, string messageInfoBulle)
+        {
+            ToolTip toolTip = new ToolTip()
+            {
+                BackColor = Color.FromArgb(13, 72, 114),
+                ReshowDelay = 1000,
+                ForeColor = Color.White,
+                ToolTipTitle = titleInfoBulle,
+                IsBalloon = true,
+                UseAnimation = true,
+                UseFading = true,
+                Active = true
+            };
+
+            toolTip.SetToolTip(control, messageInfoBulle);
+        }
+
+        public void CouleurStatutClient(GunaDataGridView dataGrid,  int positionStatut)
+        {
+            foreach (DataGridViewRow row in dataGrid.Rows)
+            {
+                if (row.Cells[positionStatut].Value.ToString() == StatutClient.Activé.ToString())
+                    row.Cells[positionStatut].Style.ForeColor = Color.Green;
+                else
+                    row.Cells[positionStatut].Style.ForeColor = Color.Crimson;
+            }
+        }
+
+        public void CouleurStatutCompte(GunaDataGridView dataGrid, int positionStatut)
+        {
+            foreach (DataGridViewRow row in dataGrid.Rows)
+            {
+                if (row.Cells[positionStatut].Value.ToString() == StatutCompte.Activé.ToString())
+                    row.Cells[positionStatut].Style.ForeColor = Color.Green;
+                else if (row.Cells[positionStatut].Value.ToString() == StatutCompte.En_attente_de_validité.ToString())
+                    row.Cells[positionStatut].Style.ForeColor = Color.FromArgb(24, 57, 101);
+                else
+                    row.Cells[positionStatut].Style.ForeColor = Color.Crimson;
+            }
+        }
+
+        public bool RendreValideControl(object obj) => obj != null;
     }
 }

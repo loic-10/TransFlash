@@ -58,6 +58,7 @@
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox22 = new Guna.UI.WinForms.GunaGroupBox();
             this.btnEdit = new Guna.UI.WinForms.GunaButton();
+            this.pbEmploye = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel26 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox23 = new Guna.UI.WinForms.GunaGroupBox();
             this.cmbPays = new Guna.UI.WinForms.GunaComboBox();
@@ -78,7 +79,6 @@
             this.txbNomComplet = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel33 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.pbEmploye = new Guna.UI.WinForms.GunaPictureBox();
             this.panelControl.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gbEmploye.SuspendLayout();
@@ -88,13 +88,13 @@
             this.gunaGroupBox21.SuspendLayout();
             this.gunaPanel6.SuspendLayout();
             this.gunaGroupBox22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmploye)).BeginInit();
             this.gunaGroupBox23.SuspendLayout();
             this.gunaGroupBox24.SuspendLayout();
             this.gunaGroupBox26.SuspendLayout();
             this.gunaGroupBox27.SuspendLayout();
             this.gunaGroupBox28.SuspendLayout();
             this.gunaGroupBox29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmploye)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl
@@ -456,6 +456,7 @@
             this.cmbVille.Radius = 5;
             this.cmbVille.Size = new System.Drawing.Size(271, 38);
             this.cmbVille.TabIndex = 10;
+            this.cmbVille.SelectedIndexChanged += new System.EventHandler(this.cmbVille_SelectedIndexChanged);
             // 
             // gunaLabel19
             // 
@@ -571,6 +572,18 @@
             this.btnEdit.Size = new System.Drawing.Size(23, 20);
             this.btnEdit.TabIndex = 24;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // pbEmploye
+            // 
+            this.pbEmploye.BaseColor = System.Drawing.Color.White;
+            this.pbEmploye.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbEmploye.InitialImage = global::Couche.Winforms.Properties.Resources.user_male_circle_104px1;
+            this.pbEmploye.Location = new System.Drawing.Point(175, 0);
+            this.pbEmploye.Name = "pbEmploye";
+            this.pbEmploye.Size = new System.Drawing.Size(160, 160);
+            this.pbEmploye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEmploye.TabIndex = 25;
+            this.pbEmploye.TabStop = false;
             // 
             // gunaLabel26
             // 
@@ -878,18 +891,6 @@
             this.gunaElipse2.Radius = 10;
             this.gunaElipse2.TargetControl = this.pbEmploye;
             // 
-            // pbEmploye
-            // 
-            this.pbEmploye.BaseColor = System.Drawing.Color.White;
-            this.pbEmploye.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbEmploye.InitialImage = global::Couche.Winforms.Properties.Resources.user_male_circle_104px1;
-            this.pbEmploye.Location = new System.Drawing.Point(175, 0);
-            this.pbEmploye.Name = "pbEmploye";
-            this.pbEmploye.Size = new System.Drawing.Size(160, 160);
-            this.pbEmploye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbEmploye.TabIndex = 25;
-            this.pbEmploye.TabStop = false;
-            // 
             // Frm_EditerEmploye
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -911,13 +912,13 @@
             this.gunaGroupBox21.ResumeLayout(false);
             this.gunaPanel6.ResumeLayout(false);
             this.gunaGroupBox22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmploye)).EndInit();
             this.gunaGroupBox23.ResumeLayout(false);
             this.gunaGroupBox24.ResumeLayout(false);
             this.gunaGroupBox26.ResumeLayout(false);
             this.gunaGroupBox27.ResumeLayout(false);
             this.gunaGroupBox28.ResumeLayout(false);
             this.gunaGroupBox29.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmploye)).EndInit();
             this.ResumeLayout(false);
 
         }

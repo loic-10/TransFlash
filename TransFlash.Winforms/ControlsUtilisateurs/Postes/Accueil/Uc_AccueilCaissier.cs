@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls;
 using TransFlash.Winforms.Fonctions;
+using TransFlash.BO;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 {
@@ -17,7 +18,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private Frm_Fonction fonction = new Frm_Fonction();
 
-        public Uc_AccueilCaissier()
+        public Uc_AccueilCaissier(Employe employe, Frm_Principal frm_Principal)
         {
             InitializeComponent();
         }
@@ -30,8 +31,8 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private void btnGererTransaction_Click(object sender, EventArgs e)
         {
-            Uc_GererTransaction frm = new Uc_GererTransaction();
-            fonction.AfficherPageChoisie(this, frm);
+            //Uc_GererTransaction frm = new Uc_GererTransaction();
+            //fonction.AfficherPageChoisie(this, frm);
         }
 
         private void btnGererEmprunt_Click(object sender, EventArgs e)

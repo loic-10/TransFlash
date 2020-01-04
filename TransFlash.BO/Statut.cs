@@ -154,14 +154,14 @@ namespace TransFlash.BO
 
         public enum StatutSalarie
         {
-            Endetté,
-            En_règle,
+            En_service,
             Renvoyé
         }
 
         public enum StatutPayementSalarie
         {
             Payé,
+            Jour_de_paie,
             Non_payé
         }
 
@@ -208,7 +208,8 @@ namespace TransFlash.BO
             Validation, 
             Virement,
             Activation,
-            Désactivation
+            Désactivation,
+            Payement
 
         }
 
@@ -216,6 +217,12 @@ namespace TransFlash.BO
         {
             Masculin,
             Féminin
+        };
+
+        public enum StatutPossibilite
+        {
+            Possible,
+            Impossible
         };
 
         public static StatutSexe? RetourSexe(string sexe)

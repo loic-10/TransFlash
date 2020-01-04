@@ -22,7 +22,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private Employe employe = null;
 
-        public Uc_AccueilChefCredit(Employe employe)
+        public Uc_AccueilChefCredit(Employe employe, Frm_Principal frm_Principal)
         {
             InitializeComponent();
             this.employe = employe;
@@ -43,13 +43,13 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private void btnGererCompte_Click(object sender, EventArgs e)
         {
-            Uc_GererCompte frm = new Uc_GererCompte();
+            Uc_GererCompte frm = new Uc_GererCompte(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 
         private void btnGererTransaction_Click(object sender, EventArgs e)
         {
-            Uc_GererTransaction frm = new Uc_GererTransaction();
+            Uc_GererTransaction frm = new Uc_GererTransaction(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 

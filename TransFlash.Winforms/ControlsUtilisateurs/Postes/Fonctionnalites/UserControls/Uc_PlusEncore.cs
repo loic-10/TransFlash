@@ -26,7 +26,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         {
             InitializeComponent();
             this.employe = employe;
-            Uc_Beneficiers frm = new Uc_Beneficiers();
+            Uc_Beneficiers frm = new Uc_Beneficiers(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
@@ -36,43 +36,43 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnBeneficiers_Click(object sender, EventArgs e)
         {
-            Uc_Beneficiers frm = new Uc_Beneficiers();
+            Uc_Beneficiers frm = new Uc_Beneficiers(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnPartsSociales_Click(object sender, EventArgs e)
         {
-            Uc_PartsSociales frm = new Uc_PartsSociales();
+            Uc_PartsSociales frm = new Uc_PartsSociales(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnNumerosComptables_Click(object sender, EventArgs e)
         {
-            Uc_Fonds frm = new Uc_Fonds();
+            Uc_Fonds frm = new Uc_Fonds(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnGaranties_Click(object sender, EventArgs e)
         {
-            Uc_Garanties frm = new Uc_Garanties();
+            Uc_Garanties frm = new Uc_Garanties(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnButsCredits_Click(object sender, EventArgs e)
         {
-            Uc_ButsCredits frm = new Uc_ButsCredits();
+            Uc_ButsCredits frm = new Uc_ButsCredits(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnAvalistes_Click(object sender, EventArgs e)
         {
-            Uc_Avalistes frm = new Uc_Avalistes();
+            Uc_Avalistes frm = new Uc_Avalistes(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnSalaries_Click(object sender, EventArgs e)
         {
-            Uc_Salaries frm = new Uc_Salaries();
+            Uc_Salaries frm = new Uc_Salaries(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
@@ -84,7 +84,19 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnVilles_Click(object sender, EventArgs e)
         {
-            Uc_Villes frm = new Uc_Villes();
+            Uc_Villes frm = new Uc_Villes(this.employe);
+            fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
+        }
+
+        private void btnFichierStocke_Click(object sender, EventArgs e)
+        {
+            Uc_FichiersStockes frm = new Uc_FichiersStockes(this.employe);
+            fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
+        }
+
+        private void btnEpargne_Click(object sender, EventArgs e)
+        {
+            Uc_Epargne frm = new Uc_Epargne(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
     }

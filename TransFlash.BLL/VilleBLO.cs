@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,6 @@ namespace TransFlash.BLL
     public class VilleBLO
     {
         private IDAL<Ville> villeBLO = null;
-        private OperationBLO operationBLO = null;
 
         public VilleBLO()
         {
@@ -29,31 +28,31 @@ namespace TransFlash.BLL
 
         public void AjouterVille(string nom, Pays nomPays, Employe employe)
         {
-            operationBLO = new OperationBLO();
             villeBLO.Add(new Ville(nom, nomPays));
 
             if(employe.CodeEmploye != string.Empty)
-                operationBLO.AjouterOperation(TypeOperation.Ajout, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+                new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, new Client("/"), new CompteClient("/"), 0,
+                    $"Ajout de la ville de {nom} au {nomPays}");
         }
 
         public void ModifierVille(Ville ville, string nom, Pays pays, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             int index = villeBLO.IndexOf(ville);
             ville.Nom = nom;
             ville.Pays = pays;
             villeBLO[index] = ville;
 
-            operationBLO.AjouterOperation(TypeOperation.Modification, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Modification, employe, new Client("/"), new CompteClient("/"), 0,
+                $"Modification de la ville de {nom} au {pays}");
         }
 
         public void SupprimerVille(Ville ville, Employe employe)
         {
-            operationBLO = new OperationBLO();
             villeBLO.Remove(ville);
 
-            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, new Client("/"), new CompteClient("/"), 0,
+                $"Suppression de la ville de {ville.Nom} au {ville.Pays}");
         }
 
         public IEnumerable<Ville> RechercherLesVillesDuPays(Pays pays) => villeBLO.Find(x => 
@@ -62,11 +61,11 @@ namespace TransFlash.BLL
         public Ville RechercherUneVille(string nom) => villeBLO.Find(x => 
                 x.Nom == nom).FirstOrDefault();
 
-        public IEnumerable<Ville> RechercherLesVilles(string valeur) => villeBLO.Find(x => 
-                x.Nom.ToLower().Contains(valeur.ToLower()) || 
-                x.Pays.ToString().ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<Ville> RechercherLesVilles(string valeur, bool checkNom, bool checkPays) => villeBLO.Find(x => 
+                (x.Nom.ToLower().Contains(valeur.ToLower()) && checkNom) || 
+                (x.Pays.ToString().ToLower().Contains(valeur.ToLower()) && checkPays));
 
-        public List<Ville> ToutesVilles => villeBLO.AllItems;
+        public IEnumerable<Ville> ToutesVilles => villeBLO.AllItems;
 
     }
 }

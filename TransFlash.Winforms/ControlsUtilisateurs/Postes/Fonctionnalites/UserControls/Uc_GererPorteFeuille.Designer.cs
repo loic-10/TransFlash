@@ -249,7 +249,7 @@
             this.btnExporterExcel.ForeColor = System.Drawing.Color.White;
             this.btnExporterExcel.Image = global::Couche.Winforms.Properties.Resources.ms_excel_64px;
             this.btnExporterExcel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExporterExcel.Location = new System.Drawing.Point(0, 252);
+            this.btnExporterExcel.Location = new System.Drawing.Point(0, 260);
             this.btnExporterExcel.Name = "btnExporterExcel";
             this.btnExporterExcel.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnExporterExcel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -273,7 +273,7 @@
             this.btnImprimer.ForeColor = System.Drawing.Color.White;
             this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.print_64px;
             this.btnImprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnImprimer.Location = new System.Drawing.Point(0, 210);
+            this.btnImprimer.Location = new System.Drawing.Point(0, 218);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnImprimer.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -297,7 +297,7 @@
             this.btnInformation.ForeColor = System.Drawing.Color.White;
             this.btnInformation.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnInformation.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnInformation.Location = new System.Drawing.Point(0, 168);
+            this.btnInformation.Location = new System.Drawing.Point(0, 176);
             this.btnInformation.Name = "btnInformation";
             this.btnInformation.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnInformation.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -322,7 +322,7 @@
             this.btnSupprimer.ForeColor = System.Drawing.Color.White;
             this.btnSupprimer.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnSupprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSupprimer.Location = new System.Drawing.Point(0, 126);
+            this.btnSupprimer.Location = new System.Drawing.Point(0, 134);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnSupprimer.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -346,7 +346,7 @@
             this.btnEditerClient.ForeColor = System.Drawing.Color.White;
             this.btnEditerClient.Image = global::Couche.Winforms.Properties.Resources.edit_user_male_64px;
             this.btnEditerClient.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditerClient.Location = new System.Drawing.Point(0, 84);
+            this.btnEditerClient.Location = new System.Drawing.Point(0, 92);
             this.btnEditerClient.Name = "btnEditerClient";
             this.btnEditerClient.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnEditerClient.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -371,7 +371,7 @@
             this.btnEnregistrerClient.ForeColor = System.Drawing.Color.White;
             this.btnEnregistrerClient.Image = global::Couche.Winforms.Properties.Resources.add_user_male_64px;
             this.btnEnregistrerClient.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEnregistrerClient.Location = new System.Drawing.Point(0, 42);
+            this.btnEnregistrerClient.Location = new System.Drawing.Point(0, 50);
             this.btnEnregistrerClient.Name = "btnEnregistrerClient";
             this.btnEnregistrerClient.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnEnregistrerClient.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -403,7 +403,7 @@
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(200, 42);
+            this.gunaButton1.Size = new System.Drawing.Size(200, 50);
             this.gunaButton1.TabIndex = 0;
             this.gunaButton1.Text = "Tout sur client";
             // 
@@ -412,13 +412,13 @@
             this.gunaElipse1.Radius = 3;
             this.gunaElipse1.TargetControl = this.dgClient;
             // 
-            // Uc_GererClient
+            // Uc_GererPorteFeuille
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.gunaPanel4);
             this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.gunaPanel5);
-            this.Name = "Uc_GererClient";
+            this.Name = "Uc_GererPorteFeuille";
             this.Size = new System.Drawing.Size(1000, 700);
             this.gunaPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgClient)).EndInit();

@@ -24,15 +24,15 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
 
         private Employe employeChef = null;
 
-        private EmployeBLO employeBLO = null;
+        private Uc_GererEmploye uc_GererEmploye = null;
 
-        public Frm_EditerCompteEmploye(Employe employeChef, Employe employe)
+        public Frm_EditerCompteEmploye(Employe employeChef, Employe employe, Uc_GererEmploye uc_GererEmploye)
         {
             InitializeComponent();
             fonction = new Frm_Fonction();
             this.employe = employe;
             this.employeChef = employeChef;
-            employeBLO = new EmployeBLO();
+            this.uc_GererEmploye = uc_GererEmploye;
             AfficheInformationEmploye(employe);
         }
 
@@ -54,7 +54,11 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
 
         private bool SiFormulaireRempliCorrectement => ((txbNomUtilisateur.Text != string.Empty) && (txbMDP.Text != string.Empty) && (txbConfirmerMDP.Text != string.Empty));
 
-        private bool SiMDPConvient => (txbMDP.Text == txbConfirmerMDP.Text);
+        private bool SiMDPConvient => txbMDP.Text == txbConfirmerMDP.Text;
+
+        private bool SiEmployePeutChangerStatut(Employe employe, StatutEmploye newStatutEmploye) =>
+            (new EmployeBLO().RechercherDesEmployesMemeStatut(employe.StatutEmploye).Count() > 1) ||
+            employe.StatutEmploye == newStatutEmploye;
 
         private void btnMettreAJour_Click(object sender, EventArgs e)
         {
@@ -64,10 +68,16 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
                 {
                     if (SiMDPConvient)
                     {
-                        employeBLO.ModifierEmploye(this.employe, txbMDP.Text, RetourStatutEmploye(cmbRoleEmploye.Text), this.employeChef);
-                        new Uc_GererEmploye(this.employeChef).RefreshDataGrid(employeBLO.TousEmployes);
-                        fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Modification",
-                            $"Employe modifie !");
+                        if (SiEmployePeutChangerStatut(this.employe, RetourStatutEmploye(cmbRoleEmploye.Text)))
+                        {
+                            new EmployeBLO().ModifierEmploye(this.employe, txbMDP.Text, RetourStatutEmploye(cmbRoleEmploye.Text), this.employeChef);
+                            this.uc_GererEmploye.txbRechercher_TextChanged(sender, e);
+                            fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Modification",
+                                $"Employe modifie !");
+                        }
+                        else
+                            MessageBox.Show($"Cet employe ne peut pas changer de statut car vous ne disposez que d'un seul {employe.StatutEmploye.ToString().Replace("_", " ")}",
+                                "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                         fonction.AfficheMessageNotification(Color.FromArgb(248, 43, 43), "Modification", "Les mots de passe non identiques !");
@@ -83,7 +93,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
 
         private void cmbRoleEmploye_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblCodeEmploye.Text = employeBLO.CodeEmploye(RetourStatutEmploye(cmbRoleEmploye.Text)).Split('-')[0] + "-" + this.employe.CodeEmploye.Split('-')[1];
+            lblCodeEmploye.Text = new EmployeBLO().CodeEmploye(RetourStatutEmploye(cmbRoleEmploye.Text)).Split('-')[0] + "-" + this.employe.CodeEmploye.Split('-')[1];
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,11 +20,14 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
 
         private Employe employeChef = null;
 
-        public Frm_InformationEmploye(Employe employeChef, Employe employe)
+        private Uc_GererEmploye uc_GererEmploye = null;
+
+        public Frm_InformationEmploye(Employe employeChef, Employe employe, Uc_GererEmploye uc_GererEmploye)
         {
             InitializeComponent();
             this.employeChef = employeChef;
             this.employe = employe;
+            this.uc_GererEmploye = uc_GererEmploye;
             InformationEmploye(this.employe);
         }
 
@@ -50,7 +54,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.Forms
         {
             Close();
             Visible = false;
-            Frm_EditerEmploye frm = new Frm_EditerEmploye(this.employeChef, this.employe) ;
+            Frm_EditerEmploye frm = new Frm_EditerEmploye(this.employeChef, this.employe, this.uc_GererEmploye) ;
             frm.ShowDialog();
         }
     }

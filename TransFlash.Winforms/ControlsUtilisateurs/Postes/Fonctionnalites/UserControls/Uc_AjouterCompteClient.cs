@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
 using TransFlash.Winforms.Fonctions;
+using TransFlash.BO;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
 {
@@ -21,10 +22,14 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         Uc_Beneficier[] beneficiers = null;
 
-        public Uc_AjouterCompteClient()
+        private Employe employe = null;
+
+        public Uc_AjouterCompteClient(Employe employe)
         {
             InitializeComponent();
             nombreBeneficier = 2;
+
+            this.employe = employe;
 
             MesBeneficiers(nombreBeneficier);
         }
@@ -58,7 +63,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Uc_GererCompte frm = new Uc_GererCompte();
+            Uc_GererCompte frm = new Uc_GererCompte(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
     }

@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,33 +13,33 @@ namespace TransFlash.BLL
     {
         private IDAL<ButCredit> butCreditBLO = null;
 
-        private OperationBLO operationBLO = null;
-
         public ButCreditBLO()
         {
             butCreditBLO = new RepositoireDAOFile<ButCredit>();
             if(butCreditBLO.Count == 0)
             {
-                AjouterButCredit("Investissement", new Employe("Indefini"));
-                AjouterButCredit("Agriculture", new Employe("Indefini"));
-                AjouterButCredit("Elevage", new Employe("Indefini"));
+                AjouterButCredit("Investissement", new Employe("/"));
+                AjouterButCredit("Agriculture", new Employe("/"));
+                AjouterButCredit("Elevage", new Employe("/"));
             }
         }
 
         public void AjouterButCredit(string nom, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             butCreditBLO.Add(new ButCredit(nom));
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, new Client("/"), new CompteClient("/"), 0, 
+                $"Ajout du but de credit {nom}");
         }
 
         public void SupprimerButCredit(ButCredit ButCredit, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             butCreditBLO.Remove(ButCredit);
 
-            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, new Client("/"), new CompteClient("/"), 0, 
+                $"Suppression du but de credit {ButCredit.Nom}");
         }
 
         public IEnumerable<ButCredit> RechercherLesButCredits(string valeur) => butCreditBLO.Find(x => 

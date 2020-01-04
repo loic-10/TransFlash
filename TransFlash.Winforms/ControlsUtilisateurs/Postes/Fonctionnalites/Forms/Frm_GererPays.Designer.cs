@@ -42,6 +42,7 @@
             this.panelNomStructure = new Guna.UI.WinForms.GunaGroupBox();
             this.txbNom = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel21 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.panelControl.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.panelMontantDepart.SuspendLayout();
@@ -103,7 +104,7 @@
             this.btnAjouter.FocusedColor = System.Drawing.Color.Empty;
             this.btnAjouter.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjouter.ForeColor = System.Drawing.Color.White;
-            this.btnAjouter.Image = global::Couche.Winforms.Properties.Resources.add_property_24px;
+            this.btnAjouter.Image = global::Couche.Winforms.Properties.Resources.checked_24px;
             this.btnAjouter.ImageOffsetX = 5;
             this.btnAjouter.ImageSize = new System.Drawing.Size(24, 24);
             this.btnAjouter.Location = new System.Drawing.Point(172, 10);
@@ -111,12 +112,12 @@
             this.btnAjouter.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.btnAjouter.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAjouter.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAjouter.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_list_24px;
+            this.btnAjouter.OnHoverImage = global::Couche.Winforms.Properties.Resources.checked_radio_button_24px;
             this.btnAjouter.OnPressedColor = System.Drawing.Color.Black;
             this.btnAjouter.Radius = 5;
             this.btnAjouter.Size = new System.Drawing.Size(138, 47);
             this.btnAjouter.TabIndex = 1;
-            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.Text = "Valider";
             this.btnAjouter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAjouter.TextOffsetX = 10;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
@@ -151,6 +152,7 @@
             this.panelMontantDepart.BackColor = System.Drawing.Color.Transparent;
             this.panelMontantDepart.BaseColor = System.Drawing.Color.Transparent;
             this.panelMontantDepart.BorderColor = System.Drawing.Color.DarkGray;
+            this.panelMontantDepart.Controls.Add(this.gunaLabel1);
             this.panelMontantDepart.Controls.Add(this.txbCodeTelephone);
             this.panelMontantDepart.Controls.Add(this.gunaLabel18);
             this.panelMontantDepart.LineColor = System.Drawing.Color.Gainsboro;
@@ -180,6 +182,8 @@
             this.txbCodeTelephone.Radius = 5;
             this.txbCodeTelephone.Size = new System.Drawing.Size(248, 38);
             this.txbCodeTelephone.TabIndex = 5;
+            this.txbCodeTelephone.TextOffsetX = 25;
+            this.txbCodeTelephone.TextChanged += new System.EventHandler(this.txbCodeTelephone_TextChanged);
             // 
             // gunaLabel18
             // 
@@ -238,6 +242,18 @@
             this.gunaLabel21.Text = "Nom*";
             this.gunaLabel21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.BackColor = System.Drawing.Color.White;
+            this.gunaLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gunaLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(131, 4);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(25, 30);
+            this.gunaLabel1.TabIndex = 7;
+            this.gunaLabel1.Text = "+";
+            this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Frm_GererPays
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -274,5 +290,6 @@
         private Guna.UI.WinForms.GunaGroupBox panelNomStructure;
         private Guna.UI.WinForms.GunaTextBox txbNom;
         private Guna.UI.WinForms.GunaLabel gunaLabel21;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
     }
 }

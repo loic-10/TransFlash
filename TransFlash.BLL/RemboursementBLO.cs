@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +13,6 @@ namespace TransFlash.BLL
     {
         private IDAL<Remboursement> remboursementBLO = null;
 
-        private CreditBLO creditBLO = null;
-
-        private OperationBLO operationBLO = null;
-
         public RemboursementBLO()
         {
             remboursementBLO = new RepositoireDAOFile<Remboursement>();
@@ -24,29 +20,28 @@ namespace TransFlash.BLL
 
         public void EffectuerRemboursement(Credit credit, double montant, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             remboursementBLO.Add(new Remboursement(CodeRemboursement, credit, DateTime.Now, montant, 
                 StatutRemboursement.En_attente_de_validité));
 
-            operationBLO.AjouterOperation(TypeOperation.Remboursement, employe, credit.Client, new CompteClient("Indefini"), montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Remboursement, employe, credit.Client, new CompteClient("/"), montant, 
+                $"Remboursement du credit {credit}");
 
             new IdentifiantBLO().AddIdRemboursement();
         }
 
         public void ValiderRemboursement(Remboursement remboursement, Employe employe)
         {
-            operationBLO = new OperationBLO();
-            creditBLO = new CreditBLO();
 
             int index = remboursementBLO.IndexOf(remboursement);
 
             remboursement.StatutRemboursement = StatutRemboursement.Validé;
             remboursementBLO[index] = remboursement;
 
-            operationBLO.AjouterOperation(TypeOperation.Validation, employe, remboursement.Credit.Client, new CompteClient("Indefini"), remboursement.Montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Validation, employe, remboursement.Credit.Client, new CompteClient("/"), 
+                remboursement.Montant, $"Validation du remboursement {remboursement} du credit {remboursement.Credit}");
 
-            creditBLO.ReduireMontantCredit(remboursement.Credit, remboursement.Montant, employe);
+            new CreditBLO().ReduireMontantCredit(remboursement.Credit, remboursement.Montant, employe);
 
         }
 
@@ -54,16 +49,16 @@ namespace TransFlash.BLL
 
         public void PayerDette(Remboursement remboursement, Credit credit, double montant, Employe employe)
         {
-            operationBLO = new OperationBLO();
-            creditBLO = new CreditBLO();
-            creditBLO.ReduireMontantCredit(credit, montant, employe);
+
+            new CreditBLO().ReduireMontantCredit(credit, montant, employe);
 
             int index = remboursementBLO.IndexOf(remboursement);
 
             remboursement.StatutRemboursement = StatutRemboursement.Validé;
             remboursementBLO[index] = remboursement;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, credit.Client, new CompteClient("Indefini"), montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Payement, employe, credit.Client, new CompteClient("/"), montant,
+                $"Payement du remboursement {remboursement}, du credit {credit} au montant de {montant}");
         }
 
         public IEnumerable<Remboursement> RemboursementDuCredit(Credit credit) => remboursementBLO.Find(x => 
@@ -76,10 +71,9 @@ namespace TransFlash.BLL
 
         public void SupprimerRemboursement(Remboursement remboursement, Employe employe)
         {
-            operationBLO = new OperationBLO();
             remboursementBLO.Remove(remboursement);
-            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, remboursement.Credit.Client, new CompteClient("Indefini"), 
-                remboursement.Montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, remboursement.Credit.Client, new CompteClient("/"), 
+                remboursement.Montant, $"Suppression du remboursement {remboursement}");
         }
 
         public List<Remboursement> TousRemboursements => remboursementBLO.AllItems;

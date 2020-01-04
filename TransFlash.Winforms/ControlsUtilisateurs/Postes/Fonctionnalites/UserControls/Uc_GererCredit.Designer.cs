@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.dataGrid = new Guna.UI.WinForms.GunaGroupBox();
             this.dgClient = new Guna.UI.WinForms.GunaDataGridView();
@@ -105,8 +105,8 @@
             this.dgClient.AllowUserToAddRows = false;
             this.dgClient.AllowUserToDeleteRows = false;
             this.dgClient.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.dgClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.dgClient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgClient.AutoGenerateColumns = false;
             this.dgClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgClient.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -114,28 +114,28 @@
             this.dgClient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgClient.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgClient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgClient.ColumnHeadersHeight = 30;
             this.dgClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
             this.dgClient.DataSource = this.personneBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgClient.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgClient.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgClient.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgClient.EnableHeadersVisualStyles = false;
@@ -292,7 +292,7 @@
             this.btnExporterExcel.ForeColor = System.Drawing.Color.White;
             this.btnExporterExcel.Image = global::Couche.Winforms.Properties.Resources.ms_excel_64px;
             this.btnExporterExcel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExporterExcel.Location = new System.Drawing.Point(0, 294);
+            this.btnExporterExcel.Location = new System.Drawing.Point(0, 302);
             this.btnExporterExcel.Name = "btnExporterExcel";
             this.btnExporterExcel.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnExporterExcel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -316,7 +316,7 @@
             this.btnImprimer.ForeColor = System.Drawing.Color.White;
             this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.print_64px;
             this.btnImprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnImprimer.Location = new System.Drawing.Point(0, 252);
+            this.btnImprimer.Location = new System.Drawing.Point(0, 260);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnImprimer.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -340,7 +340,7 @@
             this.btnInformation.ForeColor = System.Drawing.Color.White;
             this.btnInformation.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnInformation.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnInformation.Location = new System.Drawing.Point(0, 210);
+            this.btnInformation.Location = new System.Drawing.Point(0, 218);
             this.btnInformation.Name = "btnInformation";
             this.btnInformation.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnInformation.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -364,7 +364,7 @@
             this.btnSupprimer.ForeColor = System.Drawing.Color.White;
             this.btnSupprimer.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnSupprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSupprimer.Location = new System.Drawing.Point(0, 168);
+            this.btnSupprimer.Location = new System.Drawing.Point(0, 176);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnSupprimer.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -388,7 +388,7 @@
             this.btnAnnulerCredit.ForeColor = System.Drawing.Color.White;
             this.btnAnnulerCredit.Image = global::Couche.Winforms.Properties.Resources.remove_user_male_64px;
             this.btnAnnulerCredit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAnnulerCredit.Location = new System.Drawing.Point(0, 126);
+            this.btnAnnulerCredit.Location = new System.Drawing.Point(0, 134);
             this.btnAnnulerCredit.Name = "btnAnnulerCredit";
             this.btnAnnulerCredit.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnAnnulerCredit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -412,7 +412,7 @@
             this.btnFinaliserCredit.ForeColor = System.Drawing.Color.White;
             this.btnFinaliserCredit.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnFinaliserCredit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFinaliserCredit.Location = new System.Drawing.Point(0, 84);
+            this.btnFinaliserCredit.Location = new System.Drawing.Point(0, 92);
             this.btnFinaliserCredit.Name = "btnFinaliserCredit";
             this.btnFinaliserCredit.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnFinaliserCredit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -436,7 +436,7 @@
             this.btnInitierCredit.ForeColor = System.Drawing.Color.White;
             this.btnInitierCredit.Image = global::Couche.Winforms.Properties.Resources.add_user_male_64px;
             this.btnInitierCredit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnInitierCredit.Location = new System.Drawing.Point(0, 42);
+            this.btnInitierCredit.Location = new System.Drawing.Point(0, 50);
             this.btnInitierCredit.Name = "btnInitierCredit";
             this.btnInitierCredit.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnInitierCredit.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -468,7 +468,7 @@
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(200, 42);
+            this.gunaButton1.Size = new System.Drawing.Size(200, 50);
             this.gunaButton1.TabIndex = 0;
             this.gunaButton1.Text = "Tout sur credit";
             // 

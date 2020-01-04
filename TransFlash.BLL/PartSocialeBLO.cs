@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,40 +13,36 @@ namespace TransFlash.BLL
     {
         private IDAL<PartSociale> partSocialeBLO = null;
 
-        private OperationBLO operationBLO = null;
-
-        private ParametreGeneralBLO parametreGeneralBLO = null;
-
         public PartSocialeBLO()
         {
             partSocialeBLO = new RepositoireDAOFile<PartSociale>();
         }
 
-        public void AjouterPartSociale(CompteClient compteClient, StatutPartSociale statutPartSociale, double montant, Employe employe)
+        public void AjouterPartSociale(CompteClient compteClient, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
-            partSocialeBLO.Add(new PartSociale(compteClient, statutPartSociale, montant));
+            partSocialeBLO.Add(new PartSociale(compteClient, StatutPartSociale.Incomplete, 0));
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, 0,
+                $"Ajout de la part sociale du compte {compteClient}");
         }
 
-        public void AjouterMontantSociale(PartSociale partSociale, double montant, Employe employe)
+        public void AjouterMontantPartSociale(PartSociale partSociale, double montant, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             int index = partSocialeBLO.IndexOf(partSociale);
 
             partSociale.Montant += montant;
             partSocialeBLO[index] = partSociale;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, partSociale.CompteClient.Client, partSociale.CompteClient, montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, partSociale.CompteClient.Client, partSociale.CompteClient, montant,
+                $"Ajout de la part sociale {partSociale}, au montant de {montant} de part sociale par le client {partSociale.CompteClient.Client} dans le " +
+                $"compte {partSociale.CompteClient}");
         }
 
         public bool VerifierValidite(PartSociale partSociale, double montant)
         {
-            parametreGeneralBLO = new ParametreGeneralBLO();
-            if (montant > 0 && parametreGeneralBLO.TousParametreGenerals[0].MontantPartSociale >= (partSociale.Montant = montant))
+            if (montant > 0 && new ParametreGeneralBLO().TousParametreGenerals[0].MontantPartSociale >= (partSociale.Montant = montant))
                 return true;
 
             return false;
@@ -54,32 +50,34 @@ namespace TransFlash.BLL
 
         public void UtiliserArgentParSociale(PartSociale partSociale, double montant, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             int index = partSocialeBLO.IndexOf(partSociale);
 
             partSociale.Montant -= montant;
             partSocialeBLO[index] = partSociale;
 
-            operationBLO.AjouterOperation(TypeOperation.Reduction_du_montant_de_la_part_sociale, employe, partSociale.CompteClient.Client, 
-                partSociale.CompteClient, montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Reduction_du_montant_de_la_part_sociale, employe, partSociale.CompteClient.Client, 
+                partSociale.CompteClient, montant, $"Reduction du montant de la part sociale {partSociale}, au montant de {montant} de part sociale par le client " +
+                $"{partSociale.CompteClient.Client} dans le compte {partSociale.CompteClient}");
         }
 
         public void SupprimerPartSociale(PartSociale partSociale, Employe employe)
         {
-            operationBLO = new OperationBLO();
             partSocialeBLO.Remove(partSociale);
 
-            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, partSociale.CompteClient.Client, partSociale.CompteClient, partSociale.Montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, partSociale.CompteClient.Client, partSociale.CompteClient, 
+                partSociale.Montant, $"Ajout de la part sociale {partSociale}, au montant de {partSociale.Montant} de part sociale par le client " +
+                $"{partSociale.CompteClient.Client} dans le compte {partSociale.CompteClient}");
         }
 
         public PartSociale RechercherPartSocialesCompte(CompteClient compteClient) => partSocialeBLO.Find(x =>
               x.CompteClient == compteClient).FirstOrDefault();
 
-        public IEnumerable<PartSociale> RechercherLesPartSociales(string valeur) => partSocialeBLO.Find(x =>
-            x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.Montant.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.StatutPartSociale.ToString().ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<PartSociale> RechercherLesPartSociales(string valeur, bool checkStatutPartSociale, bool checkMontant,
+                bool checkCompteClient) => partSocialeBLO.Find(x =>
+            (x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) && checkCompteClient) ||
+            (x.Montant.ToString().ToLower().Contains(valeur.ToLower()) && checkMontant) ||
+            (x.StatutPartSociale.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutPartSociale));
 
         public List<PartSociale> TousPartSociales => partSocialeBLO.AllItems;
 

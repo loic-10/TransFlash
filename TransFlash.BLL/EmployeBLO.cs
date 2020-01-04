@@ -1,5 +1,5 @@
-﻿using Multicouche.DAL;
-using Multicouche.DAL.Cryptographie;
+﻿using TransFlash.DAL;
+using TransFlash.DAL.Cryptographie;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,57 +15,51 @@ namespace TransFlash.BLL
     {
         private IDAL<Employe> employeBLO = null;
 
-        private OperationBLO operationBLO = null;
-
-        private CrypterMD5 crypterMD5 = new CrypterMD5();
-
-        private FichierStockeBLO fichierStockeBLO = null;
-
         public EmployeBLO()
         {
             employeBLO = new RepositoireDAOFile<Employe>();
-            fichierStockeBLO = new FichierStockeBLO();
             if(employeBLO.Count == 0)
             {
 
                 // Creation du compte chef d'agence
-                AjouterEmploye(StatutEmploye.Chef_Agence.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("Indefini"), 
-                    new Ville("Indefini"), string.Empty, string.Empty, "1234", StatutEmploye.Chef_Agence, new Employe("Indefini"));
+                AjouterEmploye(StatutEmploye.Chef_Agence.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("/"), 
+                    new Ville("/"), string.Empty, string.Empty, "1234", StatutEmploye.Chef_Agence, new Employe("/"));
 
                 // Creation du compte chef de credit
-                AjouterEmploye(StatutEmploye.Chef_Credit.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("Indefini"), 
-                    new Ville("Indefini"), string.Empty, string.Empty, "1234", StatutEmploye.Chef_Credit, new Employe("Indefini"));
+                AjouterEmploye(StatutEmploye.Chef_Credit.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("/"), 
+                    new Ville("/"), string.Empty, string.Empty, "1234", StatutEmploye.Chef_Credit, new Employe("/"));
 
                 // Creation du compte comptable
-                AjouterEmploye(StatutEmploye.Comptable.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("Indefini"), 
-                    new Ville("Indefini"), string.Empty, string.Empty,"1234", StatutEmploye.Comptable, new Employe("Indefini"));
+                AjouterEmploye(StatutEmploye.Comptable.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("/"), 
+                    new Ville("/"), string.Empty, string.Empty,"1234", StatutEmploye.Comptable, new Employe("/"));
 
                 // Creation du compte secretaire comptable
-                AjouterEmploye(StatutEmploye.Secretaire_Comptable.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("Indefini"), 
-                    new Ville("Indefini"), string.Empty, string.Empty,"1234", StatutEmploye.Secretaire_Comptable, new Employe("Indefini"));
+                AjouterEmploye(StatutEmploye.Secretaire_Comptable.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("/"), 
+                    new Ville("/"), string.Empty, string.Empty,"1234", StatutEmploye.Secretaire_Comptable, new Employe("/"));
 
                 // Creation du compte caissier
-                AjouterEmploye(StatutEmploye.Caissier.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("Indefini"), 
-                    new Ville("Indefini"), string.Empty, string.Empty,"1234", StatutEmploye.Caissier, new Employe("Indefini"));
+                AjouterEmploye(StatutEmploye.Caissier.ToString(), null, string.Empty, null, "000000000", " ", " ", new Pays("/"), 
+                    new Ville("/"), string.Empty, string.Empty,"1234", StatutEmploye.Caissier, new Employe("/"));
             }
         }
 
         public Employe SeConnecter(string nomUtilisateur, string motDePasse) => employeBLO.Find(x => 
             (x.NomUtilisateur.ToLower() == nomUtilisateur.ToLower() || x.CodeEmploye.ToLower() == nomUtilisateur.ToLower()) &&
-            x.MotDePasse.ToLower() == crypterMD5.GetMd5Hash(MD5.Create(), motDePasse.ToLower()).ToLower()).FirstOrDefault();
+            x.MotDePasse.ToLower() == new CrypterMD5().GetMd5Hash(MD5.Create(), motDePasse.ToLower()).ToLower()).FirstOrDefault();
 
         public void AjouterEmploye(string nomComplet, DateTime? dateNaissance, string lieuNaissance, StatutSexe? sexe, string numeroCNI, 
             string numeroTelephone1, string numeroTelephone2, Pays pays, Ville ville, string adresse, string photoProfil, string motDePasse, 
             StatutEmploye statutEmploye, Employe employe)
         {
-            operationBLO = new OperationBLO();
-            employeBLO.Add(new Employe(CodeEmploye(statutEmploye), nomComplet, dateNaissance, lieuNaissance, sexe, numeroCNI, numeroTelephone1,
-            numeroTelephone2, pays, ville, adresse, photoProfil, DateTime.Now, NomUtilisateur(nomComplet, CodeEmploye(statutEmploye)), crypterMD5.GetMd5Hash(MD5.Create(), motDePasse.ToLower()), statutEmploye));
 
-            operationBLO.AjouterOperation(TypeOperation.Embauche, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "mdp : " + motDePasse);
+            employeBLO.Add(new Employe(CodeEmploye(statutEmploye), nomComplet, dateNaissance, lieuNaissance, sexe, numeroCNI, numeroTelephone1,
+            numeroTelephone2, pays, ville, adresse, photoProfil, DateTime.Now, NomUtilisateur(nomComplet, CodeEmploye(statutEmploye)), new CrypterMD5().GetMd5Hash(MD5.Create(), motDePasse.ToLower()), statutEmploye));
+
+            new OperationBLO().AjouterOperation(TypeOperation.Embauche, employe, new Client("/"), new CompteClient("/"), 0, 
+                $"Ajout de l'employe {CodeEmploye(statutEmploye)} ayant pour mdp :  {motDePasse}");
             if (photoProfil != string.Empty)
             {
-                fichierStockeBLO.AjouterFichierStocke($"Photo de l'employe {CodeEmploye(statutEmploye)}", photoProfil, new Client("Indefini"),
+                new FichierStockeBLO().AjouterFichierStocke($"Photo de l'employe {CodeEmploye(statutEmploye)}", photoProfil, new Client("/"),
                     new Garantie(0), StatutStockage.Image_des_employés, employe);
             }
 
@@ -84,9 +78,10 @@ namespace TransFlash.BLL
         public void ModifierEmploye(Employe employeModifie, string nomComplet, DateTime? dateNaissance, string lieuNaissance, StatutSexe? sexe, 
             string numeroCNI, string numeroTelephone1, string numeroTelephone2, Pays pays, Ville ville, string adresse, string photoProfil, Employe employeModifieur)
         {
-            operationBLO = new OperationBLO();
 
             int index = employeBLO.IndexOf(employeModifie);
+
+            string aMDP = employeModifie.MotDePasse;
 
             string fileName = employeModifie.PhotoProfil;
 
@@ -104,21 +99,21 @@ namespace TransFlash.BLL
             employeModifie.PhotoProfil = photoProfil;
             if (photoProfil != fileName)
             {
-                fichierStockeBLO.AjouterFichierStocke($"Photo de l'employe {employeModifie.CodeEmploye}", photoProfil, new Client("Indefini"), new Garantie(0),
+                new FichierStockeBLO().AjouterFichierStocke($"Photo de l'employe {employeModifie.CodeEmploye}", photoProfil, new Client("/"), new Garantie(0),
                     StatutStockage.Image_des_employés, employeModifieur);
             }
             employeBLO[index] = employeModifie;
 
-            operationBLO.AjouterOperation(TypeOperation.Modification, employeModifieur, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Modification, employeModifieur, new Client("/"), new CompteClient("/"), 0,
+                $"Modification de l'employe {employeModifie}");
         }
 
         public void ModifierEmploye(Employe employeModifie, string motDePasse, StatutEmploye statutEmploye, Employe employeModifieur)
         {
-            operationBLO = new OperationBLO();
 
             int index = employeBLO.IndexOf(employeModifie);
 
-            employeModifie.MotDePasse = crypterMD5.GetMd5Hash(MD5.Create(), motDePasse.ToLower());
+            employeModifie.MotDePasse = new CrypterMD5().GetMd5Hash(MD5.Create(), motDePasse.ToLower());
 
             employeModifie.StatutEmploye = statutEmploye;
 
@@ -126,17 +121,17 @@ namespace TransFlash.BLL
 
             employeBLO[index] = employeModifie;
 
-            operationBLO.AjouterOperation(TypeOperation.Modification, employeModifieur, new Client("Indefini"), new CompteClient("Indefini"), 0,
-                 "mdp : " + motDePasse);
+            new OperationBLO().AjouterOperation(TypeOperation.Modification, employeModifieur, new Client("/"), new CompteClient("/"), 0,
+                 $"Modification du compte de l'employe {employeModifie} ayant pour mdp : " + motDePasse);
         }
 
         public void SupprimerEmploye(Employe employeSupprime, Employe employeSupprimeur)
         {
-            operationBLO = new OperationBLO();
 
             employeBLO.Remove(employeSupprime);
 
-            operationBLO.AjouterOperation(TypeOperation.Embauche, employeSupprimeur, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employeSupprimeur, new Client("/"), new CompteClient("/"), 0, 
+                $"Suppression de l'employe {employeSupprime}");
         }
 
         public IEnumerable<Employe> RechercherDesEmployesMemeStatut(StatutEmploye statutEmploye) => employeBLO.Find(x => 

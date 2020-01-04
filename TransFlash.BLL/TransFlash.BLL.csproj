@@ -74,6 +74,10 @@
       <Project>{ca49aa47-ea5c-4578-a3f3-7cd9feb436d2}</Project>
       <Name>TransFlash.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TransFlash.Ressources\TransFlash.Ressources.csproj">
+      <Project>{ef50918f-028a-414f-a513-906928c78d1f}</Project>
+      <Name>TransFlash.Ressources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

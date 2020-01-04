@@ -5,9 +5,9 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
-using Multicouche.DAL.SerialisationDeserialisation;
+using TransFlash.DAL.SerialisationDeserialisation;
 
-namespace Multicouche.DAL
+namespace TransFlash.DAL
 {
     public class RepositoireDAOFile<T> : IDAL<T>
     {

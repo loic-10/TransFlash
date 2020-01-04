@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +13,6 @@ namespace TransFlash.BLL
     {
         private IDAL<CompteClient> compteClientBLO = null;
 
-        private OperationBLO operationBLO = null;
-
-        private ParametreGeneralBLO parametreGeneralBLO = new ParametreGeneralBLO();
-
-        private TransactionBLO transactionBLO = null;
-
-        private FondBLO fondBLO = null;
-
-        private EpargneBLO epargneBLO = null;
-
         public CompteClientBLO()
         {
             compteClientBLO = new RepositoireDAOFile<CompteClient>();
@@ -31,9 +21,6 @@ namespace TransFlash.BLL
         public void AjouterCompteClient(Client client, TypeCompte typeCompte, TypeAppartenantCompteEpargne? typeAppartenantCompteEpargne, 
             string nomStructure, int nombreMois, double montant, Employe employe)
         {
-            epargneBLO = new EpargneBLO();
-            operationBLO = new OperationBLO();
-            transactionBLO = new TransactionBLO();
 
             int idEpargne = new IdentifiantBLO().IdEpargne;
             CompteClient compteClient = new CompteClient(CodeCompteClient(typeCompte, typeAppartenantCompteEpargne), client, typeCompte, typeAppartenantCompteEpargne,
@@ -41,17 +28,20 @@ namespace TransFlash.BLL
 
             compteClientBLO.Add(compteClient);
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, client, compteClient, 0, "toto tata");
+            new PartSocialeBLO().AjouterPartSociale(compteClient, employe);
+
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, client, compteClient, 0, $"Ajout du compte {compteClient} pour le client " +
+                $"{client}");
 
             Epargne epargne = new Epargne(0);
             if (typeCompte == TypeCompte.Epargne)
             {
-                epargneBLO.AjouterEpargne(compteClient, nombreMois, 0, employe);
+                new EpargneBLO().AjouterEpargne(compteClient, nombreMois, 0, employe);
 
-                epargne = epargneBLO.RechercheEpargne(idEpargne);
+                epargne = new EpargneBLO().RechercheEpargne(idEpargne);
             }
 
-            transactionBLO.InitierTransaction(typeCompte, TypeTransaction.Dépot, epargne, compteClient, new CompteClient("Indefini"), employe, montant, 0);
+            new TransactionBLO().InitierTransaction(typeCompte, TypeTransaction.Dépot, epargne, compteClient, new CompteClient("/"), employe, montant, 0);
 
             new IdentifiantBLO().AddIdCompteClient();
         }
@@ -62,129 +52,139 @@ namespace TransFlash.BLL
 
         public void ModifierNomStructureDuCompte(CompteClient compteClient, string nomStructure, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             CompteClient oldCompteClient = compteClient;
             compteClient.NomStructure = nomStructure;
             compteClientBLO[compteClientBLO.IndexOf(oldCompteClient)] = compteClient;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Modification, employe, compteClient.Client, compteClient, 0, $"Modification du compte " +
+                $"{compteClient} du client {compteClient.Client}");
         }
 
-        public void ActiverCompteClient(CompteClient compteClient, double montantDepot, Employe employe)
+        public void ActiverCompteClient(CompteClient compteClient, double montant, Employe employe)
         {
-            fondBLO = new FondBLO();
 
-            double montant;
-            if (compteClient.StatutCompte == StatutCompte.En_attente_de_validité)
-                montant = parametreGeneralBLO.TousParametreGenerals[0].MontantDeCreationCompte;
-            else
-                montant = parametreGeneralBLO.TousParametreGenerals[0].FraiesDebloquerCompte;
-            
-            if(montant > 0)
-                fondBLO.MettreArgentEnFond(employe, compteClient, montant, "toto tata");
+            string description = $"Activation du compte {compteClient} du client {compteClient.Client}, au prix de {montant}";
+
+
+            new FondBLO().MettreArgentEnFond(employe, compteClient, montant, description);
 
             CompteClient oldCompteClient = compteClient;
             compteClient.StatutCompte = StatutCompte.Activé;
             compteClientBLO[compteClientBLO.IndexOf(oldCompteClient)] = compteClient;
 
-            operationBLO.AjouterOperation(TypeOperation.Activation, employe, compteClient.Client, compteClient, montant, "toto tata");
-
-            if(montantDepot > 0)
-                CrediterCompteClient(compteClient, montantDepot, employe);
+            new OperationBLO().AjouterOperation(TypeOperation.Activation, employe, compteClient.Client, compteClient, montant, description);
         }
+
+        public double MontantSoldeCompteClient(CompteClient compteClient) => compteClient.Solde;
 
         public void BloquerCompteClient(CompteClient compteClient, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             CompteClient oldCompteClient = compteClient;
             compteClient.StatutCompte = StatutCompte.Bloqué;
             compteClientBLO[compteClientBLO.IndexOf(oldCompteClient)] = compteClient;
 
-            operationBLO.AjouterOperation(TypeOperation.Désactivation, employe, compteClient.Client, compteClient, 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Désactivation, employe, compteClient.Client, compteClient, 0, $"Desactivation du " +
+                $"compte {compteClient} du client {compteClient.Client}");
         }
 
         public void CrediterCompteClient(CompteClient compteClient, double montant, Employe employe)
         {
-            operationBLO = new OperationBLO();
-            epargneBLO = new EpargneBLO();
-            fondBLO = new FondBLO();
 
-            CompteClient oldCompteClient = compteClient;
+            int index = compteClientBLO.IndexOf(compteClient);
             compteClient.Solde += montant;
-            compteClientBLO[compteClientBLO.IndexOf(oldCompteClient)] = compteClient;
+            compteClientBLO[index] = compteClient;
 
-            if (compteClient.TypeCompte == TypeCompte.Epargne)
-                epargneBLO.AugmenterMontantEpargner(epargneBLO.RechercherEpargneEnCoursDuCompte(compteClient), montant, employe);
+            string raison = $"Depot du compte {compteClient} du client {compteClient.Client} au montant de {montant}";
 
-            fondBLO.MettreArgentEnFond(employe, compteClient, montant, "toto tata");
+            new FondBLO().MettreArgentEnFond(employe, compteClient, montant, raison);
 
-            operationBLO.AjouterOperation(TypeOperation.Dépot, employe, compteClient.Client, compteClient, montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Dépot, employe, compteClient.Client, compteClient, montant, raison);
         }
 
-        public void DebiterCompteClient(CompteClient compteClient, double montant, Employe employe)
+        public void DebiterCompteClient(CompteClient compteClient, double montant, Employe employe, bool appliquerFraiesRetrait, bool couperFrais)
         {
-            operationBLO = new OperationBLO();
 
-            fondBLO = new FondBLO();
-
-            double montantFinal = (montant + CalculInteretRetrait(montant));
-
-            CompteClient oldCompteClient = compteClient;
+            double montantFinal = montant + (appliquerFraiesRetrait && couperFrais ? 
+                CalculFraiesRetrait(montant) : 
+                (!appliquerFraiesRetrait && couperFrais) ?
+                CalculFraiesRetraitTransfert(montant) :
+                0);
+            int index = compteClientBLO.IndexOf(compteClient);
             compteClient.Solde -= montantFinal;
-            compteClientBLO[compteClientBLO.IndexOf(oldCompteClient)] = compteClient;
+            compteClientBLO[index] = compteClient;
 
-            if (compteClient.TypeCompte == TypeCompte.Epargne)
-                epargneBLO.ReduireMontantEpargner(epargneBLO.RechercherEpargneEnCoursDuCompte(compteClient), montant, employe);
+            string raison = $"Retrait du compte {compteClient} du client {compteClient.Client} au montant de {montant}";
 
-            fondBLO.SortirArgentEnFond(employe, compteClient, montant, "toto tata");
+            new FondBLO().SortirArgentEnFond(employe, compteClient, montant, raison);
 
-            operationBLO.AjouterOperation(TypeOperation.Retrait, employe, compteClient.Client, compteClient, montantFinal, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Retrait, employe, compteClient.Client, compteClient, montantFinal, raison);
         }
 
-        public void CrediterUnAutreCompte(CompteClient compteClientDebiter, CompteClient compteClientCrediter, double montant, Employe employe)
+        public void CrediterUnAutreCompte(CompteClient compteClientDebiter, CompteClient compteClientCrediter, double montant, Employe employe
+            , bool appliquerFraiesRetrait, bool couperFrais)
         {
-            operationBLO = new OperationBLO();
-            DebiterCompteClient(compteClientDebiter, montant, employe);
+            DebiterCompteClient(compteClientDebiter, montant, employe, appliquerFraiesRetrait, couperFrais);
             CrediterCompteClient(compteClientCrediter, montant, employe);
 
-            operationBLO.AjouterOperation(TypeOperation.Transfert_inter_compte, employe, compteClientDebiter.Client, compteClientDebiter, montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Transfert_inter_compte, employe, compteClientDebiter.Client, compteClientDebiter, 
+                montant, $"Transfert du compte {compteClientDebiter} du client {compteClientDebiter.Client} a l'endroit du compte {compteClientCrediter} " +
+                $"du client {compteClientCrediter.Client} pour un montant de {montant}");
         }
 
         public double MontantDepots(CompteClient compteClient)
         {
             double montant = 0;
-            transactionBLO = new TransactionBLO();
-            foreach (var item in transactionBLO.RechercherDepotSurCompte(compteClient))
+            foreach (var item in new TransactionBLO().RechercherDepotSurCompte(compteClient))
             {
                 montant += item.Montant;
             }
             return montant;
         }
 
-        public double CalculInteretRetrait(double montant) => ((parametreGeneralBLO.TousParametreGenerals[0].PourcentageRetrait*montant)/100);
+        public double CalculFraiesRetrait(double montant) => ((new ParametreGeneralBLO().TousParametreGenerals[0].PourcentageRetrait*montant)/100);
+
+        public double CalculFraiesRetraitTransfert(double montant) => ((new ParametreGeneralBLO().TousParametreGenerals[0].PourcentageRetraitTransfert*montant)/100);
 
         public IEnumerable<CompteClient> CompteDesComptesDuClient(TypeCompte typeCompte, Client client) => compteClientBLO.Find(x =>
             x.TypeCompte == typeCompte && 
-            x.Client == client);
+            x.Client.CodeClient == client.CodeClient);
 
         public CompteClient RechercherUnCompte(string codeCompte) => compteClientBLO.Find(x =>
-            x.CodeCompte == codeCompte).FirstOrDefault();
+            x.StatutCompte == StatutCompte.Activé &&
+            x.CodeCompte.ToString() == codeCompte).FirstOrDefault();
+
+        public CompteClient RechercherUnComptePourBeneficier(string codeCompte) => compteClientBLO.Find(x =>
+            x.CodeCompte.ToString() == codeCompte).FirstOrDefault();
 
         public IEnumerable<CompteClient> RechercherLesComptesClientsDuClient(Client client) => compteClientBLO.Find(x =>
-            x.Client == client);
+            x.Client.CodeClient == client.CodeClient);
 
-        public IEnumerable<CompteClient> RechercherLesCompteClients(string valeur) => compteClientBLO.Find(x => 
-            x.TypeCompte.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.NomStructure.ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<CompteClient> RechercherLesComptesClientsDuClientEnFonctionDuType(Client client, 
+            string typeCompte) => compteClientBLO.Find(x =>
+            x.Client.CodeClient == client.CodeClient &&
+            x.TypeCompte.ToString() == typeCompte);
+
+        public IEnumerable<CompteClient> RechercherLesCompteClients(string valeur, bool checkCode, bool checkDateEnregistrement, 
+            bool checkClient, bool checkTypeCompte, bool checkTypeAppartenantCompteEpargne, bool checkNomStructure, bool checkSolde, 
+            bool checkStatutCompte) => compteClientBLO.Find(x => 
+            (x.TypeCompte.ToString().ToLower().Contains(valeur.ToLower()) && checkTypeCompte) ||
+            (x.NomStructure.ToLower().Contains(valeur.ToLower()) && checkNomStructure) ||
+            (x.Client.ToString().ToLower().Contains(valeur.ToLower()) && checkClient) ||
+            (x.CodeCompte.ToLower().Contains(valeur.ToLower()) && checkCode) ||
+            (x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()) && checkDateEnregistrement) ||
+            (x.Solde.ToString().ToLower().Contains(valeur.ToLower()) && checkSolde) ||
+            (x.StatutCompte.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutCompte) ||
+            (x.TypeAppartenantCompteEpargne.ToString().ToLower().Contains(valeur.ToLower()) && checkTypeAppartenantCompteEpargne));
 
         public void SupprimerCompteClient(CompteClient compteClient, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             compteClientBLO.Remove(compteClient);
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, compteClient.Client, compteClient, 0, $"Suppression du compte " +
+                $"{compteClient} du client {compteClient.Client}");
         }
 
         public List<CompteClient> TousCompteClients => compteClientBLO.AllItems;

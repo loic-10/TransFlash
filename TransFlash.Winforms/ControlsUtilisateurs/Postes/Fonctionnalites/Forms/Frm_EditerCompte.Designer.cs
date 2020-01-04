@@ -33,9 +33,11 @@
             this.GunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaGroupBox16 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox19 = new Guna.UI.WinForms.GunaGroupBox();
+            this.btnAdd = new Guna.UI.WinForms.GunaButton();
             this.panelBeneficiers = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaGroupBox20 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
@@ -49,8 +51,6 @@
             this.gunaGroupBox23 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaTextBox4 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel24 = new Guna.UI.WinForms.GunaLabel();
-            this.btnAdd = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panelControl.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gunaGroupBox16.SuspendLayout();
@@ -103,6 +103,36 @@
             this.gunaPanel1.Size = new System.Drawing.Size(1025, 66);
             this.gunaPanel1.TabIndex = 12;
             // 
+            // gunaButton1
+            // 
+            this.gunaButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.gunaButton1.Animated = true;
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = global::Couche.Winforms.Properties.Resources.approve_and_update_32px;
+            this.gunaButton1.ImageOffsetX = 10;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(412, 10);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.refresh_52px;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 5;
+            this.gunaButton1.Size = new System.Drawing.Size(200, 47);
+            this.gunaButton1.TabIndex = 0;
+            this.gunaButton1.Text = "Mettre a jour";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.gunaButton1.TextOffsetX = 10;
+            // 
             // gunaElipse1
             // 
             this.gunaElipse1.Radius = 5;
@@ -153,6 +183,33 @@
             this.gunaGroupBox19.Text = "Les beneficiers des biens du compte en cas de problemes";
             this.gunaGroupBox19.TextLocation = new System.Drawing.Point(5, 5);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Animated = true;
+            this.btnAdd.AnimationHoverSpeed = 0.07F;
+            this.btnAdd.AnimationSpeed = 0.03F;
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderColor = System.Drawing.Color.Black;
+            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::Couche.Winforms.Properties.Resources.add_property_52px;
+            this.btnAdd.ImageOffsetX = -5;
+            this.btnAdd.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnAdd.Location = new System.Drawing.Point(876, 3);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAdd.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_property_52px1;
+            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAdd.Radius = 10;
+            this.btnAdd.Size = new System.Drawing.Size(43, 35);
+            this.btnAdd.TabIndex = 20;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // panelBeneficiers
             // 
             this.panelBeneficiers.AutoScroll = true;
@@ -184,9 +241,11 @@
             this.gunaComboBox3.BackColor = System.Drawing.Color.Transparent;
             this.gunaComboBox3.BaseColor = System.Drawing.Color.White;
             this.gunaComboBox3.BorderColor = System.Drawing.Color.Silver;
+            this.gunaComboBox3.BorderSize = 1;
             this.gunaComboBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.gunaComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gunaComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gunaComboBox3.FocusedColor = System.Drawing.Color.Empty;
             this.gunaComboBox3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaComboBox3.ForeColor = System.Drawing.Color.Black;
@@ -263,9 +322,11 @@
             this.gunaComboBox4.BackColor = System.Drawing.Color.Transparent;
             this.gunaComboBox4.BaseColor = System.Drawing.Color.White;
             this.gunaComboBox4.BorderColor = System.Drawing.Color.Silver;
+            this.gunaComboBox4.BorderSize = 1;
             this.gunaComboBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.gunaComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gunaComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gunaComboBox4.FocusedColor = System.Drawing.Color.Empty;
             this.gunaComboBox4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaComboBox4.ForeColor = System.Drawing.Color.Black;
@@ -311,6 +372,7 @@
             this.gunaTextBox4.BackColor = System.Drawing.Color.Transparent;
             this.gunaTextBox4.BaseColor = System.Drawing.Color.White;
             this.gunaTextBox4.BorderColor = System.Drawing.Color.Silver;
+            this.gunaTextBox4.BorderSize = 1;
             this.gunaTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.gunaTextBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaTextBox4.FocusedBaseColor = System.Drawing.Color.White;
@@ -334,63 +396,6 @@
             this.gunaLabel24.TabIndex = 4;
             this.gunaLabel24.Text = "Nom de la structure*";
             this.gunaLabel24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Animated = true;
-            this.btnAdd.AnimationHoverSpeed = 0.07F;
-            this.btnAdd.AnimationSpeed = 0.03F;
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderColor = System.Drawing.Color.Black;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::Couche.Winforms.Properties.Resources.add_property_52px;
-            this.btnAdd.ImageOffsetX = -5;
-            this.btnAdd.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnAdd.Location = new System.Drawing.Point(876, 3);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.OnHoverImage = global::Couche.Winforms.Properties.Resources.add_property_52px1;
-            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Radius = 10;
-            this.btnAdd.Size = new System.Drawing.Size(43, 35);
-            this.btnAdd.TabIndex = 20;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.gunaButton1.Animated = true;
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = global::Couche.Winforms.Properties.Resources.approve_and_update_32px;
-            this.gunaButton1.ImageOffsetX = 10;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(412, 10);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.refresh_52px;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 5;
-            this.gunaButton1.Size = new System.Drawing.Size(200, 47);
-            this.gunaButton1.TabIndex = 0;
-            this.gunaButton1.Text = "Mettre a jour";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.gunaButton1.TextOffsetX = 10;
             // 
             // Frm_EditerCompte
             // 

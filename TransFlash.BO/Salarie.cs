@@ -17,8 +17,9 @@ namespace TransFlash.BO
         public DateTime DateEmbauche { get; set; }
         public DateTime DateEnregistrement { get; set; }
         public StatutSalarie StatutSalarie { get; set; }
-        public StatutPayementSalarie StatutPayementSalarie { get; set; }
-        public int JourDePaye { get; set; }
+        public DateTime? DatePayementMoisEnCours { get; set; }
+        public DateTime? DatePayementProchainMois { get; set; }
+        public int NombreJourPourPayement { get; set; }
         
 
         public Salarie()
@@ -30,9 +31,9 @@ namespace TransFlash.BO
             Id = id;
         }
 
-        public Salarie(int id, CompteClient compteClientEmploye, CompteClient compteClientEntreprise, double montantSalaire, 
-            DateTime dateEmbauche, DateTime dateEnregistrement, StatutSalarie statutSalarie, StatutPayementSalarie statutPayementSalarie, 
-            int jourDePaye) : this(id)
+        public Salarie(int id, CompteClient compteClientEmploye, CompteClient compteClientEntreprise, double montantSalaire,
+            DateTime dateEmbauche, DateTime dateEnregistrement, StatutSalarie statutSalarie, DateTime? datePayementMoisEnCours,
+            DateTime? datePayementProchainMois, int nombreJourPourPayement) : this(id)
         {
             CompteClientEmploye = compteClientEmploye;
             CompteClientEntreprise = compteClientEntreprise;
@@ -40,8 +41,9 @@ namespace TransFlash.BO
             DateEmbauche = dateEmbauche;
             DateEnregistrement = dateEnregistrement;
             StatutSalarie = statutSalarie;
-            StatutPayementSalarie = statutPayementSalarie;
-            JourDePaye = jourDePaye;
+            DatePayementMoisEnCours = datePayementMoisEnCours;
+            DatePayementProchainMois = datePayementProchainMois;
+            NombreJourPourPayement = nombreJourPourPayement;
         }
 
         public override bool Equals(object obj)

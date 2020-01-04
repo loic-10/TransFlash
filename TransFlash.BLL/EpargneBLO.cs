@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +13,6 @@ namespace TransFlash.BLL
     {
         private IDAL<Epargne> epargneBLO = null;
 
-        private OperationBLO operationBLO = null;
-
         public EpargneBLO()
         {
             epargneBLO = new RepositoireDAOFile<Epargne>();
@@ -22,11 +20,11 @@ namespace TransFlash.BLL
 
         public void AjouterEpargne(CompteClient compteClient, int nombreMois, double solde, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             epargneBLO.Add(new Epargne(new IdentifiantBLO().IdEpargne, compteClient, DateTime.Now, nombreMois, solde, StatutEpargne.En_cours));
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, solde, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, compteClient.Client, compteClient, solde, $"Ajout de l'epargne " +
+                $"{new IdentifiantBLO().IdEpargne}");
 
             new IdentifiantBLO().AddIdEpargne();
         }
@@ -38,24 +36,26 @@ namespace TransFlash.BLL
 
         public void AugmenterMontantEpargner(Epargne epargne, double montant, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             Epargne oldEpargne = epargne;
             epargne.Solde += montant;
 
             epargneBLO[epargneBLO.IndexOf(oldEpargne)] = epargne;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, epargne.CompteClient.Client, epargne.CompteClient, montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, epargne.CompteClient.Client, epargne.CompteClient, montant,
+                $"Augmentation du montant l'epargne {epargne}");
         }
 
         public void ReduireMontantEpargner(Epargne epargne, double montant, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             Epargne oldEpargne = epargne;
             epargne.Solde -= montant;
 
             epargneBLO[epargneBLO.IndexOf(oldEpargne)] = epargne;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, epargne.CompteClient.Client, epargne.CompteClient, montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, epargne.CompteClient.Client, epargne.CompteClient, montant,
+                $"Reduction du montant l'epargne {epargne}");
 
             //if(epargne.Solde == 0 && epargne.DateEmpargne.AddMonths(epargne.NombreMois) <= DateTime.Now)
             //    AjouterEpargne(epargne.CompteClient, )
@@ -67,24 +67,29 @@ namespace TransFlash.BLL
             x.CompteClient.Client == client);
 
         public Epargne RechercherEpargneEnCoursDuCompte(CompteClient compteClient) => epargneBLO.Find(x =>
-            x.CompteClient == compteClient && x.StatutEpargne == StatutEpargne.En_cours).FirstOrDefault();
+            x.CompteClient.CodeCompte == compteClient.CodeCompte && x.StatutEpargne == StatutEpargne.En_cours).FirstOrDefault();
 
         public IEnumerable<Epargne> RechercherEpargnesDuCompte(CompteClient compteClient) => epargneBLO.Find(x =>
             x.CompteClient == compteClient);
 
-        public IEnumerable<Epargne> RechercherLesEpargnes(string valeur) => epargneBLO.Find(x =>
-            x.DateEmpargne.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.StatutEpargne.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.Solde.ToString().ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<Epargne> RechercherLesEpargnes(string valeur, bool checkIdentifiant, bool checkCompteClient, bool checkDateEpargne, 
+            bool checkNombreMois, bool checkSolde, bool checkStatutEpargne) => epargneBLO.Find(x =>
+            (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkIdentifiant) ||
+            (x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) && checkCompteClient) ||
+            (x.DateEmpargne.ToString().ToLower().Contains(valeur.ToLower()) && checkDateEpargne) ||
+            (x.NombreMois.ToString().ToLower().Contains(valeur.ToLower()) && checkNombreMois) ||
+            (x.Solde.ToString().ToLower().Contains(valeur.ToLower()) && checkSolde) ||
+            (x.StatutEpargne.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutEpargne));
 
         public Epargne RechercheEpargne(int id) => epargneBLO.Find(x =>
             x.Id == id).FirstOrDefault();
 
         public void SupprimerEpargne(Epargne epargne, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             epargneBLO.Remove(epargne);
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, epargne.CompteClient.Client, epargne.CompteClient, epargne.Solde, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, epargne.CompteClient.Client, epargne.CompteClient, epargne.Solde,
+                $"Suppression de l'epargne {epargne}");
         }
 
         public List<Epargne> TousEpargnes => epargneBLO.AllItems;

@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,38 +13,35 @@ namespace TransFlash.BLL
     {
         private IDAL<Fond> fondBLO = null;
 
-        private OperationBLO operationBLO = null;
-
         public FondBLO()
         {
             fondBLO = new RepositoireDAOFile<Fond>();
             if (fondBLO.Count == 0)
-                MettreArgentEnFond(new Employe(string.Empty), new CompteClient("Indefini"), 0, string.Empty);
+                MettreArgentEnFond(new Employe("/"), new CompteClient("/"), 0, "/");
         }
 
-        public void MettreArgentEnFond(Employe employe, CompteClient compteClient, double montantAction,string description)
+        public void MettreArgentEnFond(Employe employe, CompteClient compteClient, double montantAction, string description)
         {
-            operationBLO = new OperationBLO();
 
-            double montantTotal = (TousFonds[0].MontantTotal + montantAction);
-            fondBLO.Add(new Fond(new IdentifiantBLO().IdFond, employe, compteClient, DateTime.Now, TypeActionFond.Entrée, montantAction, montantTotal, description));
+            double montantTotal = ((fondBLO.Count > 0 ? TousFonds[0].MontantTotal : 0 )+ montantAction);
+            fondBLO.Add(new Fond(new IdentifiantBLO().IdFond, employe, compteClient, DateTime.Now, TypeActionFond.Entrée, montantAction, 
+                montantTotal, description));
             RenouvellerMontantTotal(montantTotal);
 
-            if(employe.CodeEmploye != string.Empty)
-                operationBLO.AjouterOperation(TypeOperation.Entrée, employe, compteClient.Client, compteClient, montantAction, description);
+            if(employe.CodeEmploye != "/")
+                new OperationBLO().AjouterOperation(TypeOperation.Entrée, employe, compteClient.Client, compteClient, montantAction, description);
 
             new IdentifiantBLO().AddIdFond();
         }
 
         public void SortirArgentEnFond(Employe employe, CompteClient compteClient, double montantAction,string description)
         {
-            operationBLO = new OperationBLO();
 
             double montantTotal = (TousFonds[0].MontantTotal - montantAction);
             fondBLO.Add(new Fond(new IdentifiantBLO().IdFond, employe, compteClient, DateTime.Now, TypeActionFond.Sortie, montantAction, montantTotal, description));
             RenouvellerMontantTotal(montantTotal);
 
-            operationBLO.AjouterOperation(TypeOperation.Sortie, employe, compteClient.Client, compteClient, montantAction, description);
+            new OperationBLO().AjouterOperation(TypeOperation.Sortie, employe, compteClient.Client, compteClient, montantAction, description);
 
             new IdentifiantBLO().AddIdFond();
         }
@@ -59,7 +56,7 @@ namespace TransFlash.BLL
 
         public void RenouvellerMontantTotal(double montantTotal)
         {
-            foreach (var fond in TousFonds)
+            foreach (var fond in new List<Fond>(TousFonds))
             {
                 Fond oldfond = fond;
                 fond.MontantTotal = montantTotal;
@@ -67,12 +64,22 @@ namespace TransFlash.BLL
             }
         }
 
-        public IEnumerable<Fond> RechercherFond(string valeur) => fondBLO.Find(x => 
-                x.DateFond.ToString().ToLower().Contains(valeur.ToLower()) ||
-                x.Description.ToString().ToLower().Contains(valeur.ToLower()) ||
-                x.Employe.ToString().ToLower().Contains(valeur.ToLower()) ||
-                x.MontantAction.ToString().ToLower().Contains(valeur.ToLower()) || 
-                x.TypeActionFond.ToString().ToLower().Contains(valeur.ToLower()));
+        public void SupprimerEpargne(Fond fond, Employe employe)
+        {
+            fondBLO.Remove(fond);
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, fond.CompteClient.Client, fond.CompteClient, fond.MontantAction, 
+                $"Suppression du fond {fond}");
+        }
+
+        public IEnumerable<Fond> RechercherFond(string valeur, bool checkIdentifiant, bool checkEmploye, bool checkCompteClient,
+            bool checkDateFond, bool checkTypeActionFond, bool checkMontantAction, bool checkDescription) => fondBLO.Find(x => 
+            (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkIdentifiant) ||
+            (x.Employe.ToString().ToLower().Contains(valeur.ToLower()) && checkEmploye) ||
+            (x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) && checkCompteClient) ||
+            (x.DateFond.ToString().ToLower().Contains(valeur.ToLower()) && checkDateFond) || 
+            (x.TypeActionFond.ToString().ToLower().Contains(valeur.ToLower()) && checkTypeActionFond) ||
+            (x.MontantAction.ToString().ToLower().Contains(valeur.ToLower()) && checkMontantAction) ||
+            (x.Description.ToString().ToLower().Contains(valeur.ToLower()) && checkDescription));
 
         public double MontantTotalEnFond => TousFonds[0].MontantTotal;
 

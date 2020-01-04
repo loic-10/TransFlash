@@ -162,6 +162,12 @@
     <Compile Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilSecretaireComptable.Designer.cs">
       <DependentUpon>Uc_AccueilSecretaireComptable.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererVille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererVille.Designer.cs">
+      <DependentUpon>Frm_GererVille.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererPays.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,17 +216,59 @@
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Connexion\Uc_Connexion.Designer.cs">
       <DependentUpon>Uc_Connexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.cs">
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTouteOperation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.Designer.cs">
-      <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTouteOperation.Designer.cs">
+      <DependentUpon>Uc_GererTouteOperation.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererPorteFeuille.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererPorteFeuille.Designer.cs">
       <DependentUpon>Uc_GererPorteFeuille.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_FichiersStockes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_FichiersStockes.Designer.cs">
+      <DependentUpon>Uc_FichiersStockes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.Designer.cs">
+      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.Designer.cs">
+      <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.Designer.cs">
+      <DependentUpon>Uc_InitierTransfertInterCompte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.Designer.cs">
+      <DependentUpon>Uc_InitierRetrait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.Designer.cs">
+      <DependentUpon>Uc_Salaries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Epargne.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Epargne.Designer.cs">
+      <DependentUpon>Uc_Epargne.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Villes.cs">
       <SubType>UserControl</SubType>
@@ -233,18 +281,6 @@
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Pays.Designer.cs">
       <DependentUpon>Uc_Pays.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.Designer.cs">
-      <DependentUpon>Uc_Salaries.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.Designer.cs">
-      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Garanties.cs">
       <SubType>UserControl</SubType>
@@ -330,18 +366,6 @@
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierCredit.Designer.cs">
       <DependentUpon>Uc_InitierCredit.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.Designer.cs">
-      <DependentUpon>Uc_InitierTransfertInterCompte.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.Designer.cs">
-      <DependentUpon>Uc_InitierRetrait.cs</DependentUpon>
-    </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierDepot.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -405,6 +429,9 @@
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Accueil\Uc_AccueilSecretaireComptable.resx">
       <DependentUpon>Uc_AccueilSecretaireComptable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererVille.resx">
+      <DependentUpon>Frm_GererVille.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\Forms\Frm_GererPays.resx">
       <DependentUpon>Frm_GererPays.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,23 +456,38 @@
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Connexion\Uc_Connexion.resx">
       <DependentUpon>Uc_Connexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.resx">
-      <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTouteOperation.resx">
+      <DependentUpon>Uc_GererTouteOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererPorteFeuille.resx">
       <DependentUpon>Uc_GererPorteFeuille.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_FichiersStockes.resx">
+      <DependentUpon>Uc_FichiersStockes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.resx">
+      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.resx">
+      <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.resx">
+      <DependentUpon>Uc_InitierTransfertInterCompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.resx">
+      <DependentUpon>Uc_InitierRetrait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.resx">
+      <DependentUpon>Uc_Salaries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Epargne.resx">
+      <DependentUpon>Uc_Epargne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Villes.resx">
       <DependentUpon>Uc_Villes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Pays.resx">
       <DependentUpon>Uc_Pays.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Salaries.resx">
-      <DependentUpon>Uc_Salaries.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.resx">
-      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Garanties.resx">
       <DependentUpon>Uc_Garanties.cs</DependentUpon>
@@ -488,12 +530,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierCredit.resx">
       <DependentUpon>Uc_InitierCredit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.resx">
-      <DependentUpon>Uc_InitierTransfertInterCompte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierRetrait.resx">
-      <DependentUpon>Uc_InitierRetrait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierDepot.resx">
       <DependentUpon>Uc_InitierDepot.cs</DependentUpon>
@@ -1093,6 +1129,186 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search_property_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_radio_button_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\city_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linked_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linked_file_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guarantee_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create_order_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create_order_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paid_search_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\average_2_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_user_male_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meeting_room_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client_company_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client_company_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_squared_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_squared_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align_cell_content_left_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align_cell_content_left_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refund_2_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refund_2_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_and_right_arrows_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_and_right_arrows_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meeting_room_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meeting_room_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_wallet_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_wallet_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connection_status_off_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connection_status_off_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treatment_list_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treatment_list_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client_company_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_and_right_arrows_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treatment_list_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popular_man_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stack_of_money_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favourite_file_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_file_24px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file_24px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_file_24px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\important_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\important_file_24px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_file_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_file_24px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_search_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fingerprint_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract_job_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\economic_improvement_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

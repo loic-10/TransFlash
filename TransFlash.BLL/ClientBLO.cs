@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +13,6 @@ namespace TransFlash.BLL
     {
         private IDAL<Client> clientBLO = null;
 
-        private CompteClientBLO compteClientBLO = null;
-
-        private OperationBLO operationBLO = null;
-
-        private FichierStockeBLO fichierStockeBLO = null;
-
         public ClientBLO()
         {
             clientBLO = new RepositoireDAOFile<Client>();
@@ -29,33 +23,25 @@ namespace TransFlash.BLL
             string profession, TypeCompte typeCompte, TypeAppartenantCompteEpargne? typeAppartenantCompteEpargne, 
             string nomStructure, Employe employe, int nombreMois, double montant)
         {
-            operationBLO = new OperationBLO();
-
-            fichierStockeBLO = new FichierStockeBLO();
-
-            compteClientBLO = new CompteClientBLO();
 
             Client client = new Client(CodeClient, nomComplet, dateNaissance, lieuNaissance, sexe, numeroCNI, numeroTelephone1,
-                                                            numeroTelephone2, pays, ville, adresse, photoProfil, DateTime.Now, profession, StatutClient.Desactivé);
+                                                            numeroTelephone2, pays, ville, adresse, photoProfil, DateTime.Now, profession, StatutClient.Activé);
 
             clientBLO.Add(client);
 
-            compteClientBLO.AjouterCompteClient(client, typeCompte, typeAppartenantCompteEpargne, nomStructure, nombreMois, montant, employe);
+            new CompteClientBLO().AjouterCompteClient(client, typeCompte, typeAppartenantCompteEpargne, nomStructure, nombreMois, montant, employe);
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, client, 
-                compteClientBLO.RechercherUnCompte(compteClientBLO.CodeCompteClient(typeCompte, typeAppartenantCompteEpargne)), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("/"), 0, $"Ajout du client {nomComplet}");
 
             if (photoProfil != string.Empty)
-                fichierStockeBLO.AjouterFichierStocke($"Photo du client {CodeClient}", photoProfil, client, new Garantie(0), StatutStockage.Image_des_clients, employe);
+                new FichierStockeBLO().AjouterFichierStocke($"Photo du client {CodeClient}", photoProfil, client, new Garantie(0), StatutStockage.Image_des_clients, employe);
 
             new IdentifiantBLO().AddIdClient();
         }
 
-        public void EditerClient(Client client, string nomComplet, DateTime dateNaissance, string lieuNaissance, StatutSexe sexe, string numeroCNI, 
+        public void EditerClient(Client client, string nomComplet, DateTime dateNaissance, string lieuNaissance, StatutSexe? sexe, string numeroCNI, 
             string numeroTelephone1, string numeroTelephone2, Pays pays, Ville ville, string adresse, string photoProfil, string profession, Employe employe)
         {
-            operationBLO = new OperationBLO();
-            fichierStockeBLO = new FichierStockeBLO();
 
             int index = clientBLO.IndexOf(client);
 
@@ -75,52 +61,70 @@ namespace TransFlash.BLL
             client.Profession = profession;
 
             if (photoProfil != fileName)
-                fichierStockeBLO.AjouterFichierStocke($"Photo du client {client.CodeClient}", photoProfil, client, new Garantie(0), StatutStockage.Image_des_clients, employe);
+                new FichierStockeBLO().AjouterFichierStocke($"Photo du client {client.CodeClient}", photoProfil, client, new Garantie(0), StatutStockage.Image_des_clients, employe);
 
             clientBLO[index] = client;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Modification, employe, client, new CompteClient("/"), 0, 
+                $"Modification du client {nomComplet}");
         }
 
         public string CodeClient => "cli-" + new IdentifiantBLO().IdClient.ToString().PadLeft(8, '0');
 
         public void SupprimerClient(Client client, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             clientBLO.Remove(client);
 
-            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, client, new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, client, new CompteClient("/"), 0, 
+                $"Suppression du client {client.NomComplet}");
         }
 
         public void ActiverClient(Client client, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             Client oldClient = client;
             client.StatutClient = StatutClient.Activé;
             clientBLO[clientBLO.IndexOf(oldClient)] = client;
 
-            operationBLO.AjouterOperation(TypeOperation.Activation, employe, client, new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Activation, employe, client, new CompteClient("/"), 0, 
+                $"Activation du client {client.NomComplet}");
         }
 
         public void DesactiverClient(Client client, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             Client oldClient = client;
             client.StatutClient = StatutClient.Desactivé;
             clientBLO[clientBLO.IndexOf(oldClient)] = client;
 
-            operationBLO.AjouterOperation(TypeOperation.Désactivation, employe, client, new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Désactivation, employe, client, new CompteClient("/"), 0,
+                $"Desactivation du client {client.NomComplet}");
         }
 
-        public IEnumerable<Client> RechercherDesClients(string valeur) => clientBLO.Find(x => 
-            x.NomComplet.ToLower().Contains(valeur.ToLower()) || 
-            x.CodeClient.ToLower().Contains(valeur.ToLower()) || 
-            x.NumeroCNI.ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<Client> RechercherDesClients(string valeur, bool checkCode, bool checkDateEnregistrement, bool checkDateNaissance,
+            bool checkLieuNaissance, bool checkNomComplet, bool checkProfession, bool checkNumeroCNI, bool checkNumeroTelephone,
+            bool checkPays, bool checkSexe, bool checkStatutClient, bool checkVille) => clientBLO.Find(x =>
+            (x.CodeClient.ToLower().Contains(valeur.ToLower()) && checkCode) ||
+            (x.DateNaissance.ToString().ToLower().Contains(valeur.ToLower()) && checkDateNaissance) ||
+            (x.LieuNaissance.ToLower().Contains(valeur.ToLower()) && checkLieuNaissance) ||
+            ((x.NomComplet.ToLower().Contains(valeur.ToLower()) && x.NomComplet != null) && checkNomComplet) ||
+            (x.NumeroCNI.ToLower().Contains(valeur.ToLower()) && checkNumeroCNI) ||
+            (x.NumeroTelephone1.ToLower().Contains(valeur.ToLower()) && checkNumeroTelephone) ||
+            (x.Pays.ToString().ToLower().Contains(valeur.ToLower()) && checkPays) ||
+            (x.Sexe.ToString().ToLower().Contains(valeur.ToLower()) && checkSexe) ||
+            (x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()) && checkDateEnregistrement) ||
+            (x.Profession.ToString().ToLower().Contains(valeur.ToLower()) && checkProfession) ||
+            (x.StatutClient.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutClient) ||
+            (x.Ville.ToString().ToLower().Contains(valeur.ToLower()) && checkVille));
 
         public Client RechercherCNIExist(string numeroCNI, Client client) => clientBLO.Find(x => 
             x.NumeroCNI.ToLower() == numeroCNI.ToLower() && x.CodeClient != client.CodeClient).FirstOrDefault();
+
+        public Client RechercherUnClient(string valeur) => clientBLO.Find(x => 
+            x.StatutClient == StatutClient.Activé &&
+            (x.NumeroCNI.ToLower() == valeur.ToLower() ||
+            x.CodeClient.ToLower() == valeur.ToLower())).FirstOrDefault();
 
         public List<Client> TousClients => clientBLO.AllItems;
 

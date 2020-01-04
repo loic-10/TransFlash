@@ -21,6 +21,7 @@ namespace TransFlash.BO
 
         // Pourcentage
         public float PourcentageRetrait { get; set; }
+        public float PourcentageRetraitTransfert { get; set; }
         public float PourcentageRetraitEpargneSansAvis { get; set; }
         public float PourcentageDecouvertMaximal { get; set; }
         public float PourcentageBeneficeCompteEpargne { get; set; }
@@ -49,6 +50,10 @@ namespace TransFlash.BO
         // Fraies sur un compte
         public double FraiesDebloquerCompte { get; set; }
 
+        // Mois d'epargne
+        public int NombreMoisMinimumPourEpargne { get; set; }
+
+
 
 
 
@@ -56,12 +61,13 @@ namespace TransFlash.BO
         {
         }
 
-        public ParametreGeneral(string nomMicrofinance, string logoMicrofinance, string positionGeographiqueMicrofinance, string sloganMicrofinance,
-            Devise deviseMicrofinance, int ageMinimalRequis, float pourcentageRetrait, float pourcentageRetraitEpargneSansAvis, 
-            float pourcentageDecouvertMaximal, float pourcentageBeneficeCompteEpargne, int nombreMinimalBeneficier, int nombreMaximalBeneficier, 
-            double montantPartSociale, double montantDeCreationCompte, double montantMininimumDepot, int nombreJourRetraitAviseDeEpargne,
-            int nombreJourAttenteReponsePourCredit, int nombreMoisMinimalPourDecouvert, double soldeMaximalCompteCourant, 
-            double fraiesDebloquerCompte)
+        public ParametreGeneral(string nomMicrofinance, string logoMicrofinance, string positionGeographiqueMicrofinance, string sloganMicrofinance, 
+            Devise deviseMicrofinance, int ageMinimalRequis, float pourcentageRetrait, float pourcentageRetraitTransfert, 
+            float pourcentageRetraitEpargneSansAvis, float pourcentageDecouvertMaximal, float pourcentageBeneficeCompteEpargne, 
+            int nombreMinimalBeneficier, int nombreMaximalBeneficier, double montantPartSociale, double montantDeCreationCompte, 
+            double montantMininimumDepot, int nombreJourRetraitAviseDeEpargne, int nombreJourAttenteReponsePourCredit, 
+            int nombreMoisMinimalPourDecouvert, double soldeMaximalCompteCourant, double fraiesDebloquerCompte, 
+            int nombreMoisMinimumPourEpargne)
         {
             NomMicrofinance = nomMicrofinance;
             LogoMicrofinance = logoMicrofinance;
@@ -70,6 +76,7 @@ namespace TransFlash.BO
             DeviseMicrofinance = deviseMicrofinance;
             AgeMinimalRequis = ageMinimalRequis;
             PourcentageRetrait = pourcentageRetrait;
+            PourcentageRetraitTransfert = pourcentageRetraitTransfert;
             PourcentageRetraitEpargneSansAvis = pourcentageRetraitEpargneSansAvis;
             PourcentageDecouvertMaximal = pourcentageDecouvertMaximal;
             PourcentageBeneficeCompteEpargne = pourcentageBeneficeCompteEpargne;
@@ -83,6 +90,7 @@ namespace TransFlash.BO
             NombreMoisMinimalPourDecouvert = nombreMoisMinimalPourDecouvert;
             SoldeMaximalCompteCourant = soldeMaximalCompteCourant;
             FraiesDebloquerCompte = fraiesDebloquerCompte;
+            NombreMoisMinimumPourEpargne = nombreMoisMinimumPourEpargne;
         }
     }
 }

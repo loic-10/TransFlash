@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation6 = new Guna.UI.Animation.Animation();
-            Guna.UI.Animation.Animation animation5 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.GunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
             this.GunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
@@ -55,7 +53,7 @@
             this.panelMenu = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.panelMenuPoste = new Guna.UI.WinForms.GunaPanel();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnGererTouteOperation = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPlusEncore = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnGererPorteFeuilleEntreprise = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gererPorteFeuilleCredit = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -73,10 +71,6 @@
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaResize1 = new Guna.UI.WinForms.GunaResize(this.components);
             this.gunaImageReplaceColor1 = new Guna.UI.WinForms.GunaImageReplaceColor(this.components);
-            this.gunaTransition1 = new Guna.UI.WinForms.GunaTransition(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.gunaTransition2 = new Guna.UI.WinForms.GunaTransition(this.components);
             this.panelControl.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -98,8 +92,6 @@
             this.GunaControlBox3.AnimationSpeed = 0.03F;
             this.GunaControlBox3.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
             this.GunaControlBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.GunaControlBox3, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.GunaControlBox3, Guna.UI.Animation.DecorationType.None);
             this.GunaControlBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.GunaControlBox3.IconSize = 12F;
             this.GunaControlBox3.Location = new System.Drawing.Point(1165, 6);
@@ -117,8 +109,6 @@
             this.GunaControlBox1.AnimationHoverSpeed = 0.07F;
             this.GunaControlBox1.AnimationSpeed = 0.03F;
             this.GunaControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.GunaControlBox1, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.GunaControlBox1, Guna.UI.Animation.DecorationType.None);
             this.GunaControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.GunaControlBox1.IconSize = 12F;
             this.GunaControlBox1.Location = new System.Drawing.Point(1237, 6);
@@ -136,8 +126,6 @@
             this.panelControl.Controls.Add(this.gunaControlBox2);
             this.panelControl.Controls.Add(this.GunaControlBox3);
             this.panelControl.Controls.Add(this.GunaControlBox1);
-            this.gunaTransition2.SetDecoration(this.panelControl, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.panelControl, Guna.UI.Animation.DecorationType.None);
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl.Location = new System.Drawing.Point(0, 0);
             this.panelControl.Name = "panelControl";
@@ -148,8 +136,6 @@
             // 
             this.panelLogo.Controls.Add(this.lblLogo);
             this.panelLogo.Controls.Add(this.pbLogo);
-            this.gunaTransition2.SetDecoration(this.panelLogo, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.panelLogo, Guna.UI.Animation.DecorationType.None);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
@@ -158,8 +144,6 @@
             // 
             // lblLogo
             // 
-            this.gunaTransition2.SetDecoration(this.lblLogo, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.lblLogo, Guna.UI.Animation.DecorationType.None);
             this.lblLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblLogo.Font = new System.Drawing.Font("Kristen ITC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(0)))), ((int)(((byte)(151)))));
@@ -173,8 +157,6 @@
             // pbLogo
             // 
             this.pbLogo.BaseColor = System.Drawing.Color.White;
-            this.gunaTransition2.SetDecoration(this.pbLogo, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.pbLogo, Guna.UI.Animation.DecorationType.None);
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbLogo.Image = global::Couche.Winforms.Properties.Resources.logo;
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
@@ -192,8 +174,6 @@
             this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
             this.gunaControlBox2.AnimationSpeed = 0.03F;
             this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MaximizeBox;
-            this.gunaTransition2.SetDecoration(this.gunaControlBox2, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaControlBox2, Guna.UI.Animation.DecorationType.None);
             this.gunaControlBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.gunaControlBox2.IconSize = 15F;
             this.gunaControlBox2.Location = new System.Drawing.Point(1201, 6);
@@ -211,8 +191,6 @@
             this.gunaShadowPanel1.Controls.Add(this.btnHidde);
             this.gunaShadowPanel1.Controls.Add(this.btnView);
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel5);
-            this.gunaTransition2.SetDecoration(this.gunaShadowPanel1, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaShadowPanel1, Guna.UI.Animation.DecorationType.None);
             this.gunaShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaShadowPanel1.Location = new System.Drawing.Point(0, 43);
             this.gunaShadowPanel1.Name = "gunaShadowPanel1";
@@ -225,30 +203,26 @@
             // btnHidde
             // 
             this.btnHidde.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnHidde, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnHidde, Guna.UI.Animation.DecorationType.None);
-            this.btnHidde.Image = global::Couche.Winforms.Properties.Resources.left_squared_104px1;
-            this.btnHidde.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnHidde.Image = global::Couche.Winforms.Properties.Resources.left_squared_48px2;
+            this.btnHidde.ImageSize = new System.Drawing.Size(45, 45);
             this.btnHidde.Location = new System.Drawing.Point(0, 0);
             this.btnHidde.Name = "btnHidde";
-            this.btnHidde.OnHoverImage = global::Couche.Winforms.Properties.Resources.left_squared_104px2;
+            this.btnHidde.OnHoverImage = global::Couche.Winforms.Properties.Resources.left_squared_48px;
             this.btnHidde.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btnHidde.Size = new System.Drawing.Size(55, 56);
+            this.btnHidde.Size = new System.Drawing.Size(50, 56);
             this.btnHidde.TabIndex = 5;
             this.btnHidde.Click += new System.EventHandler(this.BtnHidde_Click);
             // 
             // btnView
             // 
             this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnView, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnView, Guna.UI.Animation.DecorationType.None);
-            this.btnView.Image = global::Couche.Winforms.Properties.Resources.activity_feed_104px;
-            this.btnView.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnView.Image = global::Couche.Winforms.Properties.Resources.align_cell_content_left_48px2;
+            this.btnView.ImageSize = new System.Drawing.Size(45, 45);
             this.btnView.Location = new System.Drawing.Point(0, 0);
             this.btnView.Name = "btnView";
-            this.btnView.OnHoverImage = global::Couche.Winforms.Properties.Resources.activity_feed_104px1;
+            this.btnView.OnHoverImage = global::Couche.Winforms.Properties.Resources.align_cell_content_left_48px;
             this.btnView.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btnView.Size = new System.Drawing.Size(55, 56);
+            this.btnView.Size = new System.Drawing.Size(50, 56);
             this.btnView.TabIndex = 3;
             this.btnView.Visible = false;
             this.btnView.Click += new System.EventHandler(this.BtnView_Click);
@@ -256,8 +230,6 @@
             // gunaPanel5
             // 
             this.gunaPanel5.Controls.Add(this.pbProfil);
-            this.gunaTransition2.SetDecoration(this.gunaPanel5, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaPanel5, Guna.UI.Animation.DecorationType.None);
             this.gunaPanel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaPanel5.Location = new System.Drawing.Point(932, 0);
             this.gunaPanel5.Name = "gunaPanel5";
@@ -267,8 +239,6 @@
             // pbProfil
             // 
             this.pbProfil.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaTransition2.SetDecoration(this.pbProfil, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.pbProfil, Guna.UI.Animation.DecorationType.None);
             this.pbProfil.Image = global::Couche.Winforms.Properties.Resources.user_male_circle_104px;
             this.pbProfil.InitialImage = global::Couche.Winforms.Properties.Resources.user_male_circle_104px;
             this.pbProfil.Location = new System.Drawing.Point(289, 3);
@@ -283,8 +253,6 @@
             // 
             this.gunaShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel2.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaTransition2.SetDecoration(this.gunaShadowPanel2, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaShadowPanel2, Guna.UI.Animation.DecorationType.None);
             this.gunaShadowPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaShadowPanel2.Location = new System.Drawing.Point(0, 97);
             this.gunaShadowPanel2.Name = "gunaShadowPanel2";
@@ -310,8 +278,6 @@
             this.panelActivite.Controls.Add(this.btnManuelUtilisation);
             this.panelActivite.Controls.Add(this.btnNotification);
             this.panelActivite.Controls.Add(this.gunaShadowPanel3);
-            this.gunaTransition2.SetDecoration(this.panelActivite, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.panelActivite, Guna.UI.Animation.DecorationType.None);
             this.panelActivite.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelActivite.Location = new System.Drawing.Point(0, 763);
             this.panelActivite.Name = "panelActivite";
@@ -320,8 +286,6 @@
             // 
             // lblDate
             // 
-            this.gunaTransition1.SetDecoration(this.lblDate, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition2.SetDecoration(this.lblDate, Guna.UI.Animation.DecorationType.None);
             this.lblDate.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
@@ -336,8 +300,6 @@
             // 
             this.btnMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnMessage, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnMessage, Guna.UI.Animation.DecorationType.None);
             this.btnMessage.Image = global::Couche.Winforms.Properties.Resources.filled_message_52px1;
             this.btnMessage.ImageSize = new System.Drawing.Size(25, 25);
             this.btnMessage.Location = new System.Drawing.Point(1165, 4);
@@ -352,8 +314,6 @@
             // 
             this.btnManuelUtilisation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnManuelUtilisation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnManuelUtilisation, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnManuelUtilisation, Guna.UI.Animation.DecorationType.None);
             this.btnManuelUtilisation.Image = global::Couche.Winforms.Properties.Resources.book_52px1;
             this.btnManuelUtilisation.ImageSize = new System.Drawing.Size(25, 25);
             this.btnManuelUtilisation.Location = new System.Drawing.Point(1237, 4);
@@ -368,8 +328,6 @@
             // 
             this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnNotification, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnNotification, Guna.UI.Animation.DecorationType.None);
             this.btnNotification.Image = global::Couche.Winforms.Properties.Resources.appointment_reminders_52px1;
             this.btnNotification.ImageSize = new System.Drawing.Size(25, 25);
             this.btnNotification.Location = new System.Drawing.Point(1201, 4);
@@ -384,8 +342,6 @@
             // 
             this.gunaShadowPanel3.BackColor = System.Drawing.SystemColors.Control;
             this.gunaShadowPanel3.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaTransition2.SetDecoration(this.gunaShadowPanel3, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaShadowPanel3, Guna.UI.Animation.DecorationType.None);
             this.gunaShadowPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaShadowPanel3.Location = new System.Drawing.Point(0, 0);
             this.gunaShadowPanel3.Name = "gunaShadowPanel3";
@@ -398,8 +354,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.panelMenu.Controls.Add(this.gunaPanel4);
-            this.gunaTransition2.SetDecoration(this.panelMenu, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.panelMenu, Guna.UI.Animation.DecorationType.None);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 100);
             this.panelMenu.Name = "panelMenu";
@@ -411,8 +365,6 @@
             // 
             this.gunaPanel4.Controls.Add(this.panelMenuPoste);
             this.gunaPanel4.Controls.Add(this.gunaPanel2);
-            this.gunaTransition2.SetDecoration(this.gunaPanel4, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaPanel4, Guna.UI.Animation.DecorationType.None);
             this.gunaPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaPanel4.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel4.Name = "gunaPanel4";
@@ -422,7 +374,7 @@
             // panelMenuPoste
             // 
             this.panelMenuPoste.AutoScroll = true;
-            this.panelMenuPoste.Controls.Add(this.gunaAdvenceButton1);
+            this.panelMenuPoste.Controls.Add(this.btnGererTouteOperation);
             this.panelMenuPoste.Controls.Add(this.btnPlusEncore);
             this.panelMenuPoste.Controls.Add(this.btnGererPorteFeuilleEntreprise);
             this.panelMenuPoste.Controls.Add(this.gererPorteFeuilleCredit);
@@ -434,8 +386,6 @@
             this.panelMenuPoste.Controls.Add(this.btnGererRemboursement);
             this.panelMenuPoste.Controls.Add(this.btnGererEmprunt);
             this.panelMenuPoste.Controls.Add(this.btnAccueil);
-            this.gunaTransition2.SetDecoration(this.panelMenuPoste, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.panelMenuPoste, Guna.UI.Animation.DecorationType.None);
             this.panelMenuPoste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenuPoste.Location = new System.Drawing.Point(0, 0);
             this.panelMenuPoste.Name = "panelMenuPoste";
@@ -443,45 +393,43 @@
             this.panelMenuPoste.TabIndex = 3;
             this.panelMenuPoste.Visible = false;
             // 
-            // gunaAdvenceButton1
+            // btnGererTouteOperation
             // 
-            this.gunaAdvenceButton1.Animated = true;
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.gunaAdvenceButton1.CheckedImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
-            this.gunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.gunaAdvenceButton1, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaAdvenceButton1, Guna.UI.Animation.DecorationType.None);
-            this.gunaAdvenceButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.gunaAdvenceButton1.Image = global::Couche.Winforms.Properties.Resources.dossier_32px;
-            this.gunaAdvenceButton1.ImageOffsetX = 5;
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(32, 32);
-            this.gunaAdvenceButton1.LineBottom = 1;
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.gunaAdvenceButton1.LineLeft = 5;
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(0, 550);
-            this.gunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.gunaAdvenceButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnPressedDepth = 0;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(265, 50);
-            this.gunaAdvenceButton1.TabIndex = 65;
-            this.gunaAdvenceButton1.Text = "Gerer toutes les operations";
+            this.btnGererTouteOperation.Animated = true;
+            this.btnGererTouteOperation.AnimationHoverSpeed = 0.07F;
+            this.btnGererTouteOperation.AnimationSpeed = 0.03F;
+            this.btnGererTouteOperation.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnGererTouteOperation.BorderColor = System.Drawing.Color.Black;
+            this.btnGererTouteOperation.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
+            this.btnGererTouteOperation.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.btnGererTouteOperation.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnGererTouteOperation.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGererTouteOperation.CheckedImage = global::Couche.Winforms.Properties.Resources.treatment_list_48px2;
+            this.btnGererTouteOperation.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
+            this.btnGererTouteOperation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGererTouteOperation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGererTouteOperation.FocusedColor = System.Drawing.Color.Empty;
+            this.btnGererTouteOperation.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGererTouteOperation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.btnGererTouteOperation.Image = global::Couche.Winforms.Properties.Resources.treatment_list_48px;
+            this.btnGererTouteOperation.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnGererTouteOperation.LineBottom = 1;
+            this.btnGererTouteOperation.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnGererTouteOperation.LineLeft = 5;
+            this.btnGererTouteOperation.Location = new System.Drawing.Point(0, 550);
+            this.btnGererTouteOperation.Margin = new System.Windows.Forms.Padding(0);
+            this.btnGererTouteOperation.Name = "btnGererTouteOperation";
+            this.btnGererTouteOperation.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.btnGererTouteOperation.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnGererTouteOperation.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGererTouteOperation.OnHoverImage = global::Couche.Winforms.Properties.Resources.treatment_list_48px2;
+            this.btnGererTouteOperation.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.btnGererTouteOperation.OnPressedColor = System.Drawing.Color.Black;
+            this.btnGererTouteOperation.OnPressedDepth = 0;
+            this.btnGererTouteOperation.Size = new System.Drawing.Size(265, 50);
+            this.btnGererTouteOperation.TabIndex = 65;
+            this.btnGererTouteOperation.Text = "Gerer toutes les operations";
+            this.btnGererTouteOperation.Click += new System.EventHandler(this.btnGererTouteOperation_Click);
             // 
             // btnPlusEncore
             // 
@@ -493,18 +441,15 @@
             this.btnPlusEncore.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnPlusEncore.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnPlusEncore.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnPlusEncore.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnPlusEncore.CheckedImage = global::Couche.Winforms.Properties.Resources.groups_52px;
+            this.btnPlusEncore.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPlusEncore.CheckedImage = global::Couche.Winforms.Properties.Resources.connection_status_off_48px2;
             this.btnPlusEncore.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnPlusEncore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnPlusEncore, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnPlusEncore, Guna.UI.Animation.DecorationType.None);
             this.btnPlusEncore.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPlusEncore.FocusedColor = System.Drawing.Color.Empty;
             this.btnPlusEncore.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlusEncore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnPlusEncore.Image = global::Couche.Winforms.Properties.Resources.groups_32px;
-            this.btnPlusEncore.ImageOffsetX = 5;
+            this.btnPlusEncore.Image = global::Couche.Winforms.Properties.Resources.connection_status_off_48px;
             this.btnPlusEncore.ImageSize = new System.Drawing.Size(32, 32);
             this.btnPlusEncore.LineBottom = 1;
             this.btnPlusEncore.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -514,8 +459,8 @@
             this.btnPlusEncore.Name = "btnPlusEncore";
             this.btnPlusEncore.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnPlusEncore.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnPlusEncore.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnPlusEncore.OnHoverImage = global::Couche.Winforms.Properties.Resources.groups_52px;
+            this.btnPlusEncore.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPlusEncore.OnHoverImage = global::Couche.Winforms.Properties.Resources.connection_status_off_48px2;
             this.btnPlusEncore.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnPlusEncore.OnPressedColor = System.Drawing.Color.Black;
             this.btnPlusEncore.OnPressedDepth = 0;
@@ -534,18 +479,15 @@
             this.btnGererPorteFeuilleEntreprise.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererPorteFeuilleEntreprise.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererPorteFeuilleEntreprise.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleEntreprise.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.btnGererPorteFeuilleEntreprise.CheckedForeColor = System.Drawing.Color.White;
             this.btnGererPorteFeuilleEntreprise.CheckedImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
             this.btnGererPorteFeuilleEntreprise.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererPorteFeuilleEntreprise.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererPorteFeuilleEntreprise, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererPorteFeuilleEntreprise, Guna.UI.Animation.DecorationType.None);
             this.btnGererPorteFeuilleEntreprise.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererPorteFeuilleEntreprise.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererPorteFeuilleEntreprise.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererPorteFeuilleEntreprise.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
             this.btnGererPorteFeuilleEntreprise.Image = global::Couche.Winforms.Properties.Resources.dossier_32px;
-            this.btnGererPorteFeuilleEntreprise.ImageOffsetX = 5;
             this.btnGererPorteFeuilleEntreprise.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererPorteFeuilleEntreprise.LineBottom = 1;
             this.btnGererPorteFeuilleEntreprise.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -555,7 +497,7 @@
             this.btnGererPorteFeuilleEntreprise.Name = "btnGererPorteFeuilleEntreprise";
             this.btnGererPorteFeuilleEntreprise.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererPorteFeuilleEntreprise.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleEntreprise.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.btnGererPorteFeuilleEntreprise.OnHoverForeColor = System.Drawing.Color.White;
             this.btnGererPorteFeuilleEntreprise.OnHoverImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
             this.btnGererPorteFeuilleEntreprise.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererPorteFeuilleEntreprise.OnPressedColor = System.Drawing.Color.Black;
@@ -575,18 +517,15 @@
             this.gererPorteFeuilleCredit.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.gererPorteFeuilleCredit.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.gererPorteFeuilleCredit.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gererPorteFeuilleCredit.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.gererPorteFeuilleCredit.CheckedImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
+            this.gererPorteFeuilleCredit.CheckedForeColor = System.Drawing.Color.White;
+            this.gererPorteFeuilleCredit.CheckedImage = global::Couche.Winforms.Properties.Resources.card_wallet_48px2;
             this.gererPorteFeuilleCredit.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.gererPorteFeuilleCredit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.gererPorteFeuilleCredit, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gererPorteFeuilleCredit, Guna.UI.Animation.DecorationType.None);
             this.gererPorteFeuilleCredit.Dock = System.Windows.Forms.DockStyle.Top;
             this.gererPorteFeuilleCredit.FocusedColor = System.Drawing.Color.Empty;
             this.gererPorteFeuilleCredit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gererPorteFeuilleCredit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.gererPorteFeuilleCredit.Image = global::Couche.Winforms.Properties.Resources.dossier_32px;
-            this.gererPorteFeuilleCredit.ImageOffsetX = 5;
+            this.gererPorteFeuilleCredit.Image = global::Couche.Winforms.Properties.Resources.card_wallet_48px;
             this.gererPorteFeuilleCredit.ImageSize = new System.Drawing.Size(32, 32);
             this.gererPorteFeuilleCredit.LineBottom = 1;
             this.gererPorteFeuilleCredit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -596,8 +535,8 @@
             this.gererPorteFeuilleCredit.Name = "gererPorteFeuilleCredit";
             this.gererPorteFeuilleCredit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.gererPorteFeuilleCredit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gererPorteFeuilleCredit.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.gererPorteFeuilleCredit.OnHoverImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
+            this.gererPorteFeuilleCredit.OnHoverForeColor = System.Drawing.Color.White;
+            this.gererPorteFeuilleCredit.OnHoverImage = global::Couche.Winforms.Properties.Resources.card_wallet_48px2;
             this.gererPorteFeuilleCredit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.gererPorteFeuilleCredit.OnPressedColor = System.Drawing.Color.Black;
             this.gererPorteFeuilleCredit.OnPressedDepth = 0;
@@ -616,18 +555,15 @@
             this.btnGererPorteFeuilleCaisse.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererPorteFeuilleCaisse.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererPorteFeuilleCaisse.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleCaisse.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.btnGererPorteFeuilleCaisse.CheckedForeColor = System.Drawing.Color.White;
             this.btnGererPorteFeuilleCaisse.CheckedImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
             this.btnGererPorteFeuilleCaisse.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererPorteFeuilleCaisse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererPorteFeuilleCaisse, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererPorteFeuilleCaisse, Guna.UI.Animation.DecorationType.None);
             this.btnGererPorteFeuilleCaisse.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererPorteFeuilleCaisse.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererPorteFeuilleCaisse.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererPorteFeuilleCaisse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
             this.btnGererPorteFeuilleCaisse.Image = global::Couche.Winforms.Properties.Resources.dossier_32px;
-            this.btnGererPorteFeuilleCaisse.ImageOffsetX = 5;
             this.btnGererPorteFeuilleCaisse.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererPorteFeuilleCaisse.LineBottom = 1;
             this.btnGererPorteFeuilleCaisse.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -637,7 +573,7 @@
             this.btnGererPorteFeuilleCaisse.Name = "btnGererPorteFeuilleCaisse";
             this.btnGererPorteFeuilleCaisse.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererPorteFeuilleCaisse.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleCaisse.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
+            this.btnGererPorteFeuilleCaisse.OnHoverForeColor = System.Drawing.Color.White;
             this.btnGererPorteFeuilleCaisse.OnHoverImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
             this.btnGererPorteFeuilleCaisse.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererPorteFeuilleCaisse.OnPressedColor = System.Drawing.Color.Black;
@@ -657,18 +593,15 @@
             this.btnGererEmployes.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererEmployes.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererEmployes.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererEmployes.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererEmployes.CheckedImage = global::Couche.Winforms.Properties.Resources.groups_52px;
+            this.btnGererEmployes.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGererEmployes.CheckedImage = global::Couche.Winforms.Properties.Resources.meeting_room_48px2;
             this.btnGererEmployes.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererEmployes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererEmployes, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererEmployes, Guna.UI.Animation.DecorationType.None);
             this.btnGererEmployes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererEmployes.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererEmployes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererEmployes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererEmployes.Image = global::Couche.Winforms.Properties.Resources.groups_32px;
-            this.btnGererEmployes.ImageOffsetX = 5;
+            this.btnGererEmployes.Image = global::Couche.Winforms.Properties.Resources.meeting_room_48px1;
             this.btnGererEmployes.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererEmployes.LineBottom = 1;
             this.btnGererEmployes.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -678,8 +611,8 @@
             this.btnGererEmployes.Name = "btnGererEmployes";
             this.btnGererEmployes.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererEmployes.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererEmployes.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererEmployes.OnHoverImage = global::Couche.Winforms.Properties.Resources.groups_52px;
+            this.btnGererEmployes.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGererEmployes.OnHoverImage = global::Couche.Winforms.Properties.Resources.meeting_room_48px2;
             this.btnGererEmployes.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererEmployes.OnPressedColor = System.Drawing.Color.Black;
             this.btnGererEmployes.OnPressedDepth = 0;
@@ -698,18 +631,15 @@
             this.btnGererCompte.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererCompte.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererCompte.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererCompte.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererCompte.CheckedImage = global::Couche.Winforms.Properties.Resources.accounting_52px;
+            this.btnGererCompte.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGererCompte.CheckedImage = global::Couche.Winforms.Properties.Resources.accounting_48px2;
             this.btnGererCompte.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererCompte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererCompte, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererCompte, Guna.UI.Animation.DecorationType.None);
             this.btnGererCompte.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererCompte.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererCompte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererCompte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererCompte.Image = global::Couche.Winforms.Properties.Resources.accounting_32px;
-            this.btnGererCompte.ImageOffsetX = 5;
+            this.btnGererCompte.Image = global::Couche.Winforms.Properties.Resources.accounting_48px;
             this.btnGererCompte.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererCompte.LineBottom = 1;
             this.btnGererCompte.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -719,8 +649,8 @@
             this.btnGererCompte.Name = "btnGererCompte";
             this.btnGererCompte.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererCompte.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererCompte.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererCompte.OnHoverImage = global::Couche.Winforms.Properties.Resources.accounting_52px;
+            this.btnGererCompte.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGererCompte.OnHoverImage = global::Couche.Winforms.Properties.Resources.accounting_48px2;
             this.btnGererCompte.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererCompte.OnPressedColor = System.Drawing.Color.Black;
             this.btnGererCompte.OnPressedDepth = 0;
@@ -739,18 +669,15 @@
             this.btnGererClient.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererClient.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererClient.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererClient.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererClient.CheckedImage = global::Couche.Winforms.Properties.Resources.overview_pages_3_52px;
+            this.btnGererClient.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGererClient.CheckedImage = global::Couche.Winforms.Properties.Resources.client_company_48px2;
             this.btnGererClient.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererClient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererClient, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererClient, Guna.UI.Animation.DecorationType.None);
             this.btnGererClient.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererClient.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererClient.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererClient.Image = global::Couche.Winforms.Properties.Resources.overview_pages_3_32px;
-            this.btnGererClient.ImageOffsetX = 5;
+            this.btnGererClient.Image = global::Couche.Winforms.Properties.Resources.client_company_48px;
             this.btnGererClient.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererClient.LineBottom = 1;
             this.btnGererClient.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -760,8 +687,8 @@
             this.btnGererClient.Name = "btnGererClient";
             this.btnGererClient.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererClient.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererClient.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererClient.OnHoverImage = global::Couche.Winforms.Properties.Resources.overview_pages_3_52px;
+            this.btnGererClient.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGererClient.OnHoverImage = global::Couche.Winforms.Properties.Resources.client_company_48px2;
             this.btnGererClient.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererClient.OnPressedColor = System.Drawing.Color.Black;
             this.btnGererClient.OnPressedDepth = 0;
@@ -780,18 +707,15 @@
             this.btnGererTransaction.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererTransaction.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererTransaction.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererTransaction.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererTransaction.CheckedImage = global::Couche.Winforms.Properties.Resources.data_in_both_directions_52px;
+            this.btnGererTransaction.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGererTransaction.CheckedImage = global::Couche.Winforms.Properties.Resources.left_and_right_arrows_48px2;
             this.btnGererTransaction.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererTransaction, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererTransaction, Guna.UI.Animation.DecorationType.None);
             this.btnGererTransaction.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererTransaction.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererTransaction.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererTransaction.Image = global::Couche.Winforms.Properties.Resources.data_in_both_directions_32px;
-            this.btnGererTransaction.ImageOffsetX = 5;
+            this.btnGererTransaction.Image = global::Couche.Winforms.Properties.Resources.left_and_right_arrows_48px;
             this.btnGererTransaction.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererTransaction.LineBottom = 1;
             this.btnGererTransaction.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -801,8 +725,8 @@
             this.btnGererTransaction.Name = "btnGererTransaction";
             this.btnGererTransaction.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererTransaction.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererTransaction.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererTransaction.OnHoverImage = global::Couche.Winforms.Properties.Resources.data_in_both_directions_52px;
+            this.btnGererTransaction.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGererTransaction.OnHoverImage = global::Couche.Winforms.Properties.Resources.left_and_right_arrows_48px2;
             this.btnGererTransaction.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererTransaction.OnPressedColor = System.Drawing.Color.Black;
             this.btnGererTransaction.OnPressedDepth = 0;
@@ -821,18 +745,15 @@
             this.btnGererRemboursement.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererRemboursement.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererRemboursement.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererRemboursement.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererRemboursement.CheckedImage = global::Couche.Winforms.Properties.Resources.refund_52px;
+            this.btnGererRemboursement.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGererRemboursement.CheckedImage = global::Couche.Winforms.Properties.Resources.refund_2_48px2;
             this.btnGererRemboursement.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererRemboursement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererRemboursement, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererRemboursement, Guna.UI.Animation.DecorationType.None);
             this.btnGererRemboursement.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererRemboursement.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererRemboursement.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererRemboursement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererRemboursement.Image = global::Couche.Winforms.Properties.Resources.refund_32px;
-            this.btnGererRemboursement.ImageOffsetX = 5;
+            this.btnGererRemboursement.Image = global::Couche.Winforms.Properties.Resources.refund_2_48px;
             this.btnGererRemboursement.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererRemboursement.LineBottom = 1;
             this.btnGererRemboursement.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -842,8 +763,8 @@
             this.btnGererRemboursement.Name = "btnGererRemboursement";
             this.btnGererRemboursement.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererRemboursement.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererRemboursement.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererRemboursement.OnHoverImage = global::Couche.Winforms.Properties.Resources.refund_52px;
+            this.btnGererRemboursement.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGererRemboursement.OnHoverImage = global::Couche.Winforms.Properties.Resources.refund_2_48px2;
             this.btnGererRemboursement.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererRemboursement.OnPressedColor = System.Drawing.Color.Black;
             this.btnGererRemboursement.OnPressedDepth = 0;
@@ -862,18 +783,15 @@
             this.btnGererEmprunt.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
             this.btnGererEmprunt.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererEmprunt.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererEmprunt.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererEmprunt.CheckedImage = global::Couche.Winforms.Properties.Resources.debt_52px;
+            this.btnGererEmprunt.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGererEmprunt.CheckedImage = global::Couche.Winforms.Properties.Resources.debt_48px2;
             this.btnGererEmprunt.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnGererEmprunt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnGererEmprunt, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnGererEmprunt, Guna.UI.Animation.DecorationType.None);
             this.btnGererEmprunt.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGererEmprunt.FocusedColor = System.Drawing.Color.Empty;
             this.btnGererEmprunt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGererEmprunt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererEmprunt.Image = global::Couche.Winforms.Properties.Resources.debt_32px;
-            this.btnGererEmprunt.ImageOffsetX = 5;
+            this.btnGererEmprunt.Image = global::Couche.Winforms.Properties.Resources.debt_48px;
             this.btnGererEmprunt.ImageSize = new System.Drawing.Size(32, 32);
             this.btnGererEmprunt.LineBottom = 1;
             this.btnGererEmprunt.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -883,8 +801,8 @@
             this.btnGererEmprunt.Name = "btnGererEmprunt";
             this.btnGererEmprunt.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererEmprunt.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererEmprunt.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererEmprunt.OnHoverImage = global::Couche.Winforms.Properties.Resources.debt_52px;
+            this.btnGererEmprunt.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGererEmprunt.OnHoverImage = global::Couche.Winforms.Properties.Resources.debt_48px2;
             this.btnGererEmprunt.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnGererEmprunt.OnPressedColor = System.Drawing.Color.Black;
             this.btnGererEmprunt.OnPressedDepth = 0;
@@ -904,18 +822,15 @@
             this.btnAccueil.Checked = true;
             this.btnAccueil.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnAccueil.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnAccueil.CheckedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnAccueil.CheckedImage = global::Couche.Winforms.Properties.Resources.home_52px;
+            this.btnAccueil.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAccueil.CheckedImage = global::Couche.Winforms.Properties.Resources.home_48px2;
             this.btnAccueil.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnAccueil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnAccueil, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnAccueil, Guna.UI.Animation.DecorationType.None);
             this.btnAccueil.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccueil.FocusedColor = System.Drawing.Color.Empty;
             this.btnAccueil.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccueil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnAccueil.Image = global::Couche.Winforms.Properties.Resources.home_32px;
-            this.btnAccueil.ImageOffsetX = 5;
+            this.btnAccueil.Image = global::Couche.Winforms.Properties.Resources.home_48px;
             this.btnAccueil.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAccueil.LineBottom = 1;
             this.btnAccueil.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
@@ -925,8 +840,8 @@
             this.btnAccueil.Name = "btnAccueil";
             this.btnAccueil.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnAccueil.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAccueil.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnAccueil.OnHoverImage = global::Couche.Winforms.Properties.Resources.home_52px;
+            this.btnAccueil.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAccueil.OnHoverImage = global::Couche.Winforms.Properties.Resources.home_48px2;
             this.btnAccueil.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnAccueil.OnPressedColor = System.Drawing.Color.Black;
             this.btnAccueil.OnPressedDepth = 0;
@@ -938,8 +853,6 @@
             // gunaPanel2
             // 
             this.gunaPanel2.Controls.Add(this.btnParametre);
-            this.gunaTransition2.SetDecoration(this.gunaPanel2, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.gunaPanel2, Guna.UI.Animation.DecorationType.None);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaPanel2.Location = new System.Drawing.Point(0, 605);
             this.gunaPanel2.Name = "gunaPanel2";
@@ -948,24 +861,20 @@
             // 
             // btnParametre
             // 
-            this.btnParametre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnParametre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaTransition2.SetDecoration(this.btnParametre, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.btnParametre, Guna.UI.Animation.DecorationType.None);
-            this.btnParametre.Image = global::Couche.Winforms.Properties.Resources.settings_104px;
+            this.btnParametre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnParametre.Image = global::Couche.Winforms.Properties.Resources.settings_48px2;
             this.btnParametre.ImageSize = new System.Drawing.Size(42, 42);
-            this.btnParametre.Location = new System.Drawing.Point(3, 2);
+            this.btnParametre.Location = new System.Drawing.Point(0, 0);
             this.btnParametre.Name = "btnParametre";
-            this.btnParametre.OnHoverImage = global::Couche.Winforms.Properties.Resources.settings_104px1;
+            this.btnParametre.OnHoverImage = global::Couche.Winforms.Properties.Resources.settings_48px;
             this.btnParametre.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btnParametre.Size = new System.Drawing.Size(50, 56);
+            this.btnParametre.Size = new System.Drawing.Size(50, 58);
             this.btnParametre.TabIndex = 2;
             // 
             // panelCorps
             // 
             this.panelCorps.AutoSize = true;
-            this.gunaTransition2.SetDecoration(this.panelCorps, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this.panelCorps, Guna.UI.Animation.DecorationType.None);
             this.panelCorps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCorps.Location = new System.Drawing.Point(265, 100);
             this.panelCorps.Name = "panelCorps";
@@ -986,60 +895,6 @@
             this.gunaImageReplaceColor1.NewColor = System.Drawing.Color.Empty;
             this.gunaImageReplaceColor1.OldColor = System.Drawing.Color.White;
             // 
-            // gunaTransition1
-            // 
-            this.gunaTransition1.AnimationType = Guna.UI.Animation.AnimationType.Transparent;
-            this.gunaTransition1.Cursor = null;
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 0;
-            animation6.Padding = new System.Windows.Forms.Padding(0);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 0F;
-            animation6.TransparencyCoeff = 1F;
-            this.gunaTransition1.DefaultAnimation = animation6;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // gunaTransition2
-            // 
-            this.gunaTransition2.AnimationType = Guna.UI.Animation.AnimationType.ScaleAndRotate;
-            this.gunaTransition2.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(30);
-            animation5.RotateCoeff = 0.5F;
-            animation5.RotateLimit = 0.2F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 0F;
-            this.gunaTransition2.DefaultAnimation = animation5;
-            // 
             // Frm_Principal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1051,15 +906,12 @@
             this.Controls.Add(this.gunaShadowPanel2);
             this.Controls.Add(this.gunaShadowPanel1);
             this.Controls.Add(this.panelControl);
-            this.gunaTransition2.SetDecoration(this, Guna.UI.Animation.DecorationType.None);
-            this.gunaTransition1.SetDecoration(this, Guna.UI.Animation.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Principal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Principal_FormClosed);
-            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panelControl.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
@@ -1113,15 +965,11 @@
         internal Guna.UI.WinForms.GunaAdvenceButton btnAccueil;
         internal Guna.UI.WinForms.GunaAdvenceButton btnPlusEncore;
         private Guna.UI.WinForms.GunaImageReplaceColor gunaImageReplaceColor1;
-        private Guna.UI.WinForms.GunaTransition gunaTransition1;
-        private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaPanel panelLogo;
         private Guna.UI.WinForms.GunaLabel lblLogo;
         private Guna.UI.WinForms.GunaCirclePictureBox pbLogo;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Timer timer2;
-        private Guna.UI.WinForms.GunaTransition gunaTransition2;
-        internal Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        internal Guna.UI.WinForms.GunaAdvenceButton btnGererTouteOperation;
     }
 }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Multicouche.DAL
+namespace TransFlash.DAL
 {
     public interface IDAL<T>
     {

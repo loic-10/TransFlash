@@ -1,11 +1,11 @@
 ﻿
-using Multicouche.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TransFlash.BO;
+using TransFlash.DAL;
 using static TransFlash.BO.Statut;
 
 namespace TransFlash.BLL
@@ -14,8 +14,6 @@ namespace TransFlash.BLL
     {
         private IDAL<Avaliste> avalisteBLO = null;
 
-        private OperationBLO operationBLO = null;
-
         public AvalisteBLO()
         {
             avalisteBLO = new RepositoireDAOFile<Avaliste>();
@@ -23,29 +21,34 @@ namespace TransFlash.BLL
 
         public void AjouterAvaliste(Garantie garantie, string nomComplet, string profession, string description, double montantParMois, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             avalisteBLO.Add(new Avaliste(new IdentifiantBLO().IdAvaliste, garantie, nomComplet, profession, description, montantParMois));
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, garantie.Credit.Client, new CompteClient("Indefini"), montantParMois, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, garantie.Credit.Client, new CompteClient("/"), montantParMois, 
+                $"Ajout de l'avaliste {new IdentifiantBLO().IdAvaliste}");
 
             new IdentifiantBLO().AddIdAvaliste();
         }
 
         public void SupprimerAvaliste(Avaliste avaliste, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             avalisteBLO.Remove(avaliste);
 
-            operationBLO.AjouterOperation(TypeOperation.Suppression, employe, avaliste.Garantie.Credit.Client, new CompteClient("Indefini"), avaliste.MontantParMois, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, avaliste.Garantie.Credit.Client, new CompteClient("/"), 
+                avaliste.MontantParMois, $"Suppression de l'avaliste {avaliste}");
         }
 
         public Avaliste RechercherAvalistesGarantie(Garantie garantie) => avalisteBLO.Find(x =>
             x.Garantie == garantie).FirstOrDefault();
 
-        public IEnumerable<Avaliste> RechercherLesAvalistes(string valeur) => avalisteBLO.Find(x => 
-            x.NomComplet.ToLower().Contains(valeur.ToLower()) ||
-            x.Profession.ToLower().Contains(valeur.ToLower()) ||
-            x.Description.ToLower().Contains(valeur.ToLower()) ||
-            x.MontantParMois.ToString().Contains(valeur));
+        public IEnumerable<Avaliste> RechercherLesAvalistes(string valeur, bool checkIdentifiant, bool checkGarantie, bool
+                checkMontantParMois, bool checkNomComplet, bool checkProfession, bool checkDescription) => avalisteBLO.Find(x => 
+            (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkIdentifiant)||
+            (x.Garantie.ToString().ToLower().Contains(valeur.ToLower()) && checkGarantie) ||
+            (x.MontantParMois.ToString().ToLower().Contains(valeur.ToLower()) && checkMontantParMois)  ||
+            (x.NomComplet.ToString().Contains(valeur) && checkNomComplet) ||
+            (x.Description.ToLower().Contains(valeur.ToLower()) && checkDescription)  ||
+            (x.Profession.ToString().Contains(valeur) && checkProfession));
 
         public List<Avaliste> TousAvalistes => avalisteBLO.AllItems;
 

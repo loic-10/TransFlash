@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Management;
 using System.Text;
 using System.Threading.Tasks;
-using Multicouche.DAL.Cryptographie;
+using TransFlash.DAL.Cryptographie;
 
 namespace Multicouche.DAL.Activateur
 {

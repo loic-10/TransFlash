@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransFlash.Winforms.Fonctions;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
 {
     public partial class Uc_Beneficier : UserControl
     {
+
+        private Frm_Fonction fonction = null;
+
         public Uc_Beneficier()
         {
             InitializeComponent();
+            fonction = new Frm_Fonction();
         }
 
 
@@ -43,7 +48,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         public int Pourcentage
         {
             get { return _pourcentage; }
-            set { _pourcentage = value; numPourcentage.Value = _pourcentage; }
+            set { _pourcentage = value; txbPourcentage.Text = _pourcentage.ToString(); }
         }
 
         [Category("Nouvelle category")]
@@ -54,5 +59,28 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         }
 
         #endregion
+
+        private void txbNom_TextChanged(object sender, EventArgs e)
+        {
+            Nom = txbNom.Text;
+        }
+
+        private void txbDescription_TextChanged(object sender, EventArgs e)
+        {
+            Description = txbDescription.Text;
+        }
+
+        private void txbPourcentage_TextChanged(object sender, EventArgs e)
+        {
+            if (txbPourcentage.Text.Length <= 2)
+            {
+                fonction.PrendreUniquementChiffre(txbPourcentage);
+                Pourcentage = int.Parse((txbPourcentage.Text != string.Empty) ? txbPourcentage.Text : 0.ToString());
+            }
+            else
+            {
+                txbPourcentage.Text = 100.ToString();
+            }
+        }
     }
 }

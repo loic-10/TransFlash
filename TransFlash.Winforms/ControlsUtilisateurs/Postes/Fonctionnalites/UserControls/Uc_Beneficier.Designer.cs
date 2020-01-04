@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.gbBeneficier = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox29 = new Guna.UI.WinForms.GunaGroupBox();
-            this.numPourcentage = new Guna.UI.WinForms.GunaNumeric();
             this.gunaLabel30 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox26 = new Guna.UI.WinForms.GunaGroupBox();
             this.txbDescription = new Guna.UI.WinForms.GunaTextBox();
@@ -40,6 +39,7 @@
             this.txbNom = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel27 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.txbPourcentage = new Guna.UI.WinForms.GunaTextBox();
             this.gbBeneficier.SuspendLayout();
             this.gunaGroupBox29.SuspendLayout();
             this.gunaGroupBox26.SuspendLayout();
@@ -72,7 +72,7 @@
             this.gunaGroupBox29.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox29.BaseColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox29.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox29.Controls.Add(this.numPourcentage);
+            this.gunaGroupBox29.Controls.Add(this.txbPourcentage);
             this.gunaGroupBox29.Controls.Add(this.gunaLabel30);
             this.gunaGroupBox29.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox29.LineTop = 0;
@@ -82,26 +82,6 @@
             this.gunaGroupBox29.Size = new System.Drawing.Size(347, 31);
             this.gunaGroupBox29.TabIndex = 9;
             this.gunaGroupBox29.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // numPourcentage
-            // 
-            this.numPourcentage.BackColor = System.Drawing.Color.Transparent;
-            this.numPourcentage.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.numPourcentage.BorderColor = System.Drawing.Color.DarkGray;
-            this.numPourcentage.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.numPourcentage.ButtonForeColor = System.Drawing.Color.White;
-            this.numPourcentage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numPourcentage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPourcentage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.numPourcentage.Location = new System.Drawing.Point(129, 0);
-            this.numPourcentage.Maximum = ((long)(100));
-            this.numPourcentage.Minimum = ((long)(0));
-            this.numPourcentage.Name = "numPourcentage";
-            this.numPourcentage.Radius = 5;
-            this.numPourcentage.Size = new System.Drawing.Size(218, 30);
-            this.numPourcentage.TabIndex = 5;
-            this.numPourcentage.Text = "gunaNumeric1";
-            this.numPourcentage.Value = ((long)(0));
             // 
             // gunaLabel30
             // 
@@ -150,6 +130,7 @@
             this.txbDescription.Radius = 5;
             this.txbDescription.Size = new System.Drawing.Size(218, 68);
             this.txbDescription.TabIndex = 6;
+            this.txbDescription.TextChanged += new System.EventHandler(this.txbDescription_TextChanged);
             // 
             // gunaLabel28
             // 
@@ -196,6 +177,7 @@
             this.txbNom.Radius = 5;
             this.txbNom.Size = new System.Drawing.Size(218, 29);
             this.txbNom.TabIndex = 6;
+            this.txbNom.TextChanged += new System.EventHandler(this.txbNom_TextChanged);
             // 
             // gunaLabel27
             // 
@@ -211,6 +193,27 @@
             // gunaElipse1
             // 
             this.gunaElipse1.TargetControl = this;
+            // 
+            // txbPourcentage
+            // 
+            this.txbPourcentage.BackColor = System.Drawing.Color.Transparent;
+            this.txbPourcentage.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbPourcentage.BorderColor = System.Drawing.Color.DarkGray;
+            this.txbPourcentage.BorderSize = 1;
+            this.txbPourcentage.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPourcentage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txbPourcentage.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txbPourcentage.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.txbPourcentage.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txbPourcentage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPourcentage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txbPourcentage.Location = new System.Drawing.Point(129, 0);
+            this.txbPourcentage.Name = "txbPourcentage";
+            this.txbPourcentage.PasswordChar = '\0';
+            this.txbPourcentage.Radius = 5;
+            this.txbPourcentage.Size = new System.Drawing.Size(218, 31);
+            this.txbPourcentage.TabIndex = 7;
+            this.txbPourcentage.TextChanged += new System.EventHandler(this.txbPourcentage_TextChanged);
             // 
             // Uc_Beneficier
             // 
@@ -231,7 +234,6 @@
 
         private Guna.UI.WinForms.GunaGroupBox gbBeneficier;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox29;
-        private Guna.UI.WinForms.GunaNumeric numPourcentage;
         private Guna.UI.WinForms.GunaLabel gunaLabel30;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox26;
         private Guna.UI.WinForms.GunaTextBox txbDescription;
@@ -240,5 +242,6 @@
         private Guna.UI.WinForms.GunaTextBox txbNom;
         private Guna.UI.WinForms.GunaLabel gunaLabel27;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaTextBox txbPourcentage;
     }
 }

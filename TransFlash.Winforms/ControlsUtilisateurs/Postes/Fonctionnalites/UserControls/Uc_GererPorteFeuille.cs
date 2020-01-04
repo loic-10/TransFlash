@@ -34,14 +34,14 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnEditerClient_Click(object sender, EventArgs e)
         {
-            Frm_EditerClient frm = new Frm_EditerClient();
-            frm.ShowDialog();
+            //Frm_EditerClient frm = new Frm_EditerClient(this.employe, ;
+            //frm.ShowDialog();
         }
 
         private void btnInformation_Click(object sender, EventArgs e)
         {
-            Frm_InformationClient frm = new Frm_InformationClient();
-            frm.ShowDialog();
+            //Frm_InformationClient frm = new Frm_InformationClient();
+            //frm.ShowDialog();
         }
     }
 }

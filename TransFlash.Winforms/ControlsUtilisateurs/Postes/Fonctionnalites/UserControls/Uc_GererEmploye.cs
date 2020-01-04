@@ -19,20 +19,18 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
     public partial class Uc_GererEmploye : UserControl
     {
 
-        private EmployeBLO employeBLO = null;
-
-        private Frm_Fonction fonction = new Frm_Fonction();
+        private Frm_Fonction fonction = null;
 
         private Employe employeChef = null;
 
         public Uc_GererEmploye(Employe employeChef)
         {
             InitializeComponent();
+            fonction = new Frm_Fonction();
             dataGridEmploye.AutoGenerateColumns = false;
-            employeBLO = new EmployeBLO();
             this.employeChef = employeChef;
             Load += Uc_GererEmploye_Load;
-            RefreshDataGrid(employeBLO.RechercherDesEmployes(txbRechercher.Text, checkCode.Checked, checkDateEnregistrement.Checked,
+            RefreshDataGrid(new EmployeBLO().RechercherDesEmployes(txbRechercher.Text, checkCode.Checked, checkDateEnregistrement.Checked,
                 checkDateNaissance.Checked, checkLieuNaissance.Checked, checkNomComplet.Checked, checkNomUtilisateur.Checked,
                 checkNumeroCNI.Checked, checkNumeroTelephone.Checked, checkPays.Checked, checkSexe.Checked, checkStatutEmploye.Checked,
                 checkVille.Checked));
@@ -40,10 +38,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void Uc_GererEmploye_Load(object sender, EventArgs e)
         {
-            RefreshDataGrid(employeBLO.RechercherDesEmployes(txbRechercher.Text, checkCode.Checked, checkDateEnregistrement.Checked,
-                checkDateNaissance.Checked, checkLieuNaissance.Checked, checkNomComplet.Checked, checkNomUtilisateur.Checked,
-                checkNumeroCNI.Checked, checkNumeroTelephone.Checked, checkPays.Checked, checkSexe.Checked, checkStatutEmploye.Checked,
-                checkVille.Checked));
+            txbRechercher_TextChanged(sender, e);
         }
 
         public void RefreshDataGrid(IEnumerable<Employe> employes)
@@ -67,21 +62,21 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         private void btnEditerEmploye_Click(object sender, EventArgs e)
         {
             Employe employe = dataGridEmploye.SelectedRows[0].DataBoundItem as Employe;
-            Frm_EditerEmploye frm = new Frm_EditerEmploye(this.employeChef, employe);
+            Frm_EditerEmploye frm = new Frm_EditerEmploye(this.employeChef, employe, this);
             frm.ShowDialog();
         }
 
         private void btnEditerCompteEmploye_Click(object sender, EventArgs e)
         {
             Employe employe = dataGridEmploye.SelectedRows[0].DataBoundItem as Employe;
-            Frm_EditerCompteEmploye frm = new Frm_EditerCompteEmploye(this.employeChef, employe);
+            Frm_EditerCompteEmploye frm = new Frm_EditerCompteEmploye(this.employeChef, employe, this);
             frm.ShowDialog();
         }
 
         private void btnInformation_Click(object sender, EventArgs e)
         {
             Employe employe = dataGridEmploye.SelectedRows[0].DataBoundItem as Employe;
-            Frm_InformationEmploye frm = new Frm_InformationEmploye(this.employeChef, employe);
+            Frm_InformationEmploye frm = new Frm_InformationEmploye(this.employeChef, employe, this);
             frm.ShowDialog();
         }
 
@@ -95,24 +90,23 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            string val = (dataGridEmploye.SelectedRows.Count > 1) ? "ces" : "cet";
             string nbr = (dataGridEmploye.SelectedRows.Count > 1) ? "s" : string.Empty;
-            if(MessageBox.Show($"Etes-vous sur de vouloir supprimer {val} employe{nbr} ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if(MessageBox.Show($"Etes-vous sur de vouloir supprimer employe{nbr} ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 for (int i = 0; i < dataGridEmploye.SelectedRows.Count; i++)
                 {
                     Employe employe = dataGridEmploye.SelectedRows[i].DataBoundItem as Employe;
-                    if (employeBLO.RechercherDesEmployesMemeStatut(employe.StatutEmploye).Count() > 1)
-                        employeBLO.SupprimerEmploye(employe, this.employeChef);
+                    if (new EmployeBLO().RechercherDesEmployesMemeStatut(employe.StatutEmploye).Count() > 1)
+                        new EmployeBLO().SupprimerEmploye(employe, this.employeChef);
                     else
                         MessageBox.Show($"Vous ne pouvez pas supprimer l'employe {employe.NomComplet} car vous ne disposez que d'un seul {employe.StatutEmploye.ToString().Replace("_", " ")}", 
                             "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                RefreshDataGrid(new EmployeBLO().TousEmployes);
+                txbRechercher_TextChanged(sender, e);
             }
         }
 
-        private void txbRechercher_TextChanged(object sender, EventArgs e)
+        public void txbRechercher_TextChanged(object sender, EventArgs e)
         {
             RefreshDataGrid(new EmployeBLO().RechercherDesEmployes(txbRechercher.Text, checkCode.Checked, checkDateEnregistrement.Checked,
                 checkDateNaissance.Checked, checkLieuNaissance.Checked, checkNomComplet.Checked, checkNomUtilisateur.Checked,

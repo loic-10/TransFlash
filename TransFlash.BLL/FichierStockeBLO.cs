@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +13,6 @@ namespace TransFlash.BLL
     {
         private IDAL<FichierStocke> fichierStockeBLO = null;
 
-        private OperationBLO operationBLO = null;
-
         public FichierStockeBLO()
         {
             fichierStockeBLO = new RepositoireDAOFile<FichierStocke>();
@@ -22,39 +20,44 @@ namespace TransFlash.BLL
 
         public void AjouterFichierStocke(string nom, string fileName, Client client, Garantie garantie, StatutStockage statutStockage, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             fichierStockeBLO.Add(new FichierStocke(new IdentifiantBLO().IdFichierStocke, DateTime.Now, nom, fileName, client, garantie, statutStockage));
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("Indefini"), garantie.MontantEvaluation, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("/"), garantie.MontantEvaluation, 
+                $"Ajout du fichier {new IdentifiantBLO().IdFichierStocke}");
 
             new IdentifiantBLO().AddIdFichierStocke();
         }
 
         public void ModifierNomFichierStocke(FichierStocke fichierStocke, string nom, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             FichierStocke oldFichierStocke = fichierStocke;
             fichierStocke.Nom = nom;
             fichierStockeBLO[fichierStockeBLO.IndexOf(oldFichierStocke)] = fichierStocke;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, fichierStocke.Client, new CompteClient("Indefini"), 
-                fichierStocke.Garantie.MontantEvaluation, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, fichierStocke.Client, new CompteClient("/"), 
+                fichierStocke.Garantie.MontantEvaluation, $"Modification du fichier {fichierStocke + (oldFichierStocke.Nom != nom ? $" avec {oldFichierStocke.Nom} change par {nom}" : string.Empty)} " );
         }
 
         public void SupprimerFichierStocke(FichierStocke fichierStocke, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             fichierStockeBLO.Remove(fichierStocke);
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, fichierStocke.Client, new CompteClient("Indefini"), 
-                fichierStocke.Garantie.MontantEvaluation, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, fichierStocke.Client, new CompteClient("/"), 
+                fichierStocke.Garantie.MontantEvaluation, $"Suppression du fichier {fichierStocke}");
         }
 
-        public IEnumerable<FichierStocke> RechercherLesFichierStockes(string valeur) => fichierStockeBLO.Find(x =>
-            x.Nom.ToLower().Contains(valeur.ToLower()) ||
-            x.StatutStockage.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<FichierStocke> RechercherLesFichierStockes(string valeur, bool checkIdentifiant, bool checkDateEnregistrement, bool checkClient, 
+            bool checkGarantie, bool checkNom, bool checkNomFichier, bool checkStatutStockage) => fichierStockeBLO.Find(x =>
+            (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkIdentifiant) ||
+            (x.Client.ToString().ToLower().Contains(valeur.ToLower()) && checkClient) ||
+            (x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()) && checkDateEnregistrement) ||
+            (x.FileName.ToString().ToLower().Contains(valeur.ToLower()) && checkNomFichier) ||
+            (x.Garantie.ToString().ToLower().Contains(valeur.ToLower()) && checkGarantie) ||
+            (x.Nom.ToString().ToLower().Contains(valeur.ToLower()) && checkNom) ||
+            (x.StatutStockage.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutStockage));
 
         public IEnumerable<FichierStocke> RechercherFichierStockesClient(Client client) => fichierStockeBLO.Find(x =>
             x.Client == client);

@@ -1,5 +1,5 @@
 ﻿
-using Multicouche.DAL;
+using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +14,6 @@ namespace TransFlash.BLL
     {
         private IDAL<Devise> deviseBLO = null;
 
-        private OperationBLO operationBLO = null;
-
         public DeviseBLO()
         {
             deviseBLO = new RepositoireDAOFile<Devise>();
@@ -23,27 +21,28 @@ namespace TransFlash.BLL
 
         public void AjouterDevise(string nomDevise, string symboleDevise, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             deviseBLO.Add(new Devise(nomDevise, symboleDevise));
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, new Client("/"), new CompteClient("/"), 0, 
+                $"Ajout de la devise {nomDevise}, ayant pour symbole {symboleDevise}");
 
         }
 
         public void SupprimerDevise(Devise devise, Employe employe)
         {
-            operationBLO = new OperationBLO();
+
             deviseBLO.Remove(devise);
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, new Client("Indefini"), new CompteClient("Indefini"), 0, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, new Client("/"), new CompteClient("/"), 0,
+                $"Suppression de la devise {devise.NomDevise}, ayant pour symbole {devise.SymboleDevise}");
         }
 
         public IEnumerable<Devise> RechercherLesDevises(string valeur) => deviseBLO.Find(x => 
             x.NomDevise.ToLower().Contains(valeur.ToLower()) ||
             x.SymboleDevise.ToLower().Contains(valeur.ToLower()));
 
-        public List<Devise> TousDevises => deviseBLO.AllItems;
+        public IEnumerable<Devise> TousDevises => deviseBLO.AllItems;
 
     }
 }

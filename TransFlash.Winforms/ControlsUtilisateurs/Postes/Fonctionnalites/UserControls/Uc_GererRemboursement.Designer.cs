@@ -251,7 +251,7 @@
             this.btnExporterExcel.ForeColor = System.Drawing.Color.White;
             this.btnExporterExcel.Image = global::Couche.Winforms.Properties.Resources.ms_excel_64px;
             this.btnExporterExcel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExporterExcel.Location = new System.Drawing.Point(0, 294);
+            this.btnExporterExcel.Location = new System.Drawing.Point(0, 302);
             this.btnExporterExcel.Name = "btnExporterExcel";
             this.btnExporterExcel.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnExporterExcel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -275,7 +275,7 @@
             this.btnImprimer.ForeColor = System.Drawing.Color.White;
             this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.print_64px;
             this.btnImprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnImprimer.Location = new System.Drawing.Point(0, 252);
+            this.btnImprimer.Location = new System.Drawing.Point(0, 260);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnImprimer.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -299,7 +299,7 @@
             this.btnInformation.ForeColor = System.Drawing.Color.White;
             this.btnInformation.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnInformation.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnInformation.Location = new System.Drawing.Point(0, 210);
+            this.btnInformation.Location = new System.Drawing.Point(0, 218);
             this.btnInformation.Name = "btnInformation";
             this.btnInformation.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnInformation.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -323,7 +323,7 @@
             this.btnSupprimer.ForeColor = System.Drawing.Color.White;
             this.btnSupprimer.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnSupprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSupprimer.Location = new System.Drawing.Point(0, 168);
+            this.btnSupprimer.Location = new System.Drawing.Point(0, 176);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnSupprimer.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -347,7 +347,7 @@
             this.gunaButton4.ForeColor = System.Drawing.Color.White;
             this.gunaButton4.Image = global::Couche.Winforms.Properties.Resources.remove_user_male_64px;
             this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(0, 126);
+            this.gunaButton4.Location = new System.Drawing.Point(0, 134);
             this.gunaButton4.Name = "gunaButton4";
             this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -371,7 +371,7 @@
             this.gunaButton2.ForeColor = System.Drawing.Color.White;
             this.gunaButton2.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(0, 84);
+            this.gunaButton2.Location = new System.Drawing.Point(0, 92);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -395,7 +395,7 @@
             this.btnInitierRemboursement.ForeColor = System.Drawing.Color.White;
             this.btnInitierRemboursement.Image = global::Couche.Winforms.Properties.Resources.add_user_male_64px;
             this.btnInitierRemboursement.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnInitierRemboursement.Location = new System.Drawing.Point(0, 42);
+            this.btnInitierRemboursement.Location = new System.Drawing.Point(0, 50);
             this.btnInitierRemboursement.Name = "btnInitierRemboursement";
             this.btnInitierRemboursement.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnInitierRemboursement.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -427,7 +427,7 @@
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverImage = global::Couche.Winforms.Properties.Resources.myspace_squared_52px;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(200, 42);
+            this.gunaButton1.Size = new System.Drawing.Size(200, 50);
             this.gunaButton1.TabIndex = 0;
             this.gunaButton1.Text = "Tout sur remboursement";
             // 

@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,108 +13,97 @@ namespace TransFlash.BLL
     {
         private IDAL<Salarie> salarieBLO = null;
 
-        private OperationBLO operationBLO = null;
-
-        private CreditBLO creditBLO = null;
-
-        private TransactionBLO transactionBLO = null;
-
-        private ParametreGeneralBLO parametreGeneralBLO = new ParametreGeneralBLO();
-
         public SalarieBLO()
         {
             salarieBLO = new RepositoireDAOFile<Salarie>();
         }
 
         public void AjouterSalarie(CompteClient compteClientEmploye, CompteClient compteClientEntreprise, double montantSalaire,
-            DateTime dateEmbauche, int jourDePaye, Employe employe)
+            DateTime dateEmbauche, int nombreJourPourPayement, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
-            salarieBLO.Add(new Salarie(new IdentifiantBLO().IdSalarie, compteClientEmploye, compteClientEntreprise, montantSalaire, dateEmbauche,
-                                            DateTime.Now, StatutSalarie.En_règle,  StatutPayementSalarie.Non_payé, jourDePaye));
+            salarieBLO.Add(new Salarie(new IdentifiantBLO().IdSalarie, compteClientEmploye, compteClientEntreprise, montantSalaire,
+                dateEmbauche,  DateTime.Now, StatutSalarie.En_service, null, null, nombreJourPourPayement));
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, compteClientEmploye.Client, new CompteClient("Indefini"), montantSalaire, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, compteClientEmploye.Client, new CompteClient("/"), 
+                montantSalaire, $"Ajout du compte ({compteClientEmploye.CodeCompte}) comme salarie pour le compte ({compteClientEntreprise.CodeCompte}), " +
+                $"pour un montant de salaire s'elevant a {montantSalaire}, paye apres {nombreJourPourPayement}");
 
             new IdentifiantBLO().AddIdSalarie();
         }
 
-        public void ModifierSalarie(Salarie salarie, double montantSalaire, int jourDePaye, Employe employe)
+        public void ModifierSalarie(Salarie salarie, double montantSalaire, int nombreJourPourPayement, Employe employe)
         {
-            operationBLO = new OperationBLO();
 
             int index = salarieBLO.IndexOf(salarie);
 
             salarie.MontantSalaire = montantSalaire;
-            salarie.JourDePaye = jourDePaye;
+            salarie.NombreJourPourPayement = nombreJourPourPayement;
             salarieBLO[index] = salarie;
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, salarie.CompteClientEmploye.Client, new CompteClient("Indefini"), montantSalaire, "toto tata");
-        }
-
-        public void DemanderDecouvert(Salarie salarie, double montantDecouvert, Employe employe)
-        {
-            operationBLO = new OperationBLO();
-            creditBLO = new CreditBLO();
-
-            creditBLO.DemanderCredit(TypeCredit.A_court_terme, 1, salarie.CompteClientEmploye.Client, new Garantie(0), montantDecouvert, employe);
-
-            operationBLO.AjouterOperation(TypeOperation.Credit, employe, salarie.CompteClientEmploye.Client, new CompteClient("Indefini"), 
-                montantDecouvert, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Modification, employe, salarie.CompteClientEmploye.Client, new CompteClient("/"), 
+                montantSalaire, $"Modification du compte ({salarie.CompteClientEmploye.CodeCompte}) comme salarie pour le compte " +
+                $"({salarie.CompteClientEntreprise.CodeCompte}), pour un montant de salaire s'elevant a {montantSalaire}, paye apres {nombreJourPourPayement}");
         }
 
         public void ValiderDecouvert(Credit credit, Employe employe)
         {
-            operationBLO = new OperationBLO();
-            creditBLO = new CreditBLO();
+            //operationBLO = new OperationBLO();
+            //creditBLO = new CreditBLO();
 
         }
 
         public void RecevoirVirement(Salarie salarie, double montant, Employe employe)
         {
-            transactionBLO = new TransactionBLO();
-            operationBLO = new OperationBLO();
-            creditBLO = new CreditBLO();
 
-            transactionBLO.InitierTransaction(TypeCompte.Courant, TypeTransaction.Dépot, new Epargne(0), salarie.CompteClientEntreprise, salarie.CompteClientEmploye,
+            new TransactionBLO().InitierTransaction(TypeCompte.Courant, TypeTransaction.Dépot, new Epargne(0), salarie.CompteClientEntreprise, salarie.CompteClientEmploye,
                 employe, montant, 0);
 
-            string codeTransaction = transactionBLO.CodeTransaction(TypeTransaction.Dépot);
+            string codeTransaction = new TransactionBLO().CodeTransaction(TypeTransaction.Dépot);
 
-            transactionBLO.ValiderTransactionCompteCourant(transactionBLO.RechercherUneTransaction(codeTransaction), employe);
+            new TransactionBLO().ValiderTransactionCompteCourant(new TransactionBLO().RechercherUneTransaction(codeTransaction), employe);
 
-            operationBLO.AjouterOperation(TypeOperation.Virement, employe, salarie.CompteClientEmploye.Client, new CompteClient("Indefini"), montant, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Virement, employe, salarie.CompteClientEmploye.Client, new CompteClient("/"),
+                montant, $"Virement bancaire effectue, qui debite le compte {salarie.CompteClientEntreprise} en creditant le compte " +
+                $"{salarie.CompteClientEmploye} d'un montant de {montant}");
 
         }
 
         public bool VoirSiComptePossedeDecouvert(Salarie salarie)
         {
-            creditBLO = new CreditBLO();
-            if (creditBLO.DecouvertDuClient(salarie.CompteClientEmploye.Client) != null)
+            if (new CreditBLO().DecouvertDuClient(salarie.CompteClientEmploye.Client) != null)
                 return true;
             return false;
         }
 
         public double MontantMaximalDecouvert(Salarie salarie) => 
-            ((salarieBLO[salarieBLO.IndexOf(salarie)].MontantSalaire) * (parametreGeneralBLO.TousParametreGenerals[0].PourcentageDecouvertMaximal/100));
+            ((salarieBLO[salarieBLO.IndexOf(salarie)].MontantSalaire) * (new ParametreGeneralBLO().TousParametreGenerals[0].PourcentageDecouvertMaximal/100));
 
         public void SupprimerSalarie(Salarie salarie, Employe employe)
         {
-            operationBLO = new OperationBLO();
             salarieBLO.Remove(salarie);
 
-            operationBLO.AjouterOperation(TypeOperation.Ajout, employe, salarie.CompteClientEmploye.Client, new CompteClient("Indefini"), salarie.MontantSalaire, "toto tata");
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, salarie.CompteClientEmploye.Client, new CompteClient("/"), 
+                salarie.MontantSalaire, $"Suppression du salarie {salarie} lie au compte {salarie.CompteClientEmploye}, salarie du compte {salarie.CompteClientEntreprise}");
         }
 
         public IEnumerable<Salarie> RechercherSalariesCompte(CompteClient compte) => salarieBLO.Find(x => 
             x.CompteClientEmploye == compte);
 
-        public IEnumerable<Salarie> RechercherLesSalaries(string valeur) => salarieBLO.Find(x =>
-            x.CompteClientEntreprise.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.CompteClientEmploye.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.StatutPayementSalarie.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.StatutSalarie.ToString().ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<Salarie> RechercherLesSalaries(string valeur, bool checkCompteEmploye, bool checkCompteEntreprise, 
+            bool checkDateEmbauche, bool checkDateEnregistrement, bool checkDatePayementMoisEnCours, 
+            bool checkDatePayementProchainMois, bool checkIdentifiant, bool checkMontantSalaire, 
+            bool checkNombreJourPourPayement, bool checkStatutSalarie) => salarieBLO.Find(x =>
+            (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkIdentifiant) ||
+            (x.CompteClientEmploye.ToString().ToLower().Contains(valeur.ToLower()) && checkCompteEmploye) ||
+            (x.CompteClientEntreprise.ToString().ToLower().Contains(valeur.ToLower()) && checkCompteEntreprise) ||
+            (x.DateEmbauche.ToString().ToLower().Contains(valeur.ToLower()) && checkDateEmbauche) ||
+            (x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()) && checkDateEnregistrement) ||
+            (x.DatePayementMoisEnCours.ToString().ToLower().Contains(valeur.ToLower()) && checkDatePayementMoisEnCours) ||
+            (x.DatePayementProchainMois.ToString().ToLower().Contains(valeur.ToLower()) && checkDatePayementProchainMois) ||
+            (x.MontantSalaire.ToString().ToLower().Contains(valeur.ToLower()) && checkMontantSalaire) ||
+            (x.NombreJourPourPayement.ToString().ToLower().Contains(valeur.ToLower()) && checkNombreJourPourPayement) ||
+            (x.StatutSalarie.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutSalarie));
 
         public List<Salarie> TousSalaries => salarieBLO.AllItems;
 

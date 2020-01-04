@@ -1,4 +1,4 @@
-﻿using Multicouche.DAL;
+﻿using TransFlash.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,12 +34,17 @@ namespace TransFlash.BLL
         public IEnumerable<Operation> RechercherOperationsCompte(CompteClient compteClient) => operationBLO.Find(x => 
             x.CompteClient == compteClient);
 
-        public IEnumerable<Operation> RechercherLesOperations(string valeur) => operationBLO.Find(x => 
-            x.Client.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.Description.ToLower().Contains(valeur.ToLower()) ||
-            x.CompteClient.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.ValeurOperation.ToString().Contains(valeur.ToLower()) ||
-            x.Employe.ToString().Contains(valeur.ToLower()));
+        public IEnumerable<Operation> RechercherLesOperations(string valeur, bool checkId, bool checkTypeOperation,
+            bool checkEmploye, bool checkDateOperation, bool checkCompteClient, bool checkValeurOperation, 
+            bool checkDescription, bool checkClient) => operationBLO.Find(x => 
+            (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkId) ||
+            (x.TypeOperation.ToString().ToLower().Contains(valeur.ToLower()) && checkTypeOperation) ||
+            (x.Employe .ToString().ToLower().Contains(valeur.ToLower()) && checkEmploye) ||
+            (x.DateOperation.ToString().ToLower().Contains(valeur.ToLower()) && checkDateOperation) ||
+            ((x.CompteClient == null ? new CompteClient("/") : x.CompteClient).ToString().ToLower().Contains(valeur.ToLower()) && checkCompteClient) ||
+            (x.ValeurOperation.ToString().ToLower().Contains(valeur.ToLower()) && checkValeurOperation) ||
+            (x.Description.ToString().ToLower().Contains(valeur.ToLower()) && checkDescription) ||
+            ((x.Client != null ? x.Client : new Client("/")).ToString().ToLower().Contains(valeur.ToLower()) && checkClient));
 
         public List<Operation> TousOperations => operationBLO.AllItems;
 
