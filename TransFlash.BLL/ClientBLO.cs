@@ -34,7 +34,7 @@ namespace TransFlash.BLL
             new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("/"), 0, $"Ajout du client {nomComplet}");
 
             if (photoProfil != string.Empty)
-                new FichierStockeBLO().AjouterFichierStocke($"Photo du client {CodeClient}", photoProfil, client, new Garantie(0), StatutStockage.Image_des_clients, employe);
+                new FichierStockeBLO().AjouterFichierStocke($"Photo du client {CodeClient}", photoProfil, client, new Garantie(0), 0, StatutStockage.Image_des_clients, employe);
 
             new IdentifiantBLO().AddIdClient();
         }
@@ -61,7 +61,7 @@ namespace TransFlash.BLL
             client.Profession = profession;
 
             if (photoProfil != fileName)
-                new FichierStockeBLO().AjouterFichierStocke($"Photo du client {client.CodeClient}", photoProfil, client, new Garantie(0), StatutStockage.Image_des_clients, employe);
+                new FichierStockeBLO().AjouterFichierStocke($"Photo du client {client.CodeClient}", photoProfil, client, new Garantie(0), 0, StatutStockage.Image_des_clients, employe);
 
             clientBLO[index] = client;
 

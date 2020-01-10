@@ -61,6 +61,28 @@ namespace TransFlash.BLL
                 $"{partSociale.CompteClient.Client} dans le compte {partSociale.CompteClient}");
         }
 
+        public double MontantPartSocialeClient(Client client)
+        {
+            double montant = 0;
+            foreach (var item in new List<PartSociale>(new PartSocialeBLO().TousPartSociales))
+            {
+                if (item.CompteClient.Client.CodeClient == client.CodeClient)
+                    montant += item.Montant;
+            }
+            return montant;
+        }
+
+        public int NombrePartSociale(Client client)
+        {
+            int nombre = 0;
+            foreach (var item in new List<PartSociale>(new PartSocialeBLO().TousPartSociales))
+            {
+                if (item.CompteClient.Client.CodeClient == client.CodeClient)
+                    nombre++;
+            }
+            return nombre;
+        }
+
         public void SupprimerPartSociale(PartSociale partSociale, Employe employe)
         {
             partSocialeBLO.Remove(partSociale);

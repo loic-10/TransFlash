@@ -20,9 +20,9 @@ namespace TransFlash.BO
         {
         }
 
-        public Avaliste(string nomComplet)
+        public Avaliste(int id)
         {
-            NomComplet = nomComplet;
+            Id = id;
         }
 
         public Avaliste(int id, Garantie garantie, string nomComplet, string profession, string description, double montantParMois)

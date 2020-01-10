@@ -37,7 +37,7 @@ namespace TransFlash.BO
 
         public override int GetHashCode()
         {
-            return CompteClient.GetHashCode();
+            return 51281350 + EqualityComparer<CompteClient>.Default.GetHashCode(CompteClient);
         }
     }
 }

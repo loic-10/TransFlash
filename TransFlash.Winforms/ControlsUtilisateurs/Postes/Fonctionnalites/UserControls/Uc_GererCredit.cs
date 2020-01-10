@@ -9,88 +9,143 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransFlash.Winforms.Fonctions;
 using TransFlash.BO;
+using TransFlash.BLL;
 
 namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserControls
 {
     public partial class Uc_GererCredit : UserControl
     {
 
-        private Frm_Fonction fonction = new Frm_Fonction();
+        private Frm_Fonction fonction = null;
 
-        public Uc_GererCredit()
+        private Employe employe = null;
+
+        public Uc_GererCredit(Employe employe)
         {
             InitializeComponent();
+            fonction = new Frm_Fonction();
+            dataGridCredit.AutoGenerateColumns = false;
+            this.employe = employe;
+            Load += Uc_GererCredit_Load;
+            RefreshDataGrid(new CreditBLO().RechercherLesCredits(txbRechercher.Text, checkCode.Checked, checkClient.Checked,
+                checkDateOuvertureDossierCredit.Checked, checkDateValidationCredit.Checked, checkGarantie.Checked, checkMontantEmprunte.Checked,
+                checkMontantRembourse.Checked, checkNombreMois.Checked, checkStatutCredit.Checked, checkTypeCredit.Checked));
+        }
+
+        private void Uc_GererCredit_Load(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        public void RefreshDataGrid(IEnumerable<Credit> credits)
+        {
+            dataGridCredit.DataSource = credits;
+            fonction.DesignDataGrid(dataGridCredit);
+            lblCountItems.Text = $"{credits.Count()} credit" + ((credits.Count() > 1) ? "s" : string.Empty);
         }
 
         private void btnInitierEmprunt_Click(object sender, EventArgs e)
         {
-            Uc_InitierCredit frm = new Uc_InitierCredit();
+            Uc_InitierCredit frm = new Uc_InitierCredit(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 
-        private void Uc_GererEmprunt_Load(object sender, EventArgs e)
+        private void btnCompleterCredit_Click(object sender, EventArgs e)
         {
-            Personne personne1 = new Personne("LEKOULAH Loic", Status.Desactivé);
-            Personne personne2 = new Personne("NGUEGANG DONFACK", Status.Activé);
-            List<Personne> personnes = new List<Personne>{
-                personne1,
-                personne2, personne2, personne1,
-                personne2, personne2, personne1,
-                personne2, personne2, personne1
-            };
+            Credit credit = dataGridCredit.SelectedRows[0].DataBoundItem as Credit;
+            Uc_InitierCredit frm = new Uc_InitierCredit(this.employe, credit);
+            fonction.AfficherPageChoisie(this, frm);
+        }
 
-            dgClient.DataSource = personnes;
-            dgClient.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(13, 72, 114);
-            dgClient.ColumnHeadersHeight = 45;
-            dgClient.RowHeadersVisible = true;
+        private void txbRechercher_TextChanged(object sender, EventArgs e)
+        {
+            RefreshDataGrid(new CreditBLO().RechercherLesCredits(txbRechercher.Text, checkCode.Checked, checkClient.Checked,
+                checkDateOuvertureDossierCredit.Checked, checkDateValidationCredit.Checked, checkGarantie.Checked, checkMontantEmprunte.Checked,
+                checkMontantRembourse.Checked, checkNombreMois.Checked, checkStatutCredit.Checked, checkTypeCredit.Checked));
+        }
 
-            foreach (DataGridViewRow row in dgClient.Rows)
+        private void dataGridEmploye_SelectionChanged(object sender, EventArgs e)
+        {
+            btnSupprimer.Enabled = fonction.SiActiveButtonPourPlusieursSelections(dataGridCredit);
+            btnInformation.Enabled = fonction.SiActiveButtonPourUneSelection(dataGridCredit);
+            btnCompleterCredit.Enabled = fonction.SiActiveButtonPourCompleterCredit(dataGridCredit, 1, 9, 4);
+            btnFinaliserCredit.Enabled = fonction.SiActiveButtonPourFinaliserCredit(dataGridCredit, 9);
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            string nbr = (dataGridCredit.SelectedRows.Count > 1) ? "s" : string.Empty;
+            if (MessageBox.Show($"Etes-vous sur de vouloir supprimer credit{nbr} ?", "Attention", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (row.Cells[1].Value.ToString() == Status.Activé.ToString())
-                    row.Cells[1].Style.ForeColor = Color.Green;
-                else
-                    row.Cells[1].Style.ForeColor = Color.Red;
-
-                row.Selected = false;
-                row.Height = 45;
-                row.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-            }
-        }
-
-        private void createGraphicsColumn(int column)
-        {
-            Image image = Properties.Resources.approve_and_update_32px;
-            DataGridViewImageColumn iconColumn = new DataGridViewImageColumn();
-            iconColumn.Image = image;
-            iconColumn.Name = "Tree";
-            iconColumn.HeaderText = "Nice tree";
-            dgClient.Columns.Insert(column, iconColumn);
-            dgClient.Columns[column].Width = 120;
-        }
-
-        private void dgClient_Resize(object sender, EventArgs e)
-        {
-        }
-
-        private void dgClient_SelectionChanged(object sender, EventArgs e)
-        {
-            bool exist = false;
-            foreach (DataGridViewRow row in dgClient.SelectedRows)
-            {
-                if (row.Cells[1].Value.ToString() == Status.Desactivé.ToString())
+                for (int i = 0; i < dataGridCredit.SelectedRows.Count; i++)
                 {
-                    exist = true;
-                    break;
+                    Credit credit = dataGridCredit.SelectedRows[i].DataBoundItem as Credit;
+                    new CreditBLO().SupprimerCredit(credit, this.employe);
                 }
+                txbRechercher_TextChanged(sender, e);
             }
+        }
 
-            if(exist == true || dgClient.SelectedRows.Count > 1)
-                btnFinaliserCredit.Enabled = false;
-            else
-                btnFinaliserCredit.Enabled = true;
+        private void btnExporterExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fonction.ExtractionSurExcel(dataGridCredit);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-            txbRecherche.Text = dgClient.SelectedRows.Count.ToString();
+        private void checkCode_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkTypeCredit_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkDateOuvertureDossierCredit_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkDateValidationCredit_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkNombreMois_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkClient_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkGarantie_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkMontantEmprunte_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkMontantRembourse_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
+        }
+
+        private void checkStatutCredit_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txbRechercher_TextChanged(sender, e);
         }
     }
 }

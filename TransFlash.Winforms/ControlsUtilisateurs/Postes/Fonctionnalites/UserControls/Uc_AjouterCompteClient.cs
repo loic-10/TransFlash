@@ -66,5 +66,10 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
             Uc_GererCompte frm = new Uc_GererCompte(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
+
+        private void gunaPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

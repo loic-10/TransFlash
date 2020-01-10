@@ -32,7 +32,7 @@ namespace TransFlash.BLL
         }
 
         public IEnumerable<Operation> RechercherOperationsCompte(CompteClient compteClient) => operationBLO.Find(x => 
-            x.CompteClient == compteClient);
+            x.CompteClient.CodeCompte == compteClient.CodeCompte);
 
         public IEnumerable<Operation> RechercherLesOperations(string valeur, bool checkId, bool checkTypeOperation,
             bool checkEmploye, bool checkDateOperation, bool checkCompteClient, bool checkValeurOperation, 

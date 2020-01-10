@@ -24,8 +24,8 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Uc_GererRemboursement frm = new Uc_GererRemboursement();
-            fonction.AfficherPageChoisie(this, frm);
+            //Uc_GererRemboursement frm = new Uc_GererRemboursement();
+            //fonction.AfficherPageChoisie(this, frm);
         }
     }
 }

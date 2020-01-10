@@ -29,7 +29,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
             dataGridFichierStockes.AutoGenerateColumns = false;
             this.employe = employe;
             RefreshGrid(new FichierStockeBLO().RechercherLesFichierStockes(txbRechercher.Text, checkIdentifiant.Checked, checkDateEnregistrement.Checked, 
-                checkClient.Checked, checkGarantie.Checked, checkNom.Checked, checkNomFichier.Checked, checkStatutStockage.Checked));
+                checkClient.Checked, checkGarantie.Checked, checkMontant.Checked, checkNom.Checked, checkNomFichier.Checked, checkStatutStockage.Checked));
             Load += Uc_FichiersStockes_Load;
         }
 
@@ -49,7 +49,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         public void txbRecherche_TextChanged(object sender, EventArgs e)
         {
             RefreshGrid(new FichierStockeBLO().RechercherLesFichierStockes(txbRechercher.Text, checkIdentifiant.Checked, checkDateEnregistrement.Checked,
-                checkClient.Checked, checkGarantie.Checked, checkNom.Checked, checkNomFichier.Checked, checkStatutStockage.Checked));
+                checkClient.Checked, checkGarantie.Checked, checkMontant.Checked, checkNom.Checked, checkNomFichier.Checked, checkStatutStockage.Checked));
         }
 
         private void dataGridVille_SelectionChanged(object sender, EventArgs e)
@@ -120,6 +120,11 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         }
 
         private void checkStatutStockage_CheckedChanged(object sender, EventArgs e)
+        {
+            txbRecherche_TextChanged(sender, e);
+        }
+
+        private void checkMontant_CheckedChanged(object sender, EventArgs e)
         {
             txbRecherche_TextChanged(sender, e);
         }

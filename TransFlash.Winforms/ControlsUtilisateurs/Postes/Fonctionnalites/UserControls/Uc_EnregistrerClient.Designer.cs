@@ -249,7 +249,7 @@
             this.gbEpargne.LineLeft = 2;
             this.gbEpargne.LineRight = 2;
             this.gbEpargne.LineTop = 2;
-            this.gbEpargne.Location = new System.Drawing.Point(8, 1145);
+            this.gbEpargne.Location = new System.Drawing.Point(-1, 1145);
             this.gbEpargne.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.gbEpargne.Name = "gbEpargne";
             this.gbEpargne.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);

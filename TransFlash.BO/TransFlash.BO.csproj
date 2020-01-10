@@ -43,7 +43,26 @@
   <ItemGroup>
     <Compile Include="Avaliste.cs" />
     <Compile Include="Beneficier.cs" />
-    <Compile Include="ButCredit.cs" />
+    <Compile Include="ClassesReport\Avaliste.cs" />
+    <Compile Include="ClassesReport\Beneficier.cs" />
+    <Compile Include="ClassesReport\ButCredit.cs" />
+    <Compile Include="ClassesReport\Client.cs" />
+    <Compile Include="ClassesReport\CompteClient.cs" />
+    <Compile Include="ClassesReport\Credit.cs" />
+    <Compile Include="ClassesReport\Devise.cs" />
+    <Compile Include="ClassesReport\Employe.cs" />
+    <Compile Include="ClassesReport\Epargne.cs" />
+    <Compile Include="ClassesReport\FichierStocke.cs" />
+    <Compile Include="ClassesReport\Fond.cs" />
+    <Compile Include="ClassesReport\Garantie.cs" />
+    <Compile Include="ClassesReport\Operation.cs" />
+    <Compile Include="ClassesReport\PartSociale.cs" />
+    <Compile Include="ClassesReport\Pays.cs" />
+    <Compile Include="ClassesReport\Personne.cs" />
+    <Compile Include="ClassesReport\Remboursement.cs" />
+    <Compile Include="ClassesReport\Salarie.cs" />
+    <Compile Include="ClassesReport\Transaction.cs" />
+    <Compile Include="ClassesReport\Ville.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="CompteClient.cs" />
     <Compile Include="Devise.cs" />

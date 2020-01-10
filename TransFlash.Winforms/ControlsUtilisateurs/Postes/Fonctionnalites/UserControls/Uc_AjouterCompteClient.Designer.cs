@@ -59,6 +59,19 @@
             this.gunaLabel39 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaGroupBox6 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaPanel11 = new Guna.UI.WinForms.GunaPanel();
+            this.cmbCodeTelephone2 = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaGroupBox25 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
+            this.cmbCodeTelephone1 = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaTextBox6 = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel29 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaGroupBox10 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.gunaLabel26 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox12 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
@@ -89,19 +102,6 @@
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
             this.txbNomComplet = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaGroupBox10 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.gunaLabel26 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaGroupBox6 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaPanel11 = new Guna.UI.WinForms.GunaPanel();
-            this.cmbCodeTelephone2 = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaGroupBox25 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
-            this.cmbCodeTelephone1 = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaTextBox6 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel29 = new Guna.UI.WinForms.GunaLabel();
             this.gunaShadowPanel1.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -115,6 +115,10 @@
             this.gunaGroupBox18.SuspendLayout();
             this.gunaGroupBox35.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
+            this.gunaGroupBox6.SuspendLayout();
+            this.gunaGroupBox25.SuspendLayout();
+            this.gunaGroupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaGroupBox12.SuspendLayout();
             this.gunaGroupBox8.SuspendLayout();
             this.gunaGroupBox17.SuspendLayout();
@@ -125,10 +129,6 @@
             this.gunaGroupBox4.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
             this.gunaGroupBox3.SuspendLayout();
-            this.gunaGroupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
-            this.gunaGroupBox6.SuspendLayout();
-            this.gunaGroupBox25.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaShadowPanel1
@@ -223,6 +223,7 @@
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(1000, 583);
             this.gunaPanel2.TabIndex = 7;
+            this.gunaPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel2_Paint);
             // 
             // gunaGroupBox16
             // 
@@ -646,6 +647,207 @@
             this.gunaGroupBox1.TabIndex = 3;
             this.gunaGroupBox1.Text = "Informations du client";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 10);
+            // 
+            // gunaGroupBox6
+            // 
+            this.gunaGroupBox6.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGroupBox6.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox6.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaGroupBox6.Controls.Add(this.gunaPanel11);
+            this.gunaGroupBox6.Controls.Add(this.cmbCodeTelephone2);
+            this.gunaGroupBox6.Controls.Add(this.gunaTextBox1);
+            this.gunaGroupBox6.Controls.Add(this.gunaLabel5);
+            this.gunaGroupBox6.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaGroupBox6.LineTop = 0;
+            this.gunaGroupBox6.Location = new System.Drawing.Point(510, 230);
+            this.gunaGroupBox6.Name = "gunaGroupBox6";
+            this.gunaGroupBox6.Radius = 5;
+            this.gunaGroupBox6.Size = new System.Drawing.Size(442, 38);
+            this.gunaGroupBox6.TabIndex = 31;
+            this.gunaGroupBox6.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // gunaPanel11
+            // 
+            this.gunaPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel11.Location = new System.Drawing.Point(265, 0);
+            this.gunaPanel11.Name = "gunaPanel11";
+            this.gunaPanel11.Size = new System.Drawing.Size(8, 38);
+            this.gunaPanel11.TabIndex = 10;
+            // 
+            // cmbCodeTelephone2
+            // 
+            this.cmbCodeTelephone2.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCodeTelephone2.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cmbCodeTelephone2.BorderColor = System.Drawing.Color.DarkGray;
+            this.cmbCodeTelephone2.BorderSize = 1;
+            this.cmbCodeTelephone2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cmbCodeTelephone2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCodeTelephone2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCodeTelephone2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCodeTelephone2.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbCodeTelephone2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodeTelephone2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbCodeTelephone2.FormattingEnabled = true;
+            this.cmbCodeTelephone2.Items.AddRange(new object[] {
+            "+237"});
+            this.cmbCodeTelephone2.Location = new System.Drawing.Point(175, 0);
+            this.cmbCodeTelephone2.Name = "cmbCodeTelephone2";
+            this.cmbCodeTelephone2.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.cmbCodeTelephone2.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbCodeTelephone2.Radius = 5;
+            this.cmbCodeTelephone2.Size = new System.Drawing.Size(90, 38);
+            this.cmbCodeTelephone2.TabIndex = 8;
+            // 
+            // gunaTextBox1
+            // 
+            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaTextBox1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gunaTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaTextBox1.BorderSize = 1;
+            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaTextBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTextBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaTextBox1.Location = new System.Drawing.Point(273, 0);
+            this.gunaTextBox1.Name = "gunaTextBox1";
+            this.gunaTextBox1.PasswordChar = '\0';
+            this.gunaTextBox1.Radius = 5;
+            this.gunaTextBox1.Size = new System.Drawing.Size(169, 38);
+            this.gunaTextBox1.TabIndex = 7;
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel5.Location = new System.Drawing.Point(0, 0);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(175, 38);
+            this.gunaLabel5.TabIndex = 4;
+            this.gunaLabel5.Text = "Numero de telephone 2";
+            this.gunaLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gunaGroupBox25
+            // 
+            this.gunaGroupBox25.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGroupBox25.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox25.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaGroupBox25.Controls.Add(this.gunaPanel10);
+            this.gunaGroupBox25.Controls.Add(this.cmbCodeTelephone1);
+            this.gunaGroupBox25.Controls.Add(this.gunaTextBox6);
+            this.gunaGroupBox25.Controls.Add(this.gunaLabel29);
+            this.gunaGroupBox25.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaGroupBox25.LineTop = 0;
+            this.gunaGroupBox25.Location = new System.Drawing.Point(510, 172);
+            this.gunaGroupBox25.Name = "gunaGroupBox25";
+            this.gunaGroupBox25.Radius = 5;
+            this.gunaGroupBox25.Size = new System.Drawing.Size(442, 38);
+            this.gunaGroupBox25.TabIndex = 30;
+            this.gunaGroupBox25.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // gunaPanel10
+            // 
+            this.gunaPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel10.Location = new System.Drawing.Point(265, 0);
+            this.gunaPanel10.Name = "gunaPanel10";
+            this.gunaPanel10.Size = new System.Drawing.Size(8, 38);
+            this.gunaPanel10.TabIndex = 9;
+            // 
+            // cmbCodeTelephone1
+            // 
+            this.cmbCodeTelephone1.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCodeTelephone1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cmbCodeTelephone1.BorderColor = System.Drawing.Color.DarkGray;
+            this.cmbCodeTelephone1.BorderSize = 1;
+            this.cmbCodeTelephone1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cmbCodeTelephone1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCodeTelephone1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCodeTelephone1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCodeTelephone1.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbCodeTelephone1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCodeTelephone1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbCodeTelephone1.FormattingEnabled = true;
+            this.cmbCodeTelephone1.Items.AddRange(new object[] {
+            "+237"});
+            this.cmbCodeTelephone1.Location = new System.Drawing.Point(175, 0);
+            this.cmbCodeTelephone1.Name = "cmbCodeTelephone1";
+            this.cmbCodeTelephone1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.cmbCodeTelephone1.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbCodeTelephone1.Radius = 5;
+            this.cmbCodeTelephone1.Size = new System.Drawing.Size(90, 38);
+            this.cmbCodeTelephone1.TabIndex = 8;
+            // 
+            // gunaTextBox6
+            // 
+            this.gunaTextBox6.BackColor = System.Drawing.Color.Transparent;
+            this.gunaTextBox6.BaseColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gunaTextBox6.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaTextBox6.BorderSize = 1;
+            this.gunaTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaTextBox6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaTextBox6.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.gunaTextBox6.FocusedBorderColor = System.Drawing.Color.Gray;
+            this.gunaTextBox6.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTextBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaTextBox6.Location = new System.Drawing.Point(273, 0);
+            this.gunaTextBox6.Name = "gunaTextBox6";
+            this.gunaTextBox6.PasswordChar = '\0';
+            this.gunaTextBox6.Radius = 5;
+            this.gunaTextBox6.Size = new System.Drawing.Size(169, 38);
+            this.gunaTextBox6.TabIndex = 7;
+            // 
+            // gunaLabel29
+            // 
+            this.gunaLabel29.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaLabel29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel29.Location = new System.Drawing.Point(0, 0);
+            this.gunaLabel29.Name = "gunaLabel29";
+            this.gunaLabel29.Size = new System.Drawing.Size(175, 38);
+            this.gunaLabel29.TabIndex = 4;
+            this.gunaLabel29.Text = "Numero de telephone*";
+            this.gunaLabel29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gunaGroupBox10
+            // 
+            this.gunaGroupBox10.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGroupBox10.BaseColor = System.Drawing.SystemColors.Control;
+            this.gunaGroupBox10.BorderColor = System.Drawing.Color.DarkGray;
+            this.gunaGroupBox10.Controls.Add(this.gunaCirclePictureBox1);
+            this.gunaGroupBox10.Controls.Add(this.gunaLabel26);
+            this.gunaGroupBox10.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaGroupBox10.LineTop = 0;
+            this.gunaGroupBox10.Location = new System.Drawing.Point(510, 346);
+            this.gunaGroupBox10.Name = "gunaGroupBox10";
+            this.gunaGroupBox10.Radius = 5;
+            this.gunaGroupBox10.Size = new System.Drawing.Size(442, 160);
+            this.gunaGroupBox10.TabIndex = 24;
+            this.gunaGroupBox10.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaCirclePictureBox1.Image = global::Couche.Winforms.Properties.Resources.credit___Copie;
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(175, 0);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox1.TabIndex = 21;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // gunaLabel26
+            // 
+            this.gunaLabel26.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaLabel26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel26.Location = new System.Drawing.Point(0, 0);
+            this.gunaLabel26.Name = "gunaLabel26";
+            this.gunaLabel26.Size = new System.Drawing.Size(175, 160);
+            this.gunaLabel26.TabIndex = 4;
+            this.gunaLabel26.Text = "Photo de l\'employe*";
             // 
             // gunaGroupBox12
             // 
@@ -1114,207 +1316,6 @@
             this.gunaLabel1.Text = "Nom complet*";
             this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gunaGroupBox10
-            // 
-            this.gunaGroupBox10.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox10.BaseColor = System.Drawing.SystemColors.Control;
-            this.gunaGroupBox10.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox10.Controls.Add(this.gunaCirclePictureBox1);
-            this.gunaGroupBox10.Controls.Add(this.gunaLabel26);
-            this.gunaGroupBox10.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox10.LineTop = 0;
-            this.gunaGroupBox10.Location = new System.Drawing.Point(510, 346);
-            this.gunaGroupBox10.Name = "gunaGroupBox10";
-            this.gunaGroupBox10.Radius = 5;
-            this.gunaGroupBox10.Size = new System.Drawing.Size(442, 160);
-            this.gunaGroupBox10.TabIndex = 24;
-            this.gunaGroupBox10.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaCirclePictureBox1.Image = global::Couche.Winforms.Properties.Resources.credit___Copie;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(175, 0);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(160, 160);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 21;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
-            // 
-            // gunaLabel26
-            // 
-            this.gunaLabel26.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaLabel26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel26.Location = new System.Drawing.Point(0, 0);
-            this.gunaLabel26.Name = "gunaLabel26";
-            this.gunaLabel26.Size = new System.Drawing.Size(175, 160);
-            this.gunaLabel26.TabIndex = 4;
-            this.gunaLabel26.Text = "Photo de l\'employe*";
-            // 
-            // gunaGroupBox6
-            // 
-            this.gunaGroupBox6.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox6.BaseColor = System.Drawing.SystemColors.Control;
-            this.gunaGroupBox6.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox6.Controls.Add(this.gunaPanel11);
-            this.gunaGroupBox6.Controls.Add(this.cmbCodeTelephone2);
-            this.gunaGroupBox6.Controls.Add(this.gunaTextBox1);
-            this.gunaGroupBox6.Controls.Add(this.gunaLabel5);
-            this.gunaGroupBox6.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox6.LineTop = 0;
-            this.gunaGroupBox6.Location = new System.Drawing.Point(510, 230);
-            this.gunaGroupBox6.Name = "gunaGroupBox6";
-            this.gunaGroupBox6.Radius = 5;
-            this.gunaGroupBox6.Size = new System.Drawing.Size(442, 38);
-            this.gunaGroupBox6.TabIndex = 31;
-            this.gunaGroupBox6.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // gunaPanel11
-            // 
-            this.gunaPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel11.Location = new System.Drawing.Point(265, 0);
-            this.gunaPanel11.Name = "gunaPanel11";
-            this.gunaPanel11.Size = new System.Drawing.Size(8, 38);
-            this.gunaPanel11.TabIndex = 10;
-            // 
-            // cmbCodeTelephone2
-            // 
-            this.cmbCodeTelephone2.BackColor = System.Drawing.Color.Transparent;
-            this.cmbCodeTelephone2.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cmbCodeTelephone2.BorderColor = System.Drawing.Color.DarkGray;
-            this.cmbCodeTelephone2.BorderSize = 1;
-            this.cmbCodeTelephone2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cmbCodeTelephone2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbCodeTelephone2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCodeTelephone2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCodeTelephone2.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbCodeTelephone2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodeTelephone2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbCodeTelephone2.FormattingEnabled = true;
-            this.cmbCodeTelephone2.Items.AddRange(new object[] {
-            "+237"});
-            this.cmbCodeTelephone2.Location = new System.Drawing.Point(175, 0);
-            this.cmbCodeTelephone2.Name = "cmbCodeTelephone2";
-            this.cmbCodeTelephone2.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.cmbCodeTelephone2.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmbCodeTelephone2.Radius = 5;
-            this.cmbCodeTelephone2.Size = new System.Drawing.Size(90, 38);
-            this.cmbCodeTelephone2.TabIndex = 8;
-            // 
-            // gunaTextBox1
-            // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox1.BorderSize = 1;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox1.Location = new System.Drawing.Point(273, 0);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 5;
-            this.gunaTextBox1.Size = new System.Drawing.Size(169, 38);
-            this.gunaTextBox1.TabIndex = 7;
-            // 
-            // gunaLabel5
-            // 
-            this.gunaLabel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(0, 0);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(175, 38);
-            this.gunaLabel5.TabIndex = 4;
-            this.gunaLabel5.Text = "Numero de telephone 2";
-            this.gunaLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // gunaGroupBox25
-            // 
-            this.gunaGroupBox25.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox25.BaseColor = System.Drawing.SystemColors.Control;
-            this.gunaGroupBox25.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaGroupBox25.Controls.Add(this.gunaPanel10);
-            this.gunaGroupBox25.Controls.Add(this.cmbCodeTelephone1);
-            this.gunaGroupBox25.Controls.Add(this.gunaTextBox6);
-            this.gunaGroupBox25.Controls.Add(this.gunaLabel29);
-            this.gunaGroupBox25.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox25.LineTop = 0;
-            this.gunaGroupBox25.Location = new System.Drawing.Point(510, 172);
-            this.gunaGroupBox25.Name = "gunaGroupBox25";
-            this.gunaGroupBox25.Radius = 5;
-            this.gunaGroupBox25.Size = new System.Drawing.Size(442, 38);
-            this.gunaGroupBox25.TabIndex = 30;
-            this.gunaGroupBox25.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // gunaPanel10
-            // 
-            this.gunaPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel10.Location = new System.Drawing.Point(265, 0);
-            this.gunaPanel10.Name = "gunaPanel10";
-            this.gunaPanel10.Size = new System.Drawing.Size(8, 38);
-            this.gunaPanel10.TabIndex = 9;
-            // 
-            // cmbCodeTelephone1
-            // 
-            this.cmbCodeTelephone1.BackColor = System.Drawing.Color.Transparent;
-            this.cmbCodeTelephone1.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cmbCodeTelephone1.BorderColor = System.Drawing.Color.DarkGray;
-            this.cmbCodeTelephone1.BorderSize = 1;
-            this.cmbCodeTelephone1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cmbCodeTelephone1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbCodeTelephone1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCodeTelephone1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCodeTelephone1.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbCodeTelephone1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCodeTelephone1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbCodeTelephone1.FormattingEnabled = true;
-            this.cmbCodeTelephone1.Items.AddRange(new object[] {
-            "+237"});
-            this.cmbCodeTelephone1.Location = new System.Drawing.Point(175, 0);
-            this.cmbCodeTelephone1.Name = "cmbCodeTelephone1";
-            this.cmbCodeTelephone1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.cmbCodeTelephone1.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmbCodeTelephone1.Radius = 5;
-            this.cmbCodeTelephone1.Size = new System.Drawing.Size(90, 38);
-            this.cmbCodeTelephone1.TabIndex = 8;
-            // 
-            // gunaTextBox6
-            // 
-            this.gunaTextBox6.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox6.BaseColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gunaTextBox6.BorderColor = System.Drawing.Color.DarkGray;
-            this.gunaTextBox6.BorderSize = 1;
-            this.gunaTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaTextBox6.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.gunaTextBox6.FocusedBorderColor = System.Drawing.Color.Gray;
-            this.gunaTextBox6.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaTextBox6.Location = new System.Drawing.Point(273, 0);
-            this.gunaTextBox6.Name = "gunaTextBox6";
-            this.gunaTextBox6.PasswordChar = '\0';
-            this.gunaTextBox6.Radius = 5;
-            this.gunaTextBox6.Size = new System.Drawing.Size(169, 38);
-            this.gunaTextBox6.TabIndex = 7;
-            // 
-            // gunaLabel29
-            // 
-            this.gunaLabel29.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaLabel29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel29.Location = new System.Drawing.Point(0, 0);
-            this.gunaLabel29.Name = "gunaLabel29";
-            this.gunaLabel29.Size = new System.Drawing.Size(175, 38);
-            this.gunaLabel29.TabIndex = 4;
-            this.gunaLabel29.Text = "Numero de telephone*";
-            this.gunaLabel29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Uc_AjouterCompteClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -1341,6 +1342,10 @@
             this.gunaGroupBox18.ResumeLayout(false);
             this.gunaGroupBox35.ResumeLayout(false);
             this.gunaGroupBox1.ResumeLayout(false);
+            this.gunaGroupBox6.ResumeLayout(false);
+            this.gunaGroupBox25.ResumeLayout(false);
+            this.gunaGroupBox10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaGroupBox12.ResumeLayout(false);
             this.gunaGroupBox8.ResumeLayout(false);
             this.gunaGroupBox17.ResumeLayout(false);
@@ -1351,10 +1356,6 @@
             this.gunaGroupBox4.ResumeLayout(false);
             this.gunaGroupBox2.ResumeLayout(false);
             this.gunaGroupBox3.ResumeLayout(false);
-            this.gunaGroupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
-            this.gunaGroupBox6.ResumeLayout(false);
-            this.gunaGroupBox25.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

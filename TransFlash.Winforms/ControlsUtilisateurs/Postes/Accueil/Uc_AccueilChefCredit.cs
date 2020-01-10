@@ -55,13 +55,13 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private void btnGererEmprunt_Click(object sender, EventArgs e)
         {
-            Uc_GererCredit frm = new Uc_GererCredit();
+            Uc_GererCredit frm = new Uc_GererCredit(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 
         private void btnGererRemboursement_Click(object sender, EventArgs e)
         {
-            Uc_GererRemboursement frm = new Uc_GererRemboursement();
+            Uc_GererRemboursement frm = new Uc_GererRemboursement(this.employe);
             fonction.AfficherPageChoisie(this, frm);
         }
 

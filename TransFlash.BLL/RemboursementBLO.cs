@@ -18,14 +18,14 @@ namespace TransFlash.BLL
             remboursementBLO = new RepositoireDAOFile<Remboursement>();
         }
 
-        public void EffectuerRemboursement(Credit credit, double montant, Employe employe)
+        public void PanifierRemboursement(Credit credit, double montant, DateTime datePrevuRemboursement, Employe employe)
         {
 
-            remboursementBLO.Add(new Remboursement(CodeRemboursement, credit, DateTime.Now, montant, 
-                StatutRemboursement.En_attente_de_validité));
+            remboursementBLO.Add(new Remboursement(CodeRemboursement, credit, null, datePrevuRemboursement, montant, 
+                StatutRemboursement.Planifié));
 
             new OperationBLO().AjouterOperation(TypeOperation.Remboursement, employe, credit.Client, new CompteClient("/"), montant, 
-                $"Remboursement du credit {credit}");
+                $"Plannification du remboursement du credit {credit}");
 
             new IdentifiantBLO().AddIdRemboursement();
         }
@@ -64,10 +64,14 @@ namespace TransFlash.BLL
         public IEnumerable<Remboursement> RemboursementDuCredit(Credit credit) => remboursementBLO.Find(x => 
             x.Credit == credit);
 
-        public IEnumerable<Remboursement> RechercherLesRemboursements(string valeur) => remboursementBLO.Find(x =>
-            x.DateRemboursement.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.StatutRemboursement.ToString().ToLower().Contains(valeur.ToLower()) ||
-            x.Montant.ToString().ToLower().Contains(valeur.ToLower()));
+        public IEnumerable<Remboursement> RechercherLesRemboursements(string valeur, bool checkCode, bool checkCredit,
+               bool checkDatePrevuRemboursement, bool checkDateRemboursement, bool checkMontant, bool checkStatutRemboursement) => remboursementBLO.Find(x =>
+            (x.CodeRemboursement.ToString().ToLower().Contains(valeur.ToLower()) && checkCode) ||
+            (x.Credit.ToString().ToLower().Contains(valeur.ToLower()) && checkCredit) ||
+            (x.DatePrevuRemboursement.ToString().ToLower().Contains(valeur.ToLower()) && checkDatePrevuRemboursement) ||
+            (x.DateRemboursement.ToString().ToLower().Contains(valeur.ToLower()) && checkDateRemboursement) ||
+            (x.Montant.ToString().ToLower().Contains(valeur.ToLower()) && checkMontant) ||
+            (x.StatutRemboursement.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutRemboursement));
 
         public void SupprimerRemboursement(Remboursement remboursement, Employe employe)
         {

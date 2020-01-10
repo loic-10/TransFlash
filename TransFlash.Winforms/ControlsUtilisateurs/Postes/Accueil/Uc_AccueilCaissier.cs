@@ -37,14 +37,14 @@ namespace Couche.Winforms.ControlsUtilisateurs.Accueil
 
         private void btnGererEmprunt_Click(object sender, EventArgs e)
         {
-            Uc_GererCredit frm = new Uc_GererCredit();
-            fonction.AfficherPageChoisie(this, frm);
+            //Uc_GererCredit frm = new Uc_GererCredit(this.);
+            //fonction.AfficherPageChoisie(this, frm);
         }
 
         private void btnGererRemboursement_Click(object sender, EventArgs e)
         {
-            Uc_GererRemboursement frm = new Uc_GererRemboursement();
-            fonction.AfficherPageChoisie(this, frm);
+            //Uc_GererRemboursement frm = new Uc_GererRemboursement();
+            //fonction.AfficherPageChoisie(this, frm);
         }
 
         private void gunaLabel1_Click(object sender, EventArgs e)

@@ -33,15 +33,12 @@ namespace TransFlash.BLL
             new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, client, compteClient, 0, $"Ajout du compte {compteClient} pour le client " +
                 $"{client}");
 
-            Epargne epargne = new Epargne(0);
             if (typeCompte == TypeCompte.Epargne)
             {
                 new EpargneBLO().AjouterEpargne(compteClient, nombreMois, 0, employe);
-
-                epargne = new EpargneBLO().RechercheEpargne(idEpargne);
             }
 
-            new TransactionBLO().InitierTransaction(typeCompte, TypeTransaction.Dépot, epargne, compteClient, new CompteClient("/"), employe, montant, 0);
+            new TransactionBLO().InitierTransaction(typeCompte, TypeTransaction.Dépot, compteClient, new CompteClient("/"), employe, montant, 0);
 
             new IdentifiantBLO().AddIdCompteClient();
         }
@@ -118,6 +115,21 @@ namespace TransFlash.BLL
             string raison = $"Retrait du compte {compteClient} du client {compteClient.Client} au montant de {montant}";
 
             new FondBLO().SortirArgentEnFond(employe, compteClient, montant, raison);
+
+            new OperationBLO().AjouterOperation(TypeOperation.Retrait, employe, compteClient.Client, compteClient, montantFinal, raison);
+        }
+
+        public void DebiterCompteClientEpargne(CompteClient compteClient, double montant, double montantReduit, Employe employe)
+        {
+
+            double montantFinal = montant - montantReduit;
+            int index = compteClientBLO.IndexOf(compteClient);
+            compteClient.Solde -= montant;
+            compteClientBLO[index] = compteClient;
+
+            string raison = $"Retrait du compte {compteClient} du client {compteClient.Client} au montant de {montantFinal}";
+
+            new FondBLO().SortirArgentEnFond(employe, compteClient, montantFinal, raison);
 
             new OperationBLO().AjouterOperation(TypeOperation.Retrait, employe, compteClient.Client, compteClient, montantFinal, raison);
         }

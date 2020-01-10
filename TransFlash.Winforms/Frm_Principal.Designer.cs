@@ -55,9 +55,7 @@
             this.panelMenuPoste = new Guna.UI.WinForms.GunaPanel();
             this.btnGererTouteOperation = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPlusEncore = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnGererPorteFeuilleEntreprise = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gererPorteFeuilleCredit = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnGererPorteFeuilleCaisse = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnGererEmployes = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnGererCompte = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnGererClient = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -376,9 +374,7 @@
             this.panelMenuPoste.AutoScroll = true;
             this.panelMenuPoste.Controls.Add(this.btnGererTouteOperation);
             this.panelMenuPoste.Controls.Add(this.btnPlusEncore);
-            this.panelMenuPoste.Controls.Add(this.btnGererPorteFeuilleEntreprise);
             this.panelMenuPoste.Controls.Add(this.gererPorteFeuilleCredit);
-            this.panelMenuPoste.Controls.Add(this.btnGererPorteFeuilleCaisse);
             this.panelMenuPoste.Controls.Add(this.btnGererEmployes);
             this.panelMenuPoste.Controls.Add(this.btnGererCompte);
             this.panelMenuPoste.Controls.Add(this.btnGererClient);
@@ -416,7 +412,7 @@
             this.btnGererTouteOperation.LineBottom = 1;
             this.btnGererTouteOperation.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.btnGererTouteOperation.LineLeft = 5;
-            this.btnGererTouteOperation.Location = new System.Drawing.Point(0, 550);
+            this.btnGererTouteOperation.Location = new System.Drawing.Point(0, 450);
             this.btnGererTouteOperation.Margin = new System.Windows.Forms.Padding(0);
             this.btnGererTouteOperation.Name = "btnGererTouteOperation";
             this.btnGererTouteOperation.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -454,7 +450,7 @@
             this.btnPlusEncore.LineBottom = 1;
             this.btnPlusEncore.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.btnPlusEncore.LineLeft = 5;
-            this.btnPlusEncore.Location = new System.Drawing.Point(0, 500);
+            this.btnPlusEncore.Location = new System.Drawing.Point(0, 400);
             this.btnPlusEncore.Margin = new System.Windows.Forms.Padding(0);
             this.btnPlusEncore.Name = "btnPlusEncore";
             this.btnPlusEncore.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -468,44 +464,6 @@
             this.btnPlusEncore.TabIndex = 64;
             this.btnPlusEncore.Text = "Plus encore...";
             this.btnPlusEncore.Click += new System.EventHandler(this.btnPlusEncore_Click);
-            // 
-            // btnGererPorteFeuilleEntreprise
-            // 
-            this.btnGererPorteFeuilleEntreprise.Animated = true;
-            this.btnGererPorteFeuilleEntreprise.AnimationHoverSpeed = 0.07F;
-            this.btnGererPorteFeuilleEntreprise.AnimationSpeed = 0.03F;
-            this.btnGererPorteFeuilleEntreprise.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnGererPorteFeuilleEntreprise.BorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleEntreprise.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.btnGererPorteFeuilleEntreprise.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnGererPorteFeuilleEntreprise.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleEntreprise.CheckedForeColor = System.Drawing.Color.White;
-            this.btnGererPorteFeuilleEntreprise.CheckedImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
-            this.btnGererPorteFeuilleEntreprise.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
-            this.btnGererPorteFeuilleEntreprise.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGererPorteFeuilleEntreprise.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGererPorteFeuilleEntreprise.FocusedColor = System.Drawing.Color.Empty;
-            this.btnGererPorteFeuilleEntreprise.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGererPorteFeuilleEntreprise.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererPorteFeuilleEntreprise.Image = global::Couche.Winforms.Properties.Resources.dossier_32px;
-            this.btnGererPorteFeuilleEntreprise.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnGererPorteFeuilleEntreprise.LineBottom = 1;
-            this.btnGererPorteFeuilleEntreprise.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnGererPorteFeuilleEntreprise.LineLeft = 5;
-            this.btnGererPorteFeuilleEntreprise.Location = new System.Drawing.Point(0, 450);
-            this.btnGererPorteFeuilleEntreprise.Margin = new System.Windows.Forms.Padding(0);
-            this.btnGererPorteFeuilleEntreprise.Name = "btnGererPorteFeuilleEntreprise";
-            this.btnGererPorteFeuilleEntreprise.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnGererPorteFeuilleEntreprise.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleEntreprise.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnGererPorteFeuilleEntreprise.OnHoverImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
-            this.btnGererPorteFeuilleEntreprise.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnGererPorteFeuilleEntreprise.OnPressedColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleEntreprise.OnPressedDepth = 0;
-            this.btnGererPorteFeuilleEntreprise.Size = new System.Drawing.Size(265, 50);
-            this.btnGererPorteFeuilleEntreprise.TabIndex = 63;
-            this.btnGererPorteFeuilleEntreprise.Text = "Gerer porte-feuille de l\'entreprise";
-            this.btnGererPorteFeuilleEntreprise.Click += new System.EventHandler(this.btnGererPorteFeuilleEntreprise_Click);
             // 
             // gererPorteFeuilleCredit
             // 
@@ -530,7 +488,7 @@
             this.gererPorteFeuilleCredit.LineBottom = 1;
             this.gererPorteFeuilleCredit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.gererPorteFeuilleCredit.LineLeft = 5;
-            this.gererPorteFeuilleCredit.Location = new System.Drawing.Point(0, 400);
+            this.gererPorteFeuilleCredit.Location = new System.Drawing.Point(0, 350);
             this.gererPorteFeuilleCredit.Margin = new System.Windows.Forms.Padding(0);
             this.gererPorteFeuilleCredit.Name = "gererPorteFeuilleCredit";
             this.gererPorteFeuilleCredit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
@@ -542,46 +500,8 @@
             this.gererPorteFeuilleCredit.OnPressedDepth = 0;
             this.gererPorteFeuilleCredit.Size = new System.Drawing.Size(265, 50);
             this.gererPorteFeuilleCredit.TabIndex = 62;
-            this.gererPorteFeuilleCredit.Text = "Gerer le porte-feuille de credit";
+            this.gererPorteFeuilleCredit.Text = "Gerer le porte-feuille des credits";
             this.gererPorteFeuilleCredit.Click += new System.EventHandler(this.gererPorteFeuilleCredit_Click);
-            // 
-            // btnGererPorteFeuilleCaisse
-            // 
-            this.btnGererPorteFeuilleCaisse.Animated = true;
-            this.btnGererPorteFeuilleCaisse.AnimationHoverSpeed = 0.07F;
-            this.btnGererPorteFeuilleCaisse.AnimationSpeed = 0.03F;
-            this.btnGererPorteFeuilleCaisse.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnGererPorteFeuilleCaisse.BorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleCaisse.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.btnGererPorteFeuilleCaisse.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnGererPorteFeuilleCaisse.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleCaisse.CheckedForeColor = System.Drawing.Color.White;
-            this.btnGererPorteFeuilleCaisse.CheckedImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
-            this.btnGererPorteFeuilleCaisse.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
-            this.btnGererPorteFeuilleCaisse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGererPorteFeuilleCaisse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGererPorteFeuilleCaisse.FocusedColor = System.Drawing.Color.Empty;
-            this.btnGererPorteFeuilleCaisse.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGererPorteFeuilleCaisse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(209)))), ((int)(((byte)(218)))));
-            this.btnGererPorteFeuilleCaisse.Image = global::Couche.Winforms.Properties.Resources.dossier_32px;
-            this.btnGererPorteFeuilleCaisse.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnGererPorteFeuilleCaisse.LineBottom = 1;
-            this.btnGererPorteFeuilleCaisse.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnGererPorteFeuilleCaisse.LineLeft = 5;
-            this.btnGererPorteFeuilleCaisse.Location = new System.Drawing.Point(0, 350);
-            this.btnGererPorteFeuilleCaisse.Margin = new System.Windows.Forms.Padding(0);
-            this.btnGererPorteFeuilleCaisse.Name = "btnGererPorteFeuilleCaisse";
-            this.btnGererPorteFeuilleCaisse.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnGererPorteFeuilleCaisse.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleCaisse.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnGererPorteFeuilleCaisse.OnHoverImage = global::Couche.Winforms.Properties.Resources.dossier_folder_52px;
-            this.btnGererPorteFeuilleCaisse.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnGererPorteFeuilleCaisse.OnPressedColor = System.Drawing.Color.Black;
-            this.btnGererPorteFeuilleCaisse.OnPressedDepth = 0;
-            this.btnGererPorteFeuilleCaisse.Size = new System.Drawing.Size(265, 50);
-            this.btnGererPorteFeuilleCaisse.TabIndex = 61;
-            this.btnGererPorteFeuilleCaisse.Text = "Gerer des rapports";
-            this.btnGererPorteFeuilleCaisse.Click += new System.EventHandler(this.btnGererPorteFeuilleCaisse_Click);
             // 
             // btnGererEmployes
             // 
@@ -953,9 +873,7 @@
         private Guna.UI.WinForms.GunaImageButton btnParametre;
         public Guna.UI.WinForms.GunaPanel panelCorps;
         public Guna.UI.WinForms.GunaPanel panelMenu;
-        internal Guna.UI.WinForms.GunaAdvenceButton btnGererPorteFeuilleEntreprise;
         public Guna.UI.WinForms.GunaAdvenceButton gererPorteFeuilleCredit;
-        internal Guna.UI.WinForms.GunaAdvenceButton btnGererPorteFeuilleCaisse;
         internal Guna.UI.WinForms.GunaAdvenceButton btnGererEmployes;
         internal Guna.UI.WinForms.GunaAdvenceButton btnGererCompte;
         internal Guna.UI.WinForms.GunaAdvenceButton btnGererClient;

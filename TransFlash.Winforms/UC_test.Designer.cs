@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Name = "UC_test";
-            this.Size = new System.Drawing.Size(552, 455);
+            this.Size = new System.Drawing.Size(1009, 647);
             this.ResumeLayout(false);
 
         }

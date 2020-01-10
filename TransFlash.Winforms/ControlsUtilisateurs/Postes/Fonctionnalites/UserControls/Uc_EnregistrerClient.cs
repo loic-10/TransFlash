@@ -275,7 +275,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
             int pourcentage = 0;
             foreach (var beneficier in uc_Beneficiers)
             {
-                if (beneficier.Nom != string.Empty && beneficier.Description != string.Empty && beneficier.Pourcentage > 0)
+                if (beneficier.FormulaireRempliCorrectement)
                     pourcentage += beneficier.Pourcentage;
             }
             return pourcentage;
@@ -285,7 +285,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         {
             foreach (var beneficier in beneficiers)
             {
-                if (beneficier.Nom != string.Empty && beneficier.Description != string.Empty && beneficier.Pourcentage > 0)
+                if (beneficier.FormulaireRempliCorrectement)
                 {
                     new BeneficierBLO().AjouterBeneficier(beneficier.Nom, beneficier.Description, beneficier.Pourcentage,
                         new CompteClientBLO().RechercherUnComptePourBeneficier(lblCodeCompte.Text), this.employe);
@@ -336,17 +336,25 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
                         {
                             if (PourcentageBeneficierRenseigne(this.beneficiers) == 100)
                             {
-                                new ClientBLO().AjouterClient(txbNomComplet.Text, dtDateNaissance.Value.Date, txbLieuNaissance.Text, RetourSexe(cmbSexe.Text),
-                                    txbNumeroCNI.Text, $"{cmbCodeTelephone1.Text} {txbNumero1.Text} ", numeroTelehone2,
-                                    new PaysBLO().RechercherUnPays(cmbPays.Text), new VilleBLO().RechercherUneVille(cmbVille.Text), txbAdresse.Text, fileName,
-                                    txbProfession.Text, RetourTypeCompte(cmbTypeCompte.Text), RetourTypeAppartenantCompteEpargne(cmbTypeAppartenant.Text),
-                                    txbNomStructure.Text, this.employe, int.Parse(txbNombreMoisEpargne.Text), double.Parse(txbMontantDepart.Text));
+                                if((RetourTypeCompte(cmbTypeCompte.Text)  == TypeCompte.Courant && 
+                                    double.Parse(txbMontantDepart.Text) <= new ParametreGeneralBLO().TousParametreGenerals[0].SoldeMaximalCompteCourant) ||
+                                    RetourTypeCompte(cmbTypeCompte.Text) == TypeCompte.Epargne)
+                                { 
+                                    new ClientBLO().AjouterClient(txbNomComplet.Text, dtDateNaissance.Value.Date, txbLieuNaissance.Text, RetourSexe(cmbSexe.Text),
+                                        txbNumeroCNI.Text, $"{cmbCodeTelephone1.Text} {txbNumero1.Text} ", numeroTelehone2,
+                                        new PaysBLO().RechercherUnPays(cmbPays.Text), new VilleBLO().RechercherUneVille(cmbVille.Text), txbAdresse.Text, fileName,
+                                        txbProfession.Text, RetourTypeCompte(cmbTypeCompte.Text), RetourTypeAppartenantCompteEpargne(cmbTypeAppartenant.Text),
+                                        txbNomStructure.Text, this.employe, int.Parse(txbNombreMoisEpargne.Text), double.Parse(txbMontantDepart.Text));
 
-                                EnregistrerBeneficier(beneficiers);
+                                    EnregistrerBeneficier(beneficiers);
 
-                                fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Enregistrement", $"Client ajoute !");
+                                    fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Enregistrement", $"Client ajoute !");
 
-                                InitForm();
+                                    InitForm();
+                                }
+                                else
+                                    fonction.AfficheMessageNotification(Color.FromArgb(248, 43, 43), "Enregistrement", $"Le montant de depart ne doit pas etre superieur a " +
+                                        $"{new ParametreGeneralBLO().TousParametreGenerals[0].SoldeMaximalCompteCourant} !");
                             }
                             else
                                 fonction.AfficheMessageNotification(Color.FromArgb(248, 43, 43), "Enregistrement", "Pourcentage ou information sur beneficier incomplete !");

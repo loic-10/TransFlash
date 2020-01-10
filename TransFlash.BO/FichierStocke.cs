@@ -16,7 +16,8 @@ namespace TransFlash.BO
         public string FileName { get; set; }
         public Client Client { get; set; }
         public Garantie Garantie { get; set; }
-        public StatutStockage StatutStockage { get; set; }
+        public double MontantEvaluation { get; set; }
+        public StatutStockage? StatutStockage { get; set; }
 
         public FichierStocke()
         {
@@ -28,13 +29,14 @@ namespace TransFlash.BO
         }
 
         public FichierStocke(int id, DateTime dateEnregistrement, string nom, string fileName, Client client, Garantie garantie, 
-            StatutStockage statutStockage) : this(id)
+            double montantEvaluation, StatutStockage? statutStockage) : this(id)
         {
             DateEnregistrement = dateEnregistrement;
             Nom = nom;
             FileName = fileName;
             Client = client;
             Garantie = garantie;
+            MontantEvaluation = montantEvaluation;
             StatutStockage = statutStockage;
         }
 

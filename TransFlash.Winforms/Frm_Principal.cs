@@ -87,6 +87,8 @@ namespace Couche.Winforms
         {
             try
             {
+                gunaTransition1.ClearQueue();
+                gunaTransition2.ClearQueue();
                 gunaTransition1.HideSync(panelLogo);
                 gunaTransition1.ShowSync(panelLogo);
                 gunaTransition2.HideSync(btnParametre);
@@ -164,13 +166,13 @@ namespace Couche.Winforms
 
         private void btnGererEmprunt_Click(object sender, EventArgs e)
         {
-            Uc_GererCredit frm = new Uc_GererCredit();
+            Uc_GererCredit frm = new Uc_GererCredit(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnGererRemboursement_Click(object sender, EventArgs e)
         {
-            Uc_GererRemboursement frm = new Uc_GererRemboursement();
+            Uc_GererRemboursement frm = new Uc_GererRemboursement(this.employe);
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
@@ -204,16 +206,10 @@ namespace Couche.Winforms
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
-        private void btnGererPorteFeuilleCaisse_Click(object sender, EventArgs e)
-        {
-            //Uc_GererBeneficier frm = new Uc_GererBeneficier();
-            //fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
-        }
-
         private void gererPorteFeuilleCredit_Click(object sender, EventArgs e)
         {
-            //Uc_GererBeneficier frm = new Uc_GererBeneficier();
-            //fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
+            Uc_GererPorteFeuille frm = new Uc_GererPorteFeuille(this.employe);
+            fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
         private void btnPlusEncore_Click(object sender, EventArgs e)

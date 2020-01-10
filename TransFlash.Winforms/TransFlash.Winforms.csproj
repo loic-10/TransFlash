@@ -216,6 +216,18 @@
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Connexion\Uc_Connexion.Designer.cs">
       <DependentUpon>Uc_Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ClientTrouve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ClientTrouve.Designer.cs">
+      <DependentUpon>Uc_ClientTrouve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Fichier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Fichier.Designer.cs">
+      <DependentUpon>Uc_Fichier.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTouteOperation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,17 +246,17 @@
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_FichiersStockes.Designer.cs">
       <DependentUpon>Uc_FichiersStockes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.Designer.cs">
-      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
-    </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.Designer.cs">
       <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_VerifierAccordCredit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_VerifierAccordCredit.Designer.cs">
+      <DependentUpon>Uc_VerifierAccordCredit.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.cs">
       <SubType>UserControl</SubType>
@@ -456,6 +468,12 @@
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Connexion\Uc_Connexion.resx">
       <DependentUpon>Uc_Connexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ClientTrouve.resx">
+      <DependentUpon>Uc_ClientTrouve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Fichier.resx">
+      <DependentUpon>Uc_Fichier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_GererTouteOperation.resx">
       <DependentUpon>Uc_GererTouteOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,11 +483,11 @@
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_FichiersStockes.resx">
       <DependentUpon>Uc_FichiersStockes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_ButsCredits.resx">
-      <DependentUpon>Uc_ButsCredits.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_Avalistes.resx">
       <DependentUpon>Uc_Avalistes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_VerifierAccordCredit.resx">
+      <DependentUpon>Uc_VerifierAccordCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlsUtilisateurs\Postes\Fonctionnalites\UserControls\Uc_InitierTransfertInterCompte.resx">
       <DependentUpon>Uc_InitierTransfertInterCompte.cs</DependentUpon>
@@ -1309,6 +1327,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\economic_improvement_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debt_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\synchronize_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\synchronize_96pxN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\synchronize_24pxB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\synchronize_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,7 +53,6 @@
     <Compile Include="EpargneBLO.cs" />
     <Compile Include="PersonneBLO.cs" />
     <Compile Include="AvalisteBLO.cs" />
-    <Compile Include="ButCreditBLO.cs" />
     <Compile Include="CreditBLO.cs" />
     <Compile Include="ParametreGeneralBLO.cs" />
     <Compile Include="EmployeBLO.cs" />

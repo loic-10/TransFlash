@@ -12,7 +12,8 @@ namespace TransFlash.BO
     {
         public string CodeRemboursement { get; set; }
         public Credit Credit { get; set; }
-        public DateTime DateRemboursement { get; set; }
+        public DateTime? DateRemboursement { get; set; }
+        public DateTime DatePrevuRemboursement { get; set; }
         public double Montant { get; set; }
         public StatutRemboursement StatutRemboursement { get; set; }
 
@@ -25,11 +26,12 @@ namespace TransFlash.BO
             CodeRemboursement = codeRemboursement;
         }
 
-        public Remboursement(string codeRemboursement, Credit emprunt, DateTime dateRemboursement, double montant, 
-            StatutRemboursement statutRemboursement) : this(codeRemboursement)
+        public Remboursement(string codeRemboursement, Credit credit, DateTime? dateRemboursement, DateTime datePrevuRemboursement, 
+            double montant, StatutRemboursement statutRemboursement) : this(codeRemboursement)
         {
-            Credit = emprunt;
+            Credit = credit;
             DateRemboursement = dateRemboursement;
+            DatePrevuRemboursement = datePrevuRemboursement;
             Montant = montant;
             StatutRemboursement = statutRemboursement;
         }

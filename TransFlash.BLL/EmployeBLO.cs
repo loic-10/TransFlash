@@ -60,7 +60,7 @@ namespace TransFlash.BLL
             if (photoProfil != string.Empty)
             {
                 new FichierStockeBLO().AjouterFichierStocke($"Photo de l'employe {CodeEmploye(statutEmploye)}", photoProfil, new Client("/"),
-                    new Garantie(0), StatutStockage.Image_des_employés, employe);
+                    new Garantie(0), 0, StatutStockage.Image_des_employés, employe);
             }
 
             new IdentifiantBLO().AddIdEmploye();
@@ -99,7 +99,7 @@ namespace TransFlash.BLL
             employeModifie.PhotoProfil = photoProfil;
             if (photoProfil != fileName)
             {
-                new FichierStockeBLO().AjouterFichierStocke($"Photo de l'employe {employeModifie.CodeEmploye}", photoProfil, new Client("/"), new Garantie(0),
+                new FichierStockeBLO().AjouterFichierStocke($"Photo de l'employe {employeModifie.CodeEmploye}", photoProfil, new Client("/"), new Garantie(0), 0,
                     StatutStockage.Image_des_employés, employeModifieur);
             }
             employeBLO[index] = employeModifie;

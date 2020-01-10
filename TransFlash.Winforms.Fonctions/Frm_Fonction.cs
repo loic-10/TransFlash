@@ -51,6 +51,7 @@ namespace TransFlash.Winforms.Fonctions
 
         public void AnimationOuverture(GunaPanel panelMenu)
         {
+            gunaTransition1.ClearQueue();
             panelMenu.Visible = false;
             panelMenu.Width = 265;
             gunaTransition1.ShowSync(panelMenu);
@@ -58,6 +59,7 @@ namespace TransFlash.Winforms.Fonctions
 
         public void AnimationIcone(Control but1, Control but2, Control but3)
         {
+            gunaTransition3.ClearQueue();
             gunaTransition3.ShowSync(but1);
             gunaTransition3.ShowSync(but2);
             gunaTransition3.ShowSync(but3);
@@ -71,6 +73,7 @@ namespace TransFlash.Winforms.Fonctions
 
         public void AnimationUserControlHidde(GunaPanel panel)
         {
+            gunaTransition1.ClearQueue();
             if (panel.Width == 265)
             {
                 panel.Visible = false;
@@ -95,6 +98,7 @@ namespace TransFlash.Winforms.Fonctions
 
         public void AfficheCorp(UserControl controlCorp, Control control, UserControl leCorpDePage)
         {
+            gunaTransition2.ClearQueue();
             try
             {
                 leCorpDePage = controlCorp;
@@ -113,6 +117,7 @@ namespace TransFlash.Winforms.Fonctions
 
         public void AfficherPageChoisie(Control control, UserControl userPage)
         {
+            gunaTransition2.ClearQueue();
             try
             {
                 gunaTransition2.HideSync(control);
@@ -243,6 +248,22 @@ namespace TransFlash.Winforms.Fonctions
 
         public bool SiActiveButtonPourUneSelection(GunaDataGridView dataGrid) => (dataGrid.SelectedRows.Count == 1);
 
+        public bool SiActiveButtonPourCompleterCredit(GunaDataGridView dataGrid, int positionTypeCredit, int positionStatutCredit, int positionNombreMois) => 
+            dataGrid.SelectedRows.Count == 1 &&
+            dataGrid.SelectedRows[0].Cells[positionTypeCredit].Value.ToString() == TypeCredit.Credit_normal.ToString() &&
+            dataGrid.SelectedRows[0].Cells[positionStatutCredit].Value.ToString() == StatutCredit.Ouverture_du_dossier.ToString() &&
+            int.Parse(dataGrid.SelectedRows[0].Cells[positionNombreMois].Value.ToString()) == 0;
+
+        public bool SiActiveButtonPourTesterPossibiliteCredit(GunaDataGridView dataGrid, int positionTypeCredit, int positionStatutCredit, int positionNombreMois) => 
+            dataGrid.SelectedRows.Count == 1 &&
+            dataGrid.SelectedRows[0].Cells[positionTypeCredit].Value.ToString() == TypeCredit.Credit_normal.ToString() &&
+            dataGrid.SelectedRows[0].Cells[positionStatutCredit].Value.ToString() == StatutCredit.Ouverture_du_dossier.ToString() &&
+            int.Parse(dataGrid.SelectedRows[0].Cells[positionNombreMois].Value.ToString()) > 0;
+
+        public bool SiActiveButtonPourFinaliserCredit(GunaDataGridView dataGrid, int positionStatutCredit) => 
+            dataGrid.SelectedRows.Count == 1 &&
+            dataGrid.SelectedRows[0].Cells[positionStatutCredit].Value.ToString() == StatutCredit.Programmé.ToString();
+
         public bool SiActiveButtonPourPlusieursSelections(GunaDataGridView dataGrid) => (dataGrid.SelectedRows.Count > 0);
 
         public bool SiTypeCompteSelectionneEpargne(GunaComboBox comboBoxTypeCompte) =>
@@ -266,6 +287,19 @@ namespace TransFlash.Winforms.Fonctions
             }
         }
 
+        public void ImporterFichier(GunaTextBox textBox)
+        {
+            OpenFileDialog of = new OpenFileDialog
+            {
+                Title = "Choose a picture",
+            };
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                textBox.Text = string.Empty;
+                textBox.Text = of.FileName;
+            }
+        }
+
         public string PictureName(PictureBox pictureBox)
         {
             const string folder = "Images";
@@ -282,6 +316,24 @@ namespace TransFlash.Winforms.Fonctions
                 fi.CopyTo(pictureName);
             }
             return pictureName;
+        }
+
+        public string FileName(GunaTextBox textBox)
+        {
+            const string folder = "Fichiers";
+            DirectoryInfo di = new DirectoryInfo(folder);
+            if (!di.Exists)
+            {
+                di.Create();
+            }
+            string fileName = string.Empty;
+            if (textBox.Text != string.Empty)
+            {
+                fileName = folder + "/" + Guid.NewGuid().ToString() + Path.GetExtension(textBox.Text);
+                FileInfo fi = new FileInfo(textBox.Text);
+                fi.CopyTo(fileName);
+            }
+            return fileName;
         }
 
         public void AfficheMessageNotification(Color couleurFond, string titre, string message)

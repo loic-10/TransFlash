@@ -104,7 +104,6 @@
             this.gunaLabel39 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.gunaGroupBox13 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaCheckBox1 = new Guna.UI.WinForms.GunaCheckBox();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
@@ -114,6 +113,7 @@
             this.panelNomStructure = new Guna.UI.WinForms.GunaGroupBox();
             this.txbNomStructure = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel21 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaCheckBox1 = new Guna.UI.WinForms.GunaCheckBox();
             this.gunaShadowPanel1.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -259,7 +259,7 @@
             this.gunaGroupBox5.LineLeft = 2;
             this.gunaGroupBox5.LineRight = 2;
             this.gunaGroupBox5.LineTop = 2;
-            this.gunaGroupBox5.Location = new System.Drawing.Point(8, 1147);
+            this.gunaGroupBox5.Location = new System.Drawing.Point(-1, 1147);
             this.gunaGroupBox5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.gunaGroupBox5.Name = "gunaGroupBox5";
             this.gunaGroupBox5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -376,7 +376,7 @@
             this.gunaGroupBox16.LineLeft = 2;
             this.gunaGroupBox16.LineRight = 2;
             this.gunaGroupBox16.LineTop = 2;
-            this.gunaGroupBox16.Location = new System.Drawing.Point(8, 156);
+            this.gunaGroupBox16.Location = new System.Drawing.Point(-1, 156);
             this.gunaGroupBox16.Name = "gunaGroupBox16";
             this.gunaGroupBox16.Radius = 5;
             this.gunaGroupBox16.Size = new System.Drawing.Size(966, 527);
@@ -1070,7 +1070,7 @@
             this.gunaGroupBox19.LineLeft = 2;
             this.gunaGroupBox19.LineRight = 2;
             this.gunaGroupBox19.LineTop = 2;
-            this.gunaGroupBox19.Location = new System.Drawing.Point(8, 713);
+            this.gunaGroupBox19.Location = new System.Drawing.Point(-1, 713);
             this.gunaGroupBox19.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.gunaGroupBox19.Name = "gunaGroupBox19";
             this.gunaGroupBox19.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -1256,7 +1256,7 @@
             this.gunaGroupBox18.LineLeft = 2;
             this.gunaGroupBox18.LineRight = 2;
             this.gunaGroupBox18.LineTop = 2;
-            this.gunaGroupBox18.Location = new System.Drawing.Point(8, 24);
+            this.gunaGroupBox18.Location = new System.Drawing.Point(-1, 24);
             this.gunaGroupBox18.Name = "gunaGroupBox18";
             this.gunaGroupBox18.Radius = 5;
             this.gunaGroupBox18.Size = new System.Drawing.Size(966, 102);
@@ -1337,7 +1337,7 @@
             this.gunaGroupBox13.LineLeft = 2;
             this.gunaGroupBox13.LineRight = 2;
             this.gunaGroupBox13.LineTop = 2;
-            this.gunaGroupBox13.Location = new System.Drawing.Point(8, 922);
+            this.gunaGroupBox13.Location = new System.Drawing.Point(-1, 922);
             this.gunaGroupBox13.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.gunaGroupBox13.Name = "gunaGroupBox13";
             this.gunaGroupBox13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -1346,19 +1346,6 @@
             this.gunaGroupBox13.TabIndex = 4;
             this.gunaGroupBox13.Text = "Informations du remboursement";
             this.gunaGroupBox13.TextLocation = new System.Drawing.Point(10, 10);
-            // 
-            // gunaCheckBox1
-            // 
-            this.gunaCheckBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCheckBox1.CheckedOffColor = System.Drawing.Color.Gray;
-            this.gunaCheckBox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
-            this.gunaCheckBox1.FillColor = System.Drawing.Color.White;
-            this.gunaCheckBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaCheckBox1.Location = new System.Drawing.Point(18, 101);
-            this.gunaCheckBox1.Name = "gunaCheckBox1";
-            this.gunaCheckBox1.Size = new System.Drawing.Size(360, 20);
-            this.gunaCheckBox1.TabIndex = 22;
-            this.gunaCheckBox1.Text = "Rembourser completement le montant de la dette";
             // 
             // gunaPanel5
             // 
@@ -1489,6 +1476,19 @@
             this.gunaLabel21.Text = "Entrer le montant du remboursement*";
             this.gunaLabel21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // gunaCheckBox1
+            // 
+            this.gunaCheckBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCheckBox1.CheckedOffColor = System.Drawing.Color.Gray;
+            this.gunaCheckBox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
+            this.gunaCheckBox1.FillColor = System.Drawing.Color.White;
+            this.gunaCheckBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaCheckBox1.Location = new System.Drawing.Point(18, 101);
+            this.gunaCheckBox1.Name = "gunaCheckBox1";
+            this.gunaCheckBox1.Size = new System.Drawing.Size(307, 20);
+            this.gunaCheckBox1.TabIndex = 22;
+            this.gunaCheckBox1.Text = "Appliquer la dette de retard de payement";
+            // 
             // Uc_InitierRemboursement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1614,7 +1614,6 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel11;
         private Guna.UI.WinForms.GunaLabel gunaLabel13;
-        private Guna.UI.WinForms.GunaCheckBox gunaCheckBox1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox20;
         private Guna.UI.WinForms.GunaPanel gunaPanel11;
         private Guna.UI.WinForms.GunaComboBox cmbCodeTelephone2;
@@ -1625,5 +1624,6 @@
         private Guna.UI.WinForms.GunaComboBox cmbCodeTelephone1;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox6;
         private Guna.UI.WinForms.GunaLabel gunaLabel29;
+        private Guna.UI.WinForms.GunaCheckBox gunaCheckBox1;
     }
 }

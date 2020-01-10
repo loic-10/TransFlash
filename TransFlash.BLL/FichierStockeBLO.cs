@@ -18,12 +18,13 @@ namespace TransFlash.BLL
             fichierStockeBLO = new RepositoireDAOFile<FichierStocke>();
         }
 
-        public void AjouterFichierStocke(string nom, string fileName, Client client, Garantie garantie, StatutStockage statutStockage, Employe employe)
+        public void AjouterFichierStocke(string nom, string fileName, Client client, Garantie garantie, double montantEvaluation, StatutStockage? statutStockage, 
+            Employe employe)
         {
 
-            fichierStockeBLO.Add(new FichierStocke(new IdentifiantBLO().IdFichierStocke, DateTime.Now, nom, fileName, client, garantie, statutStockage));
+            fichierStockeBLO.Add(new FichierStocke(new IdentifiantBLO().IdFichierStocke, DateTime.Now, nom, fileName, client, garantie, montantEvaluation, statutStockage));
 
-            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("/"), garantie.MontantEvaluation, 
+            new OperationBLO().AjouterOperation(TypeOperation.Ajout, employe, client, new CompteClient("/"), montantEvaluation, 
                 $"Ajout du fichier {new IdentifiantBLO().IdFichierStocke}");
 
             new IdentifiantBLO().AddIdFichierStocke();
@@ -50,12 +51,13 @@ namespace TransFlash.BLL
         }
 
         public IEnumerable<FichierStocke> RechercherLesFichierStockes(string valeur, bool checkIdentifiant, bool checkDateEnregistrement, bool checkClient, 
-            bool checkGarantie, bool checkNom, bool checkNomFichier, bool checkStatutStockage) => fichierStockeBLO.Find(x =>
+            bool checkGarantie, bool checkMontant, bool checkNom, bool checkNomFichier, bool checkStatutStockage) => fichierStockeBLO.Find(x =>
             (x.Id.ToString().ToLower().Contains(valeur.ToLower()) && checkIdentifiant) ||
             (x.Client.ToString().ToLower().Contains(valeur.ToLower()) && checkClient) ||
             (x.DateEnregistrement.ToString().ToLower().Contains(valeur.ToLower()) && checkDateEnregistrement) ||
             (x.FileName.ToString().ToLower().Contains(valeur.ToLower()) && checkNomFichier) ||
             (x.Garantie.ToString().ToLower().Contains(valeur.ToLower()) && checkGarantie) ||
+            (x.MontantEvaluation.ToString().ToLower().Contains(valeur.ToLower()) && checkMontant) ||
             (x.Nom.ToString().ToLower().Contains(valeur.ToLower()) && checkNom) ||
             (x.StatutStockage.ToString().ToLower().Contains(valeur.ToLower()) && checkStatutStockage));
 
@@ -63,7 +65,7 @@ namespace TransFlash.BLL
             x.Client == client);
 
         public IEnumerable<FichierStocke> RechercherFichierStockesGarantie(Garantie garantie) => fichierStockeBLO.Find(x =>
-            x.Garantie == garantie);
+            x.Garantie.Id == garantie.Id);
 
         public List<FichierStocke> TousFichierStockes => fichierStockeBLO.AllItems;
 

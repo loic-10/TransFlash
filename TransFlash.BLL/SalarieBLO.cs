@@ -56,7 +56,7 @@ namespace TransFlash.BLL
         public void RecevoirVirement(Salarie salarie, double montant, Employe employe)
         {
 
-            new TransactionBLO().InitierTransaction(TypeCompte.Courant, TypeTransaction.Dépot, new Epargne(0), salarie.CompteClientEntreprise, salarie.CompteClientEmploye,
+            new TransactionBLO().InitierTransaction(TypeCompte.Courant, TypeTransaction.Dépot, salarie.CompteClientEntreprise, salarie.CompteClientEmploye,
                 employe, montant, 0);
 
             string codeTransaction = new TransactionBLO().CodeTransaction(TypeTransaction.Dépot);

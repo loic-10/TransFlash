@@ -63,6 +63,28 @@ namespace TransFlash.BLL
 
         public bool VerifierReductionEpargne(Epargne epargne, double montant) => (epargne.Solde >= (epargne.Solde - montant));
 
+        public double MontantEpargneClient(Client client)
+        {
+            double montant = 0;
+            foreach (var item in new List<Epargne>(new EpargneBLO().TousEpargnes))
+            {
+                if (item.CompteClient.Client.CodeClient == client.CodeClient)
+                    montant += item.Solde;
+            }
+            return montant;
+        }
+
+        public int NombreEpargne(Client client)
+        {
+            int nombre = 0;
+            foreach (var item in new List<Epargne>(new EpargneBLO().TousEpargnes))
+            {
+                if (item.CompteClient.Client.CodeClient == client.CodeClient)
+                    nombre++;
+            }
+            return nombre;
+        }
+
         public IEnumerable<Epargne> RechercherEpargnesDuClient(Client client) => epargneBLO.Find(x =>
             x.CompteClient.Client == client);
 

@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
+            this.btnEpargne = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnVilles = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPays = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnSalaries = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnAvalistes = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnFichierStocke = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnButsCredits = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnGaranties = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnNumerosComptables = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPartsSociales = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnBeneficiers = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panelCorps = new Guna.UI.WinForms.GunaPanel();
-            this.btnEpargne = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +53,6 @@
             this.gunaPanel5.Controls.Add(this.btnSalaries);
             this.gunaPanel5.Controls.Add(this.btnAvalistes);
             this.gunaPanel5.Controls.Add(this.btnFichierStocke);
-            this.gunaPanel5.Controls.Add(this.btnButsCredits);
             this.gunaPanel5.Controls.Add(this.btnGaranties);
             this.gunaPanel5.Controls.Add(this.btnNumerosComptables);
             this.gunaPanel5.Controls.Add(this.btnPartsSociales);
@@ -65,6 +63,43 @@
             this.gunaPanel5.Name = "gunaPanel5";
             this.gunaPanel5.Size = new System.Drawing.Size(200, 700);
             this.gunaPanel5.TabIndex = 8;
+            // 
+            // btnEpargne
+            // 
+            this.btnEpargne.Animated = true;
+            this.btnEpargne.AnimationHoverSpeed = 0.07F;
+            this.btnEpargne.AnimationSpeed = 0.03F;
+            this.btnEpargne.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.btnEpargne.BorderColor = System.Drawing.Color.Black;
+            this.btnEpargne.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
+            this.btnEpargne.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
+            this.btnEpargne.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnEpargne.CheckedForeColor = System.Drawing.Color.White;
+            this.btnEpargne.CheckedImage = global::Couche.Winforms.Properties.Resources.workflow_52px;
+            this.btnEpargne.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnEpargne.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEpargne.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEpargne.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEpargne.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEpargne.ForeColor = System.Drawing.Color.White;
+            this.btnEpargne.Image = global::Couche.Winforms.Properties.Resources.withdrawal_32px;
+            this.btnEpargne.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEpargne.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
+            this.btnEpargne.LineLeft = 5;
+            this.btnEpargne.Location = new System.Drawing.Point(0, 428);
+            this.btnEpargne.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEpargne.Name = "btnEpargne";
+            this.btnEpargne.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
+            this.btnEpargne.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEpargne.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEpargne.OnHoverImage = global::Couche.Winforms.Properties.Resources.withdrawal_52px;
+            this.btnEpargne.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
+            this.btnEpargne.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEpargne.OnPressedDepth = 0;
+            this.btnEpargne.Size = new System.Drawing.Size(200, 42);
+            this.btnEpargne.TabIndex = 77;
+            this.btnEpargne.Text = "Epargnes";
+            this.btnEpargne.Click += new System.EventHandler(this.btnEpargne_Click);
             // 
             // btnVilles
             // 
@@ -88,7 +123,7 @@
             this.btnVilles.ImageSize = new System.Drawing.Size(20, 20);
             this.btnVilles.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnVilles.LineLeft = 5;
-            this.btnVilles.Location = new System.Drawing.Point(0, 428);
+            this.btnVilles.Location = new System.Drawing.Point(0, 386);
             this.btnVilles.Margin = new System.Windows.Forms.Padding(0);
             this.btnVilles.Name = "btnVilles";
             this.btnVilles.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
@@ -125,7 +160,7 @@
             this.btnPays.ImageSize = new System.Drawing.Size(20, 20);
             this.btnPays.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnPays.LineLeft = 5;
-            this.btnPays.Location = new System.Drawing.Point(0, 386);
+            this.btnPays.Location = new System.Drawing.Point(0, 344);
             this.btnPays.Margin = new System.Windows.Forms.Padding(0);
             this.btnPays.Name = "btnPays";
             this.btnPays.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
@@ -162,7 +197,7 @@
             this.btnSalaries.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSalaries.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnSalaries.LineLeft = 5;
-            this.btnSalaries.Location = new System.Drawing.Point(0, 344);
+            this.btnSalaries.Location = new System.Drawing.Point(0, 302);
             this.btnSalaries.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalaries.Name = "btnSalaries";
             this.btnSalaries.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
@@ -199,7 +234,7 @@
             this.btnAvalistes.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAvalistes.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnAvalistes.LineLeft = 5;
-            this.btnAvalistes.Location = new System.Drawing.Point(0, 302);
+            this.btnAvalistes.Location = new System.Drawing.Point(0, 260);
             this.btnAvalistes.Margin = new System.Windows.Forms.Padding(0);
             this.btnAvalistes.Name = "btnAvalistes";
             this.btnAvalistes.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
@@ -236,7 +271,7 @@
             this.btnFichierStocke.ImageSize = new System.Drawing.Size(20, 20);
             this.btnFichierStocke.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
             this.btnFichierStocke.LineLeft = 5;
-            this.btnFichierStocke.Location = new System.Drawing.Point(0, 260);
+            this.btnFichierStocke.Location = new System.Drawing.Point(0, 218);
             this.btnFichierStocke.Margin = new System.Windows.Forms.Padding(0);
             this.btnFichierStocke.Name = "btnFichierStocke";
             this.btnFichierStocke.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
@@ -250,43 +285,6 @@
             this.btnFichierStocke.TabIndex = 70;
             this.btnFichierStocke.Text = "Fichiers stockes";
             this.btnFichierStocke.Click += new System.EventHandler(this.btnFichierStocke_Click);
-            // 
-            // btnButsCredits
-            // 
-            this.btnButsCredits.Animated = true;
-            this.btnButsCredits.AnimationHoverSpeed = 0.07F;
-            this.btnButsCredits.AnimationSpeed = 0.03F;
-            this.btnButsCredits.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnButsCredits.BorderColor = System.Drawing.Color.Black;
-            this.btnButsCredits.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.btnButsCredits.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
-            this.btnButsCredits.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnButsCredits.CheckedForeColor = System.Drawing.Color.White;
-            this.btnButsCredits.CheckedImage = global::Couche.Winforms.Properties.Resources.workflow_52px;
-            this.btnButsCredits.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnButsCredits.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnButsCredits.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnButsCredits.FocusedColor = System.Drawing.Color.Empty;
-            this.btnButsCredits.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnButsCredits.ForeColor = System.Drawing.Color.White;
-            this.btnButsCredits.Image = global::Couche.Winforms.Properties.Resources.withdrawal_32px;
-            this.btnButsCredits.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnButsCredits.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnButsCredits.LineLeft = 5;
-            this.btnButsCredits.Location = new System.Drawing.Point(0, 218);
-            this.btnButsCredits.Margin = new System.Windows.Forms.Padding(0);
-            this.btnButsCredits.Name = "btnButsCredits";
-            this.btnButsCredits.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
-            this.btnButsCredits.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnButsCredits.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnButsCredits.OnHoverImage = global::Couche.Winforms.Properties.Resources.withdrawal_52px;
-            this.btnButsCredits.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
-            this.btnButsCredits.OnPressedColor = System.Drawing.Color.Black;
-            this.btnButsCredits.OnPressedDepth = 0;
-            this.btnButsCredits.Size = new System.Drawing.Size(200, 42);
-            this.btnButsCredits.TabIndex = 69;
-            this.btnButsCredits.Text = "Buts credits";
-            this.btnButsCredits.Click += new System.EventHandler(this.btnButsCredits_Click);
             // 
             // btnGaranties
             // 
@@ -470,43 +468,6 @@
             this.panelCorps.Size = new System.Drawing.Size(800, 700);
             this.panelCorps.TabIndex = 9;
             // 
-            // btnEpargne
-            // 
-            this.btnEpargne.Animated = true;
-            this.btnEpargne.AnimationHoverSpeed = 0.07F;
-            this.btnEpargne.AnimationSpeed = 0.03F;
-            this.btnEpargne.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnEpargne.BorderColor = System.Drawing.Color.Black;
-            this.btnEpargne.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.btnEpargne.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
-            this.btnEpargne.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnEpargne.CheckedForeColor = System.Drawing.Color.White;
-            this.btnEpargne.CheckedImage = global::Couche.Winforms.Properties.Resources.workflow_52px;
-            this.btnEpargne.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnEpargne.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEpargne.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEpargne.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEpargne.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEpargne.ForeColor = System.Drawing.Color.White;
-            this.btnEpargne.Image = global::Couche.Winforms.Properties.Resources.withdrawal_32px;
-            this.btnEpargne.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEpargne.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.btnEpargne.LineLeft = 5;
-            this.btnEpargne.Location = new System.Drawing.Point(0, 470);
-            this.btnEpargne.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEpargne.Name = "btnEpargne";
-            this.btnEpargne.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
-            this.btnEpargne.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEpargne.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEpargne.OnHoverImage = global::Couche.Winforms.Properties.Resources.withdrawal_52px;
-            this.btnEpargne.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(82)))), ((int)(((byte)(114)))));
-            this.btnEpargne.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEpargne.OnPressedDepth = 0;
-            this.btnEpargne.Size = new System.Drawing.Size(200, 42);
-            this.btnEpargne.TabIndex = 77;
-            this.btnEpargne.Text = "Epargnes";
-            this.btnEpargne.Click += new System.EventHandler(this.btnEpargne_Click);
-            // 
             // Uc_PlusEncore
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -526,7 +487,6 @@
         internal Guna.UI.WinForms.GunaAdvenceButton btnBeneficiers;
         internal Guna.UI.WinForms.GunaAdvenceButton btnAvalistes;
         internal Guna.UI.WinForms.GunaAdvenceButton btnFichierStocke;
-        internal Guna.UI.WinForms.GunaAdvenceButton btnButsCredits;
         internal Guna.UI.WinForms.GunaAdvenceButton btnGaranties;
         internal Guna.UI.WinForms.GunaAdvenceButton btnNumerosComptables;
         internal Guna.UI.WinForms.GunaAdvenceButton btnPartsSociales;

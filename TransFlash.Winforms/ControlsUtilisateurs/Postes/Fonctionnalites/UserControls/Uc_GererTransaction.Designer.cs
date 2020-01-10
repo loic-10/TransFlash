@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.btnExporterExcel = new Guna.UI.WinForms.GunaButton();
             this.btnImprimer = new Guna.UI.WinForms.GunaButton();
             this.btnInformation = new Guna.UI.WinForms.GunaButton();
+            this.btnAviserTransaction = new Guna.UI.WinForms.GunaButton();
             this.btnSupprimer = new Guna.UI.WinForms.GunaButton();
             this.btnAnnulerTransaction = new Guna.UI.WinForms.GunaButton();
             this.btnFinaliserTransaction = new Guna.UI.WinForms.GunaButton();
@@ -47,6 +48,18 @@
             this.lblCountItems = new Guna.UI.WinForms.GunaLabel();
             this.dataGrid = new Guna.UI.WinForms.GunaGroupBox();
             this.dataGridTransaction = new Guna.UI.WinForms.GunaDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
             this.lblTitre = new Guna.UI.WinForms.GunaLabel();
@@ -72,19 +85,6 @@
             this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
             this.clientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAviserTransaction = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel5.SuspendLayout();
             this.gunaPanel4.SuspendLayout();
             this.dataGrid.SuspendLayout();
@@ -104,10 +104,10 @@
             // gunaPanel5
             // 
             this.gunaPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(72)))), ((int)(((byte)(114)))));
-            this.gunaPanel5.Controls.Add(this.btnAviserTransaction);
             this.gunaPanel5.Controls.Add(this.btnExporterExcel);
             this.gunaPanel5.Controls.Add(this.btnImprimer);
             this.gunaPanel5.Controls.Add(this.btnInformation);
+            this.gunaPanel5.Controls.Add(this.btnAviserTransaction);
             this.gunaPanel5.Controls.Add(this.btnSupprimer);
             this.gunaPanel5.Controls.Add(this.btnAnnulerTransaction);
             this.gunaPanel5.Controls.Add(this.btnFinaliserTransaction);
@@ -134,7 +134,7 @@
             this.btnExporterExcel.ForeColor = System.Drawing.Color.White;
             this.btnExporterExcel.Image = global::Couche.Winforms.Properties.Resources.ms_excel_64px;
             this.btnExporterExcel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnExporterExcel.Location = new System.Drawing.Point(0, 386);
+            this.btnExporterExcel.Location = new System.Drawing.Point(0, 428);
             this.btnExporterExcel.Name = "btnExporterExcel";
             this.btnExporterExcel.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnExporterExcel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -142,7 +142,7 @@
             this.btnExporterExcel.OnHoverImage = global::Couche.Winforms.Properties.Resources.ms_excel_52px;
             this.btnExporterExcel.OnPressedColor = System.Drawing.Color.Black;
             this.btnExporterExcel.Size = new System.Drawing.Size(200, 42);
-            this.btnExporterExcel.TabIndex = 20;
+            this.btnExporterExcel.TabIndex = 24;
             this.btnExporterExcel.Text = "Exporter sous Excel";
             // 
             // btnImprimer
@@ -158,7 +158,7 @@
             this.btnImprimer.ForeColor = System.Drawing.Color.White;
             this.btnImprimer.Image = global::Couche.Winforms.Properties.Resources.print_64px;
             this.btnImprimer.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnImprimer.Location = new System.Drawing.Point(0, 344);
+            this.btnImprimer.Location = new System.Drawing.Point(0, 386);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnImprimer.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -166,7 +166,7 @@
             this.btnImprimer.OnHoverImage = global::Couche.Winforms.Properties.Resources.print_52px;
             this.btnImprimer.OnPressedColor = System.Drawing.Color.Black;
             this.btnImprimer.Size = new System.Drawing.Size(200, 42);
-            this.btnImprimer.TabIndex = 19;
+            this.btnImprimer.TabIndex = 23;
             this.btnImprimer.Text = "Imprimer";
             // 
             // btnInformation
@@ -177,12 +177,13 @@
             this.btnInformation.BorderColor = System.Drawing.Color.Black;
             this.btnInformation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInformation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformation.Enabled = false;
             this.btnInformation.FocusedColor = System.Drawing.Color.Empty;
             this.btnInformation.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformation.ForeColor = System.Drawing.Color.White;
             this.btnInformation.Image = global::Couche.Winforms.Properties.Resources.info_64px;
             this.btnInformation.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnInformation.Location = new System.Drawing.Point(0, 302);
+            this.btnInformation.Location = new System.Drawing.Point(0, 344);
             this.btnInformation.Name = "btnInformation";
             this.btnInformation.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.btnInformation.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -190,8 +191,35 @@
             this.btnInformation.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px2;
             this.btnInformation.OnPressedColor = System.Drawing.Color.Black;
             this.btnInformation.Size = new System.Drawing.Size(200, 42);
-            this.btnInformation.TabIndex = 18;
+            this.btnInformation.TabIndex = 22;
             this.btnInformation.Text = "Informations";
+            this.btnInformation.Click += new System.EventHandler(this.btnInformation_Click);
+            // 
+            // btnAviserTransaction
+            // 
+            this.btnAviserTransaction.AnimationHoverSpeed = 0.07F;
+            this.btnAviserTransaction.AnimationSpeed = 0.03F;
+            this.btnAviserTransaction.BaseColor = System.Drawing.Color.Transparent;
+            this.btnAviserTransaction.BorderColor = System.Drawing.Color.Black;
+            this.btnAviserTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAviserTransaction.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAviserTransaction.Enabled = false;
+            this.btnAviserTransaction.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAviserTransaction.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAviserTransaction.ForeColor = System.Drawing.Color.White;
+            this.btnAviserTransaction.Image = global::Couche.Winforms.Properties.Resources.info_64px;
+            this.btnAviserTransaction.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAviserTransaction.Location = new System.Drawing.Point(0, 302);
+            this.btnAviserTransaction.Name = "btnAviserTransaction";
+            this.btnAviserTransaction.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnAviserTransaction.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAviserTransaction.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAviserTransaction.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px2;
+            this.btnAviserTransaction.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAviserTransaction.Size = new System.Drawing.Size(200, 42);
+            this.btnAviserTransaction.TabIndex = 21;
+            this.btnAviserTransaction.Text = "Aviser";
+            this.btnAviserTransaction.Click += new System.EventHandler(this.btnAviserTransaction_Click);
             // 
             // btnSupprimer
             // 
@@ -201,6 +229,7 @@
             this.btnSupprimer.BorderColor = System.Drawing.Color.Black;
             this.btnSupprimer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSupprimer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSupprimer.Enabled = false;
             this.btnSupprimer.FocusedColor = System.Drawing.Color.Empty;
             this.btnSupprimer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.ForeColor = System.Drawing.Color.White;
@@ -226,6 +255,7 @@
             this.btnAnnulerTransaction.BorderColor = System.Drawing.Color.Black;
             this.btnAnnulerTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnulerTransaction.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAnnulerTransaction.Enabled = false;
             this.btnAnnulerTransaction.FocusedColor = System.Drawing.Color.Empty;
             this.btnAnnulerTransaction.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnulerTransaction.ForeColor = System.Drawing.Color.White;
@@ -241,6 +271,7 @@
             this.btnAnnulerTransaction.Size = new System.Drawing.Size(200, 42);
             this.btnAnnulerTransaction.TabIndex = 16;
             this.btnAnnulerTransaction.Text = "Annuler transaction";
+            this.btnAnnulerTransaction.Click += new System.EventHandler(this.btnAnnulerTransaction_Click);
             // 
             // btnFinaliserTransaction
             // 
@@ -250,6 +281,7 @@
             this.btnFinaliserTransaction.BorderColor = System.Drawing.Color.Black;
             this.btnFinaliserTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinaliserTransaction.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFinaliserTransaction.Enabled = false;
             this.btnFinaliserTransaction.FocusedColor = System.Drawing.Color.Empty;
             this.btnFinaliserTransaction.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinaliserTransaction.ForeColor = System.Drawing.Color.White;
@@ -421,22 +453,22 @@
             this.dataGridTransaction.AllowUserToAddRows = false;
             this.dataGridTransaction.AllowUserToDeleteRows = false;
             this.dataGridTransaction.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.dataGridTransaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.dataGridTransaction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridTransaction.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridTransaction.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridTransaction.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dataGridTransaction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(77)))), ((int)(((byte)(101)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridTransaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridTransaction.ColumnHeadersHeight = 40;
             this.dataGridTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -452,14 +484,14 @@
             this.Column10,
             this.Column11,
             this.Column12});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridTransaction.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridTransaction.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridTransaction.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridTransaction.EnableHeadersVisualStyles = false;
@@ -500,6 +532,90 @@
             this.dataGridTransaction.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
             this.dataGridTransaction.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridTransaction.SelectionChanged += new System.EventHandler(this.dataGridTransaction_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CodeTransaction";
+            this.Column1.HeaderText = "Code";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TypeCompte";
+            this.Column2.HeaderText = "Type compte";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TypeTransaction";
+            this.Column3.HeaderText = "Type transaction";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Epargne";
+            this.Column4.HeaderText = "Epargne";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "DateTransaction";
+            this.Column5.HeaderText = "Date transaction";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "EmployeEmetteur";
+            this.Column6.HeaderText = "Employe emetteur";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "EmployeValideur";
+            this.Column7.HeaderText = "Employe valideur";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "CompteClientEmetteur";
+            this.Column8.HeaderText = "Compte emetteur";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "CompteClientDestinataire";
+            this.Column9.HeaderText = "Compte destinataire";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "Montant";
+            this.Column10.HeaderText = "Montant";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "StatutTransaction";
+            this.Column11.HeaderText = "Statut";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "NombreJourAttente";
+            this.Column12.HeaderText = "Nombre jour attente";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
             // 
             // gunaPanel1
             // 
@@ -628,7 +744,6 @@
             // checkTypeTransaction
             // 
             this.checkTypeTransaction.BaseColor = System.Drawing.Color.White;
-            this.checkTypeTransaction.Checked = true;
             this.checkTypeTransaction.CheckedOffColor = System.Drawing.Color.Gray;
             this.checkTypeTransaction.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(57)))), ((int)(((byte)(101)))));
             this.checkTypeTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -845,114 +960,6 @@
             this.gunaButton8.Size = new System.Drawing.Size(30, 45);
             this.gunaButton8.TabIndex = 8;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "CodeTransaction";
-            this.Column1.HeaderText = "Code";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TypeCompte";
-            this.Column2.HeaderText = "Type compte";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TypeTransaction";
-            this.Column3.HeaderText = "Type transaction";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Epargne";
-            this.Column4.HeaderText = "Epargne";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "DateTransaction";
-            this.Column5.HeaderText = "Date transaction";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "EmployeEmetteur";
-            this.Column6.HeaderText = "Employe emetteur";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "EmployeValideur";
-            this.Column7.HeaderText = "Employe valideur";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "CompteClientEmetteur";
-            this.Column8.HeaderText = "Compte emetteur";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "CompteClientDestinataire";
-            this.Column9.HeaderText = "Compte destinataire";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "Montant";
-            this.Column10.HeaderText = "Montant";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "StatutTransaction";
-            this.Column11.HeaderText = "Statut";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "NombreJourAttente";
-            this.Column12.HeaderText = "Nombre jour attente";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // btnAviserTransaction
-            // 
-            this.btnAviserTransaction.AnimationHoverSpeed = 0.07F;
-            this.btnAviserTransaction.AnimationSpeed = 0.03F;
-            this.btnAviserTransaction.BaseColor = System.Drawing.Color.Transparent;
-            this.btnAviserTransaction.BorderColor = System.Drawing.Color.Black;
-            this.btnAviserTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAviserTransaction.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAviserTransaction.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAviserTransaction.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAviserTransaction.ForeColor = System.Drawing.Color.White;
-            this.btnAviserTransaction.Image = global::Couche.Winforms.Properties.Resources.info_64px;
-            this.btnAviserTransaction.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAviserTransaction.Location = new System.Drawing.Point(0, 428);
-            this.btnAviserTransaction.Name = "btnAviserTransaction";
-            this.btnAviserTransaction.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnAviserTransaction.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAviserTransaction.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAviserTransaction.OnHoverImage = global::Couche.Winforms.Properties.Resources.info_52px2;
-            this.btnAviserTransaction.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAviserTransaction.Size = new System.Drawing.Size(200, 42);
-            this.btnAviserTransaction.TabIndex = 21;
-            this.btnAviserTransaction.Text = "Aviser";
-            // 
             // Uc_GererTransaction
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -989,9 +996,6 @@
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaPanel gunaPanel5;
         private System.Windows.Forms.BindingSource clientsBindingSource;
-        private Guna.UI.WinForms.GunaButton btnExporterExcel;
-        private Guna.UI.WinForms.GunaButton btnImprimer;
-        private Guna.UI.WinForms.GunaButton btnInformation;
         private Guna.UI.WinForms.GunaButton btnSupprimer;
         private Guna.UI.WinForms.GunaButton btnAnnulerTransaction;
         private Guna.UI.WinForms.GunaButton btnFinaliserTransaction;
@@ -1035,5 +1039,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private Guna.UI.WinForms.GunaButton btnAviserTransaction;
+        private Guna.UI.WinForms.GunaButton btnExporterExcel;
+        private Guna.UI.WinForms.GunaButton btnImprimer;
+        private Guna.UI.WinForms.GunaButton btnInformation;
     }
 }

@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI">
-      <HintPath>E:\Logiciels\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
+    <Reference Include="Guna.UI, Version=1.6.0.0, Culture=neutral, PublicKeyToken=537479e8cf7071a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TransFlash.Winforms\bin\Debug\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework">
       <HintPath>F:\Cours\Projets\Personnels\En C#\App_HOTEL\App_HOTEL\bin\App HOTEL\MetroFramework.dll</HintPath>

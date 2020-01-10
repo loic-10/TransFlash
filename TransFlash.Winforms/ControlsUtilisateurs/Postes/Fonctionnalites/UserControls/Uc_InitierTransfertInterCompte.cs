@@ -349,15 +349,22 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
                     if (new CompteClientBLO().RechercherUnCompte(cmbChoixCompte.Text).CodeCompte != 
                         new CompteClientBLO().RechercherUnCompte(cmbChoixCompte.Text).CodeCompte)
                     {
-                        new TransactionBLO().InitierTransaction(RetourTypeCompte(cmbTypeCompte.Text), TypeTransaction.Transfert_inter_compte,
-                            new EpargneBLO().RechercheEpargne(int.Parse(txbIdentifiantEpargne.Text)), new CompteClientBLO().RechercherUnCompte(cmbChoixCompte.Text),
+                        Transaction transaction = new TransactionBLO().RechercherUneTransactionEnCours(new CompteClientBLO().RechercherUnCompte(cmbChoixCompte.Text));
+                        if (transaction == null)
+                        {
+                            new TransactionBLO().InitierTransaction(RetourTypeCompte(cmbTypeCompte.Text), TypeTransaction.Transfert_inter_compte,
+                            new CompteClientBLO().RechercherUnCompte(cmbChoixCompte.Text),
                             new CompteClientBLO().RechercherUnCompte(cmbChoixCompte.Text), this.employe, double.Parse(txbMontantDepot.Text), 0
                             );
 
-                        fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Initialisation", $"Depot initie !");
+                            fonction.AfficheMessageNotification(Color.FromArgb(33, 191, 116), "Initialisation", $"Depot initie !");
 
-                        txbRecherche.Text = string.Empty;
-                        InitFormEmeteur();
+                            txbRecherche.Text = string.Empty;
+                            InitFormEmeteur();
+                        }
+                        else
+                            fonction.AfficheMessageNotification(Color.FromArgb(248, 43, 43), "Initialisation", $"Veillez d'abord finaliser " +
+                                $"{transaction.TypeTransaction} {transaction.CodeTransaction} !");
                     }
                     else
                         fonction.AfficheMessageNotification(Color.FromArgb(248, 43, 43), "Initialisation", 

@@ -58,12 +58,6 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
             fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
         }
 
-        private void btnButsCredits_Click(object sender, EventArgs e)
-        {
-            Uc_ButsCredits frm = new Uc_ButsCredits(this.employe);
-            fonction.AfficheCorp(frm, panelCorps, leCorpDePage);
-        }
-
         private void btnAvalistes_Click(object sender, EventArgs e)
         {
             Uc_Avalistes frm = new Uc_Avalistes(this.employe);

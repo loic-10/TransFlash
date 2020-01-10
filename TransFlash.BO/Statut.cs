@@ -67,7 +67,8 @@ namespace TransFlash.BO
         {
             En_attente_de_validité,
             Annulé,
-            Validé
+            Validé,
+            Planifié
         }
 
         public enum StatutPayementRemboursement
@@ -111,10 +112,21 @@ namespace TransFlash.BO
 
         public enum TypeCredit
         {
-            A_court_terme,
-            A_moyen_terme,
-            A_long_terme
-            }
+            Credit_normal,
+            Decouvert
+        }
+
+        public static TypeCredit RetourTypeCredit(string typeCredit)
+        {
+            string[] valeurs = Enum.GetNames(typeof(TypeCredit));
+
+            if (valeurs[0] == typeCredit)
+                return TypeCredit.Credit_normal;
+            else if (valeurs[1] == typeCredit)
+                return TypeCredit.Decouvert;
+
+            return new TypeCredit();
+        }
 
         public enum TypeAppartenantCompteEpargne
         {
@@ -180,6 +192,24 @@ namespace TransFlash.BO
             Image_des_employés
         }
 
+        public static StatutStockage? RetourStatutStockage(string statutStockage)
+        {
+            string[] valeurs = Enum.GetNames(typeof(StatutStockage));
+
+            if (valeurs[0] == statutStockage)
+                return StatutStockage.Garantie;
+            else if (valeurs[1] == statutStockage)
+                return StatutStockage.Demande_de_stage;
+            else if (valeurs[2] == statutStockage)
+                return StatutStockage.Document_de_la_microfinance;
+            else if (valeurs[3] == statutStockage)
+                return StatutStockage.Image_des_clients;
+            else if (valeurs[4] == statutStockage)
+                return StatutStockage.Image_des_employés;
+
+            return null;
+        }
+
         public enum TypeActionFond
         {
             Entrée,
@@ -222,7 +252,8 @@ namespace TransFlash.BO
         public enum StatutPossibilite
         {
             Possible,
-            Impossible
+            Impossible,
+            Risqué
         };
 
         public static StatutSexe? RetourSexe(string sexe)

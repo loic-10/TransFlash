@@ -82,5 +82,10 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
                 txbPourcentage.Text = 100.ToString();
             }
         }
+
+        public bool FormulaireRempliCorrectement =>
+            Nom != string.Empty &&
+            Description != string.Empty &&
+            Pourcentage > 0;
     }
 }

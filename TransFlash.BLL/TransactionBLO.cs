@@ -19,11 +19,16 @@ namespace TransFlash.BLL
             transactionBLO = new RepositoireDAOFile<Transaction>();
         }
 
-        public void InitierTransaction(TypeCompte typeCompte, TypeTransaction typeTransaction, Epargne epargne, CompteClient compteClientEmetteur, 
+        public void InitierTransaction(TypeCompte typeCompte, TypeTransaction typeTransaction, CompteClient compteClientEmetteur,
             CompteClient compteClientDestinataire, Employe employe, double montant, int nombreJourAttente)
         {
-            transactionBLO.Add(new Transaction(CodeTransaction(typeTransaction), typeCompte, typeTransaction, epargne, DateTime.Now, compteClientEmetteur, 
-                                                                    compteClientDestinataire, employe, new Employe("/"), 
+
+            Epargne epargne = (new EpargneBLO().RechercherEpargneEnCoursDuCompte(compteClientEmetteur) != null) ?
+                new EpargneBLO().RechercherEpargneEnCoursDuCompte(compteClientEmetteur) :
+                new Epargne(0);
+
+            transactionBLO.Add(new Transaction(CodeTransaction(typeTransaction), typeCompte, typeTransaction, epargne, DateTime.Now, compteClientEmetteur,
+                                                                    compteClientDestinataire, employe, new Employe("/"),
                                                                     montant, StatutTransaction.En_cours_de_validité, nombreJourAttente));
 
             if (typeTransaction == TypeTransaction.Dépot)
@@ -53,19 +58,19 @@ namespace TransFlash.BLL
             if (transaction.TypeTransaction == TypeTransaction.Dépot)
             {
                 new CompteClientBLO().CrediterCompteClient(transaction.CompteClientEmetteur, transaction.Montant, employe);
-                new OperationBLO().AjouterOperation(TypeOperation.Dépot, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur, 
+                new OperationBLO().AjouterOperation(TypeOperation.Dépot, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur,
                     transaction.Montant, $"Validation du depot ({transaction.CodeTransaction})");
             }
             else if (transaction.TypeTransaction == TypeTransaction.Retrait)
             {
                 new CompteClientBLO().DebiterCompteClient(transaction.CompteClientEmetteur, transaction.Montant, employe, true, true);
-                new OperationBLO().AjouterOperation(TypeOperation.Retrait, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur, 
+                new OperationBLO().AjouterOperation(TypeOperation.Retrait, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur,
                     transaction.Montant, $"Validation du retrait ({transaction.CodeTransaction})");
             }
             else
             {
                 new CompteClientBLO().CrediterUnAutreCompte(transaction.CompteClientEmetteur, transaction.CompteClientDestinataire, transaction.Montant, employe, false, true);
-                new OperationBLO().AjouterOperation(TypeOperation.Transfert_inter_compte, employe, transaction.CompteClientEmetteur.Client, 
+                new OperationBLO().AjouterOperation(TypeOperation.Transfert_inter_compte, employe, transaction.CompteClientEmetteur.Client,
                     transaction.CompteClientEmetteur, transaction.Montant, $"Validation de la transaction inter-compte ({transaction.CodeTransaction})");
             }
 
@@ -80,43 +85,48 @@ namespace TransFlash.BLL
 
             int index = transactionBLO.IndexOf(transaction);
 
-            transaction.StatutTransaction = StatutTransaction.Validé;
-            transaction.EmployeValideur = employe;
-            transactionBLO[index] = transaction;
-
             if (transaction.TypeTransaction == TypeTransaction.Dépot)
             {
                 new CompteClientBLO().CrediterCompteClient(transaction.CompteClientEmetteur, transaction.Montant, employe);
                 new EpargneBLO().AugmenterMontantEpargner(transaction.Epargne, transaction.Montant, employe);
             }
 
-            else if (transaction.TypeTransaction == TypeTransaction.Retrait && (oldTransaction.StatutTransaction == StatutTransaction.Avisé ||
+            if (transaction.TypeTransaction == TypeTransaction.Retrait && (oldTransaction.StatutTransaction == StatutTransaction.Avisé ||
                 oldTransaction.StatutTransaction == StatutTransaction.En_cours_de_validité) && VerifierSiAvis(transaction))
             {
                 new CompteClientBLO().DebiterCompteClient(transaction.CompteClientEmetteur, transaction.Montant, employe, false, false);
                 new EpargneBLO().ReduireMontantEpargner(transaction.Epargne, transaction.Montant, employe);
             }
 
-            else if (transaction.TypeTransaction == TypeTransaction.Retrait && (oldTransaction.StatutTransaction == StatutTransaction.Avisé ||
+            if (transaction.TypeTransaction == TypeTransaction.Retrait && (oldTransaction.StatutTransaction == StatutTransaction.Avisé ||
                 oldTransaction.StatutTransaction == StatutTransaction.En_cours_de_validité) && !VerifierSiAvis(transaction))
             {
                 double montant = transaction.Montant + FraisPourSansAvis(transaction);
-                new CompteClientBLO().DebiterCompteClient(transaction.CompteClientEmetteur, montant, employe, false, false);
+                new CompteClientBLO().DebiterCompteClientEpargne(transaction.CompteClientEmetteur, montant, FraisPourSansAvis(transaction), employe);
                 new EpargneBLO().ReduireMontantEpargner(transaction.Epargne, montant, employe);
             }
 
-            else
+            if (transaction.TypeTransaction == TypeTransaction.Transfert_inter_compte)
             {
-                new CompteClientBLO().CrediterUnAutreCompte(transaction.CompteClientEmetteur, transaction.CompteClientDestinataire, 
+                new CompteClientBLO().CrediterUnAutreCompte(transaction.CompteClientEmetteur, transaction.CompteClientDestinataire,
                     transaction.Montant, employe, false, true);
             }
 
             if (transaction.CompteClientEmetteur.StatutCompte == StatutCompte.En_attente_de_validité)
                 new CompteClientBLO().ActiverCompteClient(transaction.CompteClientEmetteur,
                     new ParametreGeneralBLO().TousParametreGenerals[0].MontantDeCreationCompte, employe);
+
+
+            transaction.StatutTransaction = StatutTransaction.Validé;
+            transaction.EmployeValideur = employe;
+            transactionBLO[index] = transaction;
         }
 
-        public double FraisPourSansAvis(Transaction transaction) => (new ParametreGeneralBLO().TousParametreGenerals[0].PourcentageRetraitEpargneSansAvis * transaction.Montant) / 100;
+        public double FraisPourSansAvis(Transaction transaction) => (transaction.TypeTransaction == TypeTransaction.Retrait && 
+            transaction.TypeCompte == TypeCompte.Epargne &&
+            transaction.DateTransaction.AddDays(transaction.NombreJourAttente) >= DateTime.Now) ?
+            (new ParametreGeneralBLO().TousParametreGenerals[0].PourcentageRetraitEpargneSansAvis * transaction.Montant) / 100 :
+            0;
 
         public void AviserTransaction(Transaction transaction, Employe employe)
         {
@@ -148,16 +158,44 @@ namespace TransFlash.BLL
         {
 
             transactionBLO.Remove(transaction);
-            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur, 
+            new OperationBLO().AjouterOperation(TypeOperation.Suppression, employe, transaction.CompteClientEmetteur.Client, transaction.CompteClientEmetteur,
                 transaction.Montant, $"Suppression de la transaction ({transaction.CodeTransaction})");
         }
 
-        public string CodeTransaction(TypeTransaction typeTransaction) => 
-            ((typeTransaction == TypeTransaction.Transfert_inter_compte) ? "tra-" : (typeTransaction == TypeTransaction.Dépot) ? "dep-" : "ret-" ) +
+        public string CodeTransaction(TypeTransaction typeTransaction) =>
+            ((typeTransaction == TypeTransaction.Transfert_inter_compte) ? "tra-" : (typeTransaction == TypeTransaction.Dépot) ? "dep-" : "ret-") +
             new IdentifiantBLO().IdTransaction.ToString().PadLeft(8, '0');
 
         public Transaction RechercherUneTransaction(string codeTransaction) => transactionBLO.Find(x =>
             x.CodeTransaction == codeTransaction).FirstOrDefault();
+
+        public Transaction RechercherUneTransactionEnCours(CompteClient compteClient) => transactionBLO.Find(x =>
+            x.CompteClientEmetteur.CodeCompte == compteClient.CodeCompte &&
+            x.StatutTransaction == StatutTransaction.En_cours_de_validité).FirstOrDefault();
+
+        public double MontantTotalDepotClient(Client client)
+        {
+            double montant = 0;
+            foreach (var item in new List<Transaction>(new TransactionBLO().ToutesTransactions))
+            {
+                if (item.CompteClientEmetteur.Client.CodeClient == client.CodeClient && item.TypeTransaction == TypeTransaction.Dépot &&
+                    item.StatutTransaction == StatutTransaction.Validé)
+                    montant += item.Montant;
+            }
+            return montant;
+        }
+
+        public double MontantTotalRetraitClient(Client client)
+        {
+            double montant = 0;
+            foreach (var item in new List<Transaction>(new TransactionBLO().ToutesTransactions))
+            {
+                if (item.CompteClientEmetteur.Client.CodeClient == client.CodeClient && item.TypeTransaction == TypeTransaction.Retrait &&
+                    item.StatutTransaction == StatutTransaction.Validé)
+                    montant += item.Montant;
+            }
+            return montant;
+        }
 
         public IEnumerable<Transaction> RechercherTransactionsCompte(CompteClient compteClient) => transactionBLO.Find(x =>
             x.CompteClientEmetteur == compteClient);

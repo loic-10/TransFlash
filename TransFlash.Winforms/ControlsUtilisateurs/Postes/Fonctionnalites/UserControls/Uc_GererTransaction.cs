@@ -159,7 +159,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
                     $" et {new CompteClientBLO().CalculFraiesRetrait(transaction.Montant)} seront debiter de ce compte comme frais." :
                     ".") + 
                     ((transaction.CompteClientEmetteur.StatutCompte == StatutCompte.En_attente_de_validité) ?
-                    "Il doit payer au total" + ((transaction.TypeTransaction == TypeTransaction.Retrait) ? 
+                    "Il doit payer au total " + ((transaction.TypeTransaction == TypeTransaction.Retrait) ? 
                     (transaction.Montant + new CompteClientBLO().CalculFraiesRetrait(transaction.Montant) + 
                     new ParametreGeneralBLO().TousParametreGenerals[0].MontantDeCreationCompte) : 
                     (transaction.Montant + new ParametreGeneralBLO().TousParametreGenerals[0].MontantDeCreationCompte)) :  string.Empty) ,
@@ -210,6 +210,27 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
                 }
                 txbRechercher_TextChanged(sender, e);
             }
+        }
+
+        private void btnAnnulerTransaction_Click(object sender, EventArgs e)
+        {
+            Transaction transaction = dataGridTransaction.SelectedRows[0].DataBoundItem as Transaction;
+            if (MessageBox.Show($"Etes-vous sur d'annuler {transaction.TypeTransaction.ToString()} ?", "Erreur", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                new TransactionBLO().AnnulerTransaction(transaction, this.employe);
+                txbRechercher_TextChanged(sender, e);
+            }
+        }
+
+        private void btnAviserTransaction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInformation_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
             fonction = new Frm_Fonction();
             this.employe = employe;
             RefreshGrid(new GarantieBLO().RechercherLesGaranties(txbRechercher.Text, checkAvaliste.Checked, checkCredit.Checked,
-                checkDateEnregistrement.Checked, checkElementEnGarantie.Checked, checkId.Checked, checkNom.Checked, checkStatutGarantie.Checked,
+                checkDateEnregistrement.Checked, checkId.Checked, checkStatutGarantie.Checked,
                 checkMontantEvaluation.Checked));
             Load += Uc_Garanties_Load;
         }
@@ -57,7 +57,7 @@ namespace Couche.Winforms.ControlsUtilisateurs.Postes.Fonctionnalites.UserContro
         private void txbRechercher_TextChanged(object sender, EventArgs e)
         {
             RefreshGrid(new GarantieBLO().RechercherLesGaranties(txbRechercher.Text, checkAvaliste.Checked, checkCredit.Checked,
-                checkDateEnregistrement.Checked, checkElementEnGarantie.Checked, checkId.Checked, checkNom.Checked, checkStatutGarantie.Checked, 
+                checkDateEnregistrement.Checked, checkId.Checked, checkStatutGarantie.Checked, 
                 checkMontantEvaluation.Checked));
         }
 
